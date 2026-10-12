@@ -209,7 +209,7 @@ export class SmartMatchService {
       return {
         candidate,
         mentor,
-        evalInput,
+        input: evalInput,
         evaluation: breakdown,
       };
     });
@@ -248,7 +248,7 @@ export class SmartMatchService {
         async (signal) => {
           const res = await defaultGateway.generateStructuredJson<{ explanation: string }>(
             prompt,
-            process.env.GEMINI_DEFAULT_MODEL || "gemini-2.5-flash",
+            process.env.GEMINI_DEFAULT_MODEL || "gemini-3.5-flash",
             signal
           );
           return res.data;
@@ -266,6 +266,17 @@ export class SmartMatchService {
       if (explanationResult.fallbackActive) {
         fallbackActive = true;
       }
+
+      await defaultGateway.logPromptTelemetry({
+        requestId: input.requestId || "00000000-0000-0000-0000-000000000000",
+        userId: input.studentId,
+        featureType: "smart_match",
+        modelName: process.env.GEMINI_DEFAULT_MODEL || "gemini-3.5-flash",
+        promptTokens: explanationResult.fallbackActive ? 0 : 120,
+        completionTokens: explanationResult.fallbackActive ? 0 : 45,
+        latencyMs: explanationResult.latencyMs,
+        status: explanationResult.fallbackActive ? "fallback_triggered" : "success",
+      });
 
       candidateResults.push({
         mentorId: mentor.id,
@@ -296,6 +307,12 @@ export class SmartMatchService {
           match_score: m.scoreBreakdown.totalScorePercentage,
           status: "pending",
         }));
+
+        // Clear existing matches for this request to ensure pipeline idempotency
+        await this.admin
+          .from("service_request_matches")
+          .delete()
+          .eq("request_id", input.requestId);
 
         const { data: insertedMatches, error: matchInsertError } = await this.admin
           .from("service_request_matches")

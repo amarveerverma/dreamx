@@ -24,12 +24,19 @@ export async function POST(
     const cohortStartDate = (reqBody as any).cohort_start_date || new Date().toISOString().split('T')[0];
 
     // Check if program exists and is active
-    const { data: program, error: programError } = await supabase
+    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(programId);
+    let programQuery = supabase
       .from('programs')
       .select('id, price_inr, is_active')
-      .eq('id', programId)
-      .is('deleted_at', null)
-      .single();
+      .is('deleted_at', null);
+
+    if (isUuid) {
+      programQuery = programQuery.eq('id', programId);
+    } else {
+      programQuery = programQuery.eq('slug', programId);
+    }
+
+    const { data: program, error: programError } = await programQuery.single();
 
     if (programError || !program) {
       return NextResponse.json({ error: 'Program not found' }, { status: 404 });
@@ -46,7 +53,7 @@ export async function POST(
     const { data: existing } = await supabase
       .from('program_enrollments')
       .select('id')
-      .eq('program_id', programId)
+      .eq('program_id', program.id)
       .eq('student_id', user.id)
       .in('status', ['pending', 'active'])
       .maybeSingle();
@@ -59,7 +66,7 @@ export async function POST(
     const { data: enrollment, error: enrollError } = await supabase
       .from('program_enrollments')
       .insert({
-        program_id: programId,
+        program_id: program.id,
         student_id: user.id,
         cohort_start_date: cohortStartDate,
         status: 'active' // Auto-active for Phase 3 mock

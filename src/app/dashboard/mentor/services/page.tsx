@@ -61,12 +61,36 @@ export default function MentorServicesPage() {
   ]
 
   const [services, setServices] = useState<MentorServiceItem[]>(initialServices)
+  const [isLoading, setIsLoading] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editingServiceId, setEditingServiceId] = useState<string | null>(null)
   const [selectedStandardServiceId, setSelectedStandardServiceId] = useState<number>(5)
   const [customPrice, setCustomPrice] = useState<number>(1299)
   const [customNotes, setCustomNotes] = useState<string>('')
   const [statusMessage, setStatusMessage] = useState<string | null>(null)
+
+  // Fetch real persistent services from backend on mount
+  React.useEffect(() => {
+    let isMounted = true
+    async function loadServices() {
+      try {
+        setIsLoading(true)
+        const res = await fetch('/api/v1/mentors/me/services')
+        if (res.ok) {
+          const data = await res.json()
+          if (isMounted && Array.isArray(data.services) && data.services.length > 0) {
+            setServices(data.services)
+          }
+        }
+      } catch (err: any) {
+        console.warn('Could not fetch mentor services from backend:', err.message)
+      } finally {
+        if (isMounted) setIsLoading(false)
+      }
+    }
+    loadServices()
+    return () => { isMounted = false }
+  }, [])
 
   const activeCount = services.filter((s) => s.isActive).length
   const MAX_SERVICES = 5
@@ -75,36 +99,87 @@ export default function MentorServicesPage() {
   // Calculate mentor 80% take-home pay per PRD §13.6 Direct Gateway Hold model
   const calcTakeHome = (price: number) => Math.round(price * 0.8)
 
-  const handleToggleActive = (id: string) => {
-    setServices((prev) => {
-      const target = prev.find((s) => s.id === id)
-      if (!target) return prev
+  const handleToggleActive = async (id: string) => {
+    const target = services.find((s) => s.id === id)
+    if (!target) return
 
-      if (!target.isActive && activeCount >= MAX_SERVICES) {
-        setStatusMessage('⚠️ Limit Reached: Maximum 5 active services allowed per Database.md Part 5.3.')
+    if (!target.isActive && activeCount >= MAX_SERVICES) {
+      setStatusMessage('⚠️ Limit Reached: Maximum 5 active services allowed per Database.md Part 5.3.')
+      setTimeout(() => setStatusMessage(null), 4000)
+      return
+    }
+
+    const nextActive = !target.isActive
+    // Optimistic UI update
+    setServices((prev) => prev.map((s) => (s.id === id ? { ...s, isActive: nextActive } : s)))
+
+    try {
+      const res = await fetch('/api/v1/mentors/me/services', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, is_active: nextActive }),
+      })
+      if (!res.ok) {
+        const err = await res.json()
+        // Revert on error
+        setServices((prev) => prev.map((s) => (s.id === id ? { ...s, isActive: !nextActive } : s)))
+        setStatusMessage(`Error: ${err.error || 'Failed to update service status'}`)
         setTimeout(() => setStatusMessage(null), 4000)
-        return prev
+      } else {
+        setStatusMessage(nextActive ? 'Service activated.' : 'Service paused.')
+        setTimeout(() => setStatusMessage(null), 3000)
       }
-
-      return prev.map((s) => (s.id === id ? { ...s, isActive: !s.isActive } : s))
-    })
+    } catch {
+      // Revert on failure
+      setServices((prev) => prev.map((s) => (s.id === id ? { ...s, isActive: !nextActive } : s)))
+    }
   }
 
-  const handleDeleteService = (id: string) => {
+  const handleDeleteService = async (id: string) => {
+    const backup = [...services]
     setServices((prev) => prev.filter((s) => s.id !== id))
     setStatusMessage('Service removed from your active catalog.')
     setTimeout(() => setStatusMessage(null), 3000)
+
+    try {
+      const res = await fetch(`/api/v1/mentors/me/services?id=${encodeURIComponent(id)}`, {
+        method: 'DELETE',
+      })
+      if (!res.ok) {
+        setServices(backup)
+        const err = await res.json()
+        setStatusMessage(`Error: ${err.error || 'Failed to delete service'}`)
+      }
+    } catch {
+      setServices(backup)
+    }
   }
 
-  const handleUpdatePrice = (id: string, newPrice: number) => {
+  const handleUpdatePrice = async (id: string, newPrice: number) => {
     if (newPrice <= 0 || isNaN(newPrice)) return
+    const prevServices = [...services]
     setServices((prev) => prev.map((s) => (s.id === id ? { ...s, price: newPrice } : s)))
     setEditingServiceId(null)
     setStatusMessage('Price updated. Direct Gateway Hold payouts recalibrated.')
     setTimeout(() => setStatusMessage(null), 3000)
+
+    try {
+      const res = await fetch('/api/v1/mentors/me/services', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, price: newPrice }),
+      })
+      if (!res.ok) {
+        setServices(prevServices)
+        const err = await res.json()
+        setStatusMessage(`Error: ${err.error || 'Failed to update price'}`)
+      }
+    } catch {
+      setServices(prevServices)
+    }
   }
 
-  const handleAddService = (e: React.FormEvent) => {
+  const handleAddService = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (activeCount >= MAX_SERVICES) {
@@ -115,22 +190,34 @@ export default function MentorServicesPage() {
     const standardType = STANDARD_SERVICES.find((s) => s.id === selectedStandardServiceId)
     if (!standardType) return
 
-    const newService: MentorServiceItem = {
-      id: `svc-${Date.now()}`,
-      slug: standardType.slug,
-      title: standardType.title,
-      description: customNotes || standardType.shortDescription,
-      price: customPrice,
-      durationMinutes: standardType.durationMinutes,
-      deliverable: `${standardType.deliverableRubric.title} (${standardType.deliverableRubric.slaHours}h SLA)`,
-      isActive: true,
-    }
+    try {
+      const res = await fetch('/api/v1/mentors/me/services', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_type_id: standardType.id,
+          slug: standardType.slug,
+          price: customPrice,
+          custom_description: customNotes || standardType.shortDescription,
+        }),
+      })
 
-    setServices((prev) => [...prev, newService])
-    setIsModalOpen(false)
-    setCustomNotes('')
-    setStatusMessage(`✅ "${standardType.title}" activated into Slot ${services.length + 1}!`)
-    setTimeout(() => setStatusMessage(null), 4000)
+      if (res.ok) {
+        const json = await res.json()
+        const saved = json.service
+        setServices((prev) => [...prev, saved])
+        setIsModalOpen(false)
+        setCustomNotes('')
+        setStatusMessage(`✅ "${saved.title}" activated into Slot ${services.length + 1}!`)
+        setTimeout(() => setStatusMessage(null), 4000)
+      } else {
+        const err = await res.json()
+        setStatusMessage(`Error: ${err.error || 'Could not save service'}`)
+        setTimeout(() => setStatusMessage(null), 5000)
+      }
+    } catch (err: any) {
+      setStatusMessage(`Network error: ${err.message}`)
+    }
   }
 
   // Available standard services not already used

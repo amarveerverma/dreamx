@@ -20,6 +20,7 @@ export function Navbar({ activePage }: NavbarProps) {
     if (activePage) return activePage === page
     if (page === 'mentors') return pathname?.startsWith('/mentors')
     if (page === 'services') return pathname?.startsWith('/services')
+    if (page === 'programs') return pathname?.startsWith('/programs')
     if (page === 'discover') return pathname === '/'
     return false
   }
@@ -57,7 +58,7 @@ export function Navbar({ activePage }: NavbarProps) {
               className={`font-body-md text-body-md transition-colors duration-150 ${
                 isCurrent('programs') ? 'text-primary font-semibold' : 'text-on-surface-variant hover:text-on-surface'
               }`}
-              href="/services"
+              href="/programs"
             >
               Programs
             </Link>

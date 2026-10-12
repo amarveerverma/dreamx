@@ -1,977 +1,362 @@
+'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
 
-export default function Page() {
+interface MentorProfile {
+  id: string;
+  full_name: string;
+  avatar_url?: string;
+  headline?: string;
+}
+
+interface Program {
+  id: string;
+  title: string;
+  slug: string;
+  duration_weeks: number;
+  price_inr: number;
+  description: string;
+  is_active: boolean;
+  profiles?: MentorProfile;
+}
+
+export default function ProgramsPage() {
+  const [programs, setPrograms] = useState<Program[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [durationFilter, setDurationFilter] = useState<'all' | '2' | '4' | '6'>('all');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    async function fetchPrograms() {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const queryParams = new URLSearchParams();
+        if (durationFilter !== 'all') {
+          queryParams.set('duration_weeks', durationFilter);
+        }
+        const res = await fetch(`/api/v1/programs?${queryParams.toString()}`);
+        if (!res.ok) {
+          throw new Error(`Failed to load programs (HTTP ${res.status})`);
+        }
+        const json = await res.json();
+        setPrograms(json.data || []);
+      } catch (err: any) {
+        console.error('Error fetching programs:', err);
+        setError(err.message || 'Unable to load programs catalog');
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchPrograms();
+  }, [durationFilter]);
+
+  const filteredPrograms = programs.filter(p => {
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    return (
+      p.title.toLowerCase().includes(q) ||
+      p.description.toLowerCase().includes(q) ||
+      p.profiles?.full_name?.toLowerCase().includes(q)
+    );
+  });
+
   return (
-    <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div className="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md"><div className="flex items-center gap-space-lg"><a className="flex items-center gap-space-xs" data-path="programs" href="#"><div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"><span className="material-symbols-outlined text-on-primary text-[20px]">rocket_launch</span></div><span className="font-title-md text-title-md text-on-surface tracking-tight font-bold">Dream<span className="text-primary">X</span></span></a><nav className="hidden xl:flex items-center gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg px-3 py-1.5"><a className="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors px-3 py-1.5 rounded-lg" data-path="discover-goals" href="#">Discover Goals</a><a className="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors px-3 py-1.5 rounded-lg" data-path="search-marketplace" href="#">Search Marketplace</a><a className="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors px-3 py-1.5 rounded-lg" data-path="services" href="#">Services</a><a aria-current="page" className="transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg px-3 py-1.5" data-path="programs" href="#">Structured Programs</a><a className="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors px-3 py-1.5 rounded-lg" data-path="browse-mentors" href="#">Browse Mentors</a><a className="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors px-3 py-1.5 rounded-lg" data-path="pricing-memberships" href="#">Pricing & Memberships</a></nav></div><div className="flex items-center gap-space-sm"><div className="hidden md:flex items-center gap-space-xs bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-[0_1px_3px_rgba(15,23,42,0.04)]"><span className="material-symbols-outlined text-outline text-[18px]">search</span><input className="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none w-32 lg:w-44" placeholder="Search catalog..." type="text"/><kbd className="font-label-sm text-label-sm bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded">⌘K</kbd></div><div className="hidden lg:flex items-center gap-1 bg-surface-container-low px-2.5 py-1 rounded-full"><span className="material-symbols-outlined text-primary text-[16px]">public</span><span className="font-label-sm text-label-sm text-on-surface">India CM-IN ₹</span></div><div className="flex items-center gap-1 bg-secondary-fixed text-on-secondary-fixed px-2.5 py-1 rounded-full"><span className="material-symbols-outlined text-secondary text-[16px]">auto_awesome</span><span className="font-label-sm text-label-sm font-semibold">50 Credits</span></div><button className="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span className="material-symbols-outlined text-[20px]">notifications</span></button><a className="hidden sm:inline-flex font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-3 py-2 transition-colors" data-path="sign-in" href="#">Sign In</a><a className="font-label-md text-label-md font-semibold bg-primary text-on-primary hover:bg-primary-container px-4 py-2 rounded-lg transition-colors shadow-[0_1px_3px_rgba(15,23,42,0.06)]" data-path="get-started" href="#">Get Started</a><div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span className="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main className="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]"><div className="flex flex-col w-full">
+    <div className="min-h-screen bg-surface flex flex-col">
+      <Navbar activePage="programs" />
 
-<section className="w-full bg-surface-container-high text-on-surface py-2.5 px-6 lg:px-12">
-<div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
-<div className="flex items-center gap-2 text-label-sm font-label-sm">
-<span className="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-2.5 py-0.5 rounded-full font-semibold">
-<span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-          ENROLLING NOW
-        </span>
-<span className="text-on-surface-variant">Active Cohorts Enrolling for August 1 • 14-Day 100% Money-Back Escrow Guarantee • Max 6–8 Mentees/Cohort for Guaranteed 1:1 Attention</span>
-</div>
-<div className="hidden lg:flex items-center gap-4 text-label-sm font-label-sm text-on-surface-variant">
-<span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px] text-primary">verified_user</span> RBI Tokenized Escrow</span>
-<span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px] text-secondary">workspace_premium</span> FAANG Bar-Raiser Vetted</span>
-</div>
-</div>
-</section>
-
-<section className="w-full bg-surface py-10 px-6 lg:px-12">
-<div className="max-w-7xl mx-auto">
-
-<nav className="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant mb-6">
-<a className="hover:text-primary transition-colors" href="#">Home</a>
-<span className="material-symbols-outlined text-[14px]">chevron_right</span>
-<a className="hover:text-primary transition-colors" href="#">Programs</a>
-<span className="material-symbols-outlined text-[14px]">chevron_right</span>
-<span className="text-on-surface font-semibold">Structured Cohorts Catalog</span>
-</nav>
-
-<div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8">
-<div className="max-w-3xl">
-<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm font-semibold mb-4">
-<span className="material-symbols-outlined text-[16px]">stars</span>
-            Outcome-Accountable Structured Mentorship Tracks
+      <main className="flex-1 w-full pt-16">
+        {/* Enrolling Banner */}
+        <section className="w-full bg-surface-container-high text-on-surface py-2.5 px-6 lg:px-12 border-b border-outline-variant/10">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+            <div className="flex items-center gap-2 text-label-sm font-label-sm">
+              <span className="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-2.5 py-0.5 rounded-full font-semibold">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                STRUCTURED COHORTS
+              </span>
+              <span className="text-on-surface-variant">
+                14-Day 100% Escrow Guarantee • Capped 6–8 Fellows per Cohort • 1:1 Live Bar-Raiser Feedback
+              </span>
+            </div>
+            <div className="hidden lg:flex items-center gap-4 text-label-sm font-label-sm text-on-surface-variant">
+              <span className="flex items-center gap-1">
+                <span className="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+                100% Escrow Protected
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="material-symbols-outlined text-[16px] text-secondary">workspace_premium</span>
+                FAANG Bar Raisers
+              </span>
+            </div>
           </div>
-<h1 className="text-display-hero font-display-hero text-on-surface tracking-tight mb-4">
-            Structured Mentorship Programs & Career Accelerators
-          </h1>
-<p className="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
-            Outcome-accountable 2-Week Sprints, 4-Week Core Career Fellowships, and 6-Week Deep Transformations led by verified Staff & Principal Bar-Raisers from Google, Microsoft, Meta, and top Tier-1 product firms.
-          </p>
-</div>
+        </section>
 
-<div className="bg-surface-container-low p-5 rounded-xl shadow-sm flex flex-row lg:flex-col gap-4 min-w-[260px]">
-<div className="flex items-center gap-3">
-<div className="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
-<span className="material-symbols-outlined text-[20px]">groups</span>
-</div>
-<div>
-<p className="text-label-sm font-label-sm text-on-surface-variant uppercase">Max Cohort Density</p>
-<p className="text-title-md font-title-md text-on-surface">6 to 8 Fellows</p>
-</div>
-</div>
-<div className="flex items-center gap-3">
-<div className="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center font-bold">
-<span className="material-symbols-outlined text-[20px]">lock_reset</span>
-</div>
-<div>
-<p className="text-label-sm font-label-sm text-on-surface-variant uppercase">Platform Escrow</p>
-<p className="text-title-md font-title-md text-on-surface">14-Day 100% Refund</p>
-</div>
-</div>
-</div>
-</div>
+        {/* Hero & Title */}
+        <section className="w-full bg-surface py-10 px-6 lg:px-12">
+          <div className="max-w-7xl mx-auto">
+            {/* Breadcrumb */}
+            <nav className="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant mb-6">
+              <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+              <span className="material-symbols-outlined text-[14px]">chevron_right</span>
+              <span className="text-on-surface font-semibold">Structured Programs</span>
+            </nav>
 
-<div className="mt-4 pt-6 bg-surface-container-lowest p-4 rounded-xl shadow-sm">
-<div className="flex flex-col gap-4">
-<div className="flex items-center justify-between">
-<span className="text-label-md font-label-md text-on-surface font-semibold flex items-center gap-1.5">
-<span className="material-symbols-outlined text-primary text-[18px]">timer</span>
-              Filter by Commitment & Scope:
-            </span>
-<span className="text-label-sm font-label-sm text-on-surface-variant" id="activeFilterCounter">Showing all 4 structured programs</span>
-</div>
-
-<div className="flex flex-wrap gap-2" id="durationFilters">
-<button className="duration-filter-btn px-4 py-2 rounded-lg text-label-md font-label-md font-semibold transition-all bg-primary text-on-primary shadow-sm" data-filter="all" type="button">
-              All Programs (8)
-            </button>
-<button className="duration-filter-btn px-4 py-2 rounded-lg text-label-md font-label-md font-medium transition-all bg-surface-container-low text-on-surface hover:bg-surface-container" data-filter="2-week" type="button">
-              ⚡ 2-Week Sprints (Fast-Track Interview • Max 6 • ₹999–₹1,499)
-            </button>
-<button className="duration-filter-btn px-4 py-2 rounded-lg text-label-md font-label-md font-medium transition-all bg-surface-container-low text-on-surface hover:bg-surface-container" data-filter="4-week" type="button">
-              ⭐ 4-Week Core (Flagship Prep • Weekly Milestones • Max 8 • ₹1,999–₹3,499)
-            </button>
-<button className="duration-filter-btn px-4 py-2 rounded-lg text-label-md font-label-md font-medium transition-all bg-surface-container-low text-on-surface hover:bg-surface-container" data-filter="6-week" type="button">
-              🚀 6-Week Accelerators (Placement Mastery • Multi-Mentor • Max 6 • ₹3,999–₹6,499)
-            </button>
-</div>
-
-<div className="flex items-center gap-2 overflow-x-auto pb-1 pt-2">
-<span className="text-label-sm font-label-sm text-on-surface-variant whitespace-nowrap">Focus Track:</span>
-<button className="track-filter-btn px-3 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-variant text-on-surface whitespace-nowrap" data-track="all" type="button">All Tracks</button>
-<button className="track-filter-btn px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-low text-on-surface-variant hover:text-on-surface whitespace-nowrap" data-track="systems" type="button">Distributed Systems & Cloud</button>
-<button className="track-filter-btn px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-low text-on-surface-variant hover:text-on-surface whitespace-nowrap" data-track="interview" type="button">Full-Stack & Interview Crunch</button>
-<button className="track-filter-btn px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-low text-on-surface-variant hover:text-on-surface whitespace-nowrap" data-track="ai" type="button">AI & Machine Learning Engineering</button>
-<button className="track-filter-btn px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-low text-on-surface-variant hover:text-on-surface whitespace-nowrap" data-track="leadership" type="button">Staff SWE Switch & Leadership</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section className="w-full bg-surface-container-low/40 py-10 px-6 lg:px-12">
-<div className="max-w-7xl mx-auto flex flex-col gap-8">
-
-<article className="program-card bg-surface-container-lowest rounded-xl shadow-md p-6 lg:p-8 transition-all hover:shadow-xl relative" data-duration="4-week" data-track="systems">
-<div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-<div className="flex items-center gap-2">
-<span className="bg-primary text-on-primary text-label-sm font-label-sm font-bold uppercase tracking-wide px-3 py-1 rounded-full flex items-center gap-1">
-<span className="material-symbols-outlined text-[14px]">military_tech</span>
-              Flagship Core Program
-            </span>
-<span className="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-2.5 py-1 rounded-full font-medium">
-              4 Weeks • 4 Live 1:1 Loops • 8 Code Audits
-            </span>
-</div>
-
-<div className="flex items-center gap-3 bg-surface-container-low px-3 py-1.5 rounded-lg">
-<div className="flex flex-col">
-<span className="text-label-sm font-label-sm text-on-surface font-semibold">Cohort Starts Aug 1</span>
-<span className="text-label-sm font-label-sm text-error font-medium">3 of 8 seats remaining</span>
-</div>
-<div className="w-24 bg-surface-container rounded-full h-2 overflow-hidden">
-<div className="bg-primary h-full rounded-full" style={{"width":"62.5%"}}></div>
-</div>
-</div>
-</div>
-<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-<div className="lg:col-span-8 flex flex-col gap-5">
-<div>
-<h2 className="text-headline-sm font-headline-sm text-on-surface mb-2 font-bold hover:text-primary transition-colors cursor-pointer">
-                4-Week Distributed Systems & Backend Bar-Raiser Fellowship
-              </h2>
-<p className="text-body-md font-body-md text-on-surface-variant">
-                Master high-concurrency cloud topologies, fault-tolerant consensus architectures, and survive grueling L5/L6 bar-raiser interview loops with actual Google and Amazon Staff-level evaluators.
-              </p>
-</div>
-
-<div className="flex items-center gap-4 bg-surface p-3.5 rounded-xl">
-<img className="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Professional headshot portrait of Vikram Singh, a senior software architect with warm confident smile, studio soft rim lighting, dressed in neat tech corporate attire on subtle slate backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApRr990nX2qfiZiFJ1rtKXsFYCSQzR9sUFuljlm7EX4HeiqbduTjrSfK7zmqJpEU8UJrFaAKd9Vdl4TjSgq2Vm5ru3ujVrpYXa8i7XkrT4d6wZxYMRvEOSSoYZbYvE37Z9CZWi8zNifKEDt7Pb2XAKqQr1DoXqF5xAxklZhZQZKvtOa7EhCJG7r9LfvfsGxFHFLJaqds0cslXBooyHAnicRt78UsZtVgiB8KHQoxH0edibyo6Pv2ti"/>
-<div className="flex-1 min-w-0">
-<div className="flex items-center gap-2">
-<h3 className="text-title-md font-title-md text-on-surface font-semibold truncate">Vikram Singh</h3>
-<span className="text-label-sm font-label-sm bg-surface-container px-2 py-0.5 rounded text-primary font-bold">Google Cloud Staff AI</span>
-<span className="text-label-sm font-label-sm bg-surface-container-high px-2 py-0.5 rounded text-on-surface-variant">ex-Amazon Bar Raiser</span>
-</div>
-<div className="flex items-center gap-3 text-label-sm font-label-sm text-on-surface-variant mt-0.5">
-<span className="flex items-center gap-1 text-primary font-bold">
-<span className="material-symbols-outlined text-[16px]" style={{"fontVariationSettings":"'FILL' 1"}}>star</span>
-                    4.95
-                  </span>
-<span>• 240+ Mentee Evaluations</span>
-<span>• 87% L5+ Offer Conversion</span>
-</div>
-</div>
-</div>
-
-<div className="bg-surface rounded-xl p-4">
-<div className="flex items-center justify-between mb-3">
-<h4 className="text-label-md font-label-md text-on-surface font-bold uppercase tracking-wider flex items-center gap-2">
-<span className="material-symbols-outlined text-primary text-[18px]">account_tree</span>
-                  Weekly Milestone Syllabus & Deliverables
-                </h4>
-<button className="text-label-sm font-label-sm text-primary font-semibold hover:underline syllabus-toggle-btn" data-target="syllabus-1" type="button">
-                  Expand All Weeks
-                </button>
-</div>
-<div className="flex flex-col gap-3" id="syllabus-1">
-
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<div className="flex items-center gap-2">
-<span className="w-6 h-6 rounded bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-bold flex items-center justify-center">W1</span>
-<span className="text-body-md font-body-md font-semibold text-on-surface">High-Throughput Architecture, Microservices & Latency Budgeting</span>
-</div>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</div>
-<div className="syllabus-body pt-2 text-body-sm font-body-sm text-on-surface-variant">
-                    Deep dive into P99 latency engineering, RPC transport protocols, and edge caching topology.
-                    <div className="mt-2 inline-flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded text-primary text-label-sm font-label-sm font-medium">
-<span className="material-symbols-outlined text-[16px]">task</span>
-                      Verified Deliverable: 4-Page System Architecture Diagram & Rubric
-                    </div>
-</div>
-</div>
-
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<div className="flex items-center gap-2">
-<span className="w-6 h-6 rounded bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-bold flex items-center justify-center">W2</span>
-<span className="text-body-md font-body-md font-semibold text-on-surface">Distributed Data Stores, LSM-Trees vs B-Trees & Raft Consensus</span>
-</div>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</div>
-<div className="syllabus-body pt-2 text-body-sm font-body-sm text-on-surface-variant hidden">
-                    Hands-on consensus mechanics, write amplification trade-offs, and sharding strategies under cross-datacenter partition states.
-                    <div className="mt-2 inline-flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded text-primary text-label-sm font-label-sm font-medium">
-<span className="material-symbols-outlined text-[16px]">task</span>
-                      Verified Deliverable: Storage Engine Benchmark Code Review
-                    </div>
-</div>
-</div>
-
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<div className="flex items-center gap-2">
-<span className="w-6 h-6 rounded bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-bold flex items-center justify-center">W3</span>
-<span className="text-body-md font-body-md font-semibold text-on-surface">Fault-Tolerance, Circuit Breakers & 100k QPS Stress Testing</span>
-</div>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</div>
-<div className="syllabus-body pt-2 text-body-sm font-body-sm text-on-surface-variant hidden">
-                    Chaos injection, backpressure mitigation, rate-limiting algorithms (Token Bucket vs Leaky Bucket), and real-time load profiling.
-                    <div className="mt-2 inline-flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded text-primary text-label-sm font-label-sm font-medium">
-<span className="material-symbols-outlined text-[16px]">task</span>
-                      Verified Deliverable: Live Concurrency Bottleneck Audit
-                    </div>
-</div>
-</div>
-
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<div className="flex items-center gap-2">
-<span className="w-6 h-6 rounded bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-bold flex items-center justify-center">W4</span>
-<span className="text-body-md font-body-md font-semibold text-on-surface">Google L5/L6 Bar-Raiser Whiteboard Simulation & Salary Negotiation</span>
-</div>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</div>
-<div className="syllabus-body pt-2 text-body-sm font-body-sm text-on-surface-variant hidden">
-                    Live 60-min simulated loop with full pressure questioning, trade-off defense, followed by level targeting and multi-offer leverage tactics.
-                    <div className="mt-2 inline-flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded text-primary text-label-sm font-label-sm font-medium">
-<span className="material-symbols-outlined text-[16px]">task</span>
-                      Verified Deliverable: Complete 4-Page Standardized Rubric + Career Score Unlock
-                    </div>
-</div>
-</div>
-</div>
-</div>
-
-<div className="flex flex-wrap items-center gap-4 text-label-sm font-label-sm text-on-surface-variant pt-1">
-<span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-primary text-[18px]">verified</span> 14-Day Money-Back Escrow</span>
-<span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-secondary text-[18px]">sync</span> Google Meet & Calendar Auto-Sync</span>
-<span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-tertiary text-[18px]">school</span> Weekly Verified Credentials</span>
-</div>
-</div>
-
-<div className="lg:col-span-4 bg-surface-container-low p-6 rounded-xl flex flex-col justify-between h-full gap-6">
-<div>
-<div className="flex items-baseline justify-between mb-1">
-<span className="text-headline-lg font-headline-lg text-on-surface font-bold">₹2,499</span>
-<span className="text-label-md font-label-md text-on-surface-variant">all-inclusive</span>
-</div>
-<div className="bg-secondary-fixed/50 text-on-secondary-fixed-variant p-2 rounded-lg text-label-sm font-label-sm font-medium mb-4 flex items-center gap-1.5">
-<span className="material-symbols-outlined text-[16px]">auto_awesome</span>
-                Pro Members pay ₹2,249 (10% rebate applied)
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8">
+              <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm font-semibold mb-4">
+                  <span className="material-symbols-outlined text-[16px]">stars</span>
+                  Outcome-Accountable Structured Mentorship Tracks
+                </div>
+                <h1 className="text-display-hero font-display-hero text-on-surface tracking-tight mb-4">
+                  Structured Mentorship Programs & Career Accelerators
+                </h1>
+                <p className="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                  Outcome-accountable 2-Week Sprints, 4-Week Core Career Fellowships, and 6-Week Deep Transformations led by verified Staff & Principal Bar-Raisers from top Tier-1 product firms.
+                </p>
               </div>
-<div className="space-y-3 mb-6 text-body-sm font-body-sm text-on-surface-variant">
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
-<span>4x 60-Minute 1:1 Deep Dive Sessions</span>
-</div>
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
-<span>8 Asynchronous Code & Architecture Audits (24h SLA)</span>
-</div>
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
-<span>Curated Private Slack/Discord Cohort Room</span>
-</div>
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
-<span>Official Verified 4-Page Bar-Raiser Rubrics</span>
-</div>
-</div>
-</div>
-<div className="flex flex-col gap-2.5">
-<a className="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-title-md text-title-md font-semibold rounded-lg text-center shadow-md transition-all flex items-center justify-center gap-2" data-path="checkout" href="#">
-<span>Enroll in Aug 1 Cohort</span>
-<span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-</a>
-<button className="w-full py-2.5 px-4 bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold rounded-lg text-center transition-colors" type="button">
-                View Full Syllabus & Rubrics
-              </button>
-<p className="text-center text-label-sm font-label-sm text-outline mt-1">
-                Funds kept in escrow. 100% refund up to 14 days.
-              </p>
-</div>
-</div>
-</div>
-</article>
 
-<article className="program-card bg-surface-container-lowest rounded-xl shadow-md p-6 lg:p-8 transition-all hover:shadow-xl relative" data-duration="2-week" data-track="interview">
-<div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-<div className="flex items-center gap-2">
-<span className="bg-secondary text-on-secondary text-label-sm font-label-sm font-bold uppercase tracking-wide px-3 py-1 rounded-full flex items-center gap-1">
-<span className="material-symbols-outlined text-[14px]">bolt</span>
-              Fast-Track Sprint
-            </span>
-<span className="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-2.5 py-1 rounded-full font-medium">
-              2 Weeks • 2 Live Loops • 4 Targeted Drillsets
-            </span>
-</div>
-
-<div className="flex items-center gap-3 bg-surface-container-low px-3 py-1.5 rounded-lg">
-<div className="flex flex-col">
-<span className="text-label-sm font-label-sm text-on-surface font-semibold">Aug 1 Sprint Slot</span>
-<span className="text-label-sm font-label-sm text-error font-medium">2 of 6 seats remaining</span>
-</div>
-<div className="w-24 bg-surface-container rounded-full h-2 overflow-hidden">
-<div className="bg-secondary h-full rounded-full" style={{"width":"66.6%"}}></div>
-</div>
-</div>
-</div>
-<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-<div className="lg:col-span-8 flex flex-col gap-5">
-<div>
-<h2 className="text-headline-sm font-headline-sm text-on-surface mb-2 font-bold hover:text-primary transition-colors cursor-pointer">
-                2-Week Technical Interview Crunch & Whiteboard Sprint
-              </h2>
-<p className="text-body-md font-body-md text-on-surface-variant">
-                Designed for candidates with upcoming FAANG or unicorn on-sites within 30 days. High-density algorithmic pattern drill, live stress whiteboard loops, and time complexity defense.
-              </p>
-</div>
-
-<div className="flex items-center gap-4 bg-surface p-3.5 rounded-xl">
-<img className="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait of Priya Nair, an accomplished senior software engineer, sharp focused expression, wearing sleek glasses and professional blue blazer against modern tech office bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYrb2mtS-xThH6YXOyyfCJmaAtqIDcRDsxkNBmc8y-lqnmdqgA4RFnFSJZPHtd-bOEdIsvOxXtexfqbxR0gwm2LbxLd9mtX0OThivUIsi_bN3Bqhqk74CQYN1YM23k8b9-nnOiGWQXrvnQVTPGQIRpGhBHe3LVWwimzm9-6lqZbbDTNifH6XaPV2yZBXSQMA9jYD_khqA3-SFXpnopT8bLTjMNazfHliwLaF3W41Jgfp5FMqa46oGo"/>
-<div className="flex-1 min-w-0">
-<div className="flex items-center gap-2">
-<h3 className="text-title-md font-title-md text-on-surface font-semibold truncate">Priya Nair</h3>
-<span className="text-label-sm font-label-sm bg-surface-container px-2 py-0.5 rounded text-secondary font-bold">Microsoft Core Tech Lead</span>
-<span className="text-label-sm font-label-sm bg-surface-container-high px-2 py-0.5 rounded text-on-surface-variant">Concurrency Specialist</span>
-</div>
-<div className="flex items-center gap-3 text-label-sm font-label-sm text-on-surface-variant mt-0.5">
-<span className="flex items-center gap-1 text-primary font-bold">
-<span className="material-symbols-outlined text-[16px]" style={{"fontVariationSettings":"'FILL' 1"}}>star</span>
-                    4.98
-                  </span>
-<span>• 310+ Interview Loops Conducted</span>
-<span>• 94% Problem Solving Confidence Rating</span>
-</div>
-</div>
-</div>
-
-<div className="bg-surface rounded-xl p-4">
-<div className="flex items-center justify-between mb-3">
-<h4 className="text-label-md font-label-md text-on-surface font-bold uppercase tracking-wider flex items-center gap-2">
-<span className="material-symbols-outlined text-secondary text-[18px]">splitscreen</span>
-                  High-Intensity Weekly Syllabus
-                </h4>
-<button className="text-label-sm font-label-sm text-primary font-semibold hover:underline syllabus-toggle-btn" data-target="syllabus-2" type="button">
-                  Expand Details
-                </button>
-</div>
-<div className="flex flex-col gap-3" id="syllabus-2">
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<div className="flex items-center gap-2">
-<span className="w-6 h-6 rounded bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm font-bold flex items-center justify-center">W1</span>
-<span className="text-body-md font-body-md font-semibold text-on-surface">Hard Algorithmic Patterns: Sliding Windows, Monotonic Stacks, DP States</span>
-</div>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</div>
-<div className="syllabus-body pt-2 text-body-sm font-body-sm text-on-surface-variant">
-                    Surgical pattern recognition without brute-force guessing. Master dynamic programming state-machine reductions and amortized constant space tricks.
-                    <div className="mt-2 inline-flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded text-secondary text-label-sm font-label-sm font-medium">
-<span className="material-symbols-outlined text-[16px]">task</span>
-                      Deliverable: Pattern Scorecard & 25-Question Targeted Drillset
-                    </div>
-</div>
-</div>
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<div className="flex items-center gap-2">
-<span className="w-6 h-6 rounded bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm font-bold flex items-center justify-center">W2</span>
-<span className="text-body-md font-body-md font-semibold text-on-surface">Real-Time High-Pressure Whiteboard Loop & Tradeoff Defense</span>
-</div>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</div>
-<div className="syllabus-body pt-2 text-body-sm font-body-sm text-on-surface-variant hidden">
-                    Live 60-minute stress simulation mimicking Google/Meta hiring bar conditions. Unpack psychological choke points and master continuous vocal problem-solving.
-                    <div className="mt-2 inline-flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded text-secondary text-label-sm font-label-sm font-medium">
-<span className="material-symbols-outlined text-[16px]">task</span>
-                      Deliverable: 4-Page Graded Rubric + 4K Recorded Video with Timestamped Critique
-                    </div>
-</div>
-</div>
-</div>
-</div>
-
-<div className="flex flex-wrap items-center gap-4 text-label-sm font-label-sm text-on-surface-variant">
-<span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-secondary text-[18px]">timer</span> 48h Deliverable SLA</span>
-<span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-primary text-[18px]">verified_user</span> Instant 1-Time Reschedule</span>
-</div>
-</div>
-
-<div className="lg:col-span-4 bg-surface-container-low p-6 rounded-xl flex flex-col justify-between h-full gap-6">
-<div>
-<div className="flex items-baseline justify-between mb-1">
-<span className="text-headline-lg font-headline-lg text-on-surface font-bold">₹1,299</span>
-<span className="text-label-md font-label-md text-on-surface-variant">one-time</span>
-</div>
-<div className="bg-surface-container text-on-surface-variant p-2 rounded-lg text-label-sm font-label-sm font-medium mb-4 flex items-center gap-1.5">
-<span className="material-symbols-outlined text-[16px]">speed</span>
-                Zero fluff • Immediate next-day kickoff
-              </div>
-<div className="space-y-3 mb-6 text-body-sm font-body-sm text-on-surface-variant">
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
-<span>2 Full Live 60-Min Mock Whiteboard Loops</span>
-</div>
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
-<span>Custom Drillsets tailored to target company</span>
-</div>
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
-<span>High-Resolution Video Session Recordings</span>
-</div>
-</div>
-</div>
-<div className="flex flex-col gap-2.5">
-<a className="w-full py-3 px-4 bg-secondary hover:bg-secondary-container text-on-secondary font-title-md text-title-md font-semibold rounded-lg text-center shadow-md transition-all flex items-center justify-center gap-2" data-path="checkout" href="#">
-<span>Claim Sprint Seat</span>
-<span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-</a>
-<button className="w-full py-2.5 px-4 bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold rounded-lg text-center transition-colors" type="button">
-                Inspect Curriculum
-              </button>
-</div>
-</div>
-</div>
-</article>
-
-<article className="program-card bg-surface-container-lowest rounded-xl shadow-md p-6 lg:p-8 transition-all hover:shadow-xl relative" data-duration="6-week" data-track="leadership">
-<div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-<div className="flex items-center gap-2">
-<span className="bg-surface-tint text-on-primary text-label-sm font-label-sm font-bold uppercase tracking-wide px-3 py-1 rounded-full flex items-center gap-1">
-<span className="material-symbols-outlined text-[14px]">rocket_launch</span>
-              Deep Career Transformation
-            </span>
-<span className="bg-surface-variant text-on-surface text-label-sm font-label-sm px-2.5 py-1 rounded-full font-medium">
-              6 Weeks • Multi-Mentor Panel • 12 Milestone Audits
-            </span>
-</div>
-
-<div className="flex items-center gap-3 bg-surface-container-low px-3 py-1.5 rounded-lg">
-<div className="flex flex-col">
-<span className="text-label-sm font-label-sm text-on-surface font-semibold">Aug 1 Cohort</span>
-<span className="text-label-sm font-label-sm text-error font-medium">3 of 6 seats remaining</span>
-</div>
-<div className="w-24 bg-surface-container rounded-full h-2 overflow-hidden">
-<div className="bg-primary h-full rounded-full" style={{"width":"50%"}}></div>
-</div>
-</div>
-</div>
-<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-<div className="lg:col-span-8 flex flex-col gap-5">
-<div>
-<h2 className="text-headline-sm font-headline-sm text-on-surface mb-2 font-bold hover:text-primary transition-colors cursor-pointer">
-                6-Week Complete Tier-1 Placement & SDE Career Switch
-              </h2>
-<p className="text-body-md font-body-md text-on-surface-variant">
-                The definitive end-to-end career transition roadmap. Overhaul your ATS resume, dominate complex distributed system design, pass mock loops, and negotiate maximum equity compensation with multi-mentor guidance.
-              </p>
-</div>
-
-<div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-<div className="flex items-center gap-3 bg-surface p-3 rounded-xl">
-<img className="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="Portrait of Rohan Verma, Engineering Manager at Amazon, friendly professional demeanor, stylish dark turtleneck in bright natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI_sJmYZfOQBGqQh2AXP4S_j26MADp7BuMODKOtB76tgIMcAna3UakqsFVHVyPFw7l7uxVn1JkWl5Iw-0gd-CdvDq2BArh-MGEOdFtord41jbL-PwlaQvj6h6TV5Q30EDhEUKRdNIUD_k1KdPDmU3TOXZFdsLKSUUzklLfes2mykBiK6Ql5YoGXRtbDoW4I9elqQUM1PeEWmUaZ0Rvr8va8OC_zq5w4YWfTOLp_xQ22VLVVOxQLUlg"/>
-<div className="min-w-0">
-<p className="text-title-md font-title-md text-on-surface font-semibold truncate">Rohan Verma</p>
-<p className="text-label-sm font-label-sm text-on-surface-variant">Sr. Eng Manager @ Amazon</p>
-</div>
-</div>
-<div className="flex items-center gap-3 bg-surface p-3 rounded-xl">
-<img className="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="Portrait of Devika Rao, Principal Architect at top Fintech enterprise, confident tech leadership stance, wearing spectacles, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaJ0l5gePRaOC0L1GpDxGZsiWxFX7rkmeCNJ3QhgoihCSMsrJa6cpraR0Uas037V0pdQxwI9f62iPDER8iYIGMbzOjT2wg_0yzcwfg72GXpFW0nxAaz7_sv9WPG5N9_yW8-Sd9GSZ09LXr0rCUYrNIyMN7ficmMpoWRqVGeegjmykB4I45FVJ0dBAkt7zQFlJ4UAajJCPMtqzsUgAkw6nN12NM8puMt2IScXg3-hhJEjHxQxAcbgH4"/>
-<div className="min-w-0">
-<p className="text-title-md font-title-md text-on-surface font-semibold truncate">Devika Rao</p>
-<p className="text-label-sm font-label-sm text-on-surface-variant">Principal Architect @ FinTech Scaleup</p>
-</div>
-</div>
-</div>
-
-<div className="bg-surface rounded-xl p-4">
-<div className="flex items-center justify-between mb-3">
-<h4 className="text-label-md font-label-md text-on-surface font-bold uppercase tracking-wider flex items-center gap-2">
-<span className="material-symbols-outlined text-primary text-[18px]">calendar_month</span>
-                  Full 6-Week Curriculum Blueprint
-                </h4>
-<button className="text-label-sm font-label-sm text-primary font-semibold hover:underline syllabus-toggle-btn" data-target="syllabus-3" type="button">
-                  Toggle Syllabus View
-                </button>
-</div>
-<div className="grid grid-cols-1 md:grid-cols-2 gap-2.5" id="syllabus-3">
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<span className="text-label-md font-label-md font-bold text-on-surface">Week 1: ATS Resume & Career Diagnostic</span>
-<span className="material-symbols-outlined text-outline text-[18px]">expand_more</span>
-</div>
-<p className="syllabus-body text-body-sm font-body-sm text-on-surface-variant pt-2">
-                    Deconstruct past projects and format them into bullet points with measurable impact.
-                    <span className="block mt-1 font-semibold text-primary">Deliverable: Redlined LaTeX Resume</span>
-</p>
-</div>
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<span className="text-label-md font-label-md font-bold text-on-surface">Week 2: Data Structures & Complexity</span>
-<span className="material-symbols-outlined text-outline text-[18px]">expand_more</span>
-</div>
-<p className="syllabus-body text-body-sm font-body-sm text-on-surface-variant pt-2">
-                    Memory models, cache locality, and asymptotic optimization.
-                    <span className="block mt-1 font-semibold text-primary">Deliverable: Code Benchmark Report</span>
-</p>
-</div>
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<span className="text-label-md font-label-md font-bold text-on-surface">Week 3: System Design Foundations</span>
-<span className="material-symbols-outlined text-outline text-[18px]">expand_more</span>
-</div>
-<p className="syllabus-body text-body-sm font-body-sm text-on-surface-variant pt-2">
-                    Database trade-offs: SQL vs NoSQL, sharding, indexes.
-                    <span className="block mt-1 font-semibold text-primary">Deliverable: E-commerce Scale Blueprint</span>
-</p>
-</div>
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<span className="text-label-md font-label-md font-bold text-on-surface">Week 4: Microservices & Kafka Streaming</span>
-<span className="material-symbols-outlined text-outline text-[18px]">expand_more</span>
-</div>
-<p className="syllabus-body text-body-sm font-body-sm text-on-surface-variant pt-2">
-                    Idempotency, sagas, outbox patterns, and event streaming.
-                    <span className="block mt-1 font-semibold text-primary">Deliverable: Messaging Architecture Audit</span>
-</p>
-</div>
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<span className="text-label-md font-label-md font-bold text-on-surface">Week 5: Double Mock Interview Loop</span>
-<span className="material-symbols-outlined text-outline text-[18px]">expand_more</span>
-</div>
-<p className="syllabus-body text-body-sm font-body-sm text-on-surface-variant pt-2">
-                    Behavioral + technical architecture mock round with two distinct mentors.
-                    <span className="block mt-1 font-semibold text-primary">Deliverable: Two 4-Page Standardized Rubrics</span>
-</p>
-</div>
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<span className="text-label-md font-label-md font-bold text-on-surface">Week 6: Salary & Multi-Offer Negotiation</span>
-<span className="material-symbols-outlined text-outline text-[18px]">expand_more</span>
-</div>
-<p className="syllabus-body text-body-sm font-body-sm text-on-surface-variant pt-2">
-                    Executive level compensation negotiation, counter-offer tactics.
-                    <span className="block mt-1 font-semibold text-primary">Deliverable: Verbatim Counter-Offer Recruiter Scripts</span>
-</p>
-</div>
-</div>
-</div>
-<div className="flex flex-wrap items-center gap-4 text-label-sm font-label-sm text-on-surface-variant">
-<span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-primary text-[18px]">payments</span> No-Cost EMI Available (Razorpay)</span>
-<span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-secondary text-[18px]">lock_clock</span> 14-Day 100% Escrow Refund Window</span>
-</div>
-</div>
-
-<div className="lg:col-span-4 bg-surface-container-low p-6 rounded-xl flex flex-col justify-between h-full gap-6">
-<div>
-<div className="flex items-baseline justify-between mb-1">
-<span className="text-headline-lg font-headline-lg text-on-surface font-bold">₹4,999</span>
-<span className="text-label-md font-label-md text-on-surface-variant">or ₹1,666/mo (3 EMIs)</span>
-</div>
-<div className="bg-surface-tint text-on-primary p-2 rounded-lg text-label-sm font-label-sm font-semibold mb-4 flex items-center gap-1.5">
-<span className="material-symbols-outlined text-[16px]">security</span>
-                Career Placement Guarantee Support
-              </div>
-<div className="space-y-3 mb-6 text-body-sm font-body-sm text-on-surface-variant">
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
-<span>6 Live 1:1 Coaching Sessions (Multi-Mentor)</span>
-</div>
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
-<span>12 Milestone Check-ins & Deliverable Rubrics</span>
-</div>
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
-<span>Direct WhatsApp/Slack Access to Both Mentors</span>
-</div>
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
-<span>DreamX Career Readiness Score Scorecard (+1.5 avg)</span>
-</div>
-</div>
-</div>
-<div className="flex flex-col gap-2.5">
-<a className="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-title-md text-title-md font-semibold rounded-lg text-center shadow-md transition-all flex items-center justify-center gap-2" data-path="checkout" href="#">
-<span>Apply for Aug Cohort</span>
-<span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-</a>
-<button className="w-full py-2.5 px-4 bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold rounded-lg text-center transition-colors" type="button">
-                Download Detailed Syllabus PDF
-              </button>
-</div>
-</div>
-</div>
-</article>
-
-<article className="program-card bg-surface-container-lowest rounded-xl shadow-md p-6 lg:p-8 transition-all hover:shadow-xl relative" data-duration="4-week" data-track="ai">
-<div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-<div className="flex items-center gap-2">
-<span className="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm font-bold uppercase tracking-wide px-3 py-1 rounded-full flex items-center gap-1">
-<span className="material-symbols-outlined text-[14px]">psychology</span>
-              AI Core Fellowship
-            </span>
-<span className="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-2.5 py-1 rounded-full font-medium">
-              4 Weeks • 4 Live Labs • Colab GPU Clusters
-            </span>
-</div>
-
-<div className="flex items-center gap-3 bg-surface-container-low px-3 py-1.5 rounded-lg">
-<div className="flex flex-col">
-<span className="text-label-sm font-label-sm text-on-surface font-semibold">Aug 1 Cohort</span>
-<span className="text-label-sm font-label-sm text-error font-medium">2 of 8 seats remaining</span>
-</div>
-<div className="w-24 bg-surface-container rounded-full h-2 overflow-hidden">
-<div className="bg-secondary-container h-full rounded-full" style={{"width":"75%"}}></div>
-</div>
-</div>
-</div>
-<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-<div className="lg:col-span-8 flex flex-col gap-5">
-<div>
-<h2 className="text-headline-sm font-headline-sm text-on-surface mb-2 font-bold hover:text-primary transition-colors cursor-pointer">
-                4-Week Production LLM & GenAI Systems Engineering
-              </h2>
-<p className="text-body-md font-body-md text-on-surface-variant">
-                Move past toy OpenAI API calls. Learn real-world production RAG architectures, custom fine-tuning with LoRA/QLoRA, high-throughput vLLM inference serving, and deterministic agent orchestration.
-              </p>
-</div>
-
-<div className="flex items-center gap-4 bg-surface p-3.5 rounded-xl">
-<img className="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Close up portrait of Karthik S., Principal AI Architect at leading research lab, thoughtful gaze, wearing smart casual tech hoodie in warm ambient room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtyn2FlcA5bOEU2iqXvsH9qNmGRRl4_t0WgB23SiqVf2CfFwHqZ_KgFfhe_fCPX-WJTVDzFA1CXUIYp6VvqEZxle-pEaKwcGFLDzH5vuQ2ISZlPDjcAH_JzjtCwzYL7n5cMamuOCsMwt85-EceYdHAfbOcLhy9hsuvz22szvb_k08jWIPivXHQfjD2uPGL7DaFvmnr4sWTZwHgm_3uZLPPkJLlY9OKIK2CAFT_sMesNeSA6WvN-o3d"/>
-<div className="flex-1 min-w-0">
-<div className="flex items-center gap-2">
-<h3 className="text-title-md font-title-md text-on-surface font-semibold truncate">Karthik S.</h3>
-<span className="text-label-sm font-label-sm bg-surface-container px-2 py-0.5 rounded text-secondary font-bold">Principal AI Architect @ Leading AI Lab</span>
-<span className="text-label-sm font-label-sm bg-surface-container-high px-2 py-0.5 rounded text-on-surface-variant">ex-NVIDIA Research</span>
-</div>
-<div className="flex items-center gap-3 text-label-sm font-label-sm text-on-surface-variant mt-0.5">
-<span className="flex items-center gap-1 text-primary font-bold">
-<span className="material-symbols-outlined text-[16px]" style={{"fontVariationSettings":"'FILL' 1"}}>star</span>
-                    4.97
-                  </span>
-<span>• 190+ Mentees in Production AI roles</span>
-<span>• 5 NeurIPS/ICLR Publications</span>
-</div>
-</div>
-</div>
-
-<div className="bg-surface rounded-xl p-4">
-<div className="flex items-center justify-between mb-3">
-<h4 className="text-label-md font-label-md text-on-surface font-bold uppercase tracking-wider flex items-center gap-2">
-<span className="material-symbols-outlined text-secondary text-[18px]">terminal</span>
-                  Hands-On AI Engineering Milestones
-                </h4>
-<button className="text-label-sm font-label-sm text-primary font-semibold hover:underline syllabus-toggle-btn" data-target="syllabus-4" type="button">
-                  Expand All Weeks
-                </button>
-</div>
-<div className="flex flex-col gap-3" id="syllabus-4">
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<div className="flex items-center gap-2">
-<span className="w-6 h-6 rounded bg-surface-variant text-on-surface text-label-sm font-label-sm font-bold flex items-center justify-center">W1</span>
-<span className="text-body-md font-body-md font-semibold text-on-surface">RAG Optimization, Vector DBs & Hybrid Search Architecture</span>
-</div>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</div>
-<div className="syllabus-body pt-2 text-body-sm font-body-sm text-on-surface-variant">
-                    Chunking algorithms, contextual embeddings, HNSW graph index tuning, and reciprocal rank fusion with dense/sparse retrieval.
-                    <div className="mt-2 inline-flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded text-primary text-label-sm font-label-sm font-medium">
-<span className="material-symbols-outlined text-[16px]">task</span>
-                      Verified Deliverable: pgvector HNSW Indexing Blueprint
-                    </div>
-</div>
-</div>
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<div className="flex items-center gap-2">
-<span className="w-6 h-6 rounded bg-surface-variant text-on-surface text-label-sm font-label-sm font-bold flex items-center justify-center">W2</span>
-<span className="text-body-md font-body-md font-semibold text-on-surface">Model Fine-Tuning, LoRA/QLoRA & LLM Inference Serving</span>
-</div>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</div>
-<div className="syllabus-body pt-2 text-body-sm font-body-sm text-on-surface-variant hidden">
-                    Quantization strategies (AWQ, GPTQ), memory profiling, and benchmarking throughput with vLLM PagedAttention clusters.
-                    <div className="mt-2 inline-flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded text-primary text-label-sm font-label-sm font-medium">
-<span className="material-symbols-outlined text-[16px]">task</span>
-                      Verified Deliverable: vLLM Benchmark & Cost Sheet
-                    </div>
-</div>
-</div>
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<div className="flex items-center gap-2">
-<span className="w-6 h-6 rounded bg-surface-variant text-on-surface text-label-sm font-label-sm font-bold flex items-center justify-center">W3</span>
-<span className="text-body-md font-body-md font-semibold text-on-surface">AI Safety, Guardrails & Hallucination Mitigation</span>
-</div>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</div>
-<div className="syllabus-body pt-2 text-body-sm font-body-sm text-on-surface-variant hidden">
-                    Llama-Guard integration, automated hallucination evaluation frameworks (RAGAS), and enterprise compliance sandboxing.
-                    <div className="mt-2 inline-flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded text-primary text-label-sm font-label-sm font-medium">
-<span className="material-symbols-outlined text-[16px]">task</span>
-                      Verified Deliverable: NeMo Guardrails Test Suite
-                    </div>
-</div>
-</div>
-<div className="syllabus-week bg-surface-container-lowest p-3 rounded-lg">
-<div className="flex items-center justify-between cursor-pointer syllabus-header">
-<div className="flex items-center gap-2">
-<span className="w-6 h-6 rounded bg-surface-variant text-on-surface text-label-sm font-label-sm font-bold flex items-center justify-center">W4</span>
-<span className="text-body-md font-body-md font-semibold text-on-surface">Production Multi-Agent Systems & Cloud Deployment</span>
-</div>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</div>
-<div className="syllabus-body pt-2 text-body-sm font-body-sm text-on-surface-variant hidden">
-                    Deploying stateful LangGraph / AutoGen agents with Redis memory, tracing via Langfuse, and AWS ECS/EKS deployment.
-                    <div className="mt-2 inline-flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded text-primary text-label-sm font-label-sm font-medium">
-<span className="material-symbols-outlined text-[16px]">task</span>
-                      Verified Deliverable: Full End-to-End Enterprise AI Capstone Project
-                    </div>
-</div>
-</div>
-</div>
-</div>
-
-<div className="flex flex-wrap items-center gap-4 text-label-sm font-label-sm text-on-surface-variant">
-<span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-primary text-[18px]">verified</span> 14-Day Money-Back Escrow</span>
-<span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-secondary text-[18px]">cloud</span> Colab Pro GPU Credits Included</span>
-</div>
-</div>
-
-<div className="lg:col-span-4 bg-surface-container-low p-6 rounded-xl flex flex-col justify-between h-full gap-6">
-<div>
-<div className="flex items-baseline justify-between mb-1">
-<span className="text-headline-lg font-headline-lg text-on-surface font-bold">₹2,999</span>
-<span className="text-label-md font-label-md text-on-surface-variant">all-inclusive</span>
-</div>
-<div className="bg-secondary-fixed text-on-secondary-fixed p-2 rounded-lg text-label-sm font-label-sm font-medium mb-4 flex items-center gap-1.5">
-<span className="material-symbols-outlined text-[16px]">stars</span>
-                Top-rated course for SDE 2 to Staff AI transition
-              </div>
-<div className="space-y-3 mb-6 text-body-sm font-body-sm text-on-surface-variant">
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
-<span>4x 60-Minute 1:1 LLM Architecture Loops</span>
-</div>
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
-<span>Complete Dockerized Boilerplates for vLLM & RAG</span>
-</div>
-<div className="flex items-start gap-2">
-<span className="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
-<span>Weekly Colab GPU Code Audits</span>
-</div>
-</div>
-</div>
-<div className="flex flex-col gap-2.5">
-<a className="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-title-md text-title-md font-semibold rounded-lg text-center shadow-md transition-all flex items-center justify-center gap-2" data-path="checkout" href="#">
-<span>Reserve Cohort Seat</span>
-<span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-</a>
-<button className="w-full py-2.5 px-4 bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold rounded-lg text-center transition-colors" type="button">
-                Curriculum Overview
-              </button>
-</div>
-</div>
-</div>
-</article>
-</div>
-</section>
-
-<section className="w-full bg-surface py-16 px-6 lg:px-12">
-<div className="max-w-7xl mx-auto">
-<div className="text-center max-w-3xl mx-auto mb-12">
-<span className="text-label-sm font-label-sm font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full">
-          The Outcome Architecture
-        </span>
-<h2 className="text-headline-lg font-headline-lg text-on-surface font-bold mt-3 mb-4">
-          Why DreamX Structured Programs Beat Generic Bootcamps & Video Courses
-        </h2>
-<p className="text-body-lg font-body-lg text-on-surface-variant">
-          Generic bootcamps charge ₹50,000+ for 200-person webinar batches. DreamX enforces surgical micro-cohorts led exclusively by verified Staff & Principal engineers.
-        </p>
-</div>
-
-<div className="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden">
-<div className="overflow-x-auto">
-<table className="w-full text-left border-collapse">
-<thead>
-<tr className="bg-surface-container-high text-on-surface">
-<th className="p-4 text-label-md font-label-md font-bold uppercase tracking-wider w-1/4">Evaluation Vector</th>
-<th className="p-4 text-label-md font-label-md font-bold text-primary w-2/5 bg-primary/5">
-<div className="flex items-center gap-1.5">
-<span className="material-symbols-outlined text-[18px]">verified</span>
-                    DreamX Structured Cohorts
+              <div className="bg-surface-container-low p-5 rounded-xl shadow-sm flex flex-row lg:flex-col gap-4 min-w-[260px]">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
+                    <span className="material-symbols-outlined text-[20px]">groups</span>
                   </div>
-</th>
-<th className="p-4 text-label-md font-label-md font-semibold text-on-surface-variant w-1/3">
-                  Traditional Bootcamps & Video Platforms
-                </th>
-</tr>
-</thead>
-<tbody className="divide-y divide-surface-container">
-<tr className="hover:bg-surface-container-low transition-colors">
-<td className="p-4 text-body-md font-body-md font-semibold text-on-surface">Cohort Capacity</td>
-<td className="p-4 text-body-md font-body-md text-on-surface bg-primary/5 font-medium">
-<span className="inline-flex items-center gap-1.5 text-primary font-bold">
-<span className="material-symbols-outlined text-[18px]">check</span>
-                    Strict Cap: 6 to 8 Mentees
-                  </span>
-<span className="block text-label-sm font-label-sm text-on-surface-variant mt-0.5">Guaranteed individual live critique in every session.</span>
-</td>
-<td className="p-4 text-body-md font-body-md text-on-surface-variant">
-                  50 to 200+ students per batch (passive webinar lecture model).
-                </td>
-</tr>
-<tr className="hover:bg-surface-container-low transition-colors">
-<td className="p-4 text-body-md font-body-md font-semibold text-on-surface">Mentor Seniority</td>
-<td className="p-4 text-body-md font-body-md text-on-surface bg-primary/5 font-medium">
-<span className="inline-flex items-center gap-1.5 text-primary font-bold">
-<span className="material-symbols-outlined text-[18px]">check</span>
-                    Active FAANG Staff & Principal Bar-Raisers
-                  </span>
-<span className="block text-label-sm font-label-sm text-on-surface-variant mt-0.5">Vetted via corporate email domain + L5/L6 hiring committee verification.</span>
-</td>
-<td className="p-4 text-body-md font-body-md text-on-surface-variant">
-                  Full-time course instructors or junior teaching assistants.
-                </td>
-</tr>
-<tr className="hover:bg-surface-container-low transition-colors">
-<td className="p-4 text-body-md font-body-md font-semibold text-on-surface">Deliverable Accountability</td>
-<td className="p-4 text-body-md font-body-md text-on-surface bg-primary/5 font-medium">
-<span className="inline-flex items-center gap-1.5 text-primary font-bold">
-<span className="material-symbols-outlined text-[18px]">check</span>
-                    Verified 4-Page Graded Rubrics
-                  </span>
-<span className="block text-label-sm font-label-sm text-on-surface-variant mt-0.5">Actionable architecture blueprints and code benchmark audits.</span>
-</td>
-<td className="p-4 text-body-md font-body-md text-on-surface-variant">
-                  Automated multiple-choice quizzes or unreviewed clone apps.
-                </td>
-</tr>
-<tr className="hover:bg-surface-container-low transition-colors">
-<td className="p-4 text-body-md font-body-md font-semibold text-on-surface">Financial Protection</td>
-<td className="p-4 text-body-md font-body-md text-on-surface bg-primary/5 font-medium">
-<span className="inline-flex items-center gap-1.5 text-primary font-bold">
-<span className="material-symbols-outlined text-[18px]">check</span>
-                    14-Day 100% Escrow Guarantee
-                  </span>
-<span className="block text-label-sm font-label-sm text-on-surface-variant mt-0.5">Funds released to mentor only after deliverables pass quality specs.</span>
-</td>
-<td className="p-4 text-body-md font-body-md text-on-surface-variant">
-                  Zero refunds once course opens; lock-in contracts or ISAs.
-                </td>
-</tr>
-<tr className="hover:bg-surface-container-low transition-colors">
-<td className="p-4 text-body-md font-body-md font-semibold text-on-surface">Career Readiness Score</td>
-<td className="p-4 text-body-md font-body-md text-on-surface bg-primary/5 font-medium">
-<span className="inline-flex items-center gap-1.5 text-primary font-bold">
-<span className="material-symbols-outlined text-[18px]">check</span>
-                    Direct +1.2 to +1.5 Avg Platform Boost
-                  </span>
-<span className="block text-label-sm font-label-sm text-on-surface-variant mt-0.5">Recruiters on DreamX partner network search verified candidates directly.</span>
-</td>
-<td className="p-4 text-body-md font-body-md text-on-surface-variant">
-                  Generic completion PDF with zero industry hiring recognition.
-                </td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
+                  <div>
+                    <p className="text-label-sm font-label-sm text-on-surface-variant uppercase">Max Cohort Density</p>
+                    <p className="text-title-md font-title-md text-on-surface font-semibold">6 to 8 Fellows</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center font-bold">
+                    <span className="material-symbols-outlined text-[20px]">lock_reset</span>
+                  </div>
+                  <div>
+                    <p className="text-label-sm font-label-sm text-on-surface-variant uppercase">Platform Escrow</p>
+                    <p className="text-title-md font-title-md text-on-surface font-semibold">14-Day 100% Refund</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<section className="w-full bg-surface-container-low/30 py-16 px-6 lg:px-12">
-<div className="max-w-5xl mx-auto">
-<div className="text-center mb-12">
-<h2 className="text-headline-lg font-headline-lg text-on-surface font-bold mb-3">
-          Frequently Asked Questions
-        </h2>
-<p className="text-body-md font-body-md text-on-surface-variant">
-          Clear, transparent policies regarding cohort enrollment, milestone completion, and platform escrow protection.
-        </p>
-</div>
-<div className="flex flex-col gap-4">
+            {/* Filter Bar */}
+            <div className="mt-4 pt-6 bg-surface-container-lowest p-5 rounded-xl shadow-sm border border-outline-variant/15">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-primary text-[20px]">filter_list</span>
+                  <span className="text-label-md font-label-md text-on-surface font-semibold">Filter by Duration:</span>
+                </div>
 
-<div className="faq-item bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
-<button className="w-full p-5 text-left flex items-center justify-between gap-4 font-title-md text-title-md text-on-surface font-semibold faq-toggle" type="button">
-<span>How does the 14-day 100% money-back guarantee work?</span>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</button>
-<div className="faq-content px-5 pb-5 text-body-md font-body-md text-on-surface-variant hidden">
-            All mentee tuition remains held securely within the DreamX Platform Escrow Rail until Day 14. If scheduled live 1:1 sessions are missed by the mentor, code audits fail the 24-hour turnaround SLA, or curriculum deliverables do not match the promised rubric specifications, you can trigger a full 100% refund with one click—no friction, no mandatory phone calls.
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setDurationFilter('all')}
+                    className={`px-4 py-2 rounded-lg text-label-md font-label-md font-semibold transition-all ${
+                      durationFilter === 'all'
+                        ? 'bg-primary text-on-primary shadow-sm'
+                        : 'bg-surface-container-low text-on-surface hover:bg-surface-container'
+                    }`}
+                  >
+                    All Programs
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setDurationFilter('2')}
+                    className={`px-4 py-2 rounded-lg text-label-md font-label-md font-semibold transition-all ${
+                      durationFilter === '2'
+                        ? 'bg-primary text-on-primary shadow-sm'
+                        : 'bg-surface-container-low text-on-surface hover:bg-surface-container'
+                    }`}
+                  >
+                    ⚡ 2-Week Sprints
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setDurationFilter('4')}
+                    className={`px-4 py-2 rounded-lg text-label-md font-label-md font-semibold transition-all ${
+                      durationFilter === '4'
+                        ? 'bg-primary text-on-primary shadow-sm'
+                        : 'bg-surface-container-low text-on-surface hover:bg-surface-container'
+                    }`}
+                  >
+                    ⭐ 4-Week Core
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setDurationFilter('6')}
+                    className={`px-4 py-2 rounded-lg text-label-md font-label-md font-semibold transition-all ${
+                      durationFilter === '6'
+                        ? 'bg-primary text-on-primary shadow-sm'
+                        : 'bg-surface-container-low text-on-surface hover:bg-surface-container'
+                    }`}
+                  >
+                    🚀 6-Week Accelerators
+                  </button>
+                </div>
+
+                <div className="relative min-w-[220px]">
+                  <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search programs..."
+                    className="w-full pl-9 pr-3 py-1.5 bg-surface-container-low border border-outline-variant/30 rounded-lg text-body-sm text-on-surface focus:outline-none focus:border-primary"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-</div>
+        </section>
 
-<div className="faq-item bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
-<button className="w-full p-5 text-left flex items-center justify-between gap-4 font-title-md text-title-md text-on-surface font-semibold faq-toggle" type="button">
-<span>Can I switch cohorts if my exam dates or interview shifts?</span>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</button>
-<div className="faq-content px-5 pb-5 text-body-md font-body-md text-on-surface-variant hidden">
-            Yes. Every registered mentee is entitled to one free cohort transfer up to 48 hours before the program start date. Your escrow deposit will roll seamlessly into the subsequent month's cohort without penalty or administrative charges.
+        {/* Programs Listing Content */}
+        <section className="w-full bg-surface-container-low/30 py-10 px-6 lg:px-12 flex-1">
+          <div className="max-w-7xl mx-auto">
+            {isLoading ? (
+              <div className="flex flex-col items-center justify-center py-20 gap-4">
+                <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+                <p className="text-body-md text-on-surface-variant font-medium">Loading live programs catalog...</p>
+              </div>
+            ) : error ? (
+              <div className="bg-error-container/20 border border-error/20 p-8 rounded-2xl text-center max-w-xl mx-auto">
+                <span className="material-symbols-outlined text-error text-[40px] mb-2">error</span>
+                <h3 className="text-title-md font-semibold text-on-surface mb-2">Failed to Load Programs</h3>
+                <p className="text-body-sm text-on-surface-variant mb-6">{error}</p>
+                <button
+                  type="button"
+                  onClick={() => setDurationFilter(durationFilter)}
+                  className="px-6 py-2.5 bg-primary text-on-primary rounded-lg text-label-md font-semibold hover:bg-primary-container transition-colors"
+                >
+                  Retry Loading
+                </button>
+              </div>
+            ) : filteredPrograms.length === 0 ? (
+              /* Genuine Empty State when database has 0 programs */
+              <div className="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl p-12 text-center max-w-2xl mx-auto shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+                  <span className="material-symbols-outlined text-[32px]">school</span>
+                </div>
+                <h2 className="text-headline-sm font-headline-sm text-on-surface font-bold mb-3">
+                  No Cohort Programs Currently Enrolling
+                </h2>
+                <p className="text-body-md text-on-surface-variant leading-relaxed mb-8">
+                  Active cohort programs are scheduled periodically by verified Bar Raisers with strictly capped cohort sizes (max 6–8 fellows) to ensure rigorous 1:1 attention. New cohort dates will open soon.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Link
+                    href="/services"
+                    className="w-full sm:w-auto px-6 py-3 bg-primary text-on-primary font-semibold text-label-md rounded-xl hover:bg-primary/90 transition-all shadow-sm flex items-center justify-center gap-2"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">bolt</span>
+                    Explore 1-on-1 Services
+                  </Link>
+                  <Link
+                    href="/mentors"
+                    className="w-full sm:w-auto px-6 py-3 bg-surface-container hover:bg-surface-container-high text-on-surface font-semibold text-label-md rounded-xl transition-colors flex items-center justify-center gap-2"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">person_search</span>
+                    Browse Verified Mentors
+                  </Link>
+                </div>
+              </div>
+            ) : (
+              /* Real Programs from Database */
+              <div className="flex flex-col gap-6">
+                {filteredPrograms.map((program) => (
+                  <article
+                    key={program.id}
+                    className="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md border border-outline-variant/15 p-6 lg:p-8 transition-all relative"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                      <div className="flex items-center gap-2">
+                        <span className="bg-primary text-on-primary text-label-sm font-bold uppercase tracking-wide px-3 py-1 rounded-full flex items-center gap-1">
+                          <span className="material-symbols-outlined text-[14px]">military_tech</span>
+                          {program.duration_weeks}-Week Track
+                        </span>
+                        <span className="bg-secondary-fixed text-on-secondary-fixed text-label-sm px-2.5 py-1 rounded-full font-medium">
+                          Outcome-Accountable Cohort
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg text-label-sm text-on-surface-variant">
+                        <span className="material-symbols-outlined text-primary text-[16px]">verified_user</span>
+                        <span>14-Day Escrow Protected</span>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                      <div className="lg:col-span-8 flex flex-col gap-4">
+                        <h2 className="text-headline-sm font-headline-sm text-on-surface font-bold">
+                          <Link href={`/programs/${program.slug || program.id}`} className="hover:text-primary transition-colors">
+                            {program.title}
+                          </Link>
+                        </h2>
+                        <p className="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                          {program.description}
+                        </p>
+
+                        {program.profiles && (
+                          <div className="flex items-center gap-3 bg-surface-container-low p-3.5 rounded-xl">
+                            <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-title-sm shrink-0">
+                              {program.profiles.avatar_url ? (
+                                <img
+                                  src={program.profiles.avatar_url}
+                                  alt={program.profiles.full_name}
+                                  className="w-full h-full rounded-full object-cover"
+                                />
+                              ) : (
+                                program.profiles.full_name?.charAt(0) || 'M'
+                              )}
+                            </div>
+                            <div className="min-w-0">
+                              <p className="text-title-sm font-semibold text-on-surface truncate">
+                                {program.profiles.full_name}
+                              </p>
+                              {program.profiles.headline && (
+                                <p className="text-body-xs text-on-surface-variant truncate">
+                                  {program.profiles.headline}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="lg:col-span-4 bg-surface-container-low p-6 rounded-xl flex flex-col justify-between h-full gap-5">
+                        <div>
+                          <div className="flex items-baseline justify-between mb-1">
+                            <span className="text-headline-lg font-headline-lg text-on-surface font-bold">
+                              ₹{Number(program.price_inr).toLocaleString('en-IN')}
+                            </span>
+                            <span className="text-label-md font-label-md text-on-surface-variant">all-inclusive</span>
+                          </div>
+                          <p className="text-body-xs text-on-surface-variant mt-1">
+                            Includes live 1:1 sessions, milestone teardowns & verified rubrics.
+                          </p>
+                        </div>
+
+                        <div className="flex flex-col gap-2">
+                          <Link
+                            href={`/programs/${program.slug || program.id}`}
+                            className="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-semibold text-label-md rounded-lg text-center shadow-sm transition-all flex items-center justify-center gap-2"
+                          >
+                            <span>Inspect Syllabus & Enroll</span>
+                            <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            )}
           </div>
-</div>
+        </section>
+      </main>
 
-<div className="faq-item bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
-<button className="w-full p-5 text-left flex items-center justify-between gap-4 font-title-md text-title-md text-on-surface font-semibold faq-toggle" type="button">
-<span>How do async check-ins and code reviews work?</span>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</button>
-<div className="faq-content px-5 pb-5 text-body-md font-body-md text-on-surface-variant hidden">
-            You submit your GitHub pull requests, architecture diagrams, or resume drafts directly through the DreamX Mentorship Portal. Your assigned Bar-Raiser mentor reviews the code line-by-line within a guaranteed 24-hour SLA, providing timestamped video annotations and calibrated rubric ratings.
-          </div>
-</div>
-
-<div className="faq-item bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
-<button className="w-full p-5 text-left flex items-center justify-between gap-4 font-title-md text-title-md text-on-surface font-semibold faq-toggle" type="button">
-<span>What are the prerequisites for 4-week and 6-week programs?</span>
-<span className="material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
-</button>
-<div className="faq-content px-5 pb-5 text-body-md font-body-md text-on-surface-variant hidden">
-            For 4-Week Core and 6-Week Accelerators, we recommend at least 1–2 years of basic software engineering exposure (or strong self-taught proficiency in at least one backend language like Java, Go, Python, or C++). The 2-Week Sprint is explicitly tailored for candidates who already understand foundational DSA and need pressure simulation.
-          </div>
-</div>
-</div>
-</div>
-</section>
-
-<section className="w-full bg-surface-container-highest py-16 px-6 lg:px-12 text-on-surface">
-<div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-<div className="w-14 h-14 rounded-2xl bg-primary text-on-primary flex items-center justify-center mb-6 shadow-md">
-<span className="material-symbols-outlined text-[32px]">military_tech</span>
-</div>
-<h2 className="text-display-hero font-display-hero tracking-tight mb-4">
-        Ready to Accelerate Your Career with an Industry Bar-Raiser?
-      </h2>
-<p className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mb-8">
-        Choose a program, secure your seat in the August cohort, and build verified artifacts backed by DreamX Escrow. Only 6–8 spots per cohort to ensure individualized mastery.
-      </p>
-<div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-<a className="w-full sm:w-auto px-8 py-3.5 bg-primary hover:bg-primary-container text-on-primary font-title-md text-title-md font-semibold rounded-lg shadow-md transition-all flex items-center justify-center gap-2" href="#durationFilters">
-<span>Browse All Programs</span>
-<span className="material-symbols-outlined text-[18px]">keyboard_arrow_up</span>
-</a>
-<a className="w-full sm:w-auto px-8 py-3.5 bg-surface-container-lowest hover:bg-surface-container text-on-surface font-title-md text-title-md font-semibold rounded-lg shadow-sm transition-all flex items-center justify-center gap-2" data-path="discover-goals" href="#">
-<span>Take Free Career Assessment</span>
-<span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-</a>
-</div>
-</div>
-</section>
-
-
-</div></main><footer className="w-full bg-surface-container-low mt-space-xl"><div className="max-w-7xl mx-auto px-6 lg:px-12 py-space-xl"><div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-lg mb-space-xl"><div className="lg:col-span-1"><div className="flex items-center gap-space-xs mb-space-sm"><div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center"><span className="material-symbols-outlined text-on-primary text-[18px]">rocket_launch</span></div><span className="font-title-md text-title-md text-on-surface font-bold">Dream<span className="text-primary">X</span></span></div><p className="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Career mobility platform combining surgical diagnostics, vetted growth programs, and elite mentor networks.</p><div className="flex flex-col gap-space-xs"><div className="flex items-center gap-space-xs text-on-surface-variant"><span className="material-symbols-outlined text-primary text-[18px]">verified_user</span><span className="font-label-sm text-label-sm font-semibold text-on-surface">SOC-2 Type II Certified</span></div><div className="flex items-center gap-space-xs text-on-surface-variant"><span className="material-symbols-outlined text-primary text-[18px]">lock</span><span className="font-label-sm text-label-sm font-semibold text-on-surface">256-Bit SSL Encrypted</span></div></div></div><div><h4 className="font-title-md text-title-md text-on-surface mb-space-sm font-semibold">Marketplace</h4><ul className="flex flex-col gap-space-xs"><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="discover-goals" href="#">Career Diagnostic Tracks</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="browse-mentors" href="#">Executive Coaching</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="search-marketplace" href="#">Skill Gap Assessments</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="services" href="#">Portfolio Reviews</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="services" href="#">Interview Simulation</a></li></ul></div><div><h4 className="font-title-md text-title-md text-on-surface mb-space-sm font-semibold">Programs & Growth</h4><ul className="flex flex-col gap-space-xs"><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="programs" href="#">Structured Fellowships</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="programs" href="#">Outcome Accelerators</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="pricing-memberships" href="#">Corporate Upskilling</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="programs" href="#">Leadership Cohorts</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="pricing-memberships" href="#">Enterprise Invoicing</a></li></ul></div><div><h4 className="font-title-md text-title-md text-on-surface mb-space-sm font-semibold">Regional Gateways</h4><ul className="flex flex-col gap-space-xs"><li className="font-body-sm text-body-sm text-on-surface font-medium"><span className="inline-block w-2 h-2 rounded-full bg-primary mr-1"></span>South Asia (CM-IN ₹)</li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="programs" href="#">North America (CM-US $)</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="programs" href="#">European Union (CM-EU €)</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="programs" href="#">Southeast Asia (CM-SG S$)</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="programs" href="#">Middle East (CM-AE AED)</a></li></ul></div><div><h4 className="font-title-md text-title-md text-on-surface mb-space-sm font-semibold">Legal & Compliance</h4><ul className="flex flex-col gap-space-xs"><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="privacy-policy" href="#">Privacy & Data Governance</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="terms-of-service" href="#">Terms of Service</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="compliance" href="#">RBI Tokenization Standards</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="compliance" href="#">Refund & Outcomes Guarantee</a></li><li className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface"><a data-path="security" href="#">Security & Audits</a></li></ul></div></div><div className="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm"><div className="flex items-center gap-space-xs flex-wrap"><span className="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Gateway Node: CM-IN</span><span className="font-body-sm text-body-sm text-on-surface-variant">Settlements routed via RBI Tokenized Rail & Domestic UPI Protocols</span></div><div className="font-body-sm text-body-sm text-on-surface-variant">© 2025 DreamX Career Technologies Inc. All rights reserved.</div></div></div></footer>
-    </>
+      <Footer />
+    </div>
   );
 }

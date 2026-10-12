@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
@@ -9,6 +9,7 @@ import { STANDARD_SERVICES } from '@/lib/catalog-data'
 
 export default function ServiceDetailPage() {
   const params = useParams()
+  const router = useRouter()
   const slugParam = (params?.slug as string) || 'mock-interview'
 
   const service = useMemo(() => {
@@ -69,10 +70,8 @@ export default function ServiceDetailPage() {
   }
 
   const handleBooking = () => {
-    triggerToast(
-      `Escrow Locked: ₹${selectedMentor.price}`,
-      `Selected ${selectedMentor.name} for ${selectedDate} @ ${selectedTime}. 3-Day Escrow Guard active.`
-    )
+    // Route into approved Smart Match intake & slot negotiation pipeline
+    router.push(`/services/${service.slug}/match?mentor=${encodeURIComponent(selectedMentor.name)}&date=${encodeURIComponent(selectedDate)}&time=${encodeURIComponent(selectedTime)}`)
   }
 
   return (
@@ -696,17 +695,13 @@ export default function ServiceDetailPage() {
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
                     Let our 14-Dimension AI Matching Engine auto-negotiate with 3 vetted bar-raisers within your exact budget ceiling and availability window in under 30 minutes.
                   </p>
-                  <button
-                    onClick={() => {
-                      if (typeof window !== 'undefined') {
-                        window.dispatchEvent(new CustomEvent('open-command-menu'))
-                      }
-                    }}
+                  <Link
+                    href={`/services/${service.slug}/match`}
                     className="w-full py-2.5 px-space-md rounded-xl bg-secondary text-on-secondary font-label-md text-label-md font-semibold text-center hover:bg-secondary-container transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer"
                   >
                     <span>Launch AI Smart Match Request</span>
                     <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Trust Micro-Pillars */}

@@ -89,14 +89,14 @@ export function cosineSimilarity(vecA: number[], vecB: number[]): number {
 /**
  * Jaccard Index on string sets
  */
-function jaccardSimilarity(setA: string[], setB: string[]): number {
+export function jaccardSimilarity(setA: string[], setB: string[]): number {
   if (!setA.length || !setB.length) return 0.0;
   const sA = new Set(setA.map((s) => s.toLowerCase().trim()));
   const sB = new Set(setB.map((s) => s.toLowerCase().trim()));
   let intersection = 0;
-  for (const item of sA) {
+  sA.forEach((item) => {
     if (sB.has(item)) intersection++;
-  }
+  });
   const union = sA.size + sB.size - intersection;
   return union > 0 ? intersection / union : 0.0;
 }

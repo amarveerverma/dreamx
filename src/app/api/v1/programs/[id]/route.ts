@@ -9,8 +9,8 @@ export async function GET(
     const supabase = createClient();
     const { id } = params;
 
-    // Fetch program and its milestones
-    const { data: program, error: programError } = await supabase
+    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
+    let query = supabase
       .from('programs')
       .select(`
         id,
@@ -36,9 +36,15 @@ export async function GET(
           estimated_hours
         )
       `)
-      .or(`id.eq.${id},slug.eq.${id}`)
-      .is('deleted_at', null)
-      .single();
+      .is('deleted_at', null);
+
+    if (isUuid) {
+      query = query.eq('id', id);
+    } else {
+      query = query.eq('slug', id);
+    }
+
+    const { data: program, error: programError } = await query.single();
 
     if (programError) {
       console.error('Error fetching program:', programError);

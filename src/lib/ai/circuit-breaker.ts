@@ -17,11 +17,19 @@ export async function executeWithCircuitBreaker<T>(
 ): Promise<CircuitBreakerResult<T>> {
   const startTime = Date.now();
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  let timeoutId: NodeJS.Timeout;
+  const timeoutPromise = new Promise<never>((_, reject) => {
+    timeoutId = setTimeout(() => {
+      controller.abort();
+      const abortErr = new Error(`AI call exceeded ${timeoutMs}ms SLA deadline`);
+      abortErr.name = "AbortError";
+      reject(abortErr);
+    }, timeoutMs);
+  });
 
   try {
-    const result = await action(controller.signal);
-    clearTimeout(timeoutId);
+    const result = await Promise.race([action(controller.signal), timeoutPromise]);
+    clearTimeout(timeoutId!);
     const latencyMs = Date.now() - startTime;
     return {
       data: result,
@@ -29,7 +37,7 @@ export async function executeWithCircuitBreaker<T>(
       latencyMs,
     };
   } catch (err: any) {
-    clearTimeout(timeoutId);
+    clearTimeout(timeoutId!);
     const latencyMs = Date.now() - startTime;
     const isTimeout = controller.signal.aborted || err.name === "AbortError";
     const errorMessage = isTimeout

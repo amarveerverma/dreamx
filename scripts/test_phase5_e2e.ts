@@ -264,7 +264,7 @@ async function runTestSuite() {
   // 8. Telemetry Audit in ai.ai_prompt_logs
   console.log('\nCRITERION 8: Telemetry Audit in ai.ai_prompt_logs');
   const promptLogs = await pool.query(`
-    SELECT id, model, prompt_template_id, latency_ms, status, created_at 
+    SELECT id, model_name as model, feature_type as prompt_template_id, latency_ms, status, created_at 
     FROM ai.ai_prompt_logs 
     ORDER BY created_at DESC 
     LIMIT 5
@@ -277,8 +277,8 @@ async function runTestSuite() {
   const serviceTypes = await pool.query("SELECT count(*) as count FROM public.service_types WHERE is_active = true");
   assert(parseInt(serviceTypes.rows[0].count, 10) >= 10, "Standardized service_types intact (>= 10 active)");
 
-  const bookings = await pool.query("SELECT count(*) as count FROM public.bookings");
-  assert(parseInt(bookings.rows[0].count, 10) >= 0, "Phase 4 bookings table functional");
+  const bookings = await pool.query("SELECT count(*) as count FROM public.service_bookings");
+  assert(parseInt(bookings.rows[0].count, 10) >= 0, "Phase 4 service_bookings table functional");
 
   const escrowEnum = await pool.query("SELECT enumlabel FROM pg_enum WHERE enumtypid = 'public.payout_status_enum'::regtype");
   const escrowLabels = escrowEnum.rows.map(r => r.enumlabel);

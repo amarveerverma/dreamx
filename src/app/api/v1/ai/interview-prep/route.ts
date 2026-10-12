@@ -25,7 +25,7 @@ export async function POST(req: Request) {
       interviewRound: interview_round,
     });
 
-    const modelToUse = process.env.GEMINI_DEFAULT_MODEL || "gemini-2.5-flash";
+    const modelToUse = process.env.GEMINI_DEFAULT_MODEL || "gemini-3.5-flash";
     const startTime = Date.now();
 
     try {

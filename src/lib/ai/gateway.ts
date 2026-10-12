@@ -22,8 +22,8 @@ export class GeminiGateway implements ILLMGateway {
 
   constructor() {
     this.apiKey = process.env.GEMINI_API_KEY || "";
-    this.defaultModel = process.env.GEMINI_DEFAULT_MODEL || "gemini-2.5-flash";
-    this.atsModel = process.env.GEMINI_ATS_MODEL || "gemini-2.5-pro";
+    this.defaultModel = process.env.GEMINI_DEFAULT_MODEL || "gemini-3.5-flash";
+    this.atsModel = process.env.GEMINI_ATS_MODEL || "gemini-3.5-flash";
     this.embeddingModel = process.env.GEMINI_EMBEDDING_MODEL || "gemini-embedding-001";
   }
 
