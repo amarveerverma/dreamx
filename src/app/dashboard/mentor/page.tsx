@@ -15,6 +15,17 @@ export default async function MentorDashboardHome() {
           <h2 className="text-xl font-semibold mb-2">Services</h2>
           <p className="text-tertiary">Manage your 1:1 mentorship services.</p>
         </Link>
+        <Link href="/dashboard/mentor/earnings" className="p-6 bg-surface-container-low rounded-xl shadow-sm hover:shadow-md transition-shadow border border-surface-container-high">
+          <h2 className="text-xl font-semibold mb-2 flex items-center gap-2">
+            <span>Earnings &amp; Payouts</span>
+            <span className="text-xs px-2 py-0.5 rounded-full bg-secondary/10 text-secondary border border-secondary/20">Phase 6</span>
+          </h2>
+          <p className="text-tertiary">Track released earnings, 72h escrow holds, and gateway transfers.</p>
+        </Link>
+        <Link href="/dashboard/mentor/bookings" className="p-6 bg-surface-container-low rounded-xl shadow-sm hover:shadow-md transition-shadow border border-surface-container-high">
+          <h2 className="text-xl font-semibold mb-2">Bookings &amp; Sessions</h2>
+          <p className="text-tertiary">View confirmed sessions and upload outcome deliverables.</p>
+        </Link>
       </div>
     </div>
   )
