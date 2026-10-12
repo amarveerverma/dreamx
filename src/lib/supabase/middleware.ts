@@ -16,13 +16,20 @@ export async function updateSession(request: NextRequest) {
           return request.cookies.getAll()
         },
         setAll(cookiesToSet: { name: string; value: string; options: any }[]) {
-          cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value))
+          cookiesToSet.forEach(({ name, value, options }) => {
+            request.cookies.set({ name, value, ...options, path: '/' })
+          })
           supabaseResponse = NextResponse.next({
             request,
           })
-          cookiesToSet.forEach(({ name, value, options }) =>
-            supabaseResponse.cookies.set(name, value, options)
-          )
+          cookiesToSet.forEach(({ name, value, options }) => {
+            supabaseResponse.cookies.set({
+              name,
+              value,
+              ...options,
+              path: '/',
+            })
+          })
         },
       },
     }
@@ -33,11 +40,17 @@ export async function updateSession(request: NextRequest) {
 
   const { pathname } = request.nextUrl
 
-  // Helper to safely redirect while preserving refreshed cookies
+  // Helper to safely redirect while preserving refreshed cookies with full site-wide path
   const redirectWithCookies = (url: URL) => {
     const redirectResponse = NextResponse.redirect(url)
     supabaseResponse.cookies.getAll().forEach((cookie) => {
-      redirectResponse.cookies.set(cookie.name, cookie.value)
+      redirectResponse.cookies.set({
+        name: cookie.name,
+        value: cookie.value,
+        path: '/',
+        sameSite: 'lax',
+        secure: process.env.NODE_ENV === 'production',
+      })
     })
     return redirectResponse
   }
@@ -50,7 +63,7 @@ export async function updateSession(request: NextRequest) {
                      pathname.startsWith('/verify')
 
   if (isAuthPage && user) {
-    const role = user.app_metadata?.user_role || 'student'
+    const role = user.app_metadata?.user_role || user.user_metadata?.user_role || 'student'
     return redirectWithCookies(new URL(`/dashboard/${role}`, request.url))
   }
 
@@ -64,7 +77,7 @@ export async function updateSession(request: NextRequest) {
 
   // RBAC checks for dashboard
   if (pathname.startsWith('/dashboard') && user) {
-    const role = user.app_metadata?.user_role || 'student'
+    const role = user.app_metadata?.user_role || user.user_metadata?.user_role || 'student'
     
     if (pathname.startsWith('/dashboard/student') && role !== 'student') {
       return redirectWithCookies(new URL(`/dashboard/${role}`, request.url))

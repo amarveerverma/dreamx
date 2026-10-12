@@ -102,7 +102,10 @@ export default function SignupPage() {
       }
 
       if (data.session) {
-        window.location.href = '/onboard'
+        // Allow browser client to flush auth cookies to document.cookie before redirect
+        setTimeout(() => {
+          window.location.href = '/onboard'
+        }, 200)
       } else {
         setErrorMessage('Success! Check your email for the magic link to complete registration.')
         setLoading(false)

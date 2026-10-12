@@ -68,12 +68,15 @@ export default function LoginPage() {
       }
 
       setStatusMessage('Authentication successful! Launching workspace...')
-      const userRole = data.user?.app_metadata?.user_role || (activeRole === 'mentor' ? 'mentor' : 'student')
-      router.push(`/dashboard/${userRole}`)
-      router.refresh()
+      const userRole =
+        data.user?.app_metadata?.user_role ||
+        data.user?.user_metadata?.user_role ||
+        (activeRole === 'mentor' ? 'mentor' : 'student')
+
+      // Allow browser client to flush auth cookies, then launch workspace
       setTimeout(() => {
         window.location.href = `/dashboard/${userRole}`
-      }, 500)
+      }, 250)
     } catch (err: any) {
       setErrorMessage(err.message || 'Invalid email or password.')
       setStatusMessage(null)

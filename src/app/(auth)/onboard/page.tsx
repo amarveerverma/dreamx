@@ -32,18 +32,38 @@ export default function OnboardPage() {
   const [uploadedFileName, setUploadedFileName] = useState('ananya_sharma_resume_v2.pdf')
   const [saving, setSaving] = useState(false)
 
-  // Check for active session on mount
+  // Check for active session on mount with grace period for cold redirects
   useEffect(() => {
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      if (!user) {
-        router.replace('/login')
-      } else {
+    let isMounted = true
+    const checkSession = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (user && isMounted) {
         const userRole = user.app_metadata?.user_role || (user.user_metadata?.user_role as any)
         if (userRole === 'mentor' || userRole === 'student') {
           setRole(userRole)
         }
+        return
       }
-    })
+
+      // Grace period for freshly registered users whose cookies are settling in the browser
+      await new Promise((res) => setTimeout(res, 400))
+      const retry = await supabase.auth.getUser()
+      if (isMounted) {
+        if (!retry.data.user) {
+          router.replace('/login')
+        } else {
+          const userRole = retry.data.user.app_metadata?.user_role || (retry.data.user.user_metadata?.user_role as any)
+          if (userRole === 'mentor' || userRole === 'student') {
+            setRole(userRole)
+          }
+        }
+      }
+    }
+
+    checkSession()
+    return () => {
+      isMounted = false
+    }
   }, [router, supabase])
 
   const prefillStudent = () => {
@@ -93,6 +113,7 @@ export default function OnboardPage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (user) {
         const updatePayload: Record<string, any> = {
+          role: role,
           current_country: homeCountry || 'IN',
           time_zone: timezone || 'Asia/Kolkata',
           target_career_market_id: targetMarket || 'CM-IN',
@@ -100,12 +121,23 @@ export default function OnboardPage() {
         if (institution || degree) {
           updatePayload.headline = `${degree || ''} at ${institution || ''}`.trim()
         }
+        // Update profile in public.profiles table
         await supabase
           .from('profiles')
           .update(updatePayload)
           .eq('id', user.id)
+
+        // Sync role to auth metadata so JWT and session match selected pathway
+        await supabase.auth.updateUser({
+          data: {
+            user_role: role,
+          },
+        })
       }
-      window.location.href = `/dashboard/${role}`
+      // Allow browser client to flush updated session cookies
+      setTimeout(() => {
+        window.location.href = `/dashboard/${role}`
+      }, 250)
     } catch (err) {
       console.error('Onboarding update error:', err)
       window.location.href = `/dashboard/${role}`

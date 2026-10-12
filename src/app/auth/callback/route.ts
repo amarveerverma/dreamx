@@ -32,10 +32,24 @@ export async function GET(request: Request) {
     }
   )
 
+  const createRedirectWithCookies = (url: string) => {
+    const response = NextResponse.redirect(url)
+    cookieStore.getAll().forEach((cookie) => {
+      response.cookies.set({
+        name: cookie.name,
+        value: cookie.value,
+        path: '/',
+        sameSite: 'lax',
+        secure: process.env.NODE_ENV === 'production',
+      })
+    })
+    return response
+  }
+
   if (code) {
     const { error } = await supabase.auth.exchangeCodeForSession(code)
     if (!error) {
-      return NextResponse.redirect(`${origin}${next}`)
+      return createRedirectWithCookies(`${origin}${next}`)
     }
   }
 
@@ -45,7 +59,7 @@ export async function GET(request: Request) {
       type: type as any,
     })
     if (!error) {
-      return NextResponse.redirect(`${origin}${next}`)
+      return createRedirectWithCookies(`${origin}${next}`)
     }
   }
 
