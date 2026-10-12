@@ -69,7 +69,11 @@ export default function LoginPage() {
 
       setStatusMessage('Authentication successful! Launching workspace...')
       const userRole = data.user?.app_metadata?.user_role || (activeRole === 'mentor' ? 'mentor' : 'student')
-      window.location.href = `/dashboard/${userRole}`
+      router.push(`/dashboard/${userRole}`)
+      router.refresh()
+      setTimeout(() => {
+        window.location.href = `/dashboard/${userRole}`
+      }, 500)
     } catch (err: any) {
       setErrorMessage(err.message || 'Invalid email or password.')
       setStatusMessage(null)
@@ -343,6 +347,17 @@ export default function LoginPage() {
                       <span className="truncate font-mono text-label-sm text-secondary">mentor.google@dreamx.com</span>
                     </div>
                     <span className="material-symbols-outlined text-[16px] text-outline group-hover:text-secondary transition-colors">touch_app</span>
+                  </button>
+                  <button
+                    className="flex-1 min-w-[140px] text-left px-2.5 py-1.5 rounded-md bg-surface-container-lowest hover:bg-surface-container-high transition-colors font-body-sm text-body-sm text-on-surface flex items-center justify-between group shadow-xs"
+                    onClick={() => fillDemoCredentials('vermaamarveeer0@gamail.com', 'seeker')}
+                    type="button"
+                  >
+                    <div className="flex flex-col truncate">
+                      <span className="font-label-sm text-label-sm text-on-surface-variant font-semibold">Your Account</span>
+                      <span className="truncate font-mono text-label-sm text-primary">vermaamarveeer0@gamail.com</span>
+                    </div>
+                    <span className="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">touch_app</span>
                   </button>
                 </div>
               </div>
