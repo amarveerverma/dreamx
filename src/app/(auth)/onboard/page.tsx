@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
@@ -31,6 +31,20 @@ export default function OnboardPage() {
   const [newSkill, setNewSkill] = useState('')
   const [uploadedFileName, setUploadedFileName] = useState('ananya_sharma_resume_v2.pdf')
   const [saving, setSaving] = useState(false)
+
+  // Check for active session on mount
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (!user) {
+        router.replace('/login')
+      } else {
+        const userRole = user.app_metadata?.user_role || (user.user_metadata?.user_role as any)
+        if (userRole === 'mentor' || userRole === 'student') {
+          setRole(userRole)
+        }
+      }
+    })
+  }, [router, supabase])
 
   const prefillStudent = () => {
     setRole('student')
@@ -78,23 +92,22 @@ export default function OnboardPage() {
     try {
       const { data: { user } } = await supabase.auth.getUser()
       if (user) {
+        const updatePayload: Record<string, any> = {
+          current_country: homeCountry || 'IN',
+          time_zone: timezone || 'Asia/Kolkata',
+          target_career_market_id: targetMarket || 'CM-IN',
+        }
+        if (institution || degree) {
+          updatePayload.headline = `${degree || ''} at ${institution || ''}`.trim()
+        }
         await supabase
           .from('profiles')
-          .update({
-            home_country: homeCountry,
-            timezone,
-            target_career_market: targetMarket,
-            primary_goal: primaryGoal,
-            target_ctc_range: targetCTC,
-            college_name: institution,
-            graduation_year: gradYear,
-            onboarding_completed: true,
-            skills,
-          })
+          .update(updatePayload)
           .eq('id', user.id)
       }
       window.location.href = `/dashboard/${role}`
-    } catch {
+    } catch (err) {
+      console.error('Onboarding update error:', err)
       window.location.href = `/dashboard/${role}`
     } finally {
       setSaving(false)
