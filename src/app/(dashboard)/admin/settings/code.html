@@ -1,0 +1,784 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#464554", "primary-fixed": "#e1e0ff", "on-secondary-fixed-variant": "#5516be", "secondary-fixed": "#e9ddff", "on-secondary-container": "#fffbff", "inverse-surface": "#283044", "tertiary-fixed": "#6ffbbe", "on-tertiary-container": "#000703", "on-primary": "#ffffff", "on-error-container": "#93000a", "on-tertiary-fixed": "#002113", "outline": "#767586", "on-primary-fixed": "#07006c", "inverse-primary": "#c0c1ff", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#2f2ebe", "secondary-container": "#8455ef", "surface-container": "#eaedff", "surface-bright": "#faf8ff", "surface-container-high": "#e2e7ff", "surface-dim": "#d2d9f4", "primary": "#4648d4", "surface-tint": "#494bd6", "surface-container-low": "#f2f3ff", "tertiary-fixed-dim": "#4edea3", "on-background": "#131b2e", "on-secondary-fixed": "#23005c", "background": "#faf8ff", "secondary-fixed-dim": "#d0bcff", "surface": "#faf8ff", "tertiary": "#006c49", "error": "#ba1a1a", "primary-fixed-dim": "#c0c1ff", "outline-variant": "#c7c4d7", "on-error": "#ffffff", "inverse-on-surface": "#eef0ff", "surface-container-highest": "#dae2fd", "primary-container": "#6063ee", "on-primary-container": "#fffbff", "tertiary-container": "#00885d", "secondary": "#6b38d4", "surface-variant": "#dae2fd", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#005236", "on-surface": "#131b2e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "margin": "2rem", "gutter": "1.5rem", "space-xl": "2rem" }, "fontFamily": { "headline-lg-mobile": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"], "display": ["Inter"], "overline": ["Inter"], "stat-metric": ["Inter"], "body-lg": ["Inter"], "code-table": ["Inter"], "label-md": ["Inter"], "stat-metric-sm": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "overline": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "stat-metric": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "code-table": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500" }], "stat-metric-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.025em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-[260px] bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center flex-shrink-0 bg-primary-container"><img alt="DreamX logo mark" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VWlT0DlbfZMjYuXSrC1Zz9dlgmTXqKj15aAeGd-t8DaJztkLQLuh26Z1tfMxnlzHIzD-dUg_GHDfJ2Zlgru_2VGgu3sqLjdqU-Kb74cDmLycHz2gIUwlUT4iOCZVOZtmEr1nOxRk7-5TAvbSeiVtb4ZVb71nlQnWKagHhQK5rjUPA1hUuLR8_ssjIVqEytgOX-VTvvKhx5otClVTHUhEt8kE4ByD08grOXXdFBiwE09uQYU33T3poDBg"></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">DreamX</span><span class="font-overline text-overline uppercase text-on-surface-variant">Admin Console</span></div></div><div class="px-space-md py-space-xs"><nav class="space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">OVERVIEW</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="executive-dashboard" href="/admin">Executive Dashboard</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="marketplace-health" href="/admin/marketplace">Marketplace Health</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="analytics-and-performance" href="/admin/analytics">Analytics &amp; Performance</a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">MANAGEMENT</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="user-directory" href="/admin/users">User Directory</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="mentor-verification" href="/admin/mentors"><span class="">Mentor Verification</span><span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-primary font-medium">5 pending</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="program-catalog" href="/admin/programs">Program Catalog</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="content-moderation" href="/admin/moderation">Content Moderation</a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">FINANCE &amp; TRANSACTIONS</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="payments-and-escrow" href="/admin/payments"><span class="">Payments &amp; Escrow</span><span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-medium">₹14.2L held</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="reports-and-exports" href="/admin/reports">Reports &amp; Exports</a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">SYSTEM &amp; CONFIGURATION</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg font-label-md text-label-md bg-primary text-on-primary font-semibold shadow-sm" data-path="platform-settings" href="/admin/settings">Platform Settings</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="audit-and-compliance-logs" href="/admin/audit">Audit &amp; Compliance Logs</a></div></div></nav></div></div><div class="p-space-md"><div class="px-space-sm py-space-xs rounded-lg bg-surface-container-low flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-code-table text-code-table text-on-surface-variant">Production v1.0 • Supabase RLS Protected</span></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><nav class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="/admin">Administration</a><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-on-surface-variant">System</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><a class="text-on-surface font-semibold hover:text-primary transition-colors" href="/admin/settings">Platform Settings</a></nav><div class="flex items-center gap-2 px-space-sm py-1 rounded-lg bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span><span class="font-label-sm text-label-sm text-on-surface font-medium">India MVP (CM-IN)</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-low p-1 rounded-lg"><button class="px-space-sm py-1 px-3 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">Today</button><button class="px-space-sm py-1 px-3 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-[0_1px_2px_rgba(15,23,42,0.08)] font-medium">Last 7 Days</button><button class="px-space-sm py-1 px-3 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">This Month</button></div><div class="hidden xl:flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low text-tertiary"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="font-label-sm text-label-sm font-medium">All Systems Operational • pg_cron active</span></div><div class="flex items-center gap-space-sm"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Ananya Roy" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1V0AAql4jGIRqEsdzoD0fM4D7KzgdgSCXOxWXLCX3wFMiVq6EyC2nlrmufQAptIDPpABKVSJB2Zne6rHbtLLEuIAzsHg7MqEc5qSi62rtuJwW7jmVFwhjiu6vCFIoyqMlhBdshF-R8fZ8_WhxFyrgwMILFhWONB-s7Ox8cU55jyLfReXDDPXv9cQYcxLx1-bcp30sD6SXgyKvGE0-15_eB1nCyRRXlPwTjAfMFVWRUzwN1R47bR2ALOxTk"><div class="hidden lg:flex flex-col"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Ananya Roy</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">VP Operations &amp; Admin</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-lg py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Notification & System Engine State Bar -->
+<div class="w-full mb-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="flex h-2.5 w-2.5 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">
+        Global Config Engine v2.4 • Live In-Memory Cache Sync • Safe Schema Validation
+      </span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Database Safe-Lock Active (Audit Stamped)</span>
+</div>
+</div>
+<!-- Header Section with Actions -->
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">Administration</span>
+<span class="material-symbols-outlined text-[12px] text-outline-variant">chevron_right</span>
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">System</span>
+<span class="material-symbols-outlined text-[12px] text-outline-variant">chevron_right</span>
+<span class="font-overline text-overline uppercase tracking-wider text-primary font-semibold">Platform Settings</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+        Platform Settings &amp; System Configuration
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
+        Manage regional career markets, live currency exchange rates, and instant feature switches across DreamX in simple, plain language.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-colors flex items-center gap-2" id="dryRunBtn" onclick="simulateDryRun()">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">play_circle</span>
+<span class="">Test Configuration (Dry Run)</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors flex items-center gap-2" id="publishLiveBtn" onclick="publishLiveConfig()">
+<span class="material-symbols-outlined text-[18px]">cloud_upload</span>
+<span class="">Publish Configuration Live</span>
+</button>
+</div>
+</div>
+<!-- Dry Run Status Toast Notification (Hidden by default, shown via JS) -->
+<div class="hidden w-full mb-space-lg p-space-md rounded-xl bg-surface-container-high text-on-surface flex items-center justify-between shadow-sm transition-all duration-300" id="statusToast">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface" id="toastTitle">Dry Run Completed Successfully</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant" id="toastDesc">All 3 career markets, 4 currency paths, and 16 feature flags validated with 0 errors.</div>
+</div>
+</div>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" onclick="document.getElementById('statusToast').classList.add('hidden')">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Metric Summary Ribbon (4 Cards with Plain English Explanations) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Card 1 -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Active Career Markets</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          Core Market Operational
+        </span>
+</div>
+<div>
+<div class="font-stat-metric text-stat-metric font-bold text-on-surface">1 Live + 2 Drafts</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          CM-IN is live. CM-US and CM-SG staged with Liquidity Gates enabled.
+        </div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Primary: India (CM-IN)</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">412 Active Mentors</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Base Currency Rate</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-primary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          Daily Auto-Sync 00:00 UTC
+        </span>
+</div>
+<div>
+<div class="font-stat-metric text-stat-metric font-bold text-on-surface">₹1.0000 INR (Base)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          USD: ₹83.45 • SGD: ₹62.10 • EUR: ₹90.80 frozen for cross-border student checkouts.
+        </div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Conversion Buffer: ±0.5%</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Synced 4h ago</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">System Feature Flags</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          All Guards Active
+        </span>
+</div>
+<div>
+<div class="font-stat-metric text-stat-metric font-bold text-on-surface">14 of 16 Enabled</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Smart Match v2, Escrow Safe Hold, and NLP chat filters running at full capacity.
+        </div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">2 Staged Flags</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Ready for Deploy</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Configuration Safety</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Zero Drift
+        </span>
+</div>
+<div>
+<div class="font-stat-metric text-stat-metric font-bold text-on-surface">100% Schema Valid</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Every rule verified by automated checks. Zero broken JSON fields detected.
+        </div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Audit Session</span>
+<span class="font-code-table text-code-table text-on-surface-variant font-semibold">#CFG-8821</span>
+</div>
+</div>
+</div>
+<!-- Main 2-Column Operational Grid (7-column left panel, 5-column right panel) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Left Column (7 cols) -->
+<div class="xl:col-span-7 flex flex-col gap-space-xl">
+<!-- Setting Tabs Navigation -->
+<div class="p-1.5 bg-surface-container-low rounded-xl flex items-center gap-1 overflow-x-auto shadow-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold shadow-sm flex items-center gap-2 whitespace-nowrap" id="tab-markets" onclick="switchTab('markets')">
+<span class="material-symbols-outlined text-[18px]">public</span>
+<span class="">Career Markets &amp; Regional Norms</span>
+<span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed">3 Markets</span>
+</button>
+<button class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors" id="tab-flags" onclick="switchTab('flags')">
+<span class="material-symbols-outlined text-[18px]">toggle_on</span>
+<span class="">Feature Flags</span>
+<span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant">16 Rules</span>
+</button>
+<button class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors" id="tab-currencies" onclick="switchTab('currencies')">
+<span class="material-symbols-outlined text-[18px]">currency_exchange</span>
+<span class="">Currencies</span>
+<span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant">4 Active</span>
+</button>
+</div>
+<!-- Tab Content 1: Career Markets & Visual JSONB Builder -->
+<div class="flex flex-col gap-space-lg" id="section-markets">
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Career Markets &amp; Job Prep Norms</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Career Markets define how students prepare for jobs in different countries—like resume formats, interview rounds, and salary benchmarks. You can edit them safely here.
+              </p>
+</div>
+<!-- View Mode Switch: Friendly Form vs Raw JSON -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg self-start md:self-auto flex-shrink-0">
+<button class="px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-colors" id="btn-view-form" onclick="toggleMarketView('form')">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<span class="">Friendly Form</span>
+</button>
+<button class="px-space-sm py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold shadow-sm flex items-center gap-1.5" id="btn-view-json" onclick="toggleMarketView('json')">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span class="">Raw JSON Inspector</span>
+</button>
+</div>
+</div>
+<!-- Market Selector Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm mb-space-lg">
+<!-- Market 1: India (Selected) -->
+<button class="p-space-md rounded-xl bg-surface-container-high text-left transition-all relative overflow-hidden" id="market-card-IN" onclick="selectMarket('IN')">
+<div class="w-1.5 absolute left-0 top-0 bottom-0 bg-primary"></div>
+<div class="flex items-center justify-between mb-1 pl-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">India (CM-IN)</span>
+<span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">LIVE</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant pl-1">412 Verified Mentors</div>
+<div class="mt-2 pl-1 flex items-center gap-1 text-tertiary font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="">100% Liquidity Met</span>
+</div>
+</button>
+<!-- Market 2: United States -->
+<button class="p-space-md rounded-xl bg-surface-container-low text-left hover:bg-surface-container transition-all" id="market-card-US" onclick="selectMarket('US')">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">USA (CM-US)</span>
+<span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant font-semibold">STAGED</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">28 Verified Mentors</div>
+<div class="mt-2 flex items-center gap-1 text-primary font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span class="">Ready to Launch (10 min)</span>
+</div>
+</button>
+<!-- Market 3: Singapore & SEA -->
+<button class="p-space-md rounded-xl bg-surface-container-low text-left hover:bg-surface-container transition-all" id="market-card-SG" onclick="selectMarket('SG')">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">Singapore (CM-SG)</span>
+<span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-semibold">IN REVIEW</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">8 Verified Mentors</div>
+<div class="mt-2 flex items-center gap-1 text-error font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+<span class="">Need 2 more mentors</span>
+</div>
+</button>
+</div>
+<!-- Market Configuration Form Mode -->
+<div class="flex flex-col gap-space-lg hidden" id="market-form-view">
+<!-- Resume Norms Box -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold">Resume Norms &amp; Guidelines</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-1">
+<div>
+<label class="font-label-sm text-label-sm font-medium text-on-surface-variant block mb-1">Standard Page Format</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="resume-format-input" type="text" value="1-2 Pages standard, projects emphasized">
+</div>
+<div>
+<label class="font-label-sm text-label-sm font-medium text-on-surface-variant block mb-1">Photograph Policy</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="photo-policy-input" type="text" value="Optional / Not required (Indian tech standard)">
+</div>
+<div class="md:col-span-2">
+<label class="font-label-sm text-label-sm font-medium text-on-surface-variant block mb-1">Required Evaluation Sections</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="sections-input" type="text" value="Education, Key Projects, Tech Skills, Experience, Certifications">
+</div>
+</div>
+</div>
+<!-- Interview Preparation Rules Box -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">psychology</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold">Interview Preparation Rules</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-1">
+<div>
+<label class="font-label-sm text-label-sm font-medium text-on-surface-variant block mb-1">Standard Round Structure</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="3 Rounds (2 Technical/DSA + 1 Behavioral/HR)">
+</div>
+<div>
+<label class="font-label-sm text-label-sm font-medium text-on-surface-variant block mb-1">Evaluation Weighting</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="65% Technical Coding &amp; System Design, 35% Cultural">
+</div>
+<div class="md:col-span-2">
+<label class="font-label-sm text-label-sm font-medium text-on-surface-variant block mb-1">Assessment Style</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="STAR behavioral methodology with live code pairing in Python/Java">
+</div>
+</div>
+</div>
+<!-- Compensation & Pricing Corridors -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[20px]">payments</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold">Compensation &amp; Price Corridors</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-space-sm mt-1">
+<div>
+<label class="font-label-sm text-label-sm font-medium text-on-surface-variant block mb-1">Entry Level Salary</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="₹8,00,000 / year">
+</div>
+<div>
+<label class="font-label-sm text-label-sm font-medium text-on-surface-variant block mb-1">Senior Benchmark</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="₹25,00,000 / year">
+</div>
+<div>
+<label class="font-label-sm text-label-sm font-medium text-on-surface-variant block mb-1">Min Session Price</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="₹399">
+</div>
+<div>
+<label class="font-label-sm text-label-sm font-medium text-on-surface-variant block mb-1">Max Session Price</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="₹2,249">
+</div>
+</div>
+</div>
+<!-- Liquidity Gate Guardrail Banner -->
+<div class="p-space-md rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[24px]">verified</span>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-tertiary-fixed">Market Safety Gate Passed</div>
+<div class="font-body-sm text-body-sm text-on-tertiary-fixed-variant mt-0.5">
+                    Requires at least 10 verified mentors before this market can be toggled Live. Current verified mentors: <strong>412</strong>.
+                  </div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md font-semibold text-on-tertiary-fixed">Status: LIVE</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Raw JSON Inspector (Hidden by default, shown via toggle) -->
+<div class="flex flex-col gap-space-sm" id="market-json-view">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant uppercase tracking-wider">career_markets_config.json</span>
+<div class="flex items-center gap-2">
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors flex items-center gap-1" onclick="copyJsonConfig()">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span class="">Copy Config JSON</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm hover:bg-primary-container transition-colors flex items-center gap-1" onclick="validateJsonSchema()">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span class="">Validate Schema</span>
+</button>
+</div>
+</div>
+<pre class="p-space-md rounded-xl bg-inverse-surface text-inverse-on-surface font-code-table text-code-table overflow-x-auto leading-relaxed max-h-96"><code>{
+  "market_code": "CM-IN",
+  "display_name": "India Tech &amp; Engineering",
+  "status": "LIVE",
+  "currency": "INR",
+  "mentor_liquidity": {
+    "required_threshold": 10,
+    "current_verified": 412,
+    "gate_passed": true
+  },
+  "resume_config": {
+    "page_limit": 2,
+    "photo_allowed": false,
+    "required_sections": ["Education", "Key Projects", "Tech Skills", "Experience"],
+    "score_weight": 0.35
+  },
+  "interview_config": {
+    "round_count": 3,
+    "split": {
+      "technical_coding": 0.65,
+      "behavioral_star": 0.35
+    },
+    "default_duration_mins": 45
+  },
+  "salary_benchmarks": {
+    "fresher_sde1": 800000,
+    "senior_sde": 2500000,
+    "session_floor_inr": 399,
+    "session_ceiling_inr": 2249
+  }
+}</code></pre>
+</div>
+</div>
+<!-- Platform Feature Flags & Emergency Kill-Switches -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Live System Feature Switches</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Turn platform capabilities on or off instantly without requiring code deploys. All changes take effect in &lt;1 second.
+              </p>
+</div>
+<span class="px-2 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">14 Enabled / 2 Staged</span>
+</div>
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<!-- Flag 1: Smart Match v2 Engine -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Smart Match v2 Engine (14-Dimension AI Matching)</span>
+<span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">ACTIVE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Uses AI vector matching to recommend the top 3 best-fit mentors in under 3 seconds based on student target companies.
+                  </p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" onchange="toggleFlag('smart_match', this.checked)" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Flag 2: 3-Day Escrow Safe Hold -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">3-Day Escrow Safe Hold (One-Time Services)</span>
+<span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">ACTIVE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Holds student payments for 72 hours post-session before releasing to mentors, protecting against disputes and no-shows.
+                  </p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" onchange="toggleFlag('escrow_hold', this.checked)" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Flag 3: Automated Chat Contact Masking -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Automated Chat Contact Masking</span>
+<span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">ACTIVE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Automatically detects and hides phone numbers, UPI IDs, and external links in chat to protect users and prevent off-platform deals.
+                  </p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" onchange="toggleFlag('chat_masking', this.checked)" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Flag 4: Cross-Border Payments (Staged / OFF) -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Cross-Border International Payments (Razorpay Route)</span>
+<span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-semibold">STAGED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Accepts foreign credit cards in USD and EUR with automated currency conversion. Currently running in test sandbox mode.
+                  </p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input class="sr-only peer" onchange="toggleFlag('intl_payments', this.checked)" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Flag 5: 7-Day Pro Membership Free Trial -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">card_membership</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">7-Day Pro Membership Free Trial</span>
+<span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">ACTIVE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Gives newly signed up students 100 bonus AI credits and 7 days to try Pro tier perks before requiring a subscription payment.
+                  </p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" onchange="toggleFlag('pro_trial', this.checked)" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (5 cols) -->
+<div class="xl:col-span-5 flex flex-col gap-space-xl">
+<!-- Currency Rates & Financial Conversion Table -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">currency_exchange</span>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Exchange Rates</h2>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container-low text-primary font-label-sm text-label-sm hover:bg-surface-container font-semibold transition-colors flex items-center gap-1" id="forexRefreshBtn" onclick="refreshForexRates()">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+<span class="">Sync Forex</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Base currency is Indian Rupee (INR). Other currencies are converted automatically at checkout and frozen to protect against currency swings.
+        </p>
+<div class="flex flex-col gap-space-xs">
+<!-- INR Row (Base) -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container font-bold flex items-center justify-center font-headline-sm text-headline-sm">
+                ₹
+              </div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">INR (Indian Rupee)</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Default domestic platform currency</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed font-bold">1.0000 (Base)</span>
+</div>
+</div>
+<!-- USD Row -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface font-bold flex items-center justify-center font-headline-sm text-headline-sm">
+                $
+              </div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">USD (US Dollar)</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Cross-border US mentor services</div>
+</div>
+</div>
+<div class="text-right flex items-center gap-2">
+<div class="font-label-md text-label-md font-bold text-on-surface">₹83.4500</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary transition-colors" onclick="overrideRate('USD', 83.45)" title="Emergency Override">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+</div>
+<!-- EUR Row -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface font-bold flex items-center justify-center font-headline-sm text-headline-sm">
+                €
+              </div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">EUR (Euro)</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">European tech mentors</div>
+</div>
+</div>
+<div class="text-right flex items-center gap-2">
+<div class="font-label-md text-label-md font-bold text-on-surface">₹90.8000</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary transition-colors" onclick="overrideRate('EUR', 90.80)" title="Emergency Override">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+</div>
+<!-- SGD Row -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface font-bold flex items-center justify-center font-headline-sm text-headline-sm">
+                S$
+              </div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">SGD (Singapore Dollar)</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">SEA fintech mentors</div>
+</div>
+</div>
+<div class="text-right flex items-center gap-2">
+<div class="font-label-md text-label-md font-bold text-on-surface">₹62.1000</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary transition-colors" onclick="overrideRate('SGD', 62.10)" title="Emergency Override">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-low text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary flex-shrink-0">info</span>
+<span class="font-body-sm text-body-sm">
+            Rates auto-update daily from RBI/OpenExchange. You can click the edit icon for instant emergency override.
+          </span>
+</div>
+</div>
+<!-- Platform Safety Guardrails (Rules in Plain English) -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">gavel</span>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Platform Safety Guardrails</h2>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Guardrail 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">1. 10-Mentor Liquidity Gate</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Strict Rule</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              A new country or career market cannot be turned ON until at least 10 approved mentors are ready to accept bookings. This prevents empty search results for students.
+            </p>
+</div>
+<!-- Guardrail 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">2. Schema Check Protection</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed font-semibold">Automated</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Every change to market rules must pass automated schema validation. Broken or missing required fields are blocked automatically before touching the database.
+            </p>
+</div>
+<!-- Guardrail 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">3. Immutable Audit Trail</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-semibold">Security Level 1</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Every change made on this screen is stamped with your Admin ID (Ananya Roy) and IP address in the permanent system audit log.
+            </p>
+</div>
+</div>
+</div>
+<!-- Quick Action & Emergency Restore Panel -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface text-[22px]">history</span>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Backup &amp; Emergency Restore</h2>
+</div>
+<div class="flex flex-col gap-space-sm">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2" onclick="downloadBackupJson()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="">Download Full Backup (.json)</span>
+</button>
+<button class="w-full py-2.5 px-space-md rounded-lg bg-error-container text-on-error-container hover:bg-error-container/80 font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2" onclick="rollbackPreviousVersion()">
+<span class="material-symbols-outlined text-[18px]">restore</span>
+<span class="">Rollback to Previous Safe Version (v2.3)</span>
+</button>
+</div>
+<div class="pt-space-xs text-on-surface-variant flex items-center justify-between font-label-sm text-label-sm">
+<span class="">Active Session: <strong>Ananya Roy (VP Ops)</strong></span>
+<span class="text-tertiary font-medium">Synced 4 hours ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchTab(tabName) {
+    const tabs = ['markets', 'flags', 'currencies'];
+    tabs.forEach(t => {
+      const btn = document.getElementById('tab-' + t);
+      if (btn) {
+        if (t === tabName) {
+          btn.className = "px-space-md py-2 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold shadow-sm flex items-center gap-2 whitespace-nowrap";
+        } else {
+          btn.className = "px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors";
+        }
+      }
+    });
+  }
+
+  function toggleMarketView(mode) {
+    const formView = document.getElementById('market-form-view');
+    const jsonView = document.getElementById('market-json-view');
+    const btnForm = document.getElementById('btn-view-form');
+    const btnJson = document.getElementById('btn-view-json');
+
+    if (mode === 'form') {
+      formView.classList.remove('hidden');
+      jsonView.classList.add('hidden');
+      btnForm.className = "px-space-sm py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold shadow-sm flex items-center gap-1.5";
+      btnJson.className = "px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-colors";
+    } else {
+      formView.classList.add('hidden');
+      jsonView.classList.remove('hidden');
+      btnJson.className = "px-space-sm py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold shadow-sm flex items-center gap-1.5";
+      btnForm.className = "px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-colors";
+    }
+  }
+
+  function selectMarket(code) {
+    const cards = ['IN', 'US', 'SG'];
+    cards.forEach(c => {
+      const el = document.getElementById('market-card-' + c);
+      if (el) {
+        if (c === code) {
+          el.className = "p-space-md rounded-xl bg-surface-container-high text-left transition-all relative overflow-hidden";
+          if (!el.querySelector('.w-1\\.5')) {
+            const bar = document.createElement('div');
+            bar.className = 'w-1.5 absolute left-0 top-0 bottom-0 bg-primary';
+            el.prepend(bar);
+          }
+        } else {
+          el.className = "p-space-md rounded-xl bg-surface-container-low text-left hover:bg-surface-container transition-all";
+          const existingBar = el.querySelector('.w-1\\.5');
+          if (existingBar) existingBar.remove();
+        }
+      }
+    });
+  }
+
+  function simulateDryRun() {
+    const toast = document.getElementById('statusToast');
+    const title = document.getElementById('toastTitle');
+    const desc = document.getElementById('toastDesc');
+    
+    title.innerText = "Dry Run Passed: Safe to Deploy";
+    desc.innerText = "All configurations validated against strict schema. 0 warnings, 0 breaking changes.";
+    toast.classList.remove('hidden');
+
+    setTimeout(() => {
+      toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  function publishLiveConfig() {
+    const toast = document.getElementById('statusToast');
+    const title = document.getElementById('toastTitle');
+    const desc = document.getElementById('toastDesc');
+
+    title.innerText = "Live Configuration Deployed Successfully";
+    desc.innerText = "Global Cache updated. All active API nodes synced in 320ms. Stamped by Ananya Roy.";
+    toast.classList.remove('hidden');
+
+    setTimeout(() => {
+      toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  function toggleFlag(flagName, isChecked) {
+    const toast = document.getElementById('statusToast');
+    const title = document.getElementById('toastTitle');
+    const desc = document.getElementById('toastDesc');
+
+    title.innerText = `Feature Flag Updated: ${flagName}`;
+    desc.innerText = `Status changed to ${isChecked ? 'ENABLED (ON)' : 'DISABLED (OFF)'}. Cache refreshed instantly.`;
+    toast.classList.remove('hidden');
+  }
+
+  function refreshForexRates() {
+    const btn = document.getElementById('forexRefreshBtn');
+    btn.innerHTML = `<span class="material-symbols-outlined text-[14px] animate-spin">sync</span><span>Syncing...</span>`;
+    setTimeout(() => {
+      btn.innerHTML = `<span class="material-symbols-outlined text-[14px] text-tertiary">check</span><span>Rates Updated</span>`;
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[14px]">refresh</span><span>Sync Forex</span>`;
+      }, 2000);
+    }, 800);
+  }
+
+  function overrideRate(curr, currentRate) {
+    const newRate = prompt(`Enter custom exchange rate for ${curr} (Current: ₹${currentRate}):`, currentRate);
+    if (newRate && !isNaN(newRate)) {
+      alert(`Forex rate for ${curr} temporarily set to ₹${newRate}. This override is recorded in the compliance audit trail.`);
+    }
+  }
+
+  function copyJsonConfig() {
+    navigator.clipboard?.writeText(document.querySelector('pre code').innerText);
+    const toast = document.getElementById('statusToast');
+    const title = document.getElementById('toastTitle');
+    const desc = document.getElementById('toastDesc');
+    title.innerText = "Copied to Clipboard";
+    desc.innerText = "The career market JSON configuration has been copied as formatted text.";
+    toast.classList.remove('hidden');
+  }
+
+  function validateJsonSchema() {
+    simulateDryRun();
+  }
+
+  function downloadBackupJson() {
+    alert("Downloading DreamX_Platform_Settings_v2.4_Backup.json. Verification signature included.");
+  }
+
+  function rollbackPreviousVersion() {
+    if (confirm("Are you sure you want to rollback to v2.3 (created 2 days ago)? This will restore all prior market and currency parameters.")) {
+      const toast = document.getElementById('statusToast');
+      const title = document.getElementById('toastTitle');
+      const desc = document.getElementById('toastDesc');
+      title.innerText = "Configuration Rolled Back to v2.3";
+      desc.innerText = "System successfully reverted to checkpoint #CFG-8819. Audit snapshot recorded.";
+      toast.classList.remove('hidden');
+    }
+  }
+</script></main></div>
+
+</body></html>

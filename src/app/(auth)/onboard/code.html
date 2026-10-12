@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"background":"#faf8ff","on-tertiary":"#ffffff","outline":"#767586","secondary-fixed-dim":"#d0bcff","surface":"#faf8ff","surface-tint":"#494bd6","tertiary-fixed":"#d5e3fc","error":"#ba1a1a","on-error":"#ffffff","primary-fixed":"#e1e0ff","on-primary":"#ffffff","surface-container":"#eaedff","surface-bright":"#faf8ff","on-surface-variant":"#464554","secondary":"#6b38d4","surface-container-lowest":"#ffffff","on-primary-container":"#fffbff","inverse-surface":"#283044","secondary-fixed":"#e9ddff","tertiary":"#4f5d71","on-secondary-fixed":"#23005c","surface-container-highest":"#dae2fd","primary":"#4648d4","surface-variant":"#dae2fd","on-primary-fixed":"#07006c","on-surface":"#131b2e","tertiary-fixed-dim":"#b9c7df","inverse-on-surface":"#eef0ff","on-secondary-fixed-variant":"#5516be","on-tertiary-fixed":"#0d1c2e","on-secondary-container":"#fffbff","on-error-container":"#93000a","secondary-container":"#8455ef","primary-fixed-dim":"#c0c1ff","outline-variant":"#c7c4d7","on-tertiary-fixed-variant":"#3a485b","surface-container-low":"#f2f3ff","on-tertiary-container":"#fdfcff","primary-container":"#6063ee","on-background":"#131b2e","on-secondary":"#ffffff","surface-dim":"#d2d9f4","inverse-primary":"#c0c1ff","error-container":"#ffdad6","surface-container-high":"#e2e7ff","tertiary-container":"#67758b","on-primary-fixed-variant":"#2f2ebe"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","space-xs":"0.25rem","space-xl":"2rem","space-sm":"0.5rem","space-md":"1rem","margin":"2rem","gutter":"1.5rem"},"fontFamily":{"headline-lg":["Inter"],"body-sm":["Inter"],"headline-md":["Inter"],"headline-sm":["Inter"],"label-sm":["Inter"],"display-hero-mobile":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"metric-num":["Inter"],"headline-lg-mobile":["Inter"],"title-md":["Inter"],"display-hero":["Inter"]},"fontSize":{"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0.005em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"display-hero-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"0em","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"metric-num":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.025em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">verified</span></div><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface leading-none tracking-tight">DreamX</span><span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest mt-0.5">Career Marketplace</span></div></div><div class="h-5 w-px bg-surface-container-high hidden md:block"></div><div class="hidden md:flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low"><span class="material-symbols-outlined text-primary text-[14px]">lock</span><span class="font-label-sm text-label-sm text-tertiary">256-Bit Encrypted</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low"><span class="material-symbols-outlined text-primary text-[14px]">shield</span><span class="font-label-sm text-label-sm text-tertiary">Zero-Trust RLS</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low"><span class="material-symbols-outlined text-primary text-[14px]">verified_user</span><span class="font-label-sm text-label-sm text-tertiary">ISO/IEC 27001</span></div></div></div><nav class="hidden lg:flex items-center gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a aria-current="page" class="px-3 py-1.5 transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="career-profile-setup" href="#">Profile</a><a class="px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="skill-verification-pathway" href="#">Verification</a><a class="px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="market-preferences-and-goals" href="#">Goals</a></nav><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs text-tertiary font-label-sm text-label-sm"><span class="material-symbols-outlined text-secondary text-[16px]">bolt</span><span>Session Secured</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="max-w-7xl mx-auto px-margin py-space-xl min-h-[calc(100vh-8rem)] flex flex-col justify-center items-center"><div class="flex flex-col w-full">
+<!-- Interactive Evaluator & Role Selection Rig -->
+<div class="w-full bg-surface-container-lowest shadow-sm rounded-xl p-space-md mb-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm w-full md:w-auto">
+<div class="p-2 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">science</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface leading-tight">Architecture Quick Rig</div>
+<div class="font-label-sm text-label-sm text-tertiary">Architecture Sec 13.1 • Instant Persona Hydration</div>
+</div>
+</div>
+<!-- Quick Pre-fill Persona Trigger Pills -->
+<div class="flex flex-wrap items-center gap-space-sm w-full md:w-auto">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-primary font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-sm" id="btn-prefill-student" type="button">
+<span class="material-symbols-outlined text-[16px]">school</span>
+<span>Pre-fill Student (Ananya • IITD → Google AI)</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-secondary font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-sm" id="btn-prefill-mentor" type="button">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+<span>Pre-fill Mentor (Vikram • Staff SDE Google)</span>
+</button>
+<div class="hidden xl:flex items-center gap-1 pl-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Ready</span>
+</div>
+</div>
+</div>
+<!-- Role Context Toggle Banner -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md mb-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-primary text-[28px]">hub</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface leading-tight" id="onboarding-role-heading">Student &amp; Job Seeker Pathway</h2>
+<p class="font-body-sm text-body-sm text-tertiary" id="onboarding-role-subheading">Initialize career readiness score, calibrate geographic ambitions, and unlock AI match engine.</p>
+</div>
+</div>
+<!-- Segmented Pathway Selector -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl shadow-inner w-full sm:w-auto">
+<button class="flex-1 sm:flex-initial px-4 py-2 rounded-lg bg-surface-container-lowest font-label-md text-label-md text-primary font-semibold shadow-sm transition-all flex items-center justify-center gap-1.5" id="role-tab-student" type="button">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span>Student / Job Seeker</span>
+</button>
+<button class="flex-1 sm:flex-initial px-4 py-2 rounded-lg text-tertiary hover:text-on-surface font-label-md text-label-md transition-all flex items-center justify-center gap-1.5" id="role-tab-mentor" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Industry Mentor</span>
+</button>
+</div>
+</div>
+<!-- Multi-Step Breadcrumb Progress Bar -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-lg mb-space-xl">
+<div class="grid grid-cols-4 gap-space-sm relative">
+<!-- Step 1 -->
+<div class="step-indicator flex flex-col items-center text-center cursor-pointer group" data-step-target="1">
+<div class="step-circle w-10 h-10 rounded-full bg-primary text-on-primary font-title-md text-title-md flex items-center justify-center shadow-md mb-2 transition-transform duration-200 group-hover:scale-105">
+<span class="step-num">1</span>
+</div>
+<span class="font-title-md text-label-md text-on-surface font-semibold">Identity &amp; Market</span>
+<span class="font-label-sm text-label-sm text-tertiary hidden md:inline">Target Ecosystem</span>
+</div>
+<!-- Step 2 -->
+<div class="step-indicator flex flex-col items-center text-center cursor-pointer group opacity-60" data-step-target="2">
+<div class="step-circle w-10 h-10 rounded-full bg-surface-container-high text-tertiary font-title-md text-title-md flex items-center justify-center mb-2 transition-transform duration-200 group-hover:scale-105">
+<span class="step-num">2</span>
+</div>
+<span class="font-title-md text-label-md text-tertiary font-medium">Ambition &amp; Goals</span>
+<span class="font-label-sm text-label-sm text-tertiary hidden md:inline">Target CTC &amp; Horizon</span>
+</div>
+<!-- Step 3 -->
+<div class="step-indicator flex flex-col items-center text-center cursor-pointer group opacity-60" data-step-target="3">
+<div class="step-circle w-10 h-10 rounded-full bg-surface-container-high text-tertiary font-title-md text-title-md flex items-center justify-center mb-2 transition-transform duration-200 group-hover:scale-105">
+<span class="step-num">3</span>
+</div>
+<span class="font-title-md text-label-md text-tertiary font-medium">Credentials &amp; Stack</span>
+<span class="font-label-sm text-label-sm text-tertiary hidden md:inline">University &amp; Proof</span>
+</div>
+<!-- Step 4 -->
+<div class="step-indicator flex flex-col items-center text-center cursor-pointer group opacity-60" data-step-target="4">
+<div class="step-circle w-10 h-10 rounded-full bg-surface-container-high text-tertiary font-title-md text-title-md flex items-center justify-center mb-2 transition-transform duration-200 group-hover:scale-105">
+<span class="step-num">4</span>
+</div>
+<span class="font-title-md text-label-md text-tertiary font-medium">AI Baseline Scoring</span>
+<span class="font-label-sm text-label-sm text-tertiary hidden md:inline">Resume Vault</span>
+</div>
+</div>
+<!-- Active Step Progress Bar Track -->
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-space-md overflow-hidden">
+<div class="bg-primary h-full w-1/4 rounded-full transition-all duration-300 ease-out" id="step-progress-fill"></div>
+</div>
+</div>
+<!-- Wizard Content Container with Split Preview Dashboard -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start w-full">
+<!-- Main Interactive Form Region (Columns 1-8) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<form class="flex flex-col gap-space-lg" id="onboarding-wizard-form" onsubmit="return false;">
+<!-- ==================== STEP 1: IDENTITY & TARGET CAREER MARKET ==================== -->
+<div class="wizard-pane flex flex-col gap-space-lg" id="step-pane-1">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">public</span>
+<span>Decouple Ambition from Physical Location</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Target Career Market (CM)</h3>
+<p class="font-body-md text-body-md text-tertiary mt-1">DreamX models regional hiring expectations, compensation bands, and ATS rubrics independently from where you reside.</p>
+</div>
+<!-- Identity Origin Inputs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium flex items-center justify-between">
+<span>Home Jurisdiction (Residency)</span>
+<span class="text-tertiary font-label-sm text-label-sm">ISO-3166-1</span>
+</label>
+<div class="relative">
+<select class="w-full h-10 px-3 bg-surface-container-lowest text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer font-body-md text-body-md" id="input-home-country">
+<option selected="" value="IN">India (IN) - High Density Hub</option>
+<option value="US">United States (US)</option>
+<option value="GB">United Kingdom (GB)</option>
+<option value="SG">Singapore (SG)</option>
+<option value="DE">Germany (DE)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-tertiary pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium flex items-center justify-between">
+<span>Operational Timezone</span>
+<span class="text-tertiary font-label-sm text-label-sm">IANA Format</span>
+</label>
+<div class="relative">
+<select class="w-full h-10 px-3 bg-surface-container-lowest text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer font-body-md text-body-md" id="input-timezone">
+<option selected="" value="Asia/Kolkata">Asia/Kolkata (IST • UTC+05:30)</option>
+<option value="America/Los_Angeles">America/Los_Angeles (PST • UTC-08:00)</option>
+<option value="America/New_York">America/New_York (EST • UTC-05:00)</option>
+<option value="Europe/London">Europe/London (GMT • UTC+00:00)</option>
+<option value="Asia/Singapore">Asia/Singapore (SGT • UTC+08:00)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-tertiary pointer-events-none text-[20px]">schedule</span>
+</div>
+</div>
+</div>
+<!-- Target Career Market Cards Selector -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between">
+<span>Select Primary Target Market Engine</span>
+<span class="text-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> Adaptive Evaluation Rule
+                </span>
+</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md" id="market-card-group">
+<!-- Market CM-IN -->
+<div class="market-card p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer relative shadow-sm" data-market-code="CM-IN">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center font-title-md text-title-md font-bold">
+                        IN
+                      </div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">CM-IN Tech Hub</div>
+<div class="font-label-sm text-label-sm text-tertiary">Bengaluru / Gurugram / Hyderabad</div>
+</div>
+</div>
+<span class="market-badge px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm">Active</span>
+</div>
+<div class="mt-space-md flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">1-2 Page Format</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">DSA Heavy</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">INR Tier-1 Rubric</span>
+</div>
+</div>
+<!-- Market CM-US -->
+<div class="market-card p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all cursor-pointer relative shadow-sm" data-market-code="CM-US">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest text-tertiary flex items-center justify-center font-title-md text-title-md font-bold">
+                        US
+                      </div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">CM-US Silicon Valley</div>
+<div class="font-label-sm text-label-sm text-tertiary">SF / Seattle / NYC Remote</div>
+</div>
+</div>
+<span class="market-badge hidden px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm">Active</span>
+</div>
+<div class="mt-space-md flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">1-Page Strict</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">STAR Impact</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">USD Comp Curve</span>
+</div>
+</div>
+<!-- Market CM-UK -->
+<div class="market-card p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all cursor-pointer relative shadow-sm" data-market-code="CM-UK">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest text-tertiary flex items-center justify-center font-title-md text-title-md font-bold">
+                        UK
+                      </div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">CM-UK London Tech</div>
+<div class="font-label-sm text-label-sm text-tertiary">FinTech &amp; Frontier AI</div>
+</div>
+</div>
+<span class="market-badge hidden px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm">Active</span>
+</div>
+<div class="mt-space-md flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Competency Focus</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">GBP Rubric</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Visa Calibration</span>
+</div>
+</div>
+<!-- Market CM-SG -->
+<div class="market-card p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all cursor-pointer relative shadow-sm" data-market-code="CM-SG">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest text-tertiary flex items-center justify-center font-title-md text-title-md font-bold">
+                        SG
+                      </div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">CM-SG Southeast Asia</div>
+<div class="font-label-sm text-label-sm text-tertiary">Singapore / Regional Hub</div>
+</div>
+</div>
+<span class="market-badge hidden px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm">Active</span>
+</div>
+<div class="mt-space-md flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Compact Dual Track</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Cross-border APAC</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">SGD Benchmarks</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== STEP 2: AMBITION & GOALS ==================== -->
+<div class="wizard-pane hidden flex-col gap-space-lg" id="step-pane-2">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+<span>PRD Part 18 • Goal Orientation</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Career Ambition &amp; Trajectory</h3>
+<p class="font-body-md text-body-md text-tertiary mt-1">Specify target roles, timeline deadlines, and salary thresholds to guide mentorship recommendations.</p>
+</div>
+<!-- Primary Goal Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Primary Outcome Ambition</label>
+<div class="relative">
+<select class="w-full h-10 px-3 bg-surface-container-lowest text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer font-body-md text-body-md" id="input-primary-goal">
+<option selected="" value="tier1_product">Crack Tier-1 Product / AI Engineering Role (FAANG, Unicorn)</option>
+<option value="quant_hft">Quantitative Engineering / High Frequency Trading</option>
+<option value="founder_cto">Founding Engineer / Early Stage AI Startup CTO</option>
+<option value="cross_market_relocation">International Tech Mobility &amp; Cross-Border H-1B/O-1</option>
+<option value="career_pivot">Pivot from IT Services / Non-CS to Core Product Tier-1</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-tertiary pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Target Role & Specific Niche -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Target Role Designation</label>
+<input class="w-full h-10 px-3 bg-surface-container-lowest text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="input-target-role" placeholder="e.g. Distributed Systems Engineer" type="text" value="AI &amp; Distributed Systems Engineer"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Target Horizon / Timeline</label>
+<div class="relative">
+<select class="w-full h-10 px-3 bg-surface-container-lowest text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer font-body-md text-body-md" id="input-timeline">
+<option value="3_months">3 Months (Immediate Sprint • Fast-Track)</option>
+<option selected="" value="6_months">6 Months (Balanced Calibration • Recommended)</option>
+<option value="12_months">12 Months (Comprehensive Foundation • Campus Prep)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-tertiary pointer-events-none text-[20px]">timer</span>
+</div>
+</div>
+</div>
+<!-- Target Compensation Dual-Currency Input -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-medium flex items-center justify-between">
+<span>Target CTC / Annual Compensation</span>
+<span class="text-tertiary font-label-sm text-label-sm">Dynamic Market Standard</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="relative flex items-center">
+<span class="absolute left-3 text-tertiary font-title-md text-title-md">₹</span>
+<input class="w-full h-10 pl-8 pr-3 bg-surface-container-lowest text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="input-ctc-inr" placeholder="INR CTC" type="text" value="28,00,000"/>
+<span class="absolute right-3 text-tertiary font-label-sm text-label-sm">INR / Year</span>
+</div>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-tertiary font-title-md text-title-md">$</span>
+<input class="w-full h-10 pl-8 pr-3 bg-surface-container-lowest text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="input-ctc-usd" placeholder="Equivalent USD" type="text" value="145,000"/>
+<span class="absolute right-3 text-tertiary font-label-sm text-label-sm">USD Base</span>
+</div>
+</div>
+</div>
+<!-- Target Companies Multi-select Chips -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-medium">Aspirational Target Companies</label>
+<div class="flex flex-wrap gap-2 pt-1" id="company-chips-container">
+<span class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1 cursor-pointer">
+                  Google DeepMind <span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1 cursor-pointer">
+                  Microsoft Azure <span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1 cursor-pointer">
+                  Uber Platform <span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-low text-tertiary font-label-sm text-label-sm flex items-center gap-1 cursor-pointer hover:bg-surface-container">
+                  Anthropic <span class="material-symbols-outlined text-[14px]">add</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-low text-tertiary font-label-sm text-label-sm flex items-center gap-1 cursor-pointer hover:bg-surface-container">
+                  Stripe <span class="material-symbols-outlined text-[14px]">add</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== STEP 3: CREDENTIALS & TECH STACK ==================== -->
+<div class="wizard-pane hidden flex-col gap-space-lg" id="step-pane-3">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">school</span>
+<span>Database.md • Profiles &amp; Verifications</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Academic &amp; Core Skill Proofs</h3>
+<p class="font-body-md text-body-md text-tertiary mt-1">Ground your profile in verifiable institutional credentials and current technical capabilities.</p>
+</div>
+<!-- University & Program -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="md:col-span-2 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Institution / University</label>
+<div class="relative">
+<input class="w-full h-10 px-3 bg-surface-container-lowest text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="input-university" placeholder="e.g. Stanford / IIT / BITS" type="text" value="Indian Institute of Technology, Delhi (IIT Delhi)"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-primary text-[20px]">verified</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Graduation Year</label>
+<div class="relative">
+<select class="w-full h-10 px-3 bg-surface-container-lowest text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer font-body-md text-body-md" id="input-grad-year">
+<option selected="" value="2026">2026 (Pre-final Year)</option>
+<option value="2025">2025 (Final Year)</option>
+<option value="2024">2024 (Recent Alum)</option>
+<option value="2023">2023</option>
+<option value="experienced">2022 or Earlier (&gt;2 yrs exp)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-tertiary pointer-events-none text-[20px]">calendar_today</span>
+</div>
+</div>
+</div>
+<!-- Degree & Major -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Degree &amp; Specialization</label>
+<input class="w-full h-10 px-3 bg-surface-container-lowest text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="input-degree" type="text" value="B.Tech • Computer Science and Engineering"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Cumulative GPA / Score</label>
+<input class="w-full h-10 px-3 bg-surface-container-lowest text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="input-gpa" type="text" value="9.12 / 10.0 (Top 5% Cohort)"/>
+</div>
+</div>
+<!-- Technical Skills Interactive Chip Cloud -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-medium">Verified &amp; Claimed Technical Skills</label>
+<span class="font-label-sm text-label-sm text-tertiary">Click to toggle or type to add</span>
+</div>
+<div class="flex flex-wrap gap-2" id="skill-badges-container">
+<span class="skill-pill px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-medium cursor-pointer shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span>Python / PyTorch</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary hover:text-error">close</span>
+</span>
+<span class="skill-pill px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-medium cursor-pointer shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">dns</span>
+<span>Distributed Systems (Raft / Paxos)</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary hover:text-error">close</span>
+</span>
+<span class="skill-pill px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-medium cursor-pointer shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">account_tree</span>
+<span>System Design &amp; Scalability</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary hover:text-error">close</span>
+</span>
+<span class="skill-pill px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-medium cursor-pointer shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">memory</span>
+<span>C++ 20 / Concurrency</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary hover:text-error">close</span>
+</span>
+<span class="skill-pill px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-medium cursor-pointer shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>Kubernetes &amp; Envoy</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary hover:text-error">close</span>
+</span>
+</div>
+<div class="flex gap-2 mt-2">
+<input class="flex-1 h-9 px-3 bg-surface-container-low text-on-surface rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary font-body-sm text-body-sm" id="input-new-skill" placeholder="Add custom competency (e.g. CUDA, Triton, GraphQL)..." type="text"/>
+<button class="px-4 h-9 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-medium transition-colors flex items-center gap-1" id="btn-add-skill" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Add
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== STEP 4: RESUME VAULT & BASELINE SCORING ==================== -->
+<div class="wizard-pane hidden flex-col gap-space-lg" id="step-pane-4">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">auto_graph</span>
+<span>Architecture Sec 13.2 • Deterministic Baseline</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Resume Upload &amp; AI Engine Calibration</h3>
+<p class="font-body-md text-body-md text-tertiary mt-1">Upload your current resume to trigger our 8-dimension rubric and establish your initial Career Readiness Score.</p>
+</div>
+<!-- Resume Drag & Drop Zone -->
+<div class="p-space-xl rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex flex-col items-center justify-center text-center gap-space-sm relative" id="resume-dropzone">
+<div class="w-14 h-14 rounded-full bg-surface-container-highest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[32px]">upload_file</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface font-semibold">Drop your resume here or browse files</div>
+<div class="font-body-sm text-body-sm text-tertiary mt-0.5">Supports PDF or DOCX up to 5MB. Strictly encrypted via AES-256.</div>
+</div>
+<div class="flex items-center gap-space-md mt-2">
+<span class="px-2.5 py-1 rounded bg-surface-container text-tertiary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span> Zero LLM Retention
+                </span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-tertiary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Multi-Format Parse
+                </span>
+</div>
+<input accept=".pdf,.docx" class="hidden" id="resume-file-input" type="file"/>
+</div>
+<!-- Active Uploaded File Card Preview -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between" id="file-preview-card">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">description</span>
+</div>
+<div>
+<div class="font-title-md text-label-md text-on-surface font-semibold" id="preview-filename">ananya_sharma_resume_v2.pdf</div>
+<div class="font-label-sm text-label-sm text-tertiary">384 KB • Uploaded • Parsed 14 Projects &amp; 38 Competencies</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">task_alt</span> Verified ATS
+                </span>
+<button class="p-1 rounded text-tertiary hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Trigger AI Evaluation Action Banner -->
+<div class="p-space-lg rounded-xl bg-surface-container flex flex-col md:flex-row items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px] mt-0.5">bolt</span>
+<div>
+<div class="font-title-md text-title-md text-on-surface">Ready to compute your AI Career Readiness Score?</div>
+<div class="font-body-sm text-body-sm text-tertiary">Runs semantic embedding comparison against 1,200+ verified hiring rubrics.</div>
+</div>
+</div>
+<button class="px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all shadow-md flex items-center gap-2 whitespace-nowrap" id="btn-run-evaluation" type="button">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+<span>Run Baseline Evaluation</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Wizard Navigation & Progression Controls -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<button class="px-4 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 opacity-50 cursor-not-allowed" id="btn-wizard-back" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back</span>
+</button>
+<div class="flex items-center gap-space-md">
+<a class="font-label-md text-label-md text-tertiary hover:text-on-surface transition-colors hidden sm:inline" data-path="dashboard" href="#">
+              Skip for now
+            </a>
+<button class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all shadow-md flex items-center gap-2" id="btn-wizard-next" type="button">
+<span id="btn-next-text">Save &amp; Continue</span>
+<span class="material-symbols-outlined text-[18px]" id="btn-next-icon">arrow_forward</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+<!-- Right Rail: Real-time Dynamic AI Readiness Score & Rubric Analysis (Columns 9-12) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg sticky top-20">
+<!-- Real-time Career Readiness Score Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<span class="font-title-md text-title-md text-on-surface">Career Readiness Score</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">Tier 1 Target</span>
+</div>
+<!-- Score Dial / Visual Metric Representation -->
+<div class="flex items-center justify-center py-space-sm">
+<div class="relative flex items-center justify-center">
+<!-- Inline SVG Gauge (Under 2KB, dynamic color) -->
+<svg class="w-36 h-36 transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container fill-none" cx="50" cy="50" r="42" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary fill-none transition-all duration-700 ease-out" cx="50" cy="50" id="score-circle-svg" r="42" stroke="currentColor" stroke-dasharray="263.89" stroke-dashoffset="84" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-metric-num text-metric-num text-on-surface leading-none" id="score-counter-display">680</span>
+<span class="font-label-sm text-label-sm text-tertiary mt-1">out of 1000</span>
+</div>
+</div>
+</div>
+<!-- Metric Dimensions Breakdown (Database.md career_scores) -->
+<div class="flex flex-col gap-space-sm pt-2">
+<!-- Dimension 1: ATS Resume Quality -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">ATS &amp; Action-Impact Metric</span>
+<span class="text-primary font-semibold" id="dim-resume">82%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[82%] rounded-full"></div>
+</div>
+</div>
+<!-- Dimension 2: Technical Depth Index -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">Technical Depth (Systems/AI)</span>
+<span class="text-primary font-semibold" id="dim-tech">74%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[74%] rounded-full"></div>
+</div>
+</div>
+<!-- Dimension 3: Market Calibration (CM-IN / CM-US) -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">Target Market Calibration</span>
+<span class="text-primary font-semibold" id="dim-market">68%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[68%] rounded-full"></div>
+</div>
+</div>
+<!-- Dimension 4: Interview & Behavioral Readiness -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">Interview &amp; Mock Readiness</span>
+<span class="text-tertiary font-semibold" id="dim-interview">48%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full w-[48%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- AI Real-Time Feedback Callout -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-start gap-2 text-on-surface-variant font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">tips_and_updates</span>
+<p id="dynamic-score-insight">Strong foundation in Distributed Systems. Calibrating with 2 mock interviews will push score over 750 (Tier-1 Placement Guaranteed).</p>
+</div>
+</div>
+<!-- Verified Mentor Matchmaking Teaser Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="font-title-md text-title-md text-on-surface">Top Matched Mentor</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold">98% Fit</span>
+</div>
+<div class="flex items-center gap-space-sm pt-2">
+<!-- Mentor Profile Avatar using strict Asset Pipeline -->
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Professional studio portrait of an experienced South Asian tech leader, wearing an open-collar dark navy button-up shirt in front of a soft minimal architectural background, confident warm expression, cinematic natural lighting, indigo undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoFNL_8LgcjM-kra_F7EM8aXFHUaYtUOOyX8Eeq7UnxoWMUKaDMqg2HWCGdtLPgFjSpAMfw2HtvHNGwHhGn3x3moZAJQ2z3qcAkROVOyWmfhAs0mogaQ3aHTt1kTns-6b37Dawa3WL-ZaMOl99mzTSfJB_QOxjCXISbVuyrVOfEyN1JUPrfFGv8OQspkue8uMUzzwu4FCWMM6TVWxgmTRpXgOVz_ZjfnKg7TyY_dttF-NpfK2BopVT"/>
+</div>
+<div class="min-w-0 flex-1">
+<div class="font-title-md text-label-md text-on-surface font-semibold truncate">Vikramaditya S.</div>
+<div class="font-label-sm text-label-sm text-tertiary truncate">Staff SDE • Google Core Systems</div>
+<div class="font-label-sm text-label-sm text-primary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">stars</span> 4.98 • 62 Mentees Placed
+            </div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary pt-1">
+          “Specialized in guiding IIT/NIT students through Distributed Systems &amp; Google L4 hiring loops.”
+        </p>
+<button class="w-full py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors mt-2 flex items-center justify-center gap-1" type="button">
+<span>View Mentor Service Rubric</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<!-- Trust, Security & Compliance Strip -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs text-tertiary font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">enhanced_encryption</span>
+<span>AES-256 Vault Architecture • RLS Guarded</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">privacy_tip</span>
+<span>Zero LLM Data Retention • Private Enclave</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">verified_user</span>
+<span>Automated SOC-2 Compliance Pipeline</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Micro-interaction & State Machine Script -->
+<script>
+    (function initOnboardingWizard() {
+      let currentStep = 1;
+      const totalSteps = 4;
+
+      // DOM Selectors
+      const panes = {
+        1: document.getElementById('step-pane-1'),
+        2: document.getElementById('step-pane-2'),
+        3: document.getElementById('step-pane-3'),
+        4: document.getElementById('step-pane-4'),
+      };
+      const indicators = document.querySelectorAll('.step-indicator');
+      const progressFill = document.getElementById('step-progress-fill');
+      const btnBack = document.getElementById('btn-wizard-back');
+      const btnNext = document.getElementById('btn-wizard-next');
+      const btnNextText = document.getElementById('btn-next-text');
+      const btnNextIcon = document.getElementById('btn-next-icon');
+
+      // State Transition Function
+      function setStep(step) {
+        if (step < 1 || step > totalSteps) return;
+        currentStep = step;
+
+        // Toggle Panes
+        Object.keys(panes).forEach((key) => {
+          if (parseInt(key) === currentStep) {
+            panes[key].classList.remove('hidden');
+          } else {
+            panes[key].classList.add('hidden');
+          }
+        });
+
+        // Update Step Indicators
+        indicators.forEach((ind) => {
+          const target = parseInt(ind.getAttribute('data-step-target'));
+          const circle = ind.querySelector('.step-circle');
+          const title = ind.querySelector('.step-num');
+
+          if (target === currentStep) {
+            ind.classList.remove('opacity-60');
+            circle.className = 'step-circle w-10 h-10 rounded-full bg-primary text-on-primary font-title-md text-title-md flex items-center justify-center shadow-md mb-2 transition-transform duration-200 group-hover:scale-105';
+            circle.innerHTML = '<span class="step-num">' + target + '</span>';
+          } else if (target < currentStep) {
+            ind.classList.remove('opacity-60');
+            circle.className = 'step-circle w-10 h-10 rounded-full bg-surface-container text-primary font-title-md text-title-md flex items-center justify-center mb-2';
+            circle.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span>';
+          } else {
+            ind.classList.add('opacity-60');
+            circle.className = 'step-circle w-10 h-10 rounded-full bg-surface-container-high text-tertiary font-title-md text-title-md flex items-center justify-center mb-2';
+            circle.innerHTML = '<span class="step-num">' + target + '</span>';
+          }
+        });
+
+        // Update progress bar
+        progressFill.style.width = ((currentStep / totalSteps) * 100) + '%';
+
+        // Update navigation buttons
+        if (currentStep === 1) {
+          btnBack.classList.add('opacity-50', 'cursor-not-allowed');
+        } else {
+          btnBack.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+
+        if (currentStep === totalSteps) {
+          btnNextText.innerText = 'Complete & Launch Workspace';
+          btnNextIcon.innerText = 'rocket_launch';
+        } else {
+          btnNextText.innerText = 'Save & Continue';
+          btnNextIcon.innerText = 'arrow_forward';
+        }
+      }
+
+      // Indicator Click Handlers
+      indicators.forEach((ind) => {
+        ind.addEventListener('click', () => {
+          const target = parseInt(ind.getAttribute('data-step-target'));
+          setStep(target);
+        });
+      });
+
+      // Navigation Buttons
+      btnBack.addEventListener('click', () => {
+        if (currentStep > 1) setStep(currentStep - 1);
+      });
+
+      btnNext.addEventListener('click', () => {
+        if (currentStep < totalSteps) {
+          setStep(currentStep + 1);
+        } else {
+          // Final Submit Trigger
+          btnNext.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span><span>Finalizing Profile...</span>';
+          setTimeout(() => {
+            btnNext.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Workspace Ready!</span>';
+            btnNext.classList.remove('bg-primary');
+            btnNext.classList.add('bg-secondary');
+          }, 1000);
+        }
+      });
+
+      // Target Market Card Selection
+      const marketCards = document.querySelectorAll('.market-card');
+      marketCards.forEach((card) => {
+        card.addEventListener('click', () => {
+          marketCards.forEach((c) => {
+            c.classList.remove('bg-surface-container-low', 'shadow-md');
+            c.classList.add('bg-surface-container-lowest');
+            const badge = c.querySelector('.market-badge');
+            if (badge) badge.classList.add('hidden');
+          });
+          card.classList.remove('bg-surface-container-lowest');
+          card.classList.add('bg-surface-container-low', 'shadow-md');
+          const badge = card.querySelector('.market-badge');
+          if (badge) badge.classList.remove('hidden');
+
+          // Trigger slight readiness recalculation based on market
+          const code = card.getAttribute('data-market-code');
+          if (code === 'CM-US') {
+            updateReadiness(710, 85, 80, 72, 54, 'CM-US Silicon Valley requires strict 1-page STAR format. Resume score boosted.');
+          } else if (code === 'CM-IN') {
+            updateReadiness(680, 82, 74, 68, 48, 'Targeting CM-IN Tier-1: Emphasis on Data Structures, Distributed Systems & Low-Latency.');
+          } else if (code === 'CM-UK') {
+            updateReadiness(660, 78, 70, 65, 50, 'Targeting CM-UK London: High demand for FinTech concurrency and systems architecture.');
+          } else if (code === 'CM-SG') {
+            updateReadiness(670, 80, 72, 66, 52, 'Targeting CM-SG APAC: Evaluated against regional cross-border infrastructure benchmarks.');
+          }
+        });
+      });
+
+      // Quick Pre-Fill Bar Triggers
+      const btnStudent = document.getElementById('btn-prefill-student');
+      const btnMentor = document.getElementById('btn-prefill-mentor');
+
+      btnStudent.addEventListener('click', () => {
+        document.getElementById('input-home-country').value = 'IN';
+        document.getElementById('input-timezone').value = 'Asia/Kolkata';
+        document.getElementById('input-target-role').value = 'AI / Distributed Systems Engineer';
+        document.getElementById('input-ctc-inr').value = '32,00,000';
+        document.getElementById('input-ctc-usd').value = '150,000';
+        document.getElementById('input-university').value = 'Indian Institute of Technology, Delhi (IIT Delhi)';
+        document.getElementById('input-grad-year').value = '2026';
+        document.getElementById('input-degree').value = 'B.Tech &bull; Computer Science and Engineering';
+        updateReadiness(740, 88, 86, 75, 58, 'Ananya hydrated! High institutional alignment & strong algorithmic stack.');
+      });
+
+      btnMentor.addEventListener('click', () => {
+        document.getElementById('input-home-country').value = 'IN';
+        document.getElementById('input-timezone').value = 'Asia/Kolkata';
+        document.getElementById('input-target-role').value = 'Staff Software Engineer &amp; Tech Lead';
+        document.getElementById('input-ctc-inr').value = '95,00,000';
+        document.getElementById('input-ctc-usd').value = '380,000';
+        document.getElementById('input-university').value = 'IIT Bombay &bull; Ex-Google Staff';
+        document.getElementById('input-grad-year').value = 'experienced';
+        document.getElementById('input-degree').value = 'Dual Degree M.Tech / B.Tech Computer Science';
+        updateReadiness(940, 96, 98, 92, 90, 'Vikram hydrated! Top 1% Industry Mentor profile initialized with L6/Staff verification.');
+      });
+
+      // Dynamic Score Updater Helper
+      function updateReadiness(total, resume, tech, market, interview, insight) {
+        document.getElementById('score-counter-display').innerText = total;
+        document.getElementById('dim-resume').innerText = resume + '%';
+        document.getElementById('dim-tech').innerText = tech + '%';
+        document.getElementById('dim-market').innerText = market + '%';
+        document.getElementById('dim-interview').innerText = interview + '%';
+        if (insight) {
+          document.getElementById('dynamic-score-insight').innerText = insight;
+        }
+
+        // SVG Circle Arc offset (circumference ~ 263.89)
+        const circle = document.getElementById('score-circle-svg');
+        const offset = 263.89 - (263.89 * (total / 1000));
+        circle.style.strokeDashoffset = offset;
+      }
+
+      // Add Skill Interaction
+      const btnAddSkill = document.getElementById('btn-add-skill');
+      const inputSkill = document.getElementById('input-new-skill');
+      const skillContainer = document.getElementById('skill-badges-container');
+
+      btnAddSkill.addEventListener('click', () => {
+        const val = inputSkill.value.trim();
+        if (val) {
+          const pill = document.createElement('span');
+          pill.className = 'skill-pill px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-medium cursor-pointer shadow-sm flex items-center gap-1.5';
+          pill.innerHTML = '<span class="material-symbols-outlined text-[16px]">verified</span><span>' + val + '</span><span class="material-symbols-outlined text-[14px] text-tertiary hover:text-error">close</span>';
+          pill.querySelector('.text-tertiary').addEventListener('click', () => pill.remove());
+          skillContainer.appendChild(pill);
+          inputSkill.value = '';
+        }
+      });
+
+      // Role Tabs Toggle
+      const tabStudent = document.getElementById('role-tab-student');
+      const tabMentor = document.getElementById('role-tab-mentor');
+      const roleHeading = document.getElementById('onboarding-role-heading');
+      const roleSubheading = document.getElementById('onboarding-role-subheading');
+
+      tabStudent.addEventListener('click', () => {
+        tabStudent.className = 'flex-1 sm:flex-initial px-4 py-2 rounded-lg bg-surface-container-lowest font-label-md text-label-md text-primary font-semibold shadow-sm transition-all flex items-center justify-center gap-1.5';
+        tabMentor.className = 'flex-1 sm:flex-initial px-4 py-2 rounded-lg text-tertiary hover:text-on-surface font-label-md text-label-md transition-all flex items-center justify-center gap-1.5';
+        roleHeading.innerText = 'Student & Job Seeker Pathway';
+        roleSubheading.innerText = 'Initialize career readiness score, calibrate geographic ambitions, and unlock AI match engine.';
+      });
+
+      tabMentor.addEventListener('click', () => {
+        tabMentor.className = 'flex-1 sm:flex-initial px-4 py-2 rounded-lg bg-surface-container-lowest font-label-md text-label-md text-secondary font-semibold shadow-sm transition-all flex items-center justify-center gap-1.5';
+        tabStudent.className = 'flex-1 sm:flex-initial px-4 py-2 rounded-lg text-tertiary hover:text-on-surface font-label-md text-label-md transition-all flex items-center justify-center gap-1.5';
+        roleHeading.innerText = 'Industry Mentor Capability Declaration';
+        roleSubheading.innerText = 'Set market consulting rubrics, configure student verification thresholds, and publish advisory capacity.';
+      });
+
+      // Baseline Evaluation Trigger Action
+      const btnEval = document.getElementById('btn-run-evaluation');
+      btnEval.addEventListener('click', () => {
+        btnEval.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">sync</span><span>Evaluating Embeddings...</span>';
+        setTimeout(() => {
+          btnEval.innerHTML = '<span class="material-symbols-outlined text-[18px]">verified</span><span>Score Synchronized!</span>';
+          btnEval.classList.remove('bg-primary');
+          btnEval.classList.add('bg-secondary');
+          updateReadiness(745, 91, 84, 76, 52, 'ATS evaluation complete: High alignment with Google / Tier-1 hiring rubrics.');
+        }, 1200);
+      });
+    })();
+  </script>
+</div></div></main><footer class="w-full bg-surface-container-low py-space-lg"><div class="max-w-7xl mx-auto px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-wrap items-center justify-center md:justify-start gap-space-md"><span class="font-label-sm text-label-sm text-tertiary">© 2025 DreamX Career Technologies Inc. All rights reserved.</span><span class="hidden md:inline text-outline-variant">•</span><div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">gavel</span><span>SOC2 Type II Certified</span></div></div><div class="flex items-center gap-space-lg font-label-sm text-label-sm text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="security-and-compliance" href="#">Security &amp; RLS Architecture</a><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" data-path="compliance-reporting" href="#">Compliance</a></div></div></footer></body></html>

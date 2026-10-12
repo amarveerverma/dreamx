@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-surface-variant":"#464554","surface-bright":"#faf8ff","error":"#ba1a1a","secondary-fixed-dim":"#d0bcff","on-secondary":"#ffffff","on-primary":"#ffffff","on-tertiary":"#ffffff","primary-fixed":"#e1e0ff","error-container":"#ffdad6","primary-container":"#6063ee","on-surface":"#131b2e","secondary-fixed":"#e9ddff","surface-dim":"#d2d9f4","inverse-on-surface":"#eef0ff","on-secondary-container":"#fffbff","background":"#faf8ff","on-primary-container":"#fffbff","tertiary-fixed":"#d5e3fc","on-primary-fixed-variant":"#2f2ebe","surface-container-high":"#e2e7ff","inverse-surface":"#283044","tertiary-fixed-dim":"#b9c7df","surface-container-highest":"#dae2fd","tertiary-container":"#67758b","surface-container":"#eaedff","on-tertiary-fixed":"#0d1c2e","on-error-container":"#93000a","on-background":"#131b2e","surface-container-low":"#f2f3ff","surface":"#faf8ff","secondary":"#6b38d4","on-secondary-fixed":"#23005c","secondary-container":"#8455ef","tertiary":"#4f5d71","outline-variant":"#c7c4d7","on-tertiary-fixed-variant":"#3a485b","on-tertiary-container":"#fdfcff","on-error":"#ffffff","surface-variant":"#dae2fd","outline":"#767586","primary-fixed-dim":"#c0c1ff","on-primary-fixed":"#07006c","surface-tint":"#494bd6","primary":"#4648d4","on-secondary-fixed-variant":"#5516be","surface-container-lowest":"#ffffff","inverse-primary":"#c0c1ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-lg":"1.5rem","margin":"2rem","space-md":"1rem","space-xs":"0.25rem","space-sm":"0.5rem","gutter":"1.5rem"},"fontFamily":{"metric-num":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"headline-sm":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"title-md":["Inter"],"body-lg":["Inter"],"display-hero-mobile":["Inter"],"display-hero":["Inter"],"label-md":["Inter"],"headline-lg-mobile":["Inter"],"headline-lg":["Inter"]},"fontSize":{"metric-num":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0.005em","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"0em","fontWeight":"400"}],"display-hero-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.025em","fontWeight":"700"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1400px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-xl"><a class="flex items-center gap-space-sm group focus:outline-none" data-path="home" href="#"><div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-[0_0_0_1px_rgba(99,102,241,0.12),0_12px_24px_-6px_rgba(139,92,246,0.12)]"><span class="font-headline-sm text-headline-sm text-on-primary font-bold">D</span></div><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-semibold">Dream<span class="text-primary">X</span></span></a><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="discover" href="#">Discover</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="services" href="#">Services</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="programs" href="#">Programs</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="mentors" href="#">Mentors</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="pricing" href="#">Pricing</a></nav></div><div class="flex items-center gap-space-md"><button class="hidden sm:flex items-center gap-space-sm h-10 px-space-md bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] hover:shadow-[0_4px_6px_-1px_rgba(15,23,42,0.06)] hover:bg-surface-container-low transition-all duration-150 group" type="button"><span class="material-symbols-outlined text-primary text-[18px]">neurology</span><span class="font-label-md text-label-md text-on-surface-variant group-hover:text-on-surface font-medium">Search &amp; AI</span><div class="flex items-center gap-space-xs ml-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">⌘K</span><span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">50 AI Cr</span></div></button><a class="hidden md:inline-flex font-body-md text-body-md font-semibold text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors duration-150" data-path="sign-in" href="#">Sign In</a><a class="h-10 px-space-lg rounded-lg bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-body-md text-body-md font-semibold inline-flex items-center justify-center shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] hover:shadow-[0_4px_6px_-1px_rgba(15,23,42,0.06)] transition-all duration-150 active:scale-[0.99]" data-path="join-workspace" href="#">Join Workspace</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]"><div class="flex flex-col w-full">
+<!-- Hero Section -->
+<section class="relative px-6 lg:px-12 py-16 lg:py-24 max-w-7xl mx-auto w-full text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container text-primary text-xs font-semibold tracking-wider uppercase mb-6 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+      Transparent Subscription &amp; AI Credit Infrastructure
+    </div>
+<h1 class="font-headline text-4xl sm:text-5xl lg:text-6xl text-on-surface font-semibold tracking-tight max-w-4xl mx-auto leading-tight">
+      Invest in Your Career Velocity, <span class="italic font-normal text-primary">Not Empty Advice.</span>
+</h1>
+<p class="font-body text-on-surface-variant text-base sm:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">
+      Flexible monthly or annual tiers. Free diagnostic benchmarks, guaranteed 1-on-1 mentor session fee protections, and high-precision AI matching credits.
+    </p>
+<!-- Billing Interval Switcher -->
+<div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+<div class="bg-surface-container-high p-1 rounded-xl flex items-center shadow-inner">
+<button class="px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 bg-surface-container-lowest text-on-surface shadow-sm" id="billing-monthly-btn" onclick="setBillingCycle('monthly')">
+          Monthly Billing
+        </button>
+<button class="px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface flex items-center gap-2" id="billing-annual-btn" onclick="setBillingCycle('annual')">
+<span>Annual Billing</span>
+<span class="text-xs font-bold text-on-secondary px-2 py-0.5 rounded-full bg-tertiary-container text-[11px]">Save 33%</span>
+</button>
+</div>
+<div class="text-xs font-body text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base">verified_user</span>
+        100% Guaranteed 7-Day Free Trial on Pro
+      </div>
+</div>
+</section>
+<!-- Core 3-Tier Membership Matrix -->
+<section class="px-6 lg:px-12 pb-20 max-w-7xl mx-auto w-full">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+<!-- Free Explorer Tier -->
+<div class="bg-surface-container-low rounded-2xl p-8 flex flex-col justify-between shadow-sm relative group hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold tracking-widest uppercase text-on-surface-variant font-label">Free Explorer</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-surface-container text-on-surface-variant">Tier 0</span>
+</div>
+<p class="text-sm font-body text-on-surface-variant mb-6">Foundational career discovery &amp; readiness diagnostic benchmarking.</p>
+<div class="mb-8">
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-headline font-semibold text-on-surface">₹0</span>
+<span class="text-sm font-body text-on-surface-variant">/ month</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">Free forever. No payment card required.</p>
+</div>
+<div class="space-y-3.5 mb-8">
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+<span><strong>5 AI credits</strong> / month allocation</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+<span>1 standard Smart Match request / mo</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+<span>Baseline Career Readiness Score</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+<span>Full catalog 1-on-1 booking access</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined text-outline text-base mt-0.5">cancel</span>
+<span>Standard session pricing (no discount)</span>
+</div>
+</div>
+</div>
+<a class="w-full py-3 px-4 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-semibold text-sm text-center transition-colors" href="#">
+          Get Started Free
+        </a>
+</div>
+<!-- Pro Accelerator Tier (Hero Highlight) -->
+<div class="bg-surface-container-lowest rounded-2xl p-8 flex flex-col justify-between shadow-xl relative border-2 border-primary/20 transform md:-translate-y-2">
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-xs uppercase tracking-wider font-bold py-1 px-3.5 rounded-full shadow-md flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">auto_awesome</span>
+          Most Popular
+        </div>
+<div>
+<div class="flex items-center justify-between mb-4 mt-2">
+<span class="text-xs font-bold tracking-widest uppercase text-primary font-label">Pro Accelerator</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-primary-fixed text-on-primary-fixed-variant">7-Day Free Trial</span>
+</div>
+<p class="text-sm font-body text-on-surface-variant mb-6">High-conviction acceleration for active career climbers and job seekers.</p>
+<div class="mb-8">
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-headline font-semibold text-on-surface price-pro">₹149</span>
+<span class="text-sm font-body text-on-surface-variant interval-label">/ month</span>
+</div>
+<p class="text-xs text-primary font-medium mt-1 billing-sub-pro">Billed monthly. Cancel anytime.</p>
+</div>
+<div class="space-y-3.5 mb-8">
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">verified</span>
+<span><strong>100 AI credits</strong>/mo + <strong>50 bonus</strong> credits</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">verified</span>
+<span><strong>5% platform discount</strong> on all 1-on-1 sessions</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">verified</span>
+<span>14-Dimension Smart Match vector engine</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">verified</span>
+<span>Dynamic 6-month Career Roadmap sequencing</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">verified</span>
+<span>Priority 24h custom offer SLA from verified mentors</span>
+</div>
+</div>
+</div>
+<a class="w-full py-3.5 px-4 rounded-lg bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-semibold text-sm text-center shadow-md transition-all active:scale-[0.99] flex items-center justify-center gap-2" href="#">
+<span>Start 7-Day Free Trial</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- Elite Placement Tier -->
+<div class="bg-surface-container-low rounded-2xl p-8 flex flex-col justify-between shadow-sm relative group hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold tracking-widest uppercase text-tertiary font-label">Elite Placement</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-tertiary-fixed text-on-tertiary-fixed-variant">Executive Grade</span>
+</div>
+<p class="text-sm font-body text-on-surface-variant mb-6">Direct executive placement, concierge support, and early access to top tier talent.</p>
+<div class="mb-8">
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-headline font-semibold text-on-surface price-elite">₹299</span>
+<span class="text-sm font-body text-on-surface-variant interval-label">/ month</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1 billing-sub-elite">Billed monthly. Cancel anytime.</p>
+</div>
+<div class="space-y-3.5 mb-8">
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-base mt-0.5">stars</span>
+<span><strong>300 AI credits</strong>/mo + <strong>100 bonus</strong> credits</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-base mt-0.5">stars</span>
+<span><strong>10% instant discount</strong> on services &amp; cohorts</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-base mt-0.5">stars</span>
+<span>Unlimited ATS &amp; AI resume diagnostics</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-base mt-0.5">stars</span>
+<span><strong>48h early slot access</strong> for Top 1% FAANG mentors</span>
+</div>
+<div class="flex items-start gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-base mt-0.5">stars</span>
+<span>Dedicated human concierge &amp; monthly mentor AMAs</span>
+</div>
+</div>
+</div>
+<a class="w-full py-3 px-4 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-semibold text-sm text-center transition-colors" href="#">
+          Upgrade to Elite
+        </a>
+</div>
+</div>
+</section>
+<!-- AI Credit Economy & Consumption Matrix -->
+<section class="px-6 lg:px-12 py-16 bg-surface-container-low/60 w-full">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<span class="text-xs uppercase tracking-widest text-primary font-bold font-label">Engine Economics</span>
+<h2 class="font-headline text-3xl font-semibold text-on-surface mt-1">Predictable AI Credit Architecture</h2>
+<p class="font-body text-sm text-on-surface-variant mt-2 max-w-xl">
+            Never guess how much compute power you are using. Every query is backed by precision 6-pillar cost-optimized models with transparent credit drawdown.
+          </p>
+</div>
+<div class="mt-4 md:mt-0 flex items-center gap-2 text-xs bg-surface-container-lowest px-3 py-2 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-primary text-base">info</span>
+<span>Zero markup pass-through. Top-ups never expire.</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left 2 Cols: AI Consumption Matrix -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-2xl p-6 sm:p-8 shadow-sm">
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-6 flex items-center justify-between">
+<span>Feature Credit Consumption Rates</span>
+<span class="text-xs font-body font-normal text-on-surface-variant">Architecture §18 Standard</span>
+</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<div>
+<div class="text-sm font-semibold text-on-surface">Smart Match 14-Dim Vector</div>
+<div class="text-xs text-on-surface-variant">Deep mentor-candidate affinity</div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-headline font-bold text-primary">3</span>
+<span class="text-xs text-on-surface-variant block">credits</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<div class="text-sm font-semibold text-on-surface">Resume ATS Deep-Dive</div>
+<div class="text-xs text-on-surface-variant">Multi-page rubric score &amp; fixes</div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-headline font-bold text-primary">5</span>
+<span class="text-xs text-on-surface-variant block">credits</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mic</span>
+</div>
+<div>
+<div class="text-sm font-semibold text-on-surface">Mock Interview Scoring</div>
+<div class="text-xs text-on-surface-variant">Live transcript &amp; rubric eval</div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-headline font-bold text-primary">4</span>
+<span class="text-xs text-on-surface-variant block">credits</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">alt_route</span>
+</div>
+<div>
+<div class="text-sm font-semibold text-on-surface">Career Roadmap Sequencing</div>
+<div class="text-xs text-on-surface-variant">Dynamic milestones generation</div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-headline font-bold text-primary">3</span>
+<span class="text-xs text-on-surface-variant block">credits</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<div>
+<div class="text-sm font-semibold text-on-surface">Mentor Co-Pilot Turn</div>
+<div class="text-xs text-on-surface-variant">Context-aware conversational assistance</div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-headline font-bold text-primary">1</span>
+<span class="text-xs text-on-surface-variant block">credit</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-primary-fixed/40 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</div>
+<div>
+<div class="text-sm font-semibold text-on-surface">⌘K Natural Query &amp; Recs</div>
+<div class="text-xs text-on-surface-variant">Global marketplace exploration</div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-headline font-bold text-primary">FREE</span>
+<span class="text-xs text-on-surface-variant block">0 credits</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Col: Top-Up Packs -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">On-Demand Top-Ups</h3>
+<p class="text-xs font-body text-on-surface-variant mb-6">Need more compute power during an intensive sprint? Add credits instantly.</p>
+<div class="space-y-4">
+<div class="p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between">
+<div>
+<div class="text-sm font-semibold text-on-surface">Starter Top-Up</div>
+<div class="text-xs text-on-surface-variant">50 Credits • Never expires</div>
+</div>
+<div class="text-right">
+<div class="text-base font-bold text-on-surface">₹149</div>
+<button class="text-xs text-primary font-semibold hover:underline">Add Pack</button>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between">
+<div>
+<div class="text-sm font-semibold text-on-surface">Power Top-Up</div>
+<div class="text-xs text-on-surface-variant">100 Credits • Never expires</div>
+</div>
+<div class="text-right">
+<div class="text-base font-bold text-on-surface">₹249</div>
+<button class="text-xs text-primary font-semibold hover:underline">Add Pack</button>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-primary-fixed/30 flex items-center justify-between border-2 border-primary/20">
+<div>
+<div class="text-sm font-semibold text-on-surface flex items-center gap-1.5">
+<span>24h Unlimited Pass</span>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-primary text-on-primary">PRO/ELITE</span>
+</div>
+<div class="text-xs text-on-surface-variant">Unlimited AI ops for 24 hours</div>
+</div>
+<div class="text-right">
+<div class="text-base font-bold text-on-surface">₹99</div>
+<button class="text-xs text-primary font-semibold hover:underline">Activate</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 text-center">
+<span class="text-xs text-on-surface-variant inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary">lock</span>
+              Protected by Razorpay direct escrow &amp; instant webhook sync
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Comprehensive Feature Comparison Table -->
+<section class="px-6 lg:px-12 py-20 max-w-7xl mx-auto w-full">
+<div class="text-center mb-12">
+<h2 class="font-headline text-3xl sm:text-4xl font-semibold text-on-surface">Full Capability Breakdown</h2>
+<p class="font-body text-sm sm:text-base text-on-surface-variant mt-3 max-w-2xl mx-auto">
+        A granular look at what each plan unlocks. Clear metrics, no hidden boundaries.
+      </p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm font-body">
+<thead>
+<tr class="bg-surface-container-high text-on-surface text-xs uppercase tracking-wider font-semibold">
+<th class="py-4 px-6 rounded-l-xl w-1/3">Feature Category</th>
+<th class="py-4 px-4 text-center w-1/5">Free Explorer</th>
+<th class="py-4 px-4 text-center w-1/5 bg-primary-fixed/40 text-on-primary-fixed font-bold">Pro Accelerator</th>
+<th class="py-4 px-6 text-center w-1/5 rounded-r-xl">Elite Placement</th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant divide-y-0">
+<!-- Section 1: Billing & Access -->
+<tr class="bg-surface-container font-semibold text-xs tracking-wider text-on-surface uppercase">
+<td class="py-3 px-6 rounded-md mt-4" colspan="4">Pricing &amp; Commitments</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Monthly Rate</td>
+<td class="py-3.5 px-4 text-center">₹0</td>
+<td class="py-3.5 px-4 text-center font-semibold text-on-surface bg-surface-container-low/50">₹149</td>
+<td class="py-3.5 px-4 text-center">₹299</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Annual Commitment</td>
+<td class="py-3.5 px-4 text-center">—</td>
+<td class="py-3.5 px-4 text-center text-primary font-semibold bg-surface-container-low/50">₹1,188/yr (₹99/mo)</td>
+<td class="py-3.5 px-4 text-center text-primary font-semibold">₹2,388/yr (₹199/mo)</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Trial Period</td>
+<td class="py-3.5 px-4 text-center">No trial needed</td>
+<td class="py-3.5 px-4 text-center font-semibold text-primary bg-surface-container-low/50">7 Days Free (100 AI credits)</td>
+<td class="py-3.5 px-4 text-center">Immediate Activation</td>
+</tr>
+<!-- Section 2: AI Intelligence -->
+<tr class="bg-surface-container font-semibold text-xs tracking-wider text-on-surface uppercase">
+<td class="py-3 px-6 rounded-md mt-4" colspan="4">AI Intelligence &amp; Credits</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Monthly Base AI Credits</td>
+<td class="py-3.5 px-4 text-center">5 credits</td>
+<td class="py-3.5 px-4 text-center font-semibold text-on-surface bg-surface-container-low/50">100 credits</td>
+<td class="py-3.5 px-4 text-center font-semibold text-on-surface">300 credits</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Activation Bonus Credits</td>
+<td class="py-3.5 px-4 text-center">—</td>
+<td class="py-3.5 px-4 text-center text-primary font-semibold bg-surface-container-low/50">+50 Bonus Credits</td>
+<td class="py-3.5 px-4 text-center text-primary font-semibold">+100 Bonus Credits</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Resume ATS Diagnostics</td>
+<td class="py-3.5 px-4 text-center">1 summary score</td>
+<td class="py-3.5 px-4 text-center bg-surface-container-low/50">Up to 20 deep analyses/mo</td>
+<td class="py-3.5 px-4 text-center font-semibold text-on-surface">Unlimited ATS Scans</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Vector Match Dimensions</td>
+<td class="py-3.5 px-4 text-center">3 Basic filters</td>
+<td class="py-3.5 px-4 text-center bg-surface-container-low/50">Full 14-Dimension Vector</td>
+<td class="py-3.5 px-4 text-center font-semibold text-on-surface">Full 14-Dim + Priority Queue</td>
+</tr>
+<!-- Section 3: Marketplace & Mentor Terms -->
+<tr class="bg-surface-container font-semibold text-xs tracking-wider text-on-surface uppercase">
+<td class="py-3 px-6 rounded-md mt-4" colspan="4">Marketplace &amp; Mentor Benefits</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">1-on-1 Session Discount</td>
+<td class="py-3.5 px-4 text-center">0%</td>
+<td class="py-3.5 px-4 text-center font-semibold text-primary bg-surface-container-low/50">5% Platform Subsidy</td>
+<td class="py-3.5 px-4 text-center font-semibold text-primary">10% Platform Subsidy</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Early Booking Access</td>
+<td class="py-3.5 px-4 text-center">Standard Window</td>
+<td class="py-3.5 px-4 text-center bg-surface-container-low/50">24 Hours Early</td>
+<td class="py-3.5 px-4 text-center font-semibold text-on-surface">48 Hours Early (FAANG Elite)</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Custom Offer Turnaround SLA</td>
+<td class="py-3.5 px-4 text-center">72 hours</td>
+<td class="py-3.5 px-4 text-center bg-surface-container-low/50">Priority 24 hours</td>
+<td class="py-3.5 px-4 text-center font-semibold text-on-surface">Expedited &lt; 12 hours</td>
+</tr>
+<!-- Section 4: Data & Support -->
+<tr class="bg-surface-container font-semibold text-xs tracking-wider text-on-surface uppercase">
+<td class="py-3 px-6 rounded-md mt-4" colspan="4">Tools, Storage &amp; SLA</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Deliverable Storage History</td>
+<td class="py-3.5 px-4 text-center">30 Days</td>
+<td class="py-3.5 px-4 text-center bg-surface-container-low/50">6 Months Archive</td>
+<td class="py-3.5 px-4 text-center font-semibold text-on-surface">Lifetime Encrypted Vault</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Concierge &amp; Advisory</td>
+<td class="py-3.5 px-4 text-center">Community Help</td>
+<td class="py-3.5 px-4 text-center bg-surface-container-low/50">Priority Email Support</td>
+<td class="py-3.5 px-4 text-center font-semibold text-on-surface">Dedicated Placement Advisor</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-6 font-medium text-on-surface">Monthly Mentor AMAs</td>
+<td class="py-3.5 px-4 text-center">—</td>
+<td class="py-3.5 px-4 text-center bg-surface-container-low/50">Listen-only access</td>
+<td class="py-3.5 px-4 text-center font-semibold text-primary">Live Q&amp;A Speaker Pass</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Money-Back Guarantee & Escrow Callout -->
+<section class="px-6 lg:px-12 py-12 max-w-7xl mx-auto w-full">
+<div class="bg-surface-container rounded-2xl p-8 sm:p-12 flex flex-col md:flex-row items-center gap-8 shadow-sm">
+<div class="w-16 h-16 rounded-2xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h3 class="font-headline text-2xl font-semibold text-on-surface">100% Outcome Guarantee &amp; Escrow Hold</h3>
+<p class="font-body text-sm text-on-surface-variant mt-2 leading-relaxed">
+          Mentor payments are held in our T+2 escrow infrastructure. If a 1-on-1 session or cohort deliverable does not match the agreed syllabus, you have up to 72 hours to request a no-questions-asked dispute or full refund. Your career risk is completely protected.
+        </p>
+</div>
+<div class="shrink-0 flex flex-col sm:flex-row items-center gap-3">
+<div class="px-4 py-2.5 rounded-lg bg-surface-container-lowest text-xs font-semibold text-on-surface shadow-sm flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+          T+2 Escrow Security
+        </div>
+</div>
+</div>
+</section>
+<!-- Enterprise & Pricing FAQ Accordion -->
+<section class="px-6 lg:px-12 py-16 max-w-4xl mx-auto w-full">
+<div class="text-center mb-12">
+<span class="text-xs uppercase tracking-widest text-primary font-bold font-label">Clarifications</span>
+<h2 class="font-headline text-3xl font-semibold text-on-surface mt-1">Frequently Asked Questions</h2>
+<p class="font-body text-sm text-on-surface-variant mt-2">Everything you need to know about our subscriptions, escrow, and AI system.</p>
+</div>
+<div class="space-y-4" id="faq-accordion">
+<!-- FAQ 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<button class="w-full flex items-center justify-between text-left font-headline text-lg font-semibold text-on-surface" onclick="toggleFaq(this)">
+<span>Can I switch between monthly and annual plans at any time?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200">expand_more</span>
+</button>
+<div class="hidden pt-3 font-body text-sm text-on-surface-variant leading-relaxed">
+          Yes. Upgrades apply immediately, prorating any remaining balance from your current billing cycle. When switching from annual to monthly, your changes will take effect at the conclusion of your prepaid annual term.
+        </div>
+</div>
+<!-- FAQ 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<button class="w-full flex items-center justify-between text-left font-headline text-lg font-semibold text-on-surface" onclick="toggleFaq(this)">
+<span>How does the 7-day Pro free trial work?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200">expand_more</span>
+</button>
+<div class="hidden pt-3 font-body text-sm text-on-surface-variant leading-relaxed">
+          When you activate the 7-day Pro trial, you immediately receive 100 AI credits and full access to Pro features. No charge is made to your payment method until the end of day 7. You can cancel with 1 click in your account settings before the trial ends and you will not be charged a single rupee.
+        </div>
+</div>
+<!-- FAQ 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<button class="w-full flex items-center justify-between text-left font-headline text-lg font-semibold text-on-surface" onclick="toggleFaq(this)">
+<span>Do unused AI credits roll over to the next month?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200">expand_more</span>
+</button>
+<div class="hidden pt-3 font-body text-sm text-on-surface-variant leading-relaxed">
+          Subscription base credits (100 for Pro, 300 for Elite) refresh on your billing date each month. Purchased Top-Up Packs (50 &amp; 100 credit packs) <strong class="text-on-surface">never expire</strong> and remain in your secondary balance indefinitely until consumed.
+        </div>
+</div>
+<!-- FAQ 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<button class="w-full flex items-center justify-between text-left font-headline text-lg font-semibold text-on-surface" onclick="toggleFaq(this)">
+<span>How do session discounts work with mentor earnings?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200">expand_more</span>
+</button>
+<div class="hidden pt-3 font-body text-sm text-on-surface-variant leading-relaxed">
+          The 5% (Pro) and 10% (Elite) membership discounts are completely subsidized by DreamX platform operations. The mentor always receives their full standard contracted payout (80% of catalog price) without any deduction.
+        </div>
+</div>
+<!-- FAQ 5 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<button class="w-full flex items-center justify-between text-left font-headline text-lg font-semibold text-on-surface" onclick="toggleFaq(this)">
+<span>What is the refund policy and money-back guarantee?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200">expand_more</span>
+</button>
+<div class="hidden pt-3 font-body text-sm text-on-surface-variant leading-relaxed">
+          All 1-on-1 bookings and cohort programs include our 3-day post-session escrow guarantee. If a session didn't meet the promised standards, open a ticket via your dashboard to freeze the payout. For memberships, we offer an unconditional 14-day refund window if no credits have been drawn down.
+        </div>
+</div>
+</div>
+</section>
+<!-- Bottom High-Conversion Banner -->
+<section class="px-6 lg:px-12 py-16 max-w-7xl mx-auto w-full">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden shadow-xl">
+<div class="relative z-10 max-w-2xl mx-auto">
+<span class="text-xs uppercase tracking-widest text-primary-fixed-dim font-bold">Accelerate Now</span>
+<h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-semibold mt-2 text-inverse-on-surface leading-tight">
+          Stop Wondering If Your Next Interview Will Be The One.
+        </h2>
+<p class="font-body text-sm sm:text-base text-surface-container-highest mt-4 leading-relaxed">
+          Join thousands of engineers, product managers, and design leaders advancing their careers with verified mentor advisory and precision AI feedback.
+        </p>
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto px-7 py-3.5 rounded-lg bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-semibold text-sm shadow-md transition-all" href="#">
+            Start 7-Day Free Pro Trial
+          </a>
+<a class="w-full sm:w-auto px-7 py-3.5 rounded-lg bg-surface-container-highest/20 hover:bg-surface-container-highest/30 text-inverse-on-surface font-semibold text-sm transition-colors" href="#">
+            Talk to Placement Advisor
+          </a>
+</div>
+<div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-surface-container-highest">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-fixed-dim text-base">lock</span>
+<span>Razorpay SSL Certified</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-fixed-dim text-base">account_balance_wallet</span>
+<span>T+2 Escrow Protection</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-fixed-dim text-base">cancel</span>
+<span>Cancel Anytime in 1 Click</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Scripts for Billing Switch & FAQ Toggle -->
+<script>
+    function setBillingCycle(cycle) {
+      const monthlyBtn = document.getElementById('billing-monthly-btn');
+      const annualBtn = document.getElementById('billing-annual-btn');
+      const proPrice = document.querySelector('.price-pro');
+      const elitePrice = document.querySelector('.price-elite');
+      const intervalLabels = document.querySelectorAll('.interval-label');
+      const subPro = document.querySelector('.billing-sub-pro');
+      const subElite = document.querySelector('.billing-sub-elite');
+
+      if (cycle === 'annual') {
+        annualBtn.className = "px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 bg-surface-container-lowest text-on-surface shadow-sm flex items-center gap-2";
+        monthlyBtn.className = "px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface";
+        
+        if (proPrice) proPrice.textContent = '₹99';
+        if (elitePrice) elitePrice.textContent = '₹199';
+        
+        intervalLabels.forEach(el => el.textContent = '/ month');
+        if (subPro) subPro.textContent = 'Billed annually at ₹1,188/yr (Save 33%)';
+        if (subElite) subElite.textContent = 'Billed annually at ₹2,388/yr (Save 33%)';
+      } else {
+        monthlyBtn.className = "px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 bg-surface-container-lowest text-on-surface shadow-sm";
+        annualBtn.className = "px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface flex items-center gap-2";
+        
+        if (proPrice) proPrice.textContent = '₹149';
+        if (elitePrice) elitePrice.textContent = '₹299';
+        
+        intervalLabels.forEach(el => el.textContent = '/ month');
+        if (subPro) subPro.textContent = 'Billed monthly. Cancel anytime.';
+        if (subElite) subElite.textContent = 'Billed monthly. Cancel anytime.';
+      }
+    }
+
+    function toggleFaq(btn) {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-inverse-surface text-inverse-on-surface pt-space-xl pb-space-xl"><div class="max-w-[1400px] mx-auto px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-1 space-y-space-md"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center"><span class="font-headline-sm text-headline-sm text-on-primary font-bold">D</span></div><span class="font-headline-sm text-headline-sm tracking-tight text-on-primary font-semibold">Dream<span class="text-primary-fixed-dim">X</span></span></div><p class="font-body-sm text-body-sm text-surface-container-highest max-w-xs">The autonomous career mobility &amp; talent success marketplace. Engineered for high-conviction outcomes.</p><div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container/10"><span class="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span><span class="font-label-sm text-label-sm text-surface-container-highest uppercase tracking-wider font-semibold">All Systems Operational</span></div></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase tracking-wider text-surface-container-high font-semibold">Product</div><ul class="space-y-space-xs"><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="discover" href="#">Career Copilot</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="services" href="#">Outcome Simulator</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="pricing" href="#">Credit Engine</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="discover" href="#">Opportunity Exchange</a></li></ul></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase tracking-wider text-surface-container-high font-semibold">Programs</div><ul class="space-y-space-xs"><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="programs" href="#">Executive Fellowships</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="programs" href="#">Venture Apprentices</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="mentors" href="#">1-on-1 Advisory</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="programs" href="#">Enterprise Sprints</a></li></ul></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase tracking-wider text-surface-container-high font-semibold">Platform &amp; Verification</div><ul class="space-y-space-xs"><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="services" href="#">Skill Graph Engine</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="services" href="#">Verifiable Credentials</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="services" href="#">Market Benchmarks</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="services" href="#">Developer API</a></li></ul></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase tracking-wider text-surface-container-high font-semibold">Legal &amp; Trust</div><ul class="space-y-space-xs mb-space-sm"><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="privacy-policy" href="#">Privacy Architecture</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="terms-of-service" href="#">Terms of Service</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="security" href="#">Trust Center</a></li></ul><div class="flex flex-wrap gap-1.5 pt-space-xs"><span class="px-2 py-1 rounded bg-surface-container/10 font-label-sm text-label-sm text-primary-fixed font-semibold">ISO/IEC 27001</span><span class="px-2 py-1 rounded bg-surface-container/10 font-label-sm text-label-sm text-primary-fixed font-semibold">SOC-2 Type II</span><span class="px-2 py-1 rounded bg-surface-container/10 font-label-sm text-label-sm text-secondary-fixed font-semibold">RLS Guarded</span></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-surface-container-highest font-body-sm text-body-sm"><p class="">© 2025 DreamX Technologies, Inc. All rights reserved. Precision career mobility platform.</p><div class="flex items-center gap-space-lg"><a class="hover:text-on-primary transition-colors duration-150" data-path="security" href="#">Security Audits</a><a class="hover:text-on-primary transition-colors duration-150" data-path="privacy-policy" href="#">GDPR Compliance</a><a class="hover:text-on-primary transition-colors duration-150" data-path="terms-of-service" href="#">Acceptable Use</a></div></div></div></footer>
+</body></html>

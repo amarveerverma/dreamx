@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-container":"#fdfcff","primary-fixed":"#e1e0ff","outline-variant":"#c7c4d7","on-tertiary-fixed-variant":"#3a485b","surface-container-low":"#f2f3ff","inverse-on-surface":"#eef0ff","on-secondary-fixed-variant":"#5516be","outline":"#767586","on-background":"#131b2e","on-error":"#ffffff","tertiary-container":"#67758b","surface-tint":"#494bd6","inverse-primary":"#c0c1ff","surface":"#faf8ff","on-error-container":"#93000a","on-surface":"#131b2e","on-surface-variant":"#464554","secondary-container":"#8455ef","primary-container":"#6063ee","surface-container-highest":"#dae2fd","primary-fixed-dim":"#c0c1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","on-tertiary-fixed":"#0d1c2e","secondary":"#6b38d4","primary":"#4648d4","tertiary-fixed-dim":"#b9c7df","surface-bright":"#faf8ff","on-secondary-container":"#fffbff","on-secondary-fixed":"#23005c","surface-container-high":"#e2e7ff","inverse-surface":"#283044","on-primary-fixed":"#07006c","tertiary-fixed":"#d5e3fc","tertiary":"#4f5d71","on-secondary":"#ffffff","on-primary":"#ffffff","secondary-fixed-dim":"#d0bcff","surface-dim":"#d2d9f4","on-primary-fixed-variant":"#2f2ebe","error":"#ba1a1a","background":"#faf8ff","on-primary-container":"#fffbff","secondary-fixed":"#e9ddff","surface-container":"#eaedff","surface-variant":"#dae2fd","on-tertiary":"#ffffff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","space-sm":"0.5rem",margin:"2rem","space-xs":"0.25rem","space-lg":"1.5rem","space-xl":"2rem",gutter:"1.5rem"},fontFamily:{"display-hero-mobile":["Inter"],"headline-lg-mobile":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"title-md":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"metric-num":["Inter"],"body-lg":["Inter"],"display-hero":["Inter"],"label-sm":["Inter"]},fontSize:{"display-hero-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"500"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"18px",letterSpacing:"0.005em",fontWeight:"400"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"metric-num":["28px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"400"}],"display-hero":["48px",{lineHeight:"56px",letterSpacing:"-0.025em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[22px]">auto_awesome</span></div><div class="flex flex-col"><span class="font-title-md text-title-md font-bold text-on-surface leading-tight tracking-tight">DreamX</span><span class="font-label-sm text-label-sm text-tertiary tracking-wide uppercase font-semibold">Student Portal</span></div></div><button class="p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">dock_to_left</span></button></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-home" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Home</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="discover-goals" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span>Discover Goals</span></a><div class="pt-2 pb-1"><div class="flex items-center justify-between px-space-md py-1.5 text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">event_available</span><span class="font-body-md text-body-md font-medium">Services &amp; Bookings</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></div><div class="ml-6 pl-space-sm flex flex-col gap-0.5 mt-1"><a class="flex items-center px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="active-bookings" href="#">Active Bookings</a><a class="flex items-center px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="smart-requests-offers" href="#">Smart Requests &amp; Offers</a></div></div><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="programs-cohorts" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Programs &amp; Cohorts</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="career-journey" href="#"><span class="material-symbols-outlined text-[20px]">alt_route</span><span>Career Journey Roadmap</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="readiness-score" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span>Career Readiness Score</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ai-assistant" href="#"><span class="material-symbols-outlined text-[20px]">neurology</span><span>AI Assistant &amp; Recomms</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="deliverables-reports" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span>Deliverables &amp; Reports</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="membership-billing" href="#"><span class="material-symbols-outlined text-[20px]">credit_card</span><span>Membership &amp; Billing</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div></div><div class="p-space-md flex flex-col gap-space-sm"><div class="p-space-md rounded-xl bg-surface-container-low shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-primary">Pro Plan</span><span class="font-label-sm text-label-sm text-tertiary">Active</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">100 Monthly AI Credits • Renews Aug 1</p><button class="mt-space-xs w-full py-1.5 px-space-sm rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-colors shadow-sm" type="button">Upgrade to Elite</button></div><div class="flex items-center justify-between px-space-sm py-space-xs"><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">swap_horiz</span><span>Switch Portal</span></button><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-error font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">logout</span><span>Log out</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><button class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button><div class="flex items-center gap-space-xs font-body-sm text-body-sm"><span class="text-tertiary">Dashboard</span><span class="text-tertiary">/</span><span class="text-on-surface font-medium">Student Home</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-1.5 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px] text-primary">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">⌘K AI Search</span></button><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[16px] text-tertiary">public</span><span>Target: CM-IN (India Tech) • IST</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md"><span class="font-medium">⚡ 47 AI Credits</span><button class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center hover:bg-secondary-container transition-colors" type="button"><span class="material-symbols-outlined text-[14px]">add</span></button></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><div class="flex items-center gap-space-xs justify-end"><span class="font-title-md text-body-md font-semibold text-on-surface leading-none">Ananya S.</span><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase font-bold">PRO</span></div><span class="font-label-sm text-label-sm text-tertiary">3rd Yr CS @ IIT Delhi</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 px-gutter bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Toast Notification Container (Dynamic) -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-sm px-space-md py-3 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-2xl" id="toastNotification">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium" id="toastMessage">Auto-renew preference updated</span>
+</div>
+<!-- Breadcrumb & Top Stat strip -->
+<section class="py-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-tertiary">
+<span>Dashboard</span>
+<span>/</span>
+<span>Account &amp; Billing</span>
+<span>/</span>
+<span class="text-on-surface font-medium">Membership &amp; Tier Plan</span>
+</div>
+<div class="flex items-center gap-space-sm mt-1">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Student Membership &amp; Perks</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold tracking-wide">
+          PRO ACCELERATOR
+        </span>
+</div>
+</div>
+<!-- Active Snapshot Badges -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-2 px-space-md py-2 rounded-xl bg-surface-container-lowest shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary">Status</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Active • Renews Aug 1, 2026</span>
+</div>
+</div>
+<div class="flex items-center gap-2 px-space-md py-2 rounded-xl bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">workspace_premium</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary">Billing Mandate</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Razorpay UPI AutoPay</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Hero Active Tier Card with AI Quota & Visual Pass -->
+<section class="mt-space-sm mb-space-xl">
+<div class="rounded-2xl bg-surface-container-lowest shadow-md overflow-hidden relative">
+<!-- Ambient Gradient Runner -->
+<div class="h-1.5 w-full bg-gradient-to-r from-primary via-secondary to-primary-container"></div>
+<div class="p-space-lg md:p-8 flex flex-col lg:flex-row gap-space-xl justify-between items-start lg:items-center">
+<!-- Left: Tier Narrative -->
+<div class="flex-1 flex flex-col gap-space-sm">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">
+              Student Subsidized Rate
+            </span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium">
+              IIT Delhi Verified Scholar
+            </span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-low text-tertiary font-label-sm text-label-sm">
+              7-Day Free Trial Converted (May 2026)
+            </span>
+</div>
+<div class="mt-1">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+              DreamX Pro Accelerator Plan
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+              Equipped with end-to-end placement readiness tools, prioritized vector mentor matching, 15% discount on all 1:1 expert sessions, and monthly refreshed AI credit reservoirs.
+            </p>
+</div>
+<!-- Subscription Metadata Rows -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-md pt-space-xs mt-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-semibold">Current Billing</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">₹149 <span class="font-body-sm text-body-sm font-normal text-tertiary">/ month</span></span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Next: Aug 01, 2026</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-semibold">Payment Via</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[18px] text-tertiary">account_balance_wallet</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">ananya@oksbi</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">E-Mandate ID: RZP-EMND-91823</span>
+</div>
+<div class="flex flex-col col-span-2 sm:col-span-1">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-semibold">Active Member ID</span>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-0.5 tracking-wider font-mono">DX-STU-88219</span>
+<span class="font-label-sm text-label-sm text-tertiary">Valid through: May 31, 2027</span>
+</div>
+</div>
+</div>
+<!-- Right: AI Credit Meter & Action Box -->
+<div class="w-full lg:w-96 p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+</div>
+<span class="font-title-md text-title-md font-semibold text-on-surface">Monthly AI Credits</span>
+</div>
+<span class="font-metric-num text-metric-num font-bold text-primary">47 <span class="font-body-sm text-body-sm font-normal text-tertiary">/ 100</span></span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full">
+<div class="h-2.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full" style="width: 47%;"></div>
+</div>
+<div class="flex justify-between items-center mt-1.5">
+<span class="font-label-sm text-label-sm text-tertiary">Renews in 18 days (Aug 1)</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">53 used this cycle</span>
+</div>
+</div>
+<!-- Quick Micro Upgrades -->
+<div class="pt-space-xs flex flex-col gap-2">
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors shadow-sm text-center font-label-md text-label-md font-semibold flex items-center justify-center gap-1" id="btnTopUpCredits" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">add_circle</span>
+<span>Top-up 50 (₹49)</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors shadow-sm text-center font-label-md text-label-md font-semibold flex items-center justify-center gap-1" id="btnDayPass" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">all_inclusive</span>
+<span>Day Pass (₹99)</span>
+</button>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 py-2 px-3 rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 shadow-sm" id="btnDownloadPass" type="button">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>Download Pass</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-dim transition-colors font-label-md text-label-md font-semibold" id="btnChangePlanScroll" type="button">
+                Change Plan
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action Secondary Bar -->
+<div class="bg-surface-container px-space-lg py-2.5 flex flex-wrap items-center justify-between text-on-surface-variant gap-space-sm">
+<div class="flex items-center gap-space-md text-body-sm font-body-sm">
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">verified</span> IIT Delhi Academic Discount: 65% OFF applied
+          </span>
+<span class="hidden sm:inline-block text-tertiary">•</span>
+<span class="text-tertiary hidden sm:inline-block">Tax Invoice #DX-2026-INV88 ready</span>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors font-medium" id="btnPausePlan">Pause for Semester</button>
+<span class="text-outline-variant">•</span>
+<button class="font-label-md text-label-md text-error hover:text-on-error-container transition-colors font-medium" id="btnCancelMembership">Cancel Membership</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive ROI Savings Calculator & Lifetime Metrics -->
+<section class="mb-space-xl">
+<div class="flex flex-col gap-1 mb-space-md">
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm font-semibold tracking-wider uppercase">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+<span>Value Intelligence</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Your Cumulative Savings &amp; Dynamic ROI Calculator</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Measure how your student membership subsidy offsets mock interviews, cohort tuitions, and ATS resume audits.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Lifetime Metrics Bento Card -->
+<div class="lg:col-span-4 rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary">Realized Net Savings</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">12.2x ROI</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-hero text-display-hero font-extrabold text-on-surface tracking-tight">₹1,820</span>
+<span class="font-body-md text-body-md text-tertiary font-medium">saved in 72 days</span>
+</div>
+<!-- Savings Breakdown List -->
+<div class="mt-space-md flex flex-col gap-2.5">
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">videocam</span>
+<span class="font-body-sm text-body-sm text-on-surface">3x FAANG Mock Interviews</span>
+</div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">₹675 saved</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">school</span>
+<span class="font-body-sm text-body-sm text-on-surface">Backend Cohort Enrollment</span>
+</div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">₹800 saved</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">description</span>
+<span class="font-body-sm text-body-sm text-on-surface">ATS Resume Reviews</span>
+</div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">₹345 saved</span>
+</div>
+</div>
+</div>
+<!-- Inline Visual Sparkline / Micro Donut -->
+<div class="mt-space-lg pt-space-md bg-surface-container rounded-xl p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<svg class="w-12 h-12 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-dim stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3.5"></path>
+<path class="text-primary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="82, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">82% Cost Offset</span>
+<span class="font-label-sm text-label-sm text-tertiary">Annual sub recovered</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[24px] text-primary">trending_up</span>
+</div>
+</div>
+<!-- Live Dynamic Calculator Widget -->
+<div class="lg:col-span-8 rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between border-b pb-space-sm mb-space-md">
+<div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Interactive Career Spending &amp; Savings Model</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Adjust your estimated preparation activities to calculate your projected annual yield.</p>
+</div>
+<span class="font-label-sm text-label-sm font-semibold px-2 py-1 rounded bg-surface-container text-tertiary">Real-Time Forecast</span>
+</div>
+<!-- Controls Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg my-space-md">
+<!-- Mock Interviews -->
+<div class="flex flex-col gap-2 p-space-md rounded-xl bg-surface-container-low">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Mock Interviews</span>
+<span class="font-title-md text-title-md font-bold text-primary" id="labelMocks">2 / mo</span>
+</div>
+<input class="w-full accent-primary cursor-pointer" id="sliderMocks" max="6" min="0" step="1" type="range" value="2"/>
+<span class="font-label-sm text-label-sm text-tertiary">₹1,500 base per session</span>
+</div>
+<!-- Resume ATS Reviews -->
+<div class="flex flex-col gap-2 p-space-md rounded-xl bg-surface-container-low">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">ATS / Resume Audits</span>
+<span class="font-title-md text-title-md font-bold text-primary" id="labelAudits">1 / mo</span>
+</div>
+<input class="w-full accent-primary cursor-pointer" id="sliderAudits" max="4" min="0" step="1" type="range" value="1"/>
+<span class="font-label-sm text-label-sm text-tertiary">₹499 base per audit</span>
+</div>
+<!-- Cohort Fellowships -->
+<div class="flex flex-col gap-2 p-space-md rounded-xl bg-surface-container-low">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Cohort Fellowships</span>
+<span class="font-title-md text-title-md font-bold text-primary" id="labelCohorts">1 / yr</span>
+</div>
+<input class="w-full accent-primary cursor-pointer" id="sliderCohorts" max="3" min="0" step="1" type="range" value="1"/>
+<span class="font-label-sm text-label-sm text-tertiary">₹8,000 average tuition</span>
+</div>
+</div>
+<!-- Dynamic Output Comparison Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-lg pt-space-md">
+<!-- Free Tier Result -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary">On Free Tier</span>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">₹0 Saved</div>
+<p class="font-body-sm text-body-sm text-tertiary mt-1">Full retail price across all bookings + 5 AI credits/mo cap.</p>
+</div>
+<div class="mt-4 pt-2 border-t text-on-surface-variant font-label-md text-label-md">
+                Annual Cost: <span class="font-bold text-on-surface" id="outFreeCost">₹49,988</span>
+</div>
+</div>
+<!-- Pro Tier (Current) Result -->
+<div class="p-space-md rounded-xl bg-primary-fixed text-on-primary-fixed shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm font-bold">CURRENT</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-primary-fixed-variant">On Pro Accelerator</span>
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary-fixed mt-1" id="outProSavings">₹7,098 / yr</div>
+<p class="font-body-sm text-body-sm text-on-primary-fixed-variant mt-1">15% discount + 1,200 AI credits/year reservoir included.</p>
+</div>
+<div class="mt-4 pt-2 text-on-primary-fixed font-label-md text-label-md">
+                Net Annual Value: <span class="font-bold" id="outProNet">₹5,910 profit</span>
+</div>
+</div>
+<!-- Elite Tier Result -->
+<div class="p-space-md rounded-xl bg-secondary-fixed text-on-secondary-fixed shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-secondary-fixed-variant">On Elite Fellowship</span>
+<div class="font-headline-sm text-headline-sm font-bold text-on-secondary-fixed mt-1" id="outEliteSavings">₹12,497 / yr</div>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant mt-1">25% discount + 3,600 AI credits/year + Priority 48h booking pass.</p>
+</div>
+<div class="mt-4 pt-2 text-on-secondary-fixed font-label-md text-label-md">
+                Net Annual Value: <span class="font-bold" id="outEliteNet">₹10,109 profit</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">workspace_premium</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface" id="calloutROI">Your annual Pro membership pays for itself after just 1 Mock Interview session!</span>
+</div>
+<button class="font-label-md text-label-md font-semibold text-secondary hover:text-secondary-container transition-colors" id="btnSwitchEliteQuick">Compare Elite Perks →</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 3-Tier Comparison & Upgrade Matrix -->
+<section class="mb-space-xl" id="tierMatrixSection">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-lg">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-primary tracking-wider">Plan Architectures</span>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Compare Student Membership Tiers</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">All tiers include verified institutional credential checks and dedicated recruiter network visibility.</p>
+</div>
+<!-- Billing Frequency Toggle -->
+<div class="flex items-center p-1 rounded-xl bg-surface-container-low shadow-sm self-start md:self-auto">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-sm transition-all" id="toggleMonthly" type="button">
+          Monthly Billing
+        </button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all flex items-center gap-1" id="toggleAnnual" type="button">
+<span>Annual Billing</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold">SAVE 33%</span>
+</button>
+</div>
+</div>
+<!-- 3 Tier Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg items-stretch">
+<!-- Tier 1: Free Explorer -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-label-sm font-bold uppercase text-tertiary">Foundation</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Free Explorer</h3>
+</div>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">explore</span>
+</div>
+</div>
+<div class="my-space-md">
+<span class="font-display-hero text-headline-lg font-bold text-on-surface">₹0</span>
+<span class="font-body-sm text-body-sm text-tertiary">forever student license</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Basic career discovery tools for exploring domain pathways and standard community events.
+          </p>
+<!-- Perks Checklist -->
+<div class="flex flex-col gap-2.5 pt-space-sm border-t">
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-tertiary mt-0.5">check</span>
+<span><strong>5 Monthly</strong> AI Diagnostic Credits</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-tertiary mt-0.5">check</span>
+<span>1 Career Readiness Assessment / mo</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-tertiary">
+<span class="material-symbols-outlined text-[18px] text-tertiary mt-0.5">remove</span>
+<span>No service or cohort discounts</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-tertiary">
+<span class="material-symbols-outlined text-[18px] text-tertiary mt-0.5">remove</span>
+<span>Standard 72-hour mentor booking queue</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-tertiary">
+<span class="material-symbols-outlined text-[18px] text-tertiary mt-0.5">remove</span>
+<span>Rule-based career match only</span>
+</div>
+</div>
+</div>
+<button class="mt-space-lg w-full py-2.5 px-space-md rounded-lg bg-surface-container text-tertiary font-label-md text-label-md font-semibold cursor-not-allowed text-center" disabled="">
+          Current Fallback Tier
+        </button>
+</div>
+<!-- Tier 2: Pro Accelerator (ACTIVE) -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-md flex flex-col justify-between relative overflow-hidden">
+<!-- Accent Top Bar -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold uppercase">
+          CURRENT PLAN
+        </div>
+<div class="flex flex-col">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-label-sm font-bold uppercase text-primary">Accelerated Velocity</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Pro Accelerator</h3>
+</div>
+</div>
+<div class="my-space-md">
+<span class="font-display-hero text-headline-lg font-bold text-on-surface" id="pricePro">₹149</span>
+<span class="font-body-sm text-body-sm text-tertiary" id="freqPro">/ month (billed monthly)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            The standard for college students preparing for campus hiring, internships, and initial placements.
+          </p>
+<!-- Perks Checklist -->
+<div class="flex flex-col gap-2.5 pt-space-sm border-t">
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">check_circle</span>
+<span><strong>100 Monthly</strong> AI Diagnostic Credits</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">check_circle</span>
+<span><strong>15% Instant Discount</strong> on 1:1 Bookings (+50 bonus credits)</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">check_circle</span>
+<span><strong>10% First-Month Subsidy</strong> on Cohorts</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">check_circle</span>
+<span>Unlimited Career Readiness Score &amp; Trackers</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">check_circle</span>
+<span>Full Vector AI Matching + Gap Diagnostics</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">check_circle</span>
+<span>24h Early Access to Top Mentor Calendar Slots</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg flex flex-col gap-2">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-dim transition-colors text-center" id="btnManageActive" type="button">
+            Manage Billing &amp; Invoices
+          </button>
+<span class="text-center font-label-sm text-label-sm text-tertiary">Renews automatically via UPI Mandate</span>
+</div>
+</div>
+<!-- Tier 3: Elite Fellowship (Upgrade Target) -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-lg flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-primary-container"></div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold uppercase">
+          RECOMMENDED FOR FINAL YEAR
+        </div>
+<div class="flex flex-col">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-label-sm font-bold uppercase text-secondary">Premier Placement</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Elite Fellowship</h3>
+</div>
+</div>
+<div class="my-space-md">
+<span class="font-display-hero text-headline-lg font-bold text-on-surface" id="priceElite">₹299</span>
+<span class="font-body-sm text-body-sm text-tertiary" id="freqElite">/ month (billed monthly)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Comprehensive executive guidance for Tier-1 placements, global fellowships, and off-campus FAANG offers.
+          </p>
+<!-- Perks Checklist -->
+<div class="flex flex-col gap-2.5 pt-space-sm border-t">
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">stars</span>
+<span><strong>300 Monthly</strong> AI Diagnostic Credits</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">stars</span>
+<span><strong>25% Instant Discount</strong> on 1:1 Bookings (+100 bonus credits)</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">stars</span>
+<span><strong>20% First-Month Subsidy</strong> on Cohorts</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">stars</span>
+<span>Unlimited Readiness + Cohort Benchmark Metrics</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">stars</span>
+<span>Instant Priority AI Routing &amp; Recruiter Ping</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">stars</span>
+<span>48h Early Access + Monthly Private AMA with Staff Engs</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg flex flex-col gap-2">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-secondary text-on-secondary hover:bg-secondary-container transition-colors shadow-sm font-label-md text-label-md font-semibold text-center flex items-center justify-center gap-1.5" id="btnUpgradeElite" type="button">
+<span class="material-symbols-outlined text-[18px]">upgrade</span>
+<span>Upgrade to Elite (Prorated ₹150)</span>
+</button>
+<span class="text-center font-label-sm text-label-sm text-tertiary">Immediate prorated deduction via Razorpay</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Method & Auto-Debit Controls -->
+<section class="mb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Active Payment Method Card -->
+<div class="lg:col-span-7 rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-on-surface">Primary Payment Mandate</span>
+<span class="font-label-sm text-label-sm text-tertiary">Compliant with RBI E-Mandate Directives</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">UPI AutoPay</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary font-bold text-headline-sm">
+                SBI
+              </div>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-bold text-on-surface">State Bank of India (UPI)</span>
+<span class="font-body-sm text-body-sm text-tertiary">VPA: ananya@oksbi • Mandate Max: ₹5,000/mo</span>
+<span class="font-label-sm text-label-sm text-primary font-medium mt-0.5">Authorization Reference: UMN-SBIN-2026-904128</span>
+</div>
+</div>
+<button class="py-1.5 px-space-md rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-dim transition-colors font-label-md text-label-md font-semibold self-start sm:self-auto" id="btnUpdateVPA" type="button">
+              Replace UPI ID
+            </button>
+</div>
+<!-- Policy & Grace Period Notice -->
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container flex items-start gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[20px] text-tertiary mt-0.5">info</span>
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-on-surface">3-Day Grace Period Protection</span>
+<p class="text-tertiary text-body-sm">
+                If auto-debit fails on Aug 1, our automated retry pipeline triggers every 24 hours. Your Pro status, saved roadmap milestones, and active AI credits remain uninterrupted for 72 hours.
+              </p>
+</div>
+</div>
+</div>
+<div class="mt-space-lg flex items-center justify-between border-t pt-space-md">
+<span class="font-label-sm text-label-sm text-tertiary">Last verified: July 1, 2026 via NPCI e-Mandate switch</span>
+<button class="font-label-sm text-label-sm font-semibold text-primary hover:underline">View Mandate PDF</button>
+</div>
+</div>
+<!-- Auto-Renew & Cancellation Controls -->
+<div class="lg:col-span-5 rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-title-md text-title-md font-bold text-on-surface">Renewal Controls</span>
+<span class="material-symbols-outlined text-[20px] text-tertiary">tune</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Manage auto-debit state or configure pause windows during university exam schedules.
+          </p>
+<!-- Toggle Container -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-on-surface">Auto-Renew Membership</span>
+<span class="font-label-sm text-label-sm text-tertiary">Debits ₹149 on Aug 1, 2026</span>
+</div>
+<!-- Custom Styled Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggleAutoRenew" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-dim peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="mt-space-md flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm py-1">
+<span class="text-tertiary">Semester Break Pause</span>
+<button class="font-label-md text-label-md font-semibold text-primary hover:underline" id="btnPauseOption">Schedule Pause (Up to 60d)</button>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm py-1">
+<span class="text-tertiary">Cancellation Terms</span>
+<span class="font-body-sm text-body-sm text-on-surface">Retain perks until period ends</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md border-t flex items-center justify-between">
+<button class="font-label-sm text-label-sm text-tertiary hover:text-on-surface flex items-center gap-1" id="btnBillingSupport">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+<span>Billing Support Desk</span>
+</button>
+<button class="font-label-sm text-label-sm text-tertiary hover:underline" id="btnTermDetails">Refund &amp; Cancellation Policy</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Billing History & GST-Compliant Invoices Table -->
+<section class="mb-space-xl">
+<div class="rounded-2xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<div class="p-space-lg border-b flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Billing History &amp; GST Invoices</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SAC Code 998431 (Online Educational &amp; Career Training Services). Download PDF receipts for reimbursement.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-dim transition-colors font-label-md text-label-md font-semibold flex items-center gap-1" id="btnDownloadAllReceipts">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Export All (FY26-27)</span>
+</button>
+</div>
+</div>
+<!-- Tabular Records -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-tertiary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-lg">Invoice Date</th>
+<th class="py-3 px-space-md">Invoice ID</th>
+<th class="py-3 px-space-md">Description</th>
+<th class="py-3 px-space-md">Method &amp; Ref</th>
+<th class="py-3 px-space-md">Amount</th>
+<th class="py-3 px-space-md">Status</th>
+<th class="py-3 px-space-lg text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low text-body-sm font-body-sm text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 px-space-lg font-medium">Jul 01, 2026</td>
+<td class="py-4 px-space-md font-mono text-tertiary">INV-2026-7812</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">DreamX Pro Plan - Monthly Renewal</span>
+<span class="font-label-sm text-label-sm text-tertiary">100 Credits Allocated • Valid July 31</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">contactless</span>
+<span>UPI: ananya@oksbi</span>
+</div>
+</td>
+<td class="py-4 px-space-md font-semibold">₹149.00</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Paid • Verified
+                </span>
+</td>
+<td class="py-4 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-dim text-on-surface transition-colors font-label-md text-label-md font-medium" onclick="triggerDownload('INV-2026-7812')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+<span>PDF</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 px-space-lg font-medium">Jun 18, 2026</td>
+<td class="py-4 px-space-md font-mono text-tertiary">INV-2026-6401</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">AI Credit Power Pack (100 Bonus Credits)</span>
+<span class="font-label-sm text-label-sm text-tertiary">Used for Full Mock Interview Transcripts</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">credit_card</span>
+<span>Razorpay Instant UPI</span>
+</div>
+</td>
+<td class="py-4 px-space-md font-semibold">₹249.00</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Paid • Verified
+                </span>
+</td>
+<td class="py-4 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-dim text-on-surface transition-colors font-label-md text-label-md font-medium" onclick="triggerDownload('INV-2026-6401')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+<span>PDF</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 px-space-lg font-medium">Jun 01, 2026</td>
+<td class="py-4 px-space-md font-mono text-tertiary">INV-2026-5290</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">DreamX Pro Plan - Monthly Renewal</span>
+<span class="font-label-sm text-label-sm text-tertiary">Trial Converted • 100 Credits Allocated</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">contactless</span>
+<span>UPI: ananya@oksbi</span>
+</div>
+</td>
+<td class="py-4 px-space-md font-semibold">₹149.00</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Paid • Verified
+                </span>
+</td>
+<td class="py-4 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-dim text-on-surface transition-colors font-label-md text-label-md font-medium" onclick="triggerDownload('INV-2026-5290')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+<span>PDF</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 (Trial Invoice) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 px-space-lg font-medium">May 24, 2026</td>
+<td class="py-4 px-space-md font-mono text-tertiary">INV-2026-4011</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">7-Day Free Trial Starter Authorization</span>
+<span class="font-label-sm text-label-sm text-tertiary">Campus Partner Campaign (IIT Delhi)</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">account_balance_wallet</span>
+<span>Zero Auth Mandate</span>
+</div>
+</td>
+<td class="py-4 px-space-md font-semibold">₹0.00</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Settled
+                </span>
+</td>
+<td class="py-4 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-dim text-on-surface transition-colors font-label-md text-label-md font-medium" onclick="triggerDownload('INV-2026-4011')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+<span>PDF</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer Note -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between text-tertiary font-label-sm text-label-sm gap-2">
+<span>DreamX Global Technologies India Pvt Ltd • GSTIN: 07AABCD8891P1Z4</span>
+<span>All amounts include 18% IGST (SGST 9% + CGST 9%)</span>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript -->
+<script>
+    // Toast Notification helper
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      if (toast && toastMsg) {
+        toastMsg.textContent = message;
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-20', 'opacity-0');
+        }, 3200);
+      }
+    }
+
+    // Trigger Invoice PDF Download simulation
+    window.triggerDownload = function(invoiceId) {
+      showToast('Generating GST Invoice PDF: ' + invoiceId + '...');
+    };
+
+    // ROI Calculator Logic
+    const sliderMocks = document.getElementById('sliderMocks');
+    const sliderAudits = document.getElementById('sliderAudits');
+    const sliderCohorts = document.getElementById('sliderCohorts');
+
+    const labelMocks = document.getElementById('labelMocks');
+    const labelAudits = document.getElementById('labelAudits');
+    const labelCohorts = document.getElementById('labelCohorts');
+
+    const outFreeCost = document.getElementById('outFreeCost');
+    const outProSavings = document.getElementById('outProSavings');
+    const outProNet = document.getElementById('outProNet');
+    const outEliteSavings = document.getElementById('outEliteSavings');
+    const outEliteNet = document.getElementById('outEliteNet');
+    const calloutROI = document.getElementById('calloutROI');
+
+    function updateCalculator() {
+      const mocks = parseInt(sliderMocks.value, 10);
+      const audits = parseInt(sliderAudits.value, 10);
+      const cohorts = parseInt(sliderCohorts.value, 10);
+
+      labelMocks.textContent = mocks + ' / mo';
+      labelAudits.textContent = audits + ' / mo';
+      labelCohorts.textContent = cohorts + ' / yr';
+
+      // Base unit values
+      // Mock: ₹1500 each * 12 months
+      // Audit: ₹499 each * 12 months
+      // Cohort: ₹8000 each per year
+      const annualBaseSpending = (mocks * 1500 * 12) + (audits * 499 * 12) + (cohorts * 8000);
+      outFreeCost.textContent = '₹' + annualBaseSpending.toLocaleString('en-IN');
+
+      // Pro Plan: 15% discount on services, 10% on first cohort month (~₹800/yr), sub cost = ₹1,188/yr
+      const proServiceSavings = (mocks * 1500 * 12 * 0.15) + (audits * 499 * 12 * 0.15);
+      const proCohortSavings = cohorts * 800; // ~10% off
+      const totalProSavings = Math.round(proServiceSavings + proCohortSavings);
+      const proSubCost = 1188;
+      const netProProfit = totalProSavings - proSubCost;
+
+      outProSavings.textContent = '₹' + totalProSavings.toLocaleString('en-IN') + ' / yr';
+      if (netProProfit >= 0) {
+        outProNet.textContent = '₹' + netProProfit.toLocaleString('en-IN') + ' net profit';
+      } else {
+        outProNet.textContent = '₹' + Math.abs(netProProfit).toLocaleString('en-IN') + ' investment';
+      }
+
+      // Elite Plan: 25% discount on services, 20% on cohorts (~₹1,600), sub cost = ₹2,388/yr
+      const eliteServiceSavings = (mocks * 1500 * 12 * 0.25) + (audits * 499 * 12 * 0.25);
+      const eliteCohortSavings = cohorts * 1600;
+      const totalEliteSavings = Math.round(eliteServiceSavings + eliteCohortSavings);
+      const eliteSubCost = 2388;
+      const netEliteProfit = totalEliteSavings - eliteSubCost;
+
+      outEliteSavings.textContent = '₹' + totalEliteSavings.toLocaleString('en-IN') + ' / yr';
+      if (netEliteProfit >= 0) {
+        outEliteNet.textContent = '₹' + netEliteProfit.toLocaleString('en-IN') + ' net profit';
+      } else {
+        outEliteNet.textContent = '₹' + Math.abs(netEliteProfit).toLocaleString('en-IN') + ' investment';
+      }
+
+      // Dynamic callout
+      if (mocks >= 1) {
+        calloutROI.textContent = 'Your annual Pro plan (₹1,188) pays for itself in just ' + Math.max(1, Math.ceil(1188 / (1500 * 0.15))) + ' mock interviews!';
+      } else if (cohorts >= 1) {
+        calloutROI.textContent = 'One cohort subsidy alone covers over 67% of your annual DreamX membership!';
+      } else {
+        calloutROI.textContent = 'Pro members save an average of ₹4,200 annually across mock calls and audits.';
+      }
+    }
+
+    if (sliderMocks && sliderAudits && sliderCohorts) {
+      sliderMocks.addEventListener('input', updateCalculator);
+      sliderAudits.addEventListener('input', updateCalculator);
+      sliderCohorts.addEventListener('input', updateCalculator);
+      updateCalculator();
+    }
+
+    // Toggle Monthly / Annual billing display
+    const toggleMonthly = document.getElementById('toggleMonthly');
+    const toggleAnnual = document.getElementById('toggleAnnual');
+    const pricePro = document.getElementById('pricePro');
+    const freqPro = document.getElementById('freqPro');
+    const priceElite = document.getElementById('priceElite');
+    const freqElite = document.getElementById('freqElite');
+
+    if (toggleMonthly && toggleAnnual) {
+      toggleMonthly.addEventListener('click', () => {
+        toggleMonthly.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+        toggleMonthly.classList.remove('text-on-surface-variant');
+        toggleAnnual.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+        toggleAnnual.classList.add('text-on-surface-variant');
+
+        if (pricePro) pricePro.textContent = '₹149';
+        if (freqPro) freqPro.textContent = '/ month (billed monthly)';
+        if (priceElite) priceElite.textContent = '₹299';
+        if (freqElite) freqElite.textContent = '/ month (billed monthly)';
+      });
+
+      toggleAnnual.addEventListener('click', () => {
+        toggleAnnual.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+        toggleAnnual.classList.remove('text-on-surface-variant');
+        toggleMonthly.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+        toggleMonthly.classList.add('text-on-surface-variant');
+
+        if (pricePro) pricePro.textContent = '₹99';
+        if (freqPro) freqPro.textContent = '/ month (₹1,188 billed annually)';
+        if (priceElite) priceElite.textContent = '₹199';
+        if (freqElite) freqElite.textContent = '/ month (₹2,388 billed annually)';
+        showToast('Switched to Annual Pricing: 33% Student Discount Active');
+      });
+    }
+
+    // Action button listeners
+    const btnTopUpCredits = document.getElementById('btnTopUpCredits');
+    if (btnTopUpCredits) {
+      btnTopUpCredits.addEventListener('click', () => {
+        showToast('Credit Top-up: 50 AI Credits added to quota!');
+      });
+    }
+
+    const btnDayPass = document.getElementById('btnDayPass');
+    if (btnDayPass) {
+      btnDayPass.addEventListener('click', () => {
+        showToast('Unlimited 24h AI Day Pass Activated (₹99 charged to UPI)');
+      });
+    }
+
+    const btnDownloadPass = document.getElementById('btnDownloadPass');
+    if (btnDownloadPass) {
+      btnDownloadPass.addEventListener('click', () => {
+        showToast('Downloading verified IIT Delhi Student Member Pass (DX-STU-88219)...');
+      });
+    }
+
+    const btnChangePlanScroll = document.getElementById('btnChangePlanScroll');
+    const btnSwitchEliteQuick = document.getElementById('btnSwitchEliteQuick');
+    if (btnChangePlanScroll) {
+      btnChangePlanScroll.addEventListener('click', () => {
+        document.getElementById('tierMatrixSection').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    if (btnSwitchEliteQuick) {
+      btnSwitchEliteQuick.addEventListener('click', () => {
+        document.getElementById('tierMatrixSection').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    const btnUpgradeElite = document.getElementById('btnUpgradeElite');
+    if (btnUpgradeElite) {
+      btnUpgradeElite.addEventListener('click', () => {
+        showToast('Initiating Razorpay Mandate update to Elite Tier (Prorated ₹150)...');
+      });
+    }
+
+    const toggleAutoRenew = document.getElementById('toggleAutoRenew');
+    if (toggleAutoRenew) {
+      toggleAutoRenew.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          showToast('Auto-renew enabled: Aug 1 recurring debit scheduled');
+        } else {
+          showToast('Auto-renew disabled: Access will expire on Aug 1, 2026');
+        }
+      });
+    }
+
+    const btnPauseOption = document.getElementById('btnPauseOption');
+    if (btnPauseOption) {
+      btnPauseOption.addEventListener('click', () => {
+        showToast('Semester Pause configuration open: Select duration (30-60 days)');
+      });
+    }
+
+    const btnCancelMembership = document.getElementById('btnCancelMembership');
+    if (btnCancelMembership) {
+      btnCancelMembership.addEventListener('click', () => {
+        showToast('Cancellation policy modal opened: Active perks valid until Aug 1, 2026');
+      });
+    }
+  </script>
+</div></main></div></body></html>

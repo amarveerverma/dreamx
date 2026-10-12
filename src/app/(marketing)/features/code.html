@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-surface-variant":"#464554","surface-bright":"#faf8ff","error":"#ba1a1a","secondary-fixed-dim":"#d0bcff","on-secondary":"#ffffff","on-primary":"#ffffff","on-tertiary":"#ffffff","primary-fixed":"#e1e0ff","error-container":"#ffdad6","primary-container":"#6063ee","on-surface":"#131b2e","secondary-fixed":"#e9ddff","surface-dim":"#d2d9f4","inverse-on-surface":"#eef0ff","on-secondary-container":"#fffbff","background":"#faf8ff","on-primary-container":"#fffbff","tertiary-fixed":"#d5e3fc","on-primary-fixed-variant":"#2f2ebe","surface-container-high":"#e2e7ff","inverse-surface":"#283044","tertiary-fixed-dim":"#b9c7df","surface-container-highest":"#dae2fd","tertiary-container":"#67758b","surface-container":"#eaedff","on-tertiary-fixed":"#0d1c2e","on-error-container":"#93000a","on-background":"#131b2e","surface-container-low":"#f2f3ff","surface":"#faf8ff","secondary":"#6b38d4","on-secondary-fixed":"#23005c","secondary-container":"#8455ef","tertiary":"#4f5d71","outline-variant":"#c7c4d7","on-tertiary-fixed-variant":"#3a485b","on-tertiary-container":"#fdfcff","on-error":"#ffffff","surface-variant":"#dae2fd","outline":"#767586","primary-fixed-dim":"#c0c1ff","on-primary-fixed":"#07006c","surface-tint":"#494bd6","primary":"#4648d4","on-secondary-fixed-variant":"#5516be","surface-container-lowest":"#ffffff","inverse-primary":"#c0c1ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-lg":"1.5rem","margin":"2rem","space-md":"1rem","space-xs":"0.25rem","space-sm":"0.5rem","gutter":"1.5rem"},"fontFamily":{"metric-num":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"headline-sm":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"title-md":["Inter"],"body-lg":["Inter"],"display-hero-mobile":["Inter"],"display-hero":["Inter"],"label-md":["Inter"],"headline-lg-mobile":["Inter"],"headline-lg":["Inter"]},"fontSize":{"metric-num":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0.005em","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"0em","fontWeight":"400"}],"display-hero-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.025em","fontWeight":"700"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1400px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-xl"><a class="flex items-center gap-space-sm group focus:outline-none" data-path="home" href="#"><div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-[0_0_0_1px_rgba(99,102,241,0.12),0_12px_24px_-6px_rgba(139,92,246,0.12)]"><span class="font-headline-sm text-headline-sm text-on-primary font-bold">D</span></div><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-semibold">Dream<span class="text-primary">X</span></span></a><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="discover" href="#">Discover</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="services" href="#">Services</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="programs" href="#">Programs</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="mentors" href="#">Mentors</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="pricing" href="#">Pricing</a></nav></div><div class="flex items-center gap-space-md"><button class="hidden sm:flex items-center gap-space-sm h-10 px-space-md bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] hover:shadow-[0_4px_6px_-1px_rgba(15,23,42,0.06)] hover:bg-surface-container-low transition-all duration-150 group" type="button"><span class="material-symbols-outlined text-primary text-[18px]">neurology</span><span class="font-label-md text-label-md text-on-surface-variant group-hover:text-on-surface font-medium">Search &amp; AI</span><div class="flex items-center gap-space-xs ml-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">⌘K</span><span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">50 AI Cr</span></div></button><a class="hidden md:inline-flex font-body-md text-body-md font-semibold text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors duration-150" data-path="sign-in" href="#">Sign In</a><a class="h-10 px-space-lg rounded-lg bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-body-md text-body-md font-semibold inline-flex items-center justify-center shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] hover:shadow-[0_4px_6px_-1px_rgba(15,23,42,0.06)] transition-all duration-150 active:scale-[0.99]" data-path="join-workspace" href="#">Join Workspace</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]"><div class="flex flex-col w-full">
+<!-- Subtle Editorial Ambient Gradients -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-96 -left-20 w-80 h-80 bg-tertiary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- HERO SECTION -->
+<section class="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 pt-12 pb-20">
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto space-y-6">
+<!-- Live System Status & Eyebrow Pill -->
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-container-high/70 shadow-sm backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label text-xs uppercase tracking-widest text-primary font-bold">✦ Enterprise Infrastructure for Career Mobility</span>
+<span class="hidden sm:inline-block text-outline text-xs">•</span>
+<span class="hidden sm:inline-block font-label text-xs text-on-surface-variant font-medium">88.4% Match SLA Fill Rate</span>
+</div>
+<!-- Main Title -->
+<h1 class="font-headline text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-on-surface leading-[1.08]">
+          Engineered for <span class="font-serif italic text-primary font-normal">High-Conviction</span> Career Breakthroughs
+        </h1>
+<!-- Subhead -->
+<p class="font-body text-base sm:text-lg lg:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+          The technical and operational infrastructure connecting ambitious talent to vetted industry leaders — powered by 14-dimension vector matching, standardized rubric deliverables, and programmatic hold-and-release escrow.
+        </p>
+<!-- Dynamic Live Metrics Ribbon -->
+<div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 py-2 text-xs font-label text-on-surface-variant">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-md bg-surface-container">
+<span class="material-symbols-outlined text-primary text-base">verified</span>
+<span class="font-semibold text-on-surface">412+</span> Verified Staff &amp; Principal Mentors
+          </div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-md bg-surface-container">
+<span class="material-symbols-outlined text-primary text-base">speed</span>
+<span class="font-semibold text-on-surface">&lt;2.8s</span> Vector Broadcast Latency
+          </div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-md bg-surface-container">
+<span class="material-symbols-outlined text-primary text-base">lock</span>
+<span class="font-semibold text-on-surface">100%</span> Escrow-Protected Deliverables
+          </div>
+</div>
+<!-- Dual CTA -->
+<div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
+<a class="w-full sm:w-auto h-12 px-7 rounded-lg bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-body text-sm font-semibold inline-flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all duration-200" href="#catalog">
+<span>Explore 10-Service Catalog</span>
+<span class="material-symbols-outlined text-lg">arrow_downward</span>
+</a>
+<a class="w-full sm:w-auto h-12 px-7 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body text-sm font-semibold inline-flex items-center justify-center gap-2 transition-all duration-200" href="#comparison">
+<span>Compare vs Legacy Platforms</span>
+<span class="material-symbols-outlined text-lg">compare_arrows</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION 1: THE 6 CORE ARCHITECTURAL PILLARS (Interactive / Showcase Grid) -->
+<section class="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 py-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<div class="font-label text-xs uppercase tracking-widest text-primary font-bold mb-2">01 / Foundation Layer</div>
+<h2 class="font-headline text-3xl sm:text-4xl font-semibold text-on-surface">Six Core Pillars of High-Conviction Mobility</h2>
+</div>
+<p class="font-body text-sm text-on-surface-variant max-w-md">
+          A closed-loop engine built from the ground up to replace informal advisory chats with precision career acceleration and guaranteed outcomes.
+        </p>
+</div>
+<!-- Bento-style Pillars Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Pillar 1: Smart Match Engine (Featured card with SVG weight viz) -->
+<div class="p-7 sm:p-8 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">neurology</span>
+</div>
+<span class="px-2.5 py-1 rounded text-xs font-label font-semibold bg-surface-container text-on-surface-variant">SLA &lt;3,000ms</span>
+</div>
+<h3 class="font-headline text-2xl font-semibold text-on-surface mb-2">14-Dimension Smart Match</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 leading-relaxed">
+              Cosine vector similarity across 14 weighted parameters with a strict 48-hour request TTL. Eliminates cold outbound searches.
+            </p>
+<!-- Dimension Weights mini visualization -->
+<div class="space-y-2.5 pt-2">
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-label">
+<span class="text-on-surface">Service Expertise &amp; Depth</span>
+<span class="font-semibold text-primary">15%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-label">
+<span class="text-on-surface">Career Goal &amp; Target Company Type</span>
+<span class="font-semibold text-primary">12%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 12%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-label">
+<span class="text-on-surface">Career Market Context (US/IN/EU)</span>
+<span class="font-semibold text-primary">12%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 12%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-label">
+<span class="text-on-surface">Tech Stack / Skills Semantic Overlap</span>
+<span class="font-semibold text-primary">10%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2 text-xs font-label text-primary font-semibold">
+<span>+ 10 additional weighted dimensions</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Pillar 2: Global Career Market Framework -->
+<div class="p-7 sm:p-8 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">public</span>
+</div>
+<span class="px-2.5 py-1 rounded text-xs font-label font-semibold bg-surface-container text-on-surface-variant">Regional ATS</span>
+</div>
+<h3 class="font-headline text-2xl font-semibold text-on-surface mb-2">Global Career Market Framework</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 leading-relaxed">
+              Decouple your physical address from professional ambition. Explicitly switch between <span class="font-semibold text-on-surface">CM-US</span> and <span class="font-semibold text-on-surface">CM-IN</span> models with localized salary percentiles and hiring customs.
+            </p>
+<div class="p-4 rounded-lg bg-surface-container-lowest shadow-sm space-y-3">
+<div class="flex items-center justify-between text-xs">
+<span class="font-label font-bold text-on-surface">CM-IN Market</span>
+<span class="text-xs px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">DSA &amp; System Design Focus</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="font-label font-bold text-on-surface">CM-US Market</span>
+<span class="text-xs px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Scope, Impact &amp; Behavioral</span>
+</div>
+<p class="text-xs text-on-surface-variant font-body">Matches mentors actively interviewing or managing teams within that designated jurisdiction.</p>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2 text-xs font-label text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-sm text-primary">tune</span>
+            Adaptive ATS filters &amp; tax compliance
+          </div>
+</div>
+<!-- Pillar 3: Hold-and-Release Escrow Engine -->
+<div class="p-7 sm:p-8 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl">shield</span>
+</div>
+<span class="px-2.5 py-1 rounded text-xs font-label font-semibold bg-tertiary-fixed text-on-tertiary-container">Automated pg_cron</span>
+</div>
+<h3 class="font-headline text-2xl font-semibold text-on-surface mb-2">Hold-and-Release Escrow</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 leading-relaxed">
+              No unpaid advice, no lost student funds. Every payment sits in vault escrow until delivery criteria are certified.
+            </p>
+<div class="space-y-3">
+<div class="p-3 rounded-lg bg-surface-container-lowest flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">timer</span>
+<span class="font-label font-medium text-on-surface">One-Time Services</span>
+</div>
+<span class="font-semibold text-primary">3-Day Hold Window</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-lowest flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-base">date_range</span>
+<span class="font-label font-medium text-on-surface">Cohort Sprints</span>
+</div>
+<span class="font-semibold text-tertiary">14-Day Milestone Release</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2 text-xs font-label text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-primary">gavel</span>
+            72-hour dispute window &amp; standardized resolution
+          </div>
+</div>
+<!-- Pillar 4: Career Readiness Scoring Engine -->
+<div class="p-7 sm:p-8 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">insights</span>
+</div>
+<span class="px-2.5 py-1 rounded text-xs font-label font-semibold bg-surface-container text-on-surface-variant">0.0 - 5.0 Scale</span>
+</div>
+<h3 class="font-headline text-2xl font-semibold text-on-surface mb-2">Career Readiness Score (CRS)</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 leading-relaxed">
+              Continuous diagnostic indexing across 8 validated dimensions: Resume, LinkedIn, Portfolio, Communication, Technical, Mock, Planning, and Confidence.
+            </p>
+<!-- SVG Radar/Polygon-style visual representation -->
+<div class="p-4 rounded-lg bg-surface-container-lowest flex items-center justify-between">
+<div class="space-y-1">
+<div class="font-label text-xs text-on-surface-variant">Aggregate Index</div>
+<div class="font-headline text-3xl font-bold text-on-surface">4.3<span class="text-sm font-normal text-on-surface-variant">/5.0</span></div>
+<div class="text-[11px] font-label text-primary font-semibold">Tier 1 Target Ready</div>
+</div>
+<svg class="w-20 h-20 text-primary" viewbox="0 0 100 100">
+<polygon fill="none" points="50,10 90,38 75,85 25,85 10,38" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5"></polygon>
+<polygon fill="currentColor" fill-opacity="0.25" points="50,22 80,42 70,76 30,78 20,45" stroke="currentColor" stroke-width="2"></polygon>
+<circle cx="50" cy="22" fill="currentColor" r="3"></circle>
+<circle cx="80" cy="42" fill="currentColor" r="3"></circle>
+<circle cx="70" cy="76" fill="currentColor" r="3"></circle>
+<circle cx="30" cy="78" fill="currentColor" r="3"></circle>
+<circle cx="20" cy="45" fill="currentColor" r="3"></circle>
+</svg>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2 text-xs font-label text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-primary">auto_graph</span>
+            Dynamic recalibration post-deliverable
+          </div>
+</div>
+<!-- Pillar 5: Guided 10-Stage Career Journey -->
+<div class="p-7 sm:p-8 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">route</span>
+</div>
+<span class="px-2.5 py-1 rounded text-xs font-label font-semibold bg-surface-container text-on-surface-variant">Milestone Gated</span>
+</div>
+<h3 class="font-headline text-2xl font-semibold text-on-surface mb-2">Guided 10-Stage Journey</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 leading-relaxed">
+              No scattered bookings. Each session operates as a strategic milestone advancing you along a structured roadmap from baseline diagnostic to multi-offer negotiation.
+            </p>
+<div class="flex items-center justify-between px-2 py-3 rounded-lg bg-surface-container-lowest">
+<div class="flex flex-col items-center">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center">01</span>
+<span class="text-[10px] font-label text-on-surface-variant mt-1">Audit</span>
+</div>
+<span class="h-0.5 w-4 bg-primary/40"></span>
+<div class="flex flex-col items-center">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center">04</span>
+<span class="text-[10px] font-label text-on-surface-variant mt-1">System</span>
+</div>
+<span class="h-0.5 w-4 bg-primary/40"></span>
+<div class="flex flex-col items-center">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center">07</span>
+<span class="text-[10px] font-label text-on-surface-variant mt-1">Mock</span>
+</div>
+<span class="h-0.5 w-4 bg-primary/40"></span>
+<div class="flex flex-col items-center">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary text-[10px] font-bold flex items-center justify-center">10</span>
+<span class="text-[10px] font-label text-on-surface-variant mt-1">Offer</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2 text-xs font-label text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-primary">flag</span>
+            Deterministic readiness checks before stage advancement
+          </div>
+</div>
+<!-- Pillar 6: Rating-Based Pricing Engine -->
+<div class="p-7 sm:p-8 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">price_check</span>
+</div>
+<span class="px-2.5 py-1 rounded text-xs font-label font-semibold bg-surface-container text-on-surface-variant">Anti-Price Gouging</span>
+</div>
+<h3 class="font-headline text-2xl font-semibold text-on-surface mb-2">Rating-Based Pricing Engine</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 leading-relaxed">
+              Fair pricing governed by performance metrics. New advisors join under calibrated rate bands (₹249 - ₹799) until they prove their deliverable completion rates.
+            </p>
+<div class="p-4 rounded-lg bg-surface-container-lowest space-y-2 text-xs">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Unverified / Onboarding:</span>
+<span class="font-mono font-semibold text-on-surface">Standard Fixed Band</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">4.0+ Stars (5+ Sessions):</span>
+<span class="font-mono font-semibold text-primary">Autonomous Custom Rates</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Sub-4.0 Star Rating:</span>
+<span class="font-mono font-semibold text-tertiary">Platform Cap Imposed</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2 text-xs font-label text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-primary">balance</span>
+            Protects student budgets while rewarding top practitioners
+          </div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: INTERACTIVE WORKFLOW ARCHITECTURE VISUALIZER -->
+<section class="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 py-16">
+<div class="p-8 sm:p-12 rounded-2xl bg-surface-container shadow-sm">
+<div class="max-w-2xl mb-12">
+<div class="font-label text-xs uppercase tracking-widest text-primary font-bold mb-2">02 / Transaction Lifecycle</div>
+<h2 class="font-headline text-3xl sm:text-4xl font-semibold text-on-surface">How A Request Becomes An Offer In Under 24 Hours</h2>
+<p class="font-body text-sm text-on-surface-variant mt-3 leading-relaxed">
+            The end-to-end technical pipeline eliminating scheduling friction, opaque pricing, and ambiguous feedback.
+          </p>
+</div>
+<!-- 4 Step Pipeline Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Step 1 -->
+<div class="p-6 rounded-xl bg-surface-container-lowest flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary/20 group-hover:bg-primary transition-colors"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-2xl font-bold text-primary">01</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl">dataset</span>
+</div>
+<h4 class="font-headline text-lg font-semibold text-on-surface mb-2">Autonomous Intent Mapping</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+                Select from 11 verified career goals or submit current resumes to the 2-minute diagnostic engine to establish exact service scope.
+              </p>
+</div>
+<div class="mt-6 pt-4 text-[11px] font-label text-on-surface-variant">
+              Embeds Target Company Tier &amp; Timeline
+            </div>
+</div>
+<!-- Step 2 -->
+<div class="p-6 rounded-xl bg-surface-container-lowest flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary/20 group-hover:bg-primary transition-colors"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-2xl font-bold text-primary">02</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl">hub</span>
+</div>
+<h4 class="font-headline text-lg font-semibold text-on-surface mb-2">14-Dim Vector Broadcast</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+                PostgreSQL <code class="font-mono text-[11px] bg-surface-container px-1 py-0.5 rounded">pgvector</code> calculates cosine affinity across target seniority, technical stack, and UTC calendar slots.
+              </p>
+</div>
+<div class="mt-6 pt-4 text-[11px] font-label text-primary font-semibold">
+              Top 5 Qualified Mentors Alerted
+            </div>
+</div>
+<!-- Step 3 -->
+<div class="p-6 rounded-xl bg-surface-container-lowest flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary/20 group-hover:bg-primary transition-colors"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-2xl font-bold text-primary">03</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl">currency_exchange</span>
+</div>
+<h4 class="font-headline text-lg font-semibold text-on-surface mb-2">24h Offer &amp; 1-Counter Rule</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+                Mentors submit structured offers. The platform enforces the <span class="font-semibold text-on-surface">1-Counter Rule</span> to prevent protracted back-and-forth haggling.
+              </p>
+</div>
+<div class="mt-6 pt-4 text-[11px] font-label text-on-surface-variant">
+              Fair Market Price Certainty
+            </div>
+</div>
+<!-- Step 4 -->
+<div class="p-6 rounded-xl bg-surface-container-lowest flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary/20 group-hover:bg-primary transition-colors"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-2xl font-bold text-primary">04</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl">task_alt</span>
+</div>
+<h4 class="font-headline text-lg font-semibold text-on-surface mb-2">Google Meet + Rubric PDF</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+                Zero friction booking with calendar integration. Payout releases only when mentor submits standard rubric-scored deliverable report.
+              </p>
+</div>
+<div class="mt-6 pt-4 text-[11px] font-label text-tertiary font-semibold">
+              72-Hour Quality Escrow Release
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: LIVE 10-SERVICE CATALOG PREVIEW -->
+<section class="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 py-16" id="catalog">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<div class="font-label text-xs uppercase tracking-widest text-primary font-bold mb-2">03 / Standardized Services</div>
+<h2 class="font-headline text-3xl sm:text-4xl font-semibold text-on-surface">Precision Deliverables, Not Casual Chats</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-label text-on-surface-variant">Filter By:</span>
+<button class="px-3 py-1 text-xs rounded-full bg-primary text-on-primary font-semibold">All (10)</button>
+<button class="px-3 py-1 text-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface">Reviews</button>
+<button class="px-3 py-1 text-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface">Mocks</button>
+<button class="px-3 py-1 text-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface">Strategy</button>
+</div>
+</div>
+<!-- 10 Service Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- 1. Resume Review -->
+<div class="p-6 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-label text-on-surface-variant mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span> 45 Minutes</span>
+<span class="font-mono font-semibold text-on-surface">₹499 – ₹999</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">01. Resume Deep-Dive Review</h3>
+<p class="font-body text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Line-by-line critique of technical bullet points, metric framing (XYZ formula), and narrative clarity by a senior hiring manager.
+            </p>
+</div>
+<div class="pt-4 bg-surface-container-lowest/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-xs">
+<span class="font-label text-on-surface-variant">Deliverable: Annotated PDF + Re-write Suggestions</span>
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+</div>
+</div>
+<!-- 2. ATS Resume Optimization -->
+<div class="p-6 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-label text-on-surface-variant mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span> 45 Minutes</span>
+<span class="font-mono font-semibold text-on-surface">₹599 – ₹1,199</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">02. ATS Resume Optimization</h3>
+<p class="font-body text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Parsing benchmark verification against Greenhouse, Lever, and Workday algorithms with target keyword distribution maps.
+            </p>
+</div>
+<div class="pt-4 bg-surface-container-lowest/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-xs">
+<span class="font-label text-on-surface-variant">Deliverable: ATS Scorecard &amp; Clean Layout Template</span>
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+</div>
+</div>
+<!-- 3. LinkedIn Profile Review -->
+<div class="p-6 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-label text-on-surface-variant mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span> 30 Minutes</span>
+<span class="font-mono font-semibold text-on-surface">₹299 – ₹699</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">03. LinkedIn Profile &amp; Recruiter SEO</h3>
+<p class="font-body text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Restructure headline, about summary, and experience tags to rank in the top percentile of Recruiter Search queries.
+            </p>
+</div>
+<div class="pt-4 bg-surface-container-lowest/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-xs">
+<span class="font-label text-on-surface-variant">Deliverable: Recruiter Search Keyword Audit</span>
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+</div>
+</div>
+<!-- 4. Portfolio Review -->
+<div class="p-6 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-label text-on-surface-variant mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span> 45 Minutes</span>
+<span class="font-mono font-semibold text-on-surface">₹499 – ₹999</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">04. Portfolio &amp; Case Study Audit</h3>
+<p class="font-body text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Design, architecture, and code repo reviews evaluating whether personal projects clearly demonstrate production-level problem solving.
+            </p>
+</div>
+<div class="pt-4 bg-surface-container-lowest/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-xs">
+<span class="font-label text-on-surface-variant">Deliverable: Case Study Architecture Report</span>
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+</div>
+</div>
+<!-- 5. Behavioral Mock -->
+<div class="p-6 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-label text-on-surface-variant mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span> 60 Minutes</span>
+<span class="font-mono font-semibold text-on-surface">₹599 – ₹1,199</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">05. Behavioral &amp; Leadership Mock</h3>
+<p class="font-body text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Simulated interview evaluating STAR method responses, cross-functional collaboration, ownership, and conflict resolution stories.
+            </p>
+</div>
+<div class="pt-4 bg-surface-container-lowest/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-xs">
+<span class="font-label text-on-surface-variant">Deliverable: STAR Rubric Feedback Matrix</span>
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+</div>
+</div>
+<!-- 6. Technical Mock -->
+<div class="p-6 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-label text-on-surface-variant mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span> 60 Minutes</span>
+<span class="font-mono font-semibold text-on-surface">₹799 – ₹1,499</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">06. System Design / Tech Mock</h3>
+<p class="font-body text-xs text-on-surface-variant mb-4 leading-relaxed">
+              High-pressure architecture drill covering scalability, trade-off analysis, microservices, consistency, and database sharding.
+            </p>
+</div>
+<div class="pt-4 bg-surface-container-lowest/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-xs">
+<span class="font-label text-on-surface-variant">Deliverable: Bar-Raiser Assessment Sheet</span>
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+</div>
+</div>
+<!-- 7. Career Consultation -->
+<div class="p-6 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-label text-on-surface-variant mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span> 30 Minutes</span>
+<span class="font-mono font-semibold text-on-surface">₹399 – ₹799</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">07. Strategic Career Consultation</h3>
+<p class="font-body text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Unpack crossroads: IC vs Management, domain switching into AI/ML, startup vs Big Tech, or international relocation roadmaps.
+            </p>
+</div>
+<div class="pt-4 bg-surface-container-lowest/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-xs">
+<span class="font-label text-on-surface-variant">Deliverable: Decision Framework One-Pager</span>
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+</div>
+</div>
+<!-- 8. Salary Negotiation -->
+<div class="p-6 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-label text-on-surface-variant mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span> 30 Minutes</span>
+<span class="font-mono font-semibold text-on-surface">₹499 – ₹999</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">08. Offer &amp; Salary Negotiation</h3>
+<p class="font-body text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Benchmark total compensation (Base, Stock/ESOP, Joining Bonus). Craft verbatim counter-offer emails and phone counter scripts.
+            </p>
+</div>
+<div class="pt-4 bg-surface-container-lowest/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-xs">
+<span class="font-label text-on-surface-variant">Deliverable: Custom Counter-Offer Script</span>
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+</div>
+</div>
+<!-- 9. Career Roadmap -->
+<div class="p-6 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-label text-on-surface-variant mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span> 60 Minutes</span>
+<span class="font-mono font-semibold text-on-surface">₹599 – ₹1,199</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">09. 6-Month Career Roadmap</h3>
+<p class="font-body text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Quarterly milestone engineering outlining projects to ship, open source contributions, and target seniority leap objectives.
+            </p>
+</div>
+<div class="pt-4 bg-surface-container-lowest/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-xs">
+<span class="font-label text-on-surface-variant">Deliverable: 6-Month Gantt &amp; Milestone Plan</span>
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+</div>
+</div>
+<!-- 10. Coding Deep-Dive (spans across on small, sits gracefully on desktop) -->
+<div class="p-6 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between text-xs font-label text-on-surface-variant mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span> 60 Minutes</span>
+<span class="font-mono font-semibold text-on-surface">₹699 – ₹1,299</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">10. Live Algorithm &amp; Coding Deep-Dive</h3>
+<p class="font-body text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Real-time problem breakdown on LeetCode Medium/Hard patterns, time/space complexity optimization, and live code reviews.
+            </p>
+</div>
+<div class="pt-4 bg-surface-container-lowest/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-xs">
+<span class="font-label text-on-surface-variant">Deliverable: Annotated Solution &amp; Space/Time Proofs</span>
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: ARCHITECTURAL COMPARISON MATRIX -->
+<section class="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 py-16" id="comparison">
+<div class="mb-10 text-center max-w-2xl mx-auto">
+<div class="font-label text-xs uppercase tracking-widest text-primary font-bold mb-2">04 / Structural Superiority</div>
+<h2 class="font-headline text-3xl sm:text-4xl font-semibold text-on-surface">Why The Industry Needed An Infrastructure Upgrade</h2>
+<p class="font-body text-sm text-on-surface-variant mt-2">
+          Compare how DreamX eliminates common marketplace failure modes versus legacy networks.
+        </p>
+</div>
+<!-- High-Fidelity Comparison Table -->
+<div class="overflow-x-auto rounded-2xl bg-surface-container-lowest shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-xs font-label text-on-surface-variant">
+<th class="py-5 px-6 font-semibold">Evaluation Criteria</th>
+<th class="py-5 px-6 font-bold text-primary text-sm">DreamX Platform</th>
+<th class="py-5 px-6 font-medium">Topmate</th>
+<th class="py-5 px-6 font-medium">Fiverr / Upwork</th>
+<th class="py-5 px-6 font-medium">ADPList</th>
+</tr>
+</thead>
+<tbody class="font-body text-xs divide-y-0 text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-5 px-6 font-semibold">
+                Outcome Accountability &amp; Deliverables
+              </td>
+<td class="py-5 px-6 bg-primary-fixed/20 font-medium">
+<div class="flex items-center gap-1.5 text-primary font-semibold">
+<span class="material-symbols-outlined text-base">check_circle</span>
+                  Mandatory Rubric PDF Scorecards
+                </div>
+<div class="text-[11px] text-on-surface-variant mt-0.5">Dispute triggered if deliverable missing</div>
+</td>
+<td class="py-5 px-6 text-on-surface-variant">Unstructured call only (No written deliverable required)</td>
+<td class="py-5 px-6 text-on-surface-variant">Arbitrary gig outputs, variable quality</td>
+<td class="py-5 px-6 text-on-surface-variant">Volunteer advice without structured outcomes</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-5 px-6 font-semibold">
+                Matching Intelligence
+              </td>
+<td class="py-5 px-6 bg-primary-fixed/20 font-medium">
+<div class="flex items-center gap-1.5 text-primary font-semibold">
+<span class="material-symbols-outlined text-base">check_circle</span>
+                  14-Dim Vector Cosine Engine
+                </div>
+<div class="text-[11px] text-on-surface-variant mt-0.5">Under 3,000ms SLA broadcast to top 5</div>
+</td>
+<td class="py-5 px-6 text-on-surface-variant">Manual link sharing, no system-driven match</td>
+<td class="py-5 px-6 text-on-surface-variant">Keyword search &amp; uncalibrated bidding</td>
+<td class="py-5 px-6 text-on-surface-variant">Manual directory browsing &amp; cold booking</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-5 px-6 font-semibold">
+                Payout &amp; Escrow Security
+              </td>
+<td class="py-5 px-6 bg-primary-fixed/20 font-medium">
+<div class="flex items-center gap-1.5 text-primary font-semibold">
+<span class="material-symbols-outlined text-base">check_circle</span>
+                  3-Day &amp; 14-Day Vault Escrow
+                </div>
+<div class="text-[11px] text-on-surface-variant mt-0.5">Automated release via pg_cron</div>
+</td>
+<td class="py-5 px-6 text-on-surface-variant">Upfront direct charge, painful refund paths</td>
+<td class="py-5 px-6 text-on-surface-variant">Complex 14-day arbitration disputes</td>
+<td class="py-5 px-6 text-on-surface-variant">Free only (High ghosting rate ~40%)</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-5 px-6 font-semibold">
+                Pricing Fairness &amp; Governance
+              </td>
+<td class="py-5 px-6 bg-primary-fixed/20 font-medium">
+<div class="flex items-center gap-1.5 text-primary font-semibold">
+<span class="material-symbols-outlined text-base">check_circle</span>
+                  Rating-Calibrated Bands
+                </div>
+<div class="text-[11px] text-on-surface-variant mt-0.5">Proof-of-work required before rate hikes</div>
+</td>
+<td class="py-5 px-6 text-on-surface-variant">Unregulated wild west pricing by creators</td>
+<td class="py-5 px-6 text-on-surface-variant">Race to bottom or exorbitant freelance fees</td>
+<td class="py-5 px-6 text-on-surface-variant">Uncompensated (Mentors burnout quickly)</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-5 px-6 font-semibold">
+                Career Continuity
+              </td>
+<td class="py-5 px-6 bg-primary-fixed/20 font-medium">
+<div class="flex items-center gap-1.5 text-primary font-semibold">
+<span class="material-symbols-outlined text-base">check_circle</span>
+                  10-Stage Milestone Journey
+                </div>
+<div class="text-[11px] text-on-surface-variant mt-0.5">Tracks Career Readiness Score progression</div>
+</td>
+<td class="py-5 px-6 text-on-surface-variant">One-off isolated phone calls</td>
+<td class="py-5 px-6 text-on-surface-variant">Transactional task execution</td>
+<td class="py-5 px-6 text-on-surface-variant">No longitudinal progress tracking</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- SECTION 5: ENTERPRISE TRUST & DATA SECURITY -->
+<section class="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 py-12">
+<div class="p-8 rounded-2xl bg-surface-container-high/60 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="space-y-2 text-center md:text-left">
+<h3 class="font-headline text-2xl font-semibold text-on-surface">Enterprise-Grade Trust Architecture</h3>
+<p class="font-body text-xs text-on-surface-variant max-w-xl">
+            DreamX operates with full database isolation using Row-Level Security (RLS) policies, end-to-end encrypted session telemetry, and automated audit logs for institutional cohorts.
+          </p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-3">
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-lowest shadow-sm text-xs font-label font-semibold text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">lock</span>
+            ISO/IEC 27001
+          </div>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-lowest shadow-sm text-xs font-label font-semibold text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">verified</span>
+            SOC-2 Type II
+          </div>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-lowest shadow-sm text-xs font-label font-semibold text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">security</span>
+            RLS Guarded
+          </div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: HIGH-CONVERSION CLOSING BANNER -->
+<section class="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 pt-8 pb-20">
+<div class="p-10 sm:p-16 rounded-3xl bg-inverse-surface text-inverse-on-surface text-center relative overflow-hidden shadow-xl">
+<div class="absolute -top-24 -left-24 w-72 h-72 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -right-24 w-72 h-72 bg-secondary/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mx-auto space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container/10 text-primary-fixed-dim text-xs font-label font-semibold">
+<span>Guaranteed Outcome SLAs</span>
+</div>
+<h2 class="font-headline text-3xl sm:text-5xl font-semibold tracking-tight text-white leading-tight">
+            Ready to Accelerate Your Career Trajectory?
+          </h2>
+<p class="font-body text-sm sm:text-base text-surface-container-high leading-relaxed">
+            Whether you are preparing for your next Tier-1 technical round or an experienced engineering leader looking to monetize real insight without scheduling headaches.
+          </p>
+<!-- Dual Audience Routing -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+<a class="w-full sm:w-auto h-12 px-8 rounded-lg bg-primary hover:bg-primary-container text-white font-body text-sm font-semibold inline-flex items-center justify-center gap-2 shadow-md transition-all duration-200" href="#">
+<span>Book a Verified Session</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto h-12 px-8 rounded-lg bg-white/10 hover:bg-white/15 text-white font-body text-sm font-semibold inline-flex items-center justify-center gap-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">work</span>
+<span>Apply as a Verified Mentor</span>
+</a>
+</div>
+<!-- Bottom Micro Assurance -->
+<div class="pt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-label text-surface-container-highest">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary-fixed-dim">verified</span>
+              100% Escrow Refund Guarantee
+            </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary-fixed-dim">timer</span>
+              24-Hour Matching Commitment
+            </span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // Filter button interactions for Catalog preview
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('#catalog button');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+          b.classList.add('bg-surface-container', 'text-on-surface');
+        });
+        btn.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+        btn.classList.remove('bg-surface-container', 'text-on-surface');
+      });
+    });
+  });
+</script></main><footer class="w-full bg-inverse-surface text-inverse-on-surface pt-space-xl pb-space-xl"><div class="max-w-[1400px] mx-auto px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-1 space-y-space-md"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center"><span class="font-headline-sm text-headline-sm text-on-primary font-bold">D</span></div><span class="font-headline-sm text-headline-sm tracking-tight text-on-primary font-semibold">Dream<span class="text-primary-fixed-dim">X</span></span></div><p class="font-body-sm text-body-sm text-surface-container-highest max-w-xs">The autonomous career mobility &amp; talent success marketplace. Engineered for high-conviction outcomes.</p><div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container/10"><span class="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span><span class="font-label-sm text-label-sm text-surface-container-highest uppercase tracking-wider font-semibold">All Systems Operational</span></div></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase tracking-wider text-surface-container-high font-semibold">Product</div><ul class="space-y-space-xs"><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="discover" href="#">Career Copilot</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="services" href="#">Outcome Simulator</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="pricing" href="#">Credit Engine</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="discover" href="#">Opportunity Exchange</a></li></ul></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase tracking-wider text-surface-container-high font-semibold">Programs</div><ul class="space-y-space-xs"><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="programs" href="#">Executive Fellowships</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="programs" href="#">Venture Apprentices</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="mentors" href="#">1-on-1 Advisory</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="programs" href="#">Enterprise Sprints</a></li></ul></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase tracking-wider text-surface-container-high font-semibold">Platform &amp; Verification</div><ul class="space-y-space-xs"><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="services" href="#">Skill Graph Engine</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="services" href="#">Verifiable Credentials</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="services" href="#">Market Benchmarks</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="services" href="#">Developer API</a></li></ul></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase tracking-wider text-surface-container-high font-semibold">Legal &amp; Trust</div><ul class="space-y-space-xs mb-space-sm"><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="privacy-policy" href="#">Privacy Architecture</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="terms-of-service" href="#">Terms of Service</a></li><li class="h-7 flex items-center"><a class="font-body-sm text-body-sm text-surface-container-highest hover:text-on-primary transition-colors duration-150" data-path="security" href="#">Trust Center</a></li></ul><div class="flex flex-wrap gap-1.5 pt-space-xs"><span class="px-2 py-1 rounded bg-surface-container/10 font-label-sm text-label-sm text-primary-fixed font-semibold">ISO/IEC 27001</span><span class="px-2 py-1 rounded bg-surface-container/10 font-label-sm text-label-sm text-primary-fixed font-semibold">SOC-2 Type II</span><span class="px-2 py-1 rounded bg-surface-container/10 font-label-sm text-label-sm text-secondary-fixed font-semibold">RLS Guarded</span></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-surface-container-highest font-body-sm text-body-sm"><p class="">© 2025 DreamX Technologies, Inc. All rights reserved. Precision career mobility platform.</p><div class="flex items-center gap-space-lg"><a class="hover:text-on-primary transition-colors duration-150" data-path="security" href="#">Security Audits</a><a class="hover:text-on-primary transition-colors duration-150" data-path="privacy-policy" href="#">GDPR Compliance</a><a class="hover:text-on-primary transition-colors duration-150" data-path="terms-of-service" href="#">Acceptable Use</a></div></div></div></footer>
+</body></html>

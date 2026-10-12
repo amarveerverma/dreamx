@@ -1,0 +1,266 @@
+---
+name: Executive Precision
+colors:
+  surface: '#faf8ff'
+  surface-dim: '#d2d9f4'
+  surface-bright: '#faf8ff'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#f2f3ff'
+  surface-container: '#eaedff'
+  surface-container-high: '#e2e7ff'
+  surface-container-highest: '#dae2fd'
+  on-surface: '#131b2e'
+  on-surface-variant: '#464554'
+  inverse-surface: '#283044'
+  inverse-on-surface: '#eef0ff'
+  outline: '#767586'
+  outline-variant: '#c7c4d7'
+  surface-tint: '#494bd6'
+  primary: '#4648d4'
+  on-primary: '#ffffff'
+  primary-container: '#6063ee'
+  on-primary-container: '#fffbff'
+  inverse-primary: '#c0c1ff'
+  secondary: '#6b38d4'
+  on-secondary: '#ffffff'
+  secondary-container: '#8455ef'
+  on-secondary-container: '#fffbff'
+  tertiary: '#006c49'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#00885d'
+  on-tertiary-container: '#000703'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#e1e0ff'
+  primary-fixed-dim: '#c0c1ff'
+  on-primary-fixed: '#07006c'
+  on-primary-fixed-variant: '#2f2ebe'
+  secondary-fixed: '#e9ddff'
+  secondary-fixed-dim: '#d0bcff'
+  on-secondary-fixed: '#23005c'
+  on-secondary-fixed-variant: '#5516be'
+  tertiary-fixed: '#6ffbbe'
+  tertiary-fixed-dim: '#4edea3'
+  on-tertiary-fixed: '#002113'
+  on-tertiary-fixed-variant: '#005236'
+  background: '#faf8ff'
+  on-background: '#131b2e'
+  surface-variant: '#dae2fd'
+typography:
+  display:
+    fontFamily: Inter
+    fontSize: 36px
+    fontWeight: '700'
+    lineHeight: 44px
+    letterSpacing: -0.03em
+  headline-lg:
+    fontFamily: Inter
+    fontSize: 28px
+    fontWeight: '600'
+    lineHeight: 36px
+    letterSpacing: -0.025em
+  headline-lg-mobile:
+    fontFamily: Inter
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+    letterSpacing: -0.02em
+  headline-md:
+    fontFamily: Inter
+    fontSize: 20px
+    fontWeight: '600'
+    lineHeight: 28px
+    letterSpacing: -0.02em
+  headline-sm:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: '600'
+    lineHeight: 24px
+    letterSpacing: -0.015em
+  stat-metric:
+    fontFamily: Inter
+    fontSize: 32px
+    fontWeight: '700'
+    lineHeight: 38px
+    letterSpacing: -0.03em
+  stat-metric-sm:
+    fontFamily: Inter
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 30px
+    letterSpacing: -0.02em
+  body-lg:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 24px
+    letterSpacing: -0.01em
+  body-md:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 20px
+    letterSpacing: -0.005em
+  body-sm:
+    fontFamily: Inter
+    fontSize: 13px
+    fontWeight: '400'
+    lineHeight: 18px
+    letterSpacing: 0em
+  label-md:
+    fontFamily: Inter
+    fontSize: 13px
+    fontWeight: '500'
+    lineHeight: 16px
+    letterSpacing: 0em
+  label-sm:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: '500'
+    lineHeight: 16px
+    letterSpacing: 0.01em
+  code-table:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: '500'
+    lineHeight: 16px
+    letterSpacing: 0.02em
+  overline:
+    fontFamily: Inter
+    fontSize: 11px
+    fontWeight: '600'
+    lineHeight: 14px
+    letterSpacing: 0.06em
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1.5rem
+  margin: 2rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2rem
+---
+
+## Brand & Style
+
+This design system establishes an executive-grade operational environment blending the systematic precision of developer tooling with the calculated luxury of modern fintech dashboards. Designed specifically for high-velocity executive administration, the aesthetic eliminates visual noise in favor of analytical clarity, high data density, and effortless scannability.
+
+The visual style merges structured modern enterprise minimalism with tactile, ultra-refined micro-surfaces:
+- **Surface Integrity**: Pure white functional cards hover subtly over warm-tinted neutral canvases, keeping optical fatigue low during extended operational shifts.
+- **Controlled Vibrancy**: Rich indigo and violet accents serve strictly functional purposes—focal anchors, active system states, and critical actions—never decorative distraction.
+- **Financial Clarity**: High-contrast typography and tabular figures ensure mission-critical statistics, financial flows, and platform health metrics read instantly with zero ambiguity.
+- **Polished Tactility**: Restrained, calibrated multi-layer shadows and hairline ghost borders replace heavy containers, delivering an interface that feels responsive, engineered, and authoritative.
+
+## Colors
+
+The palette leverages a carefully balanced relationship between high-contrast functional ink, soft warm-neutral backdrops, and focused chromatic signals.
+
+### Core Swatches
+- **Primary Indigo (`#6366F1`)**: The anchor for primary calls to action, selected active states, and focal metrics. Hover state transitions to deep indigo (`#4F46E5`).
+- **Accent Violet (`#8B5CF6`)**: Secondary highlight and platform feature accent, signaling intelligence layers, executive filters, and secondary interactive states.
+- **Surface White (`#FFFFFF`)**: Pure canvas for elevated operational cards, modal dialogs, and popovers.
+- **Warm Canvas Neutral (`#F9F9FB` / `#FCFCFD`)**: Base application background, providing warm contrast against white elevated cards without visual weight.
+- **Ink Slate-900 (`#0F172A`)**: Primary text and deep structural lines, offering razor-sharp contrast against white and light slate surfaces.
+- **Subdued Ink**:
+  - Ink Secondary (`#475569` / Slate-600): Form labels, column headers, meta timestamps.
+  - Ink Muted (`#94A3B8` / Slate-400): Inactive icons, subtle placeholders, disabled triggers.
+  - Hairline Border (`#E2E8F0` / Slate-200): Crisp structural borders and dividers.
+
+### Semantic Tones
+- **Growth / Health (Emerald `#10B981`)**: Positive yields, completed transactions, operational health 100%. Light tint background: `#ECFDF5`.
+- **Pending / Warning (Amber `#F59E0B`)**: In-review authorizations, high latency, operational thresholds reached. Light tint background: `#FFFBEB`.
+- **Alert / Destructive (Rose `#EF4444`)**: Failed webhooks, unauthorized attempts, irreversible system operations. Light tint background: `#FEF2F2`.
+- **Informational (Blue `#3B82F6`)**: System logs, audit notices, passive configuration cues. Light tint background: `#EFF6FF`.
+
+## Typography
+
+Inter serves as the single typographic foundation across all visual hierarchies to maintain structural consistency and technical discipline.
+
+### Numeric & Metric Precision
+- All metrics, currency quantities, volume counters, and table data cells must activate tabular numbers (`font-feature-settings: "tnum" 1, "cv05" 1`) to ensure strict vertical alignment across comparative rows.
+- Currency symbols are set with reduced opacity (70%) or slightly reduced point sizes to emphasize the numeric quantity.
+
+### Typographic Discipline
+- Overlines and section category titles are strictly uppercase with `0.06em` tracking for rapid structural indexing.
+- Metric values pair directly with micro-labels (`label-sm` or `body-sm`) placed consistently either immediately below or aligned as muted suffixes.
+
+## Layout & Spacing
+
+The layout is anchored in an uncompromising 8pt dimensional rhythm (with 4pt half-steps for micro-components such as badges, inputs, and toggles).
+
+### Structural Architecture
+- **Desktop Grid**: Fluid 12-column system, max container width constrained to `1600px` for high-density administrative views, flanked by a collapsible fixed-width navigation rail (`260px` expanded, `72px` collapsed).
+- **Gutters & Margins**: Default desktop margin of `32px` (`2rem`) with `24px` (`1.5rem`) gutters between dashboard analytical cards.
+- **Section Rhythm**: Inter-card section gaps strictly adhere to `32px` (`space-xl`), while related intra-card metrics and controls use `16px` (`space-md`) or `8px` (`space-sm`).
+
+### Breakpoints & Adaptive Reflow
+- **Desktop (`>= 1280px`)**: Full multi-column dashboard views (3-4 KPI metrics horizontally, dual-column analytics charts, side audit rail).
+- **Tablet (`768px - 1279px`)**: KPI grid scales to 2-column configuration; secondary data charts stack vertically; navigation collapses into compact icon rail. Margin drops to `24px` (`1.5rem`).
+- **Mobile (`< 768px`)**: Single-column vertical stream; navigation transitions to an off-canvas drawer with sticky executive header; card internal paddings compress from `24px` to `16px`. Canvas margin reduces to `16px` (`1rem`).
+
+## Elevation & Depth
+
+Depth in the dashboard is conveyed through hairline surface containment coupled with diffuse, low-opacity ambient shadows. Bold drop shadows and heavy multi-layered borders are prohibited.
+
+### Elevation Hierarchy
+- **Level 0 (Base Canvas)**: Background color (`#F9F9FB` / `#FCFCFD`), completely flat, no shadow.
+- **Level 1 (Operational Cards & Containers)**: Surface white (`#FFFFFF`) with a `1px` continuous border in `#E2E8F0` and subtle ambient drop:
+  `box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03)`.
+- **Level 2 (Hover States, Action Menus, Filter Flyouts)**: Elevated interactive elements:
+  `box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04)`.
+- **Level 3 (Command Palette, Executive Modals, Floating Bar)**: Centered interactive focal layers:
+  `box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04)`, enclosed with a hairline border (`#CBD5E1`).
+
+### Border Discipline
+All cards and elevated panels maintain a crisp, sub-pixel border of `1px solid #E2E8F0`. When an element is focused or hovered, the border shifts smoothly to `#CBD5E1` or `rgba(99, 102, 241, 0.35)` rather than scaling thickness.
+
+## Shapes
+
+The interface implements a cohesive curvature scale centered on an exact `12px` card radius, delivering a clean modern contour that feels tailored rather than generic.
+
+- **Primary Cards & Modals**: Fixed at `12px` (`0.75rem`), reinforcing containment while maintaining crisp alignment with surrounding grids.
+- **Form Controls & Buttons**: Set to `8px` (`0.5rem`) for a tactile, tool-like interaction feel.
+- **Data Badges, Chips & Avatars**: Set to full pill curvature (`9999px`) or `6px` depending on data context (status pills are fully rounded; technical ID badges use `6px`).
+- **Inner Nesting Alignment**: Elements nested inside `12px` cards maintain an `8px` corner radius to ensure concentric visual harmony.
+
+## Components
+
+### Buttons
+- **Primary**: Background `#6366F1`, hover `#4F46E5`, active `#4338CA`, text `#FFFFFF`. Internal padding `8px 16px` (medium), font weight `500`, border radius `8px`. Focus ring `2px solid #6366F1` with `2px` offset.
+- **Secondary / Outline**: Surface `#FFFFFF`, border `1px solid #E2E8F0`, text `#0F172A`. Hover background `#F8FAFC`, border color `#CBD5E1`.
+- **Ghost**: Zero default background, text `#475569`. Hover background `#F1F5F9`, text `#0F172A`.
+- **Destructive**: Background `#EF4444`, hover `#DC2626`, text `#FFFFFF`.
+
+### Cards & KPI Blocks
+- Standard container: White surface, `12px` border radius, `1px solid #E2E8F0` border, `20px` to `24px` internal padding.
+- KPI metric block anatomy: Muted overline label (`label-sm`), main tabular value (`stat-metric`), followed by an inline status badge displaying percentage delta and sparkline visualization.
+
+### Chips & Status Indicators
+- **Growth / Active**: Background `#ECFDF5`, text `#065F46`, optional `6px` solid emerald dot indicator.
+- **Pending / Warning**: Background `#FFFBEB`, text `#92400E`, optional amber dot.
+- **Critical / Failed**: Background `#FEF2F2`, text `#991B1B`, optional rose dot.
+- **Neutral / Meta**: Background `#F1F5F9`, text `#334155`. Border radius `9999px`, height `24px`, padding `0 10px`.
+
+### Tables & Data Grids
+- **Header Row**: Height `40px`, background `#F8FAFC`, text `#475569`, uppercase `11px` tracking `0.05em`, border bottom `1px solid #E2E8F0`.
+- **Data Rows**: Height `52px`, background `#FFFFFF`, text `#0F172A`, font size `13px`. Zebra striping omitted in favor of `#F8FAFC` row hover states.
+- Numeric columns strictly align right with tabular font features activated.
+
+### Input Fields & Selectors
+- Height `38px`, background `#FFFFFF`, border `1px solid #E2E8F0`, border radius `8px`, horizontal padding `12px`.
+- Text `#0F172A`, placeholder `#94A3B8`.
+- Focus state: Border color `#6366F1`, shadow `0 0 0 3px rgba(99, 102, 241, 0.15)`, outline none.
+
+### Interactive Quick Filters & Segmented Controls
+- Background `#F1F5F9`, padding `3px`, border radius `8px`.
+- Active segment: Background `#FFFFFF`, text `#0F172A`, shadow `0 1px 2px rgba(15, 23, 42, 0.08)`.
+- Inactive segment: Text `#64748B`, hover text `#0F172A`.

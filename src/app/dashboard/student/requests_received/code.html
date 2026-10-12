@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-container":"#fdfcff","primary-fixed":"#e1e0ff","outline-variant":"#c7c4d7","on-tertiary-fixed-variant":"#3a485b","surface-container-low":"#f2f3ff","inverse-on-surface":"#eef0ff","on-secondary-fixed-variant":"#5516be","outline":"#767586","on-background":"#131b2e","on-error":"#ffffff","tertiary-container":"#67758b","surface-tint":"#494bd6","inverse-primary":"#c0c1ff","surface":"#faf8ff","on-error-container":"#93000a","on-surface":"#131b2e","on-surface-variant":"#464554","secondary-container":"#8455ef","primary-container":"#6063ee","surface-container-highest":"#dae2fd","primary-fixed-dim":"#c0c1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","on-tertiary-fixed":"#0d1c2e","secondary":"#6b38d4","primary":"#4648d4","tertiary-fixed-dim":"#b9c7df","surface-bright":"#faf8ff","on-secondary-container":"#fffbff","on-secondary-fixed":"#23005c","surface-container-high":"#e2e7ff","inverse-surface":"#283044","on-primary-fixed":"#07006c","tertiary-fixed":"#d5e3fc","tertiary":"#4f5d71","on-secondary":"#ffffff","on-primary":"#ffffff","secondary-fixed-dim":"#d0bcff","surface-dim":"#d2d9f4","on-primary-fixed-variant":"#2f2ebe","error":"#ba1a1a","background":"#faf8ff","on-primary-container":"#fffbff","secondary-fixed":"#e9ddff","surface-container":"#eaedff","surface-variant":"#dae2fd","on-tertiary":"#ffffff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","space-sm":"0.5rem",margin:"2rem","space-xs":"0.25rem","space-lg":"1.5rem","space-xl":"2rem",gutter:"1.5rem"},fontFamily:{"display-hero-mobile":["Inter"],"headline-lg-mobile":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"title-md":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"metric-num":["Inter"],"body-lg":["Inter"],"display-hero":["Inter"],"label-sm":["Inter"]},fontSize:{"display-hero-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"500"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"18px",letterSpacing:"0.005em",fontWeight:"400"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"metric-num":["28px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"400"}],"display-hero":["48px",{lineHeight:"56px",letterSpacing:"-0.025em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[22px]">auto_awesome</span></div><div class="flex flex-col"><span class="font-title-md text-title-md font-bold text-on-surface leading-tight tracking-tight">DreamX</span><span class="font-label-sm text-label-sm text-tertiary tracking-wide uppercase font-semibold">Student Portal</span></div></div><button class="p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">dock_to_left</span></button></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-home" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Home</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="discover-goals" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span>Discover Goals</span></a><div class="pt-2 pb-1"><div class="flex items-center justify-between px-space-md py-1.5 text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">event_available</span><span class="font-body-md text-body-md font-medium">Services &amp; Bookings</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></div><div class="ml-6 pl-space-sm flex flex-col gap-0.5 mt-1"><a class="flex items-center px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="active-bookings" href="#">Active Bookings</a><a class="flex items-center px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="smart-requests-offers" href="#">Smart Requests &amp; Offers</a></div></div><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="programs-cohorts" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Programs &amp; Cohorts</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="career-journey" href="#"><span class="material-symbols-outlined text-[20px]">alt_route</span><span>Career Journey Roadmap</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="readiness-score" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span>Career Readiness Score</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ai-assistant" href="#"><span class="material-symbols-outlined text-[20px]">neurology</span><span>AI Assistant &amp; Recomms</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="deliverables-reports" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span>Deliverables &amp; Reports</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="membership-billing" href="#"><span class="material-symbols-outlined text-[20px]">credit_card</span><span>Membership &amp; Billing</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div></div><div class="p-space-md flex flex-col gap-space-sm"><div class="p-space-md rounded-xl bg-surface-container-low shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-primary">Pro Plan</span><span class="font-label-sm text-label-sm text-tertiary">Active</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">100 Monthly AI Credits • Renews Aug 1</p><button class="mt-space-xs w-full py-1.5 px-space-sm rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-colors shadow-sm" type="button">Upgrade to Elite</button></div><div class="flex items-center justify-between px-space-sm py-space-xs"><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">swap_horiz</span><span>Switch Portal</span></button><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-error font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">logout</span><span>Log out</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><button class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button><div class="flex items-center gap-space-xs font-body-sm text-body-sm"><span class="text-tertiary">Dashboard</span><span class="text-tertiary">/</span><span class="text-on-surface font-medium">Student Home</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-1.5 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px] text-primary">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">⌘K AI Search</span></button><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[16px] text-tertiary">public</span><span>Target: CM-IN (India Tech) • IST</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md"><span class="font-medium">⚡ 47 AI Credits</span><button class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center hover:bg-secondary-container transition-colors" type="button"><span class="material-symbols-outlined text-[14px]">add</span></button></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><div class="flex items-center gap-space-xs justify-end"><span class="font-title-md text-body-md font-semibold text-on-surface leading-none">Ananya S.</span><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase font-bold">PRO</span></div><span class="font-label-sm text-label-sm text-tertiary">3rd Yr CS @ IIT Delhi</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 px-gutter bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive State Script -->
+<script>
+    // Synchronize global sidebar selection state
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.querySelectorAll("aside nav a");
+      navLinks.forEach((link) => {
+        link.classList.remove("bg-primary-container", "text-on-primary-container", "font-semibold");
+        link.classList.add("text-on-surface-variant");
+        if (link.getAttribute("data-path") === "smart-requests-offers") {
+          link.classList.add("bg-primary-container", "text-on-primary-container", "font-semibold");
+          link.classList.remove("text-on-surface-variant");
+        }
+      });
+    });
+
+    function toggleComparisonMatrix() {
+      const tableWrapper = document.getElementById("matrix-breakdown");
+      const chevron = document.getElementById("matrix-chevron");
+      const text = document.getElementById("matrix-toggle-text");
+      if (tableWrapper.classList.contains("hidden")) {
+        tableWrapper.classList.remove("hidden");
+        chevron.textContent = "expand_less";
+        text.textContent = "Hide 14-Dimension Comparison Matrix";
+      } else {
+        tableWrapper.classList.add("hidden");
+        chevron.textContent = "expand_more";
+        text.textContent = "Inspect 14-Dimension Comparison Matrix";
+      }
+    }
+
+    function openCounterModal(mentorName, initialPrice) {
+      const modal = document.getElementById("counter-modal");
+      document.getElementById("modal-mentor-name").textContent = mentorName;
+      document.getElementById("modal-original-price").textContent = "₹" + initialPrice;
+      modal.classList.remove("hidden");
+    }
+
+    function closeCounterModal() {
+      document.getElementById("counter-modal").classList.add("hidden");
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("action-toast");
+      const toastText = document.getElementById("toast-text");
+      toastText.textContent = message;
+      toast.classList.remove("opacity-0", "translate-y-4", "pointer-events-none");
+      toast.classList.add("opacity-100", "translate-y-0");
+      setTimeout(() => {
+        toast.classList.remove("opacity-100", "translate-y-0");
+        toast.classList.add("opacity-0", "translate-y-4", "pointer-events-none");
+      }, 3400);
+    }
+  </script>
+<!-- Ambient background glow accents -->
+<div class="relative w-full pb-16">
+<div class="absolute -top-6 left-1/4 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-64 right-10 w-80 h-80 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Toast Notification Overlay -->
+<div class="fixed bottom-6 right-8 z-50 flex items-center gap-space-sm bg-inverse-surface text-inverse-on-surface px-space-md py-3 rounded-xl shadow-xl transition-all duration-300 transform opacity-0 translate-y-4 pointer-events-none" id="action-toast">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">verified</span>
+<span class="font-body-sm text-body-sm" id="toast-text">Offer accepted. Directing to Escrow Checkout...</span>
+</div>
+<!-- Page Header Section -->
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<!-- Breadcrumb Bar -->
+<nav class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<span class="text-outline-variant">/</span>
+<span class="text-tertiary">Services &amp; Bookings</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-medium">Smart Match Requests &amp; Offers</span>
+</nav>
+<!-- Main Title & Action Row -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Smart Match Requests &amp; Received Offers</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              Live Bidding Active
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-4xl">
+            Review live candidate bids, inspect 14-dimension match scores, compare counter-offers, and lock confirmed slots under 100% DreamX Safe Escrow.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-title-md text-body-md font-semibold shadow-sm hover:bg-surface-container-low transition-colors flex items-center gap-space-xs" onclick="showToast('Auto-decline rules &amp; filter criteria saved successfully.')" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">tune</span>
+<span>Match Preferences</span>
+</button>
+<button class="h-10 px-space-md rounded-lg bg-gradient-to-r from-primary to-secondary text-on-primary font-title-md text-body-md font-semibold shadow-md hover:shadow-lg hover:opacity-95 transition-all flex items-center gap-space-xs" onclick="showToast('Redirecting to 14-Dimension Smart Match wizard...')" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span>Submit New Smart Match</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 4-Card Operational Bidding KPIs -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-xl">
+<!-- KPI 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary tracking-wider">Active Requests</span>
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">broadcast_on_personal</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<div class="font-metric-num text-metric-num text-on-surface">1 In Bidding</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="font-medium text-primary">REQ-2026-4412</span>
+<span>• Expires in 18h 42m</span>
+</p>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary tracking-wider">Offers Received</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<div class="font-metric-num text-metric-num text-on-surface">3 Mentor Offers</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Range: <span class="font-medium text-on-surface">₹749 – ₹999</span> • 100% Verified
+          </p>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary tracking-wider">Avg Compatibility</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<div class="font-metric-num text-metric-num text-primary">91.2% Match</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Top: <span class="font-medium text-on-surface">94.5%</span> (Google L6 Bar Raiser)
+          </p>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary tracking-wider">Max Savings Potential</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">savings</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<div class="font-metric-num text-metric-num text-on-surface">₹250 Savings</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Best offer ₹749 vs ₹999 standard ceiling
+          </p>
+</div>
+</div>
+</div>
+<!-- Segmented Navigation Filter Tabs -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-lg">
+<div class="flex items-center gap-1.5 p-1 rounded-xl bg-surface-container-low shadow-inner">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-primary font-title-md text-label-md font-semibold shadow-sm transition-all flex items-center gap-space-xs" type="button">
+<span>Active Requests &amp; Bids</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-fixed text-on-primary-fixed text-label-sm">1</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-colors flex items-center gap-space-xs" type="button">
+<span>Received Offers</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-tertiary text-label-sm">3</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-colors flex items-center gap-space-xs" type="button">
+<span>Counter-Offer Threads</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-tertiary text-label-sm">1</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-colors flex items-center gap-space-xs" type="button">
+<span>Expired &amp; Past Requests</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-tertiary text-label-sm">4</span>
+</button>
+</div>
+<!-- Quick Search & Status Indicators -->
+<div class="flex items-center gap-space-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5 bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-md text-label-md text-on-surface">Auto-Match AI V4.2</span>
+</div>
+</div>
+</div>
+<!-- Active Request In-Depth Banner (Request #REQ-2026-4412) -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm mb-space-xl relative overflow-hidden">
+<!-- Ambient top indicator line -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary-container"></div>
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-space-lg">
+<div class="flex-1 space-y-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold tracking-wide uppercase">REQ-2026-4412</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+              3 Bids Received • Top 5 Mentors Notified
+            </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-low text-tertiary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+              18h 42m remaining until 48h TTL expires
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">
+            ATS Resume Review &amp; Distributed Systems Architecture Audit
+          </h2>
+<!-- Meta Grid for the active bid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md pt-2">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">target</span>
+<div>
+<div class="font-label-sm text-label-sm text-tertiary uppercase">Target Objective</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">Google SDE-2 • Tier-1 Placement</div>
+<div class="font-body-sm text-body-sm text-tertiary">Market: CM-IN (India Tech)</div>
+</div>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">event</span>
+<div>
+<div class="font-label-sm text-label-sm text-tertiary uppercase">Requested Window</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">Thu, Jul 31, 2026</div>
+<div class="font-body-sm text-body-sm text-tertiary">7:00 PM – 9:00 PM IST</div>
+</div>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">currency_rupee</span>
+<div>
+<div class="font-label-sm text-label-sm text-tertiary uppercase">Student Budget Slider</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">₹700 – ₹1,000</div>
+<div class="font-body-sm text-body-sm text-tertiary">15-minute escrow hold</div>
+</div>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">attach_file</span>
+<div>
+<div class="font-label-sm text-label-sm text-tertiary uppercase">Attached Artifact</div>
+<a class="font-body-md text-body-md font-medium text-primary hover:underline flex items-center gap-1" href="#">
+<span>Ananya_Resume_Google_v2.pdf</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<div class="font-body-sm text-body-sm text-tertiary">248 KB • ATS-Optimized</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Banner Action Panel -->
+<div class="flex flex-row lg:flex-col items-center lg:items-end justify-between gap-space-sm pt-space-xs">
+<button class="h-9 px-space-md rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md font-semibold flex items-center gap-1.5" onclick="showToast('Modifying active request constraints...')" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<span>Edit Constraints</span>
+</button>
+<button class="h-9 px-space-md rounded-lg text-error hover:bg-error-container/40 transition-colors font-label-md text-label-md font-medium flex items-center gap-1" onclick="showToast('Request cancellation confirmed.')" type="button">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span>Cancel Request</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section Heading: Comparison Grid -->
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Active Mentor Bids</h3>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">3 Competing Offers</span>
+</div>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1 transition-colors" onclick="toggleComparisonMatrix()" type="button">
+<span id="matrix-toggle-text">Inspect 14-Dimension Comparison Matrix</span>
+<span class="material-symbols-outlined text-[18px]" id="matrix-chevron">expand_more</span>
+</button>
+</div>
+<!-- The Core Marketplace Experience: 3 Distinct Offer Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg mb-space-xl">
+<!-- OFFER 1: Rohan Verma (Top Match) -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden group">
+<!-- Top AI Accent Stripe & Pill -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
+<div>
+<!-- Header & Badge -->
+<div class="flex items-start justify-between gap-2 mb-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">award_star</span>
+              94.5% Compatibility • Top Match
+            </span>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>5h 18m left</span>
+</div>
+</div>
+<!-- Mentor Avatar & Bio -->
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="relative w-12 h-12 rounded-xl bg-surface-container-high overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Professional studio portrait of an experienced Indian male software engineering leader in a dark casual blazer with focused, confident demeanor and soft architectural tech office background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLzflLkjFAQXsF6Uvq1ptGSWzr8PLPNtYbsdiqMkRufG1s2aZBsWcYpzazyBoxo6lk9SrmEMO4b2gD5skDL6SSeTpFXNdfwhXQPKiviFT-1I-gDZRy4vzPwbGlCjPo8IwFvLtqzukRM5mezi55RQC9KmMntG1uanramx81H-CAbvQm0lH0gI1onh9TPH3J6F8opETxgch6GjLD4Z0t6OZsyWkH5oHbWnDLTBGYtDtci070q81Iphtk"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">Rohan Verma</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Sr. Engineering Manager @ Amazon</p>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-tertiary">
+<span class="flex items-center text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[14px] text-secondary mr-0.5" style="font-variation-settings: 'FILL' 1;">star</span>
+                  4.98
+                </span>
+<span>(112 reviews)</span>
+<span>• Systems &amp; Leadership Hiring</span>
+</div>
+</div>
+</div>
+<!-- Proposed Price & Slot -->
+<div class="p-space-sm rounded-xl bg-surface-container-low mb-space-md flex items-center justify-between">
+<div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹799</span>
+<span class="font-body-sm text-body-sm text-tertiary line-through">₹999</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">20% DreamX Match</span>
+</div>
+<div class="font-label-sm text-label-sm text-tertiary">Includes 100% Escrow Protection</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-primary">Confirmed Window</span>
+<div class="font-body-sm text-body-sm font-medium text-on-surface">Thu, Jul 31 • 7:30 PM IST</div>
+<div class="font-label-sm text-label-sm text-tertiary">60 mins 1:1 Video Teardown</div>
+</div>
+</div>
+<!-- Mentor Pitch -->
+<div class="space-y-space-xs mb-space-md">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary">Mentor Personalized Pitch</span>
+<p class="font-body-sm text-body-sm text-on-surface bg-surface-bright p-3 rounded-lg leading-relaxed">
+              “I've reviewed your attached resume. Strong project background, but your DynamoDB &amp; Raft consensus bullet points lack concrete QPS and tail-latency metrics. I'll provide an annotated 4-page redline and live 1:1 teardown.”
+            </p>
+</div>
+<!-- Included Customizations -->
+<div class="space-y-1.5 mb-space-lg text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>1 Iterative Re-review after revisions</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>24h Async Follow-up Slack Q&amp;A window</span>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<button class="w-full h-10 rounded-lg bg-primary text-on-primary font-title-md text-label-md font-semibold shadow hover:bg-primary-container transition-all flex items-center justify-center gap-1.5" onclick="showToast('Locking slot with Rohan Verma under DreamX 15-minute escrow...')" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+<span>Accept &amp; Checkout (₹799)</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="h-9 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1" onclick="openCounterModal('Rohan Verma', 799)" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_vertical_circle</span>
+<span>Counter-Offer</span>
+</button>
+<button class="h-9 rounded-lg bg-surface-container-low hover:bg-error-container/30 text-on-surface-variant hover:text-error font-label-md text-label-md font-medium transition-colors" onclick="showToast('Offer from Rohan Verma declined.')" type="button">
+              Decline
+            </button>
+</div>
+</div>
+</div>
+<!-- OFFER 2: Devika Rao (Best Value) -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden group">
+<!-- Top AI Accent Stripe & Pill -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-primary-container"></div>
+<div>
+<!-- Header & Badge -->
+<div class="flex items-start justify-between gap-2 mb-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">price_check</span>
+              91.2% Compatibility • Best Value
+            </span>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>11h 05m left</span>
+</div>
+</div>
+<!-- Mentor Avatar & Bio -->
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="relative w-12 h-12 rounded-xl bg-surface-container-high overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Modern close-up corporate portrait of an Indian woman cloud architect with intelligent, warm expression, minimalist glasses, and a soft-lit engineering command hub background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCArjQGm5VF0HR_gU0LBUiQ1FsExjYDjtS3y7OAbRrMbWhWrlA4klltQHuaKMC3IqDLdFU71REzb1wJCVky1U-SLlwT3iCVnVJ9CFzOirPlXpFwYHDJmNblxLSEaSM4Nhtld4sVrceKcumDHaYJ_uFnB7-Hl606jetOglTrbcLFSuJQDrvoUCi5XuoQrzrPEVe_ImFSRFTwJC4CJlGyuCLYbKn2JeEQjIoO99_AXWBJ6GDheqhY26BC"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">Devika Rao</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Principal Cloud Architect • ex-Flipkart</p>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-tertiary">
+<span class="flex items-center text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[14px] text-secondary mr-0.5" style="font-variation-settings: 'FILL' 1;">star</span>
+                  4.92
+                </span>
+<span>(74 reviews)</span>
+<span>• Distributed FinTech</span>
+</div>
+</div>
+</div>
+<!-- Proposed Price & Slot -->
+<div class="p-space-sm rounded-xl bg-surface-container-low mb-space-md flex items-center justify-between">
+<div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹749</span>
+<span class="font-body-sm text-body-sm text-tertiary line-through">₹999</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">25% Savings</span>
+</div>
+<div class="font-label-sm text-label-sm text-tertiary">Lowest bid for this request</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-primary">Confirmed Window</span>
+<div class="font-body-sm text-body-sm font-medium text-on-surface">Thu, Jul 31 • 8:00 PM IST</div>
+<div class="font-label-sm text-label-sm text-tertiary">60 mins Architecture Review</div>
+</div>
+</div>
+<!-- Mentor Pitch -->
+<div class="space-y-space-xs mb-space-md">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary">Mentor Personalized Pitch</span>
+<p class="font-body-sm text-body-sm text-on-surface bg-surface-bright p-3 rounded-lg leading-relaxed">
+              “Specialized in high-concurrency microservices and payment gateways. Will calibrate your resume against Tier-1 Indian FinTech bar and optimize ATS parsing keywords.”
+            </p>
+</div>
+<!-- Included Customizations -->
+<div class="space-y-1.5 mb-space-lg text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Production architecture diagram template</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>ATS Keyword Match Density Diagnostic</span>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<button class="w-full h-10 rounded-lg bg-primary text-on-primary font-title-md text-label-md font-semibold shadow hover:bg-primary-container transition-all flex items-center justify-center gap-1.5" onclick="showToast('Locking slot with Devika Rao under DreamX 15-minute escrow...')" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+<span>Accept &amp; Checkout (₹749)</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="h-9 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1" onclick="openCounterModal('Devika Rao', 749)" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_vertical_circle</span>
+<span>Counter-Offer</span>
+</button>
+<button class="h-9 rounded-lg bg-surface-container-low hover:bg-error-container/30 text-on-surface-variant hover:text-error font-label-md text-label-md font-medium transition-colors" onclick="showToast('Offer from Devika Rao declined.')" type="button">
+              Decline
+            </button>
+</div>
+</div>
+</div>
+<!-- OFFER 3: Vikram Singh (Premium Bar Raiser) -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden group">
+<!-- Top AI Accent Stripe & Pill -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-container to-surface-tint"></div>
+<div>
+<!-- Header & Badge -->
+<div class="flex items-start justify-between gap-2 mb-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">military_tech</span>
+              88.0% Compatibility • Bar Raiser
+            </span>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>16h 30m left</span>
+</div>
+</div>
+<!-- Mentor Avatar & Bio -->
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="relative w-12 h-12 rounded-xl bg-surface-container-high overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of an Indian senior AI infrastructure engineer in his late thirties wearing an indigo shirt, set in an illuminated Bangalore research lab with subtle terminal screens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEf01IAra--tyKvUeDGPmnykidHLaRSbMubdfJlM_zeVmjBnOkgqUyV3FnYT1hlj_-_1tI_wM34kC9T5H45Bi1Ri2C93qovXL0FvTxuY-jHeMP3FDisybIoLIu2VpENUSPvX-oxO5kDqliVVsyOgbueg0u67On_Q_VzxdPVuaVLvKGdtksErrhPmqlwM8DfEBlGlNknYAwXeA9a9bQAOmD1DQJCeP2J7qB0MRvi8Y6EtdqmX2ym_MV"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">Vikram Singh</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Senior AI Engineer @ Google Cloud</p>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-tertiary">
+<span class="flex items-center text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[14px] text-secondary mr-0.5" style="font-variation-settings: 'FILL' 1;">star</span>
+                  4.95
+                </span>
+<span>(84 reviews)</span>
+<span>• ex-Amazon Bar Raiser</span>
+</div>
+</div>
+</div>
+<!-- Proposed Price & Slot -->
+<div class="p-space-sm rounded-xl bg-surface-container-low mb-space-md flex items-center justify-between">
+<div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹999</span>
+<span class="font-label-sm text-label-sm text-tertiary">Catalog Price</span>
+</div>
+<div class="font-label-sm text-label-sm text-tertiary">Certified L5 Hiring Committee</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-primary">Counter-Slot</span>
+<div class="font-body-sm text-body-sm font-medium text-on-surface">Fri, Aug 1 • 6:30 PM IST</div>
+<div class="font-label-sm text-label-sm text-tertiary">+1 Day Shift (Within Window)</div>
+</div>
+</div>
+<!-- Mentor Pitch -->
+<div class="space-y-space-xs mb-space-md">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary">Mentor Personalized Pitch</span>
+<p class="font-body-sm text-body-sm text-on-surface bg-surface-bright p-3 rounded-lg leading-relaxed">
+              “Can do a deep dive into your distributed cache and consensus implementations, providing exact Google L4/L5 rubric scoring criteria.”
+            </p>
+</div>
+<!-- Included Customizations -->
+<div class="space-y-1.5 mb-space-lg text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Google Standardized 4-Page Rubric Scorecard</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>60 mins Live Whiteboard System Calibration</span>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<button class="w-full h-10 rounded-lg bg-primary text-on-primary font-title-md text-label-md font-semibold shadow hover:bg-primary-container transition-all flex items-center justify-center gap-1.5" onclick="showToast('Locking slot with Vikram Singh under DreamX 15-minute escrow...')" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+<span>Accept &amp; Checkout (₹999)</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="h-9 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1" onclick="openCounterModal('Vikram Singh', 999)" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_vertical_circle</span>
+<span>Counter-Offer</span>
+</button>
+<button class="h-9 rounded-lg bg-surface-container-low hover:bg-error-container/30 text-on-surface-variant hover:text-error font-label-md text-label-md font-medium transition-colors" onclick="showToast('Offer from Vikram Singh declined.')" type="button">
+              Decline
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Side-by-Side Comparison Matrix Table (Expandable / Inline View) -->
+<div class="mb-space-xl p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm" id="matrix-breakdown">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-2">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">14-Dimension Smart Match Evaluation Matrix</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Deterministic calibration across verified skills, seniority, SLAs, and candidate rubric targets.</p>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container text-tertiary font-label-sm text-label-sm font-medium">Algorithmic Confidence: 99.4%</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-on-surface">
+<th class="py-3 px-space-md font-label-sm text-label-sm uppercase font-semibold text-tertiary">Comparison Dimension</th>
+<th class="py-3 px-space-md font-title-md text-body-md font-semibold text-primary">Rohan Verma (94.5%)</th>
+<th class="py-3 px-space-md font-title-md text-body-md font-semibold text-secondary">Devika Rao (91.2%)</th>
+<th class="py-3 px-space-md font-title-md text-body-md font-semibold text-on-surface">Vikram Singh (88.0%)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-space-md font-medium text-tertiary">Company Pedigree</td>
+<td class="py-3 px-space-md text-on-surface font-medium">Amazon (Sr. Eng. Manager)</td>
+<td class="py-3 px-space-md text-on-surface font-medium">Scaleup FinTech (ex-Flipkart)</td>
+<td class="py-3 px-space-md text-on-surface font-medium">Google Cloud (ex-Amazon)</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-space-md font-medium text-tertiary">Verified Hiring Authority</td>
+<td class="py-3 px-space-md text-on-surface">Active Bar Raiser &amp; Hiring Mgr</td>
+<td class="py-3 px-space-md text-on-surface">System Arch Interviewer</td>
+<td class="py-3 px-space-md text-on-surface">Google L5/L6 Committee Member</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-space-md font-medium text-tertiary">Target Fit (Google SDE-2)</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2">
+<div class="w-24 h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 95%"></div>
+</div>
+<span class="font-semibold text-primary">95%</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2">
+<div class="w-24 h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 90%"></div>
+</div>
+<span class="font-semibold text-secondary">90%</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2">
+<div class="w-24 h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 98%"></div>
+</div>
+<span class="font-semibold text-on-surface">98%</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-space-md font-medium text-tertiary">Offered Price</td>
+<td class="py-3 px-space-md font-bold text-on-surface">₹799 <span class="font-normal text-primary text-label-sm">(20% off)</span></td>
+<td class="py-3 px-space-md font-bold text-on-surface">₹749 <span class="font-normal text-secondary text-label-sm">(Lowest)</span></td>
+<td class="py-3 px-space-md font-bold text-on-surface">₹999 <span class="font-normal text-tertiary text-label-sm">(Standard)</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-space-md font-medium text-tertiary">Slot Precision</td>
+<td class="py-3 px-space-md text-on-surface">Exact Match (Thu, 7:30 PM)</td>
+<td class="py-3 px-space-md text-on-surface">Exact Match (Thu, 8:00 PM)</td>
+<td class="py-3 px-space-md text-on-surface">+1 Day Shift (Fri, 6:30 PM)</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-space-md font-medium text-tertiary">Artifacts Delivered</td>
+<td class="py-3 px-space-md text-on-surface">4-page annotated PDF + Audio Rec</td>
+<td class="py-3 px-space-md text-on-surface">Keyword Report + Arch Template</td>
+<td class="py-3 px-space-md text-on-surface">Official Google Rubric Scorecard</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-space-md font-medium text-tertiary">Re-Review Policy</td>
+<td class="py-3 px-space-md font-semibold text-primary">1 Included Free (within 7d)</td>
+<td class="py-3 px-space-md text-tertiary">Add-on for ₹249</td>
+<td class="py-3 px-space-md text-tertiary">Add-on for ₹349</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-space-md font-medium text-tertiary">Async SLA</td>
+<td class="py-3 px-space-md text-on-surface">&lt; 4 hours for questions</td>
+<td class="py-3 px-space-md text-on-surface">&lt; 12 hours</td>
+<td class="py-3 px-space-md text-on-surface">&lt; 24 hours</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Counter-Offer Policy & 48h TTL Explainer Callout -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-on-surface">DreamX Single Counter-Offer Rule &amp; Escrow Guarantee</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Fair-Market Policy</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed max-w-4xl">
+            Students are permitted exactly <strong>1 counter-offer per mentor bid</strong> to avoid endless negotiation stalls. Accepting any offer automatically declines all competing bids and secures the confirmed slot under our <strong>15-minute checkout lock</strong> with <strong>100% Safe Escrow Guarantee</strong> (funds released only post satisfactory session delivery).
+          </p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-space-xs">
+<a class="font-title-md text-body-md font-semibold text-primary hover:underline flex items-center gap-1" href="#">
+<span>Read Escrow Terms</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Modal: Single Counter-Offer Trigger (prd.MD §7.5) -->
+<div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm flex items-center justify-center p-space-md hidden" id="counter-modal">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="p-space-lg">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">currency_exchange</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Submit Single Counter-Offer</h3>
+</div>
+<button class="text-tertiary hover:text-on-surface transition-colors" onclick="closeCounterModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          You are proposing a revised price and timing constraint to <strong class="text-on-surface" id="modal-mentor-name">Rohan Verma</strong>. Remember: you have only 1 counter-offer allowed for this bid.
+        </p>
+<div class="my-space-md p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-tertiary">Original Mentor Bid:</span>
+<span class="font-title-md text-title-md font-bold text-on-surface" id="modal-original-price">₹799</span>
+</div>
+<div class="space-y-space-md">
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-1">Your Proposed Price (INR)</label>
+<div class="relative">
+<span class="absolute left-3 top-2.5 text-tertiary font-body-md">₹</span>
+<input class="w-full h-10 pl-7 pr-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none shadow-sm" id="counter-price-input" max="1000" min="600" type="number" value="720"/>
+</div>
+<p class="font-label-sm text-label-sm text-tertiary mt-1">Suggested fair range: ₹700 – ₹780 for 90%+ acceptance rate</p>
+</div>
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-1">Optional Scope Adjustment Note</label>
+<textarea class="w-full p-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none shadow-sm" placeholder="E.g., Can shorten live teardown to 45 mins if needed to match ₹720 rate..." rows="3"></textarea>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm mt-space-lg pt-space-sm">
+<button class="h-9 px-space-md rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-colors" onclick="closeCounterModal()" type="button">
+            Cancel
+          </button>
+<button class="h-9 px-space-md rounded-lg bg-primary text-on-primary font-title-md text-label-md font-semibold shadow hover:bg-primary-container transition-all flex items-center gap-1" onclick="closeCounterModal(); showToast('Counter-offer submitted to mentor. 24h timer started.');" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Send Counter-Offer</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

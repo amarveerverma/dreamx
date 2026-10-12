@@ -1,0 +1,473 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#8455ef", "error": "#ba1a1a", "on-primary-container": "#fffbff", "on-tertiary-fixed": "#002113", "on-secondary": "#ffffff", "surface-container-highest": "#dae2fd", "error-container": "#ffdad6", "surface-container-lowest": "#ffffff", "surface-bright": "#faf8ff", "surface-container-high": "#e2e7ff", "tertiary-container": "#00885d", "on-surface": "#131b2e", "surface": "#faf8ff", "background": "#faf8ff", "on-tertiary-container": "#000703", "inverse-on-surface": "#eef0ff", "inverse-primary": "#c0c1ff", "on-tertiary-fixed-variant": "#005236", "inverse-surface": "#283044", "surface-container": "#eaedff", "secondary-fixed": "#e9ddff", "tertiary-fixed": "#6ffbbe", "primary-fixed": "#e1e0ff", "on-secondary-container": "#fffbff", "tertiary-fixed-dim": "#4edea3", "on-secondary-fixed": "#23005c", "primary-container": "#6063ee", "tertiary": "#006c49", "surface-dim": "#d2d9f4", "primary-fixed-dim": "#c0c1ff", "surface-variant": "#dae2fd", "primary": "#4648d4", "secondary": "#6b38d4", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#2f2ebe", "on-error": "#ffffff", "on-secondary-fixed-variant": "#5516be", "outline-variant": "#c7c4d7", "surface-tint": "#494bd6", "on-error-container": "#93000a", "on-primary-fixed": "#07006c", "secondary-fixed-dim": "#d0bcff", "surface-container-low": "#f2f3ff", "on-surface-variant": "#464554", "outline": "#767586", "on-primary": "#ffffff", "on-background": "#131b2e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-md": "1rem", "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem", "space-xl": "2rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-lg": ["Inter"], "headline-sm": ["Inter"], "display": ["Inter"], "headline-lg-mobile": ["Inter"], "label-md": ["Inter"], "stat-metric-sm": ["Inter"], "body-lg": ["Inter"], "overline": ["Inter"], "headline-md": ["Inter"], "stat-metric": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "code-table": ["Inter"], "label-sm": ["Inter"] }, "fontSize": { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500" }], "stat-metric-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "overline": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "stat-metric": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "code-table": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-[260px] bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm"><img alt="DreamX Logo" class="w-8 h-8 rounded-lg object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VWlT0DlbfZMjYuXSrC1Zz9dlgmTXqKj15aAeGd-t8DaJztkLQLuh26Z1tfMxnlzHIzD-dUg_GHDfJ2Zlgru_2VGgu3sqLjdqU-Kb74cDmLycHz2gIUwlUT4iOCZVOZtmEr1nOxRk7-5TAvbSeiVtb4ZVb71nlQnWKagHhQK5rjUPA1hUuLR8_ssjIVqEytgOX-VTvvKhx5otClVTHUhEt8kE4ByD08grOXXdFBiwE09uQYU33T3poDBg"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">DreamX</span><span class="font-overline text-overline uppercase text-on-surface-variant">Admin Console</span></div></div><div class="px-space-md py-space-xs"><nav class="space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Overview</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin"><span class="flex items-center gap-space-sm"><span class="">Executive Dashboard</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/marketplace"><span class="flex items-center gap-space-sm"><span class="">Marketplace Health</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/analytics"><span class="flex items-center gap-space-sm"><span class="">Analytics &amp; Performance</span></span></a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Management</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/users"><span class="flex items-center gap-space-sm"><span class="">User Directory</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/mentors"><span class="flex items-center gap-space-sm"><span class="">Mentor Verification</span></span><span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-primary font-medium">5 pending</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/programs"><span class="flex items-center gap-space-sm"><span class="">Program Catalog</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg bg-primary text-on-primary font-medium transition-colors font-label-md text-label-md" href="/admin/moderation"><span class="flex items-center gap-space-sm"><span class="">Content Moderation</span></span></a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Finance &amp; Transactions</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/payments"><span class="flex items-center gap-space-sm"><span class="">Payments &amp; Escrow</span></span><span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-medium">₹14.2L held</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/reports"><span class="flex items-center gap-space-sm"><span class="">Reports &amp; Exports</span></span></a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">System &amp; Configuration</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/settings"><span class="flex items-center gap-space-sm"><span class="">Platform Settings</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/audit"><span class="flex items-center gap-space-sm"><span class="">Audit &amp; Compliance Logs</span></span></a></div></div></nav></div></div><div class="p-space-md"><div class="px-space-sm py-space-xs rounded-lg bg-surface-container-low flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-code-table text-code-table text-on-surface-variant">Production v1.0 • Supabase RLS Protected</span></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><nav class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant"><span class="text-on-surface-variant">Administration</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-on-surface-variant">Management</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><a class="text-on-surface font-semibold hover:text-primary transition-colors" href="/admin/moderation">Content Moderation</a></nav><div class="flex items-center gap-2 px-space-sm py-1 rounded-lg bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span><span class="font-label-sm text-label-sm text-on-surface font-medium">India MVP (CM-IN)</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-low p-1 rounded-lg"><button class="px-3 py-1 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">Today</button><button class="px-3 py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-[0_1px_2px_rgba(15,23,42,0.08)] font-medium">Last 7 Days</button><button class="px-3 py-1 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">This Month</button></div><div class="hidden xl:flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low text-tertiary"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="font-label-sm text-label-sm font-medium">All Systems Operational • pg_cron active</span></div><div class="flex items-center gap-space-sm"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1V0AAql4jGIRqEsdzoD0fM4D7KzgdgSCXOxWXLCX3wFMiVq6EyC2nlrmufQAptIDPpABKVSJB2Zne6rHbtLLEuIAzsHg7MqEc5qSi62rtuJwW7jmVFwhjiu6vCFIoyqMlhBdshF-R8fZ8_WhxFyrgwMILFhWONB-s7Ox8cU55jyLfReXDDPXv9cQYcxLx1-bcp30sD6SXgyKvGE0-15_eB1nCyRRXlPwTjAfMFVWRUzwN1R47bR2ALOxTk"><div class="hidden lg:flex flex-col"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Ananya Roy</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">VP Operations &amp; Admin</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-lg py-space-xl"><div class="flex flex-col w-full space-y-space-xl">
+<!-- Dynamic Notification / Top Breadcrumb & Status Deck -->
+<div class="flex flex-col gap-y-space-md">
+<div class="flex flex-wrap items-center justify-between gap-y-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">Administration</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">chevron_right</span>
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">Management</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">chevron_right</span>
+<span class="font-overline text-overline uppercase tracking-wider text-primary font-semibold">Moderation &amp; Compliance</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Safety Engine Active • Automated Word Filter Running</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span class="font-semibold">India MVP (CM-IN)</span>
+</div>
+</div>
+</div>
+<!-- Main Header Banner & Top Controls -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Content Moderation &amp; Dispute Arbitration</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">7 Attention Items</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Review flagged student feedback, arbitrate session disputes between students and mentors, and enforce platform safety rules with full audit accountability.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm self-start lg:self-center">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md font-medium shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="">Download Audit Log (.csv)</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all font-label-md text-label-md font-medium shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">admin_panel_settings</span>
+<span class="">Update Safety Rules</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Key Metrics Ribbon (4 Balanced Stat Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Stat 1: Queue -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">Current Queue</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Action Required</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric font-bold text-on-surface">7 Cases</span>
+<span class="font-label-sm text-label-sm text-error font-medium">High Priority</span>
+</div>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">4 reviews, 2 refunds, 1 contact leak</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Requires staff review</span>
+<span class="material-symbols-outlined text-[18px] text-error">assignment_late</span>
+</div>
+</div>
+<!-- Stat 2: SLA Performance -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">Dispute Speed</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-semibold">Within SLA</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric font-bold text-on-surface">94.2%</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">↑ +3.1% vs Q2</span>
+</div>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">Disputes resolved within 24 hours</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Avg turnaround 8.4 hrs</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">pace</span>
+</div>
+</div>
+<!-- Stat 3: Held Escrow -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">Disputed Funds</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">Safe in Escrow</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric font-bold text-on-surface">₹24,800</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">3 active cases</span>
+</div>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">Temporarily frozen until arbitrated</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Protected via Razorpay Escrow</span>
+<span class="material-symbols-outlined text-[18px] text-primary">lock_clock</span>
+</div>
+</div>
+<!-- Stat 4: Filter Integrity -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">Safety Filter Rate</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-semibold">Clean System</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric font-bold text-on-surface">99.8%</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Zero Critical Leaks</span>
+</div>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">5 blocked attempts out of 2,410 chats</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Anti-poaching heuristics active</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">shield</span>
+</div>
+</div>
+</div>
+<!-- Primary Operations Two-Column Split (65% Queue / 35% Action Console) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- LEFT COLUMN: Moderation Cases & Queue (~65% / 8 cols) -->
+<div class="lg:col-span-7 xl:col-span-8 flex flex-col space-y-space-md">
+<!-- Queue Navigation Tabs -->
+<div class="p-1 rounded-xl bg-surface-container-lowest shadow-sm flex flex-wrap items-center gap-1">
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold transition-all">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+<span class="">Flagged Student Reviews</span>
+<span class="px-1.5 py-0.5 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-bold">4</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md font-medium transition-all">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+<span class="">Session &amp; Refund Disputes</span>
+<span class="px-1.5 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm">2</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md font-medium transition-all">
+<span class="material-symbols-outlined text-[16px]">lock_person</span>
+<span class="">Message Safety &amp; Anti-Poaching</span>
+<span class="px-1.5 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm">1</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md font-medium transition-all ml-auto">
+<span class="material-symbols-outlined text-[16px]">history</span>
+<span class="">Resolved History (142)</span>
+</button>
+</div>
+<!-- Search & Quick Filters Bar -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="relative w-full sm:w-80">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search by Case ID, student, mentor..." type="text">
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto overflow-x-auto">
+<span class="font-overline text-overline uppercase text-on-surface-variant shrink-0">Filter by:</span>
+<button class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold shrink-0">All Urgent (7)</button>
+<button class="px-2.5 py-1 rounded-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm shrink-0">High Priority</button>
+<button class="px-2.5 py-1 rounded-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm shrink-0">Needs Mentor Reply</button>
+</div>
+</div>
+<!-- CASE 1 (SELECTED & EXPANDED DETAIL VIEW) -->
+<div class="flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-md space-y-space-md">
+<!-- Case Topline -->
+<div class="flex flex-wrap items-center justify-between gap-2 pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="px-2.5 py-1 rounded-md bg-primary-container text-on-primary-container font-code-table text-code-table font-bold">CASE #REV-4182</span>
+<span class="px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+              Flagged by Mentor
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Reported 3 hours ago</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold">Priority 1 (Urgent)</span>
+</div>
+</div>
+<!-- Participants Dossier Strip -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md p-space-md rounded-xl bg-surface-container-low">
+<!-- Mentor Profile -->
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-xl object-cover shadow-sm" data-alt="Professional headshot of Devendra Kumar, a senior software architect wearing a dark navy blazer, neutral office background with gentle rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl3nK1oatIFSjiz9qkP2TP92orhrhHQhBC1O4sbAQi3_wmlXRkEm3B3iE0obNRSP38EEXIIfM0UXMEDm0D4R5gEhlRJblan7o7-NTPP87uzsJJ3ckzxp_o7PBWNNN9-7WA0LWzfdtdJiHvLKixylRWkC2nuY3rg27DmYGA3S7a0w6Qnr98Mt7A-PgYcX5RjbPrtBQ8neH_fH9EuUW_czDRHFX3uOOxxytAuSRErKrFvpLFQ3R-6jlh">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Devendra K.</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Lead Architect @ Razorpay • Rating 4.96 (184 sessions)</span>
+<span class="font-label-sm text-label-sm text-primary font-medium mt-0.5">Service: Resume Review &amp; ATS Audit (₹899)</span>
+</div>
+</div>
+<!-- Student Profile -->
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-xl object-cover shadow-sm" data-alt="Headshot of Kunal Verma, an Indian male college engineering student in casual crewneck sweatshirt, smiling softly against modern campus library backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa4PCLMQSoER81r9YS2GGR0JB4cg2Bw8yYRjsdYaFvGjLGsYf0frRCkTLWQY2kgI9WzAdBPQrHbnbUcoO5qc1Y4GQizMSpCthc-nJ-Gvb3-7eHqmIchgh9c8jp2g_tJJB7mucZvuWZuXrM4nABwxaTtWtWEmUouMGIW5PAvzOLMWJjGsEK6QDMFUBhL6n0nJU1R6ks4u3VEsVcQECOVWw-3jYqskeqVSm25rtrYxYWt4lwRfryvpzI">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Kunal Verma</span>
+<span class="px-2 py-0.2 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">4th Year B.Tech</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Joined DreamX Feb 2024 • 2 previous completed bookings</span>
+<div class="flex items-center gap-1 mt-0.5 text-error font-label-sm text-label-sm font-semibold">
+<span class="">Submitted Review: 1.0 Star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="text-on-surface-variant font-normal">(Publicly on hold)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- The Reported Review Content Box -->
+<div class="p-space-md rounded-xl bg-surface-container space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-overline text-overline uppercase tracking-wider text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+              Flagged Public Review Text (Pending Approval)
+            </span>
+<span class="font-code-table text-code-table text-on-surface-variant">Automated Profanity Match: 2 Instances</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed p-3 bg-surface-container-lowest rounded-lg shadow-inner">
+<span class="text-on-surface-variant">"</span>
+<mark class="bg-error-container text-on-error-container px-1 rounded font-medium">Mentor did not even look at my resume</mark> 
+            during our session. He just talked about irrelevant theory. He didn't care about my job interview at all. 
+            <mark class="bg-error-container text-on-error-container px-1 rounded font-medium">This entire session was a total waste of money and scam!</mark>
+            Stay away from him if you value your time!
+            <span class="text-on-surface-variant">"</span>
+</p>
+</div>
+<!-- Mentor's Defense & Platform Evidence -->
+<div class="space-y-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">record_voice_over</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Mentor's Appeal &amp; Counter-Claim</h3>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm">
+<p class="font-body-md text-body-md text-on-surface italic">
+              "The student joined 35 minutes late to a 45-minute scheduled call. I stayed on the call waiting and even extended it 10 extra minutes. Afterwards, I completed the full 4-page annotated ATS feedback report with 42 inline notes and uploaded it within 14 hours. The student is posting abusive slander because he failed his own time commitment."
+            </p>
+<!-- Objective System Evidence Log -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-surface-container-highest text-primary material-symbols-outlined text-[20px]">description</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Annotated_Resume_Report_v2.pdf</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-primary font-label-sm text-label-sm font-medium">Verified by DreamX Engine</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Size: 2.4 MB • 42 Detailed Annotations Verified • ATS Score: 78/100</span>
+</div>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-surface-container text-primary hover:bg-surface-container-high transition-colors font-label-sm text-label-sm font-semibold shrink-0" href="#">
+                View PDF Artifact
+              </a>
+</div>
+<!-- Attendance & SLA Timeline Proof -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+<div class="p-2 rounded bg-surface-container-low">
+<span class="font-overline text-overline uppercase text-on-surface-variant block">Mentor Joined</span>
+<span class="font-label-md text-label-md font-semibold text-tertiary">00:00 (On Time)</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<span class="font-overline text-overline uppercase text-on-surface-variant block">Student Joined</span>
+<span class="font-label-md text-label-md font-semibold text-error">+34m 12s Late</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<span class="font-overline text-overline uppercase text-on-surface-variant block">Session Length</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">20m Call Time</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<span class="font-overline text-overline uppercase text-on-surface-variant block">Report Delivered</span>
+<span class="font-label-md text-label-md font-semibold text-tertiary">14h (Within 24h SLA)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CASE 2 (Session Refund Dispute - Accordion Preview) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col space-y-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container font-code-table text-code-table font-semibold text-on-surface">CASE #DSP-104</span>
+<span class="px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Escrow Frozen (₹1,299)</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Pooja Sundaram vs Arunachalam M. (Google SDE-2)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Disputed 5 hours ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+          Student Claim: Mentor arrived 25m late and omitted the agreed-upon system design architecture scorecard deliverable.
+        </p>
+<div class="pt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mentor submitted audio log. 18 hours remaining on auto-arbitration window.</span>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:underline flex items-center gap-1">
+<span class="">Review Arbitration Dossier</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CASE 3 (Contact Leak & Anti-Poaching Alert) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col space-y-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container font-code-table text-code-table font-semibold text-on-surface">CASE #MSG-902</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">phonelink_erase</span>
+              Message Blocked Automatically
+            </span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Rohan Mehta (Student) → Priya Nair (Mentor)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-flagged 42 mins ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Detected WhatsApp number pattern (<code class="bg-surface-container px-1 py-0.5 rounded font-code-table text-code-table text-error">+91 98765-XXXXX</code>) requesting direct offline payment over Google Pay to bypass platform fee.
+        </p>
+<div class="pt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Message scrubbed in chat window • Student queued for Strike #1</span>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:underline flex items-center gap-1">
+<span class="">Issue Direct Warning</span>
+<span class="material-symbols-outlined text-[14px]">send</span>
+</button>
+</div>
+</div>
+<!-- CASE 4 (Duplicate Review / False Claim) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col space-y-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container font-code-table text-code-table font-semibold text-on-surface">CASE #REV-4179</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">Duplicate Review Flag</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">S. Vardhan • 2.0 Star Review • Mock Interview</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Reported Yesterday</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+          System flagged repeated submission from identical IP hash within 10 minutes of initial 5-star rating.
+        </p>
+<div class="pt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fingerprint: Chrome 122 on macOS (Bangalore Node)</span>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:underline flex items-center gap-1">
+<span class="">Investigate Cluster</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Decision Console & Safety Policies (~35% / 4-5 cols) -->
+<div class="lg:col-span-5 xl:col-span-4 flex flex-col space-y-space-md">
+<!-- DECISION ARBITRATION PANEL (Interactive Focus Card) -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-md space-y-space-md">
+<div class="space-y-1 pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">balance</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Arbitration &amp; Decision Console</h2>
+</div>
+<span class="font-code-table text-code-table text-primary font-semibold">Evaluating: Case #REV-4182</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Your decision will immediately update the mentor's rolling public score, issue an automated notification to both parties, and record an immutable entry in the audit ledger.
+          </p>
+</div>
+<!-- 3 Decision Actions -->
+<div class="space-y-space-sm">
+<!-- Action 1: Approve Appeal -->
+<button class="w-full p-3 rounded-xl bg-surface-container-high hover:bg-tertiary-container hover:text-on-primary transition-all text-left flex items-start gap-3 group">
+<span class="p-2 rounded-lg bg-surface-container-lowest text-tertiary group-hover:bg-on-primary group-hover:text-tertiary material-symbols-outlined text-[20px] shrink-0">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface group-hover:text-on-primary">Approve Mentor Appeal &amp; Remove Review</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-primary/90 mt-0.5">Removes 1-star rating from Devendra's profile. Restores score to 4.96. Issues formal warning to student for false review.</span>
+</div>
+</button>
+<!-- Action 2: Edit & Strip Language -->
+<button class="w-full p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all text-left flex items-start gap-3">
+<span class="p-2 rounded-lg bg-surface-container text-on-surface material-symbols-outlined text-[20px] shrink-0">rule</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Edit Review &amp; Remove Abusive Words</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Blanks out "scam" and "waste of money" while preserving student's constructive feedback.</span>
+</div>
+</button>
+<!-- Action 3: Uphold Student -->
+<button class="w-full p-3 rounded-xl bg-surface-container-low hover:bg-error-container hover:text-on-error-container transition-all text-left flex items-start gap-3 group">
+<span class="p-2 rounded-lg bg-surface-container text-error group-hover:bg-error group-hover:text-on-error material-symbols-outlined text-[20px] shrink-0">cancel</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface group-hover:text-on-error-container">Uphold Student Review (Reject Appeal)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-error-container mt-0.5">Keeps 1-star rating visible on mentor profile. Releases escrowed session funds as completed.</span>
+</div>
+</button>
+</div>
+<!-- Mandatory Justification Reason -->
+<div class="space-y-1.5 pt-space-xs">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between">
+<span class="">Mandatory Decision Justification</span>
+<span class="font-overline text-overline uppercase text-tertiary">Logged in Audit Trail</span>
+</label>
+<textarea class="w-full p-3 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20" rows="3">Deliverable verified in platform storage. Student attendance log confirms a 34-minute late arrival. Removing abusive review text in accordance with Community Guideline §4.2.</textarea>
+</div>
+<!-- Admin Identity Pill -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Logged as Ananya Roy (VP Ops)</span>
+</div>
+<span class="font-code-table text-code-table text-on-surface-variant">#AUD-88219</span>
+</div>
+<!-- Confirm Submission CTA -->
+<button class="w-full py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-semibold transition-all shadow-md shadow-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="">Submit Final Arbitration Decision</span>
+</button>
+</div>
+<!-- PLATFORM SAFETY GUIDELINES & GUARDRAILS PANEL -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">shield_lock</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Platform Safety Rules</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-code-table text-code-table">v2.4 Live</span>
+</div>
+<div class="space-y-space-md">
+<!-- Rule 1 -->
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">1</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Proof-Backed Reviews</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pl-7">
+              Students can only rate sessions they attended for more than 50% duration. If the mentor delivered promised artifacts within SLA, false claims are suppressed upon review.
+            </p>
+</div>
+<!-- Rule 2 -->
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">2</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Escrow Freeze Safety</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pl-7">
+              When a dispute is lodged within 48 hours of call completion, payout release is frozen automatically. Zero risk of lost funds before staff mediation.
+            </p>
+</div>
+<!-- Rule 3 -->
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">3</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Anti-Poaching Protection</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pl-7">
+              Phone numbers, email addresses, and payment IDs are scrubbed instantly. Mentors accepting off-platform cash face permanent listing termination.
+            </p>
+</div>
+<!-- Strike Policy Box -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-error shrink-0 mt-0.5">policy</span>
+<div class="space-y-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Three-Strike Warning Protocol</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+                3 verified misconduct strikes within 30 rolling days will pause account booking capabilities automatically across DreamX India.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- System Health Quick Telemetry -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container animate-pulse"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Automated NLP Guard</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hindi &amp; English slurs covered</span>
+</div>
+</div>
+<span class="font-code-table text-code-table text-tertiary font-bold">99.98% Uptime</span>
+</div>
+</div>
+</div>
+</div></main></div>
+
+</body></html>

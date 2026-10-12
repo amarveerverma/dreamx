@@ -1,0 +1,270 @@
+---
+name: Career Discovery System
+colors:
+  surface: '#faf8ff'
+  surface-dim: '#d2d9f4'
+  surface-bright: '#faf8ff'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#f2f3ff'
+  surface-container: '#eaedff'
+  surface-container-high: '#e2e7ff'
+  surface-container-highest: '#dae2fd'
+  on-surface: '#131b2e'
+  on-surface-variant: '#464554'
+  inverse-surface: '#283044'
+  inverse-on-surface: '#eef0ff'
+  outline: '#767586'
+  outline-variant: '#c7c4d7'
+  surface-tint: '#494bd6'
+  primary: '#4648d4'
+  on-primary: '#ffffff'
+  primary-container: '#6063ee'
+  on-primary-container: '#fffbff'
+  inverse-primary: '#c0c1ff'
+  secondary: '#6b38d4'
+  on-secondary: '#ffffff'
+  secondary-container: '#8455ef'
+  on-secondary-container: '#fffbff'
+  tertiary: '#4f5d71'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#67758b'
+  on-tertiary-container: '#fdfcff'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#e1e0ff'
+  primary-fixed-dim: '#c0c1ff'
+  on-primary-fixed: '#07006c'
+  on-primary-fixed-variant: '#2f2ebe'
+  secondary-fixed: '#e9ddff'
+  secondary-fixed-dim: '#d0bcff'
+  on-secondary-fixed: '#23005c'
+  on-secondary-fixed-variant: '#5516be'
+  tertiary-fixed: '#d5e3fc'
+  tertiary-fixed-dim: '#b9c7df'
+  on-tertiary-fixed: '#0d1c2e'
+  on-tertiary-fixed-variant: '#3a485b'
+  background: '#faf8ff'
+  on-background: '#131b2e'
+  surface-variant: '#dae2fd'
+typography:
+  display-hero:
+    fontFamily: Inter
+    fontSize: 48px
+    fontWeight: '700'
+    lineHeight: 56px
+    letterSpacing: -0.025em
+  display-hero-mobile:
+    fontFamily: Inter
+    fontSize: 32px
+    fontWeight: '700'
+    lineHeight: 40px
+    letterSpacing: -0.02em
+  headline-lg:
+    fontFamily: Inter
+    fontSize: 32px
+    fontWeight: '600'
+    lineHeight: 40px
+    letterSpacing: -0.02em
+  headline-lg-mobile:
+    fontFamily: Inter
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+    letterSpacing: -0.015em
+  headline-md:
+    fontFamily: Inter
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+    letterSpacing: -0.015em
+  headline-sm:
+    fontFamily: Inter
+    fontSize: 20px
+    fontWeight: '600'
+    lineHeight: 28px
+    letterSpacing: -0.01em
+  title-md:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: '600'
+    lineHeight: 24px
+    letterSpacing: -0.005em
+  body-lg:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 26px
+    letterSpacing: 0em
+  body-md:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 22px
+    letterSpacing: 0em
+  body-sm:
+    fontFamily: Inter
+    fontSize: 13px
+    fontWeight: '400'
+    lineHeight: 18px
+    letterSpacing: 0.005em
+  label-md:
+    fontFamily: Inter
+    fontSize: 13px
+    fontWeight: '500'
+    lineHeight: 18px
+    letterSpacing: 0.01em
+  label-sm:
+    fontFamily: Inter
+    fontSize: 11px
+    fontWeight: '600'
+    lineHeight: 14px
+    letterSpacing: 0.04em
+  metric-num:
+    fontFamily: Inter
+    fontSize: 28px
+    fontWeight: '700'
+    lineHeight: 32px
+    letterSpacing: -0.02em
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1.5rem
+  margin: 2rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2rem
+---
+
+## Brand & Style
+
+The design system establishes a high-conviction, outcome-oriented interface designed for ambitious professionals navigating career mobility. Blending the surgical precision of modern developer tools with the structured trust of enterprise financial platforms, the aesthetic balances high-density utility with luminous, optimistic accents.
+
+### Design Principles
+- **Surgical Clarity:** Eliminate decorative noise. Every layout container, border line, and typography shift communicates structural intent, career progression, or outcome certainty.
+- **Ambient Intelligence:** AI capabilities are manifested through calibrated gradient borders, glowing focus states, and contextual discovery chips, avoiding gimmickry in favor of calm computational confidence.
+- **Fintech Rigor & Velocity:** Micro-interactions are snappy (150ms–200ms ease-out transitions), typography adheres to tabular alignment where data matters, and structural boundaries stay crisp and predictable.
+- **Outcome Luminosity:** Key milestones, skill verifications, and career breakthroughs leverage vibrant indigo-to-purple spectral transitions over paper-clean, neutral backdrops.
+
+## Colors
+
+The palette relies on a balanced contrast hierarchy engineered for sustained reading, complex multi-step workflows, and visual discovery.
+
+### Palette Architecture
+- **Primary Indigo (`#6366F1`):** The primary engine for transactional elements, active goal states, progress milestones, and directional user paths.
+- **Accent Purple (`#8B5CF6`):** The ambient intelligence marker. Reserved for AI recommendations, match scores, machine-generated career vectors, and high-tier milestones.
+- **Ink Primary (`#0F172A`):** Deep, high-legibility slate ink for primary headings, metric values, and high-emphasis interface chrome.
+- **Slate Secondary (`#475569`):** Grounded secondary neutral for supporting metadata, field descriptions, column labels, and inactive status indicators.
+- **Slate Subtle (`#94A3B8`):** Disabled states, structural dividers, and placeholder labels.
+- **Card Stroke (`#E2E8F0`):** Crisp, hairline boundary definition providing structure against the base canvas.
+- **Canvas Base (`#FCFCFD`):** An ultra-clean, clinical cool white canvas that sets off surface containers.
+- **Surface Pure (`#FFFFFF`):** High-clarity foreground panels, goal tiles, modal containers, and elevated drawers.
+
+### Color Distribution Strategy
+- **60% Canvas & Pure Surfaces:** `#FCFCFD` base paired with crisp `#FFFFFF` cards creates a clean, calm background.
+- **30% Structural Typographic Hierarchy:** `#0F172A` for absolute clarity, anchored by `#475569` context lines and `#E2E8F0` hairline borders.
+- **10% Kinetic Accents:** Focused bursts of `#6366F1` and `#8B5CF6` reserved strictly for high-impact actions, interactive discovery vectors, and calculated match metrics.
+
+## Typography
+
+The type system is powered entirely by Inter, chosen for its neutral precision, balanced vertical metrics, and distinct OpenType features.
+
+### OpenType Configuration
+- Enable contextual alternates (`calt`) and standard ligatures (`liga`) universally.
+- Enable tabular figures (`tnum`) for all analytical dashboards, salary metrics, time-to-goal projections, and tabular candidate comparisons.
+- Negative letter tracking is applied consistently to all display scales (`-0.025em` down to `-0.015em`) to preserve visual density across large screens.
+
+### Usage Hierarchy
+- **Display & Large Headlines:** Used exclusively for high-intent milestone intros, career path trajectory summaries, and dashboard overview anchors.
+- **Titles & Labels:** Optimized for fast optical scanning across cards, data tables, and AI vector matches.
+- **Labels & Micro-Caps:** All `label-sm` variants utilize uppercase styling with `+0.04em` letter-spacing for status badges, confidence meters, and skill tags.
+
+## Layout & Spacing
+
+Layout geometry follows an explicit 8pt baseline grid system (0.5rem = 8px), creating balanced visual density and predictable structural alignment across responsive breakpoints.
+
+### Grid & Composition Strategy
+- **Desktop (≥ 1280px):** 12-column layout, max-width bounded at 1440px, centered with 32px (`2rem`) outer margin padding and 24px (`1.5rem`) gutters. Side navigation remains fixed at 260px.
+- **Tablet (768px – 1279px):** 8-column layout, flexible margins scaled to 24px (`1.5rem`), gutters pegged at 16px (`1rem`). Split navigation collapses to an elevated sub-header or sliding canvas drawer.
+- **Mobile (< 768px):** 4-column fluid layout with 16px (`1rem`) lateral canvas padding and 12px gutters. Cards, goal tiles, and actionable matrices reflow to single-column vertical stacks.
+
+### Internal Component Spacing Rules
+- Micro-spacing (`space-xs` = 4px, `space-sm` = 8px) is dedicated strictly to inline icon-label pairings, badge padding, and segmented control segments.
+- Standard flow (`space-md` = 16px, `space-lg` = 24px) dictates card interiors, modal padding, and vertical form fields.
+- Macro intervals (`space-xl` = 32px and larger multiples of 8px) govern section block transitions and dashboard row separation.
+
+## Elevation & Depth
+
+Visual hierarchy uses a layered strategy that combines low-contrast hairline outlines with soft, multi-tier ambient shadows. This prevents heavy drop shadows while maintaining clear tactile depth between interacting panels.
+
+### Surface Outlines
+All card panels, floating menus, input states, and recommendation modules carry an initial hairline outline:
+`1px solid #E2E8F0`. On interactive hover states, this shifts cleanly to `1px solid #CBD5E1` or a focused `#6366F1/40%`.
+
+### Elevation Tiers
+- **Flat (Canvas):** `#FCFCFD` baseline layer. No drop shadow.
+- **Level 1 (Default Cards & Goal Tiles):** 
+  `box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.02)`. Grounded, stable, embedded directly into the canvas.
+- **Level 2 (Hover States, Action Bars & Segmented Containers):**
+  `box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04)`.
+- **Level 3 (Dropdowns, Command Menus & Floating Toolbars):**
+  `box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04)`.
+- **Level 4 (Modals, Takeovers & Match Resolution Drawers):**
+  `box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.04)`.
+
+### Ambient AI Gradient Glow
+For elevated AI-generated discovery units:
+A dual-layer ambient shadow tinted with primary spectral values:
+`box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.12), 0 12px 24px -6px rgba(139, 92, 246, 0.12)`.
+
+## Shapes
+
+The design system employs a 3-tier corner geometry mapped directly to container scale and context.
+
+### Radius System
+- **Compact Base (8px / `0.5rem`):** Buttons, textual inputs, dropdown items, filter chips, and inline code/status pills.
+- **Standard Structural (12px / `0.75rem`):** Interactive goal discovery tiles, standard analytics panels, list group containers, and notification toasts.
+- **Large Contextual (20px / `1.25rem`):** Hero cards, AI recommendation surfaces, high-level milestone clusters, and full-screen workflow modals.
+- **Pill (Full Round / 9999px):** Quantitative counter badges, active system indicators, avatar frames, and dynamic progress trackers.
+
+## Components
+
+### Buttons
+- **Primary Action:** Solid `#6366F1` background, `#FFFFFF` text, 8px border radius, 40px height for standard sizes (padding: `0 16px`), 14px font size at 600 weight. Subtle top inner highlight: `inset 0 1px 0 rgba(255, 255, 255, 0.2)`. On hover: transition to `#4F46E5`.
+- **Secondary (Outline):** 1px `#E2E8F0` border, `#FFFFFF` background, `#0F172A` text. On hover: border transitions to `#CBD5E1`, background to `#F8FAFC`.
+- **AI Assist Action:** A continuous linear-gradient (`135deg, #6366F1, #8B5CF6`), `#FFFFFF` text, subtle 12px glow on hover with scale transition (`transform: translateY(-0.5px)`).
+
+### Goal Tiles
+- **Structure:** 12px corner radius, `#FFFFFF` surface, 1px `#E2E8F0` border, 20px internal padding.
+- **Visual Expression:** Includes an icon container (40x40px, rounded-8px, tinted `#6366F1/8%` fill) featuring an indigo icon.
+- **Interactive State:** Hover elevates to Level 2 elevation, border shifts to `#6366F1`, and a trailing directional chevron becomes visible.
+
+### AI Recommendation Cards
+- **Structure:** 20px radius, `#FFFFFF` card body overlaid with a 1px pseudo-border gradient: `linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(139, 92, 246, 0.15))`.
+- **Top Accent:** A hairline 2px gradient runner across the top card perimeter (`linear-gradient(90deg, #6366F1, #8B5CF6)`).
+- **Match Indicator:** Houses a pill badge in the top-right corner with a `#8B5CF6/10%` fill, `#8B5CF6` text, displaying a calculated fit percentage (e.g., "98% Match").
+
+### Form Inputs & Selectors
+- **Input Fields:** 40px height, 8px radius, `#FFFFFF` surface, 1px `#E2E8F0` border, 14px type size, 12px horizontal padding.
+- **Focus State:** Hairline border switches to `#6366F1` with an outer ring: `0 0 0 3px rgba(99, 102, 241, 0.15)`.
+
+### Chips & Filter Pills
+- **Filter Tags:** 32px height, 8px radius, `#F8FAFC` background, 1px `#E2E8F0` stroke, 13px medium type.
+- **Selected State:** `#6366F1` background, `#FFFFFF` text, 0px border.
+
+### Checkboxes & Radios
+- **Checkboxes:** 18x18px box, 4px corner radius, 1px `#CBD5E1` border. Active state: `#6366F1` fill with an optical white check icon.
+- **Radios:** 18x18px circular frame, 1px `#CBD5E1` border. Active state: `#6366F1` ring with a 6px centered solid white dot.
+
+### Career Outcome Matrices (Specialized Component)
+- Segmented data list built with tabular layout structures. 
+- Alternating subtle rows on `#FCFCFD` canvas with divider strokes in `#E2E8F0`. 
+- Includes skill-gap meters rendered with 6px height rounded progress rails: background `#F1F5F9`, filled indicator `#6366F1`.

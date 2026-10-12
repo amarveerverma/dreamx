@@ -1,0 +1,627 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#8455ef", "error": "#ba1a1a", "on-primary-container": "#fffbff", "on-tertiary-fixed": "#002113", "on-secondary": "#ffffff", "surface-container-highest": "#dae2fd", "error-container": "#ffdad6", "surface-container-lowest": "#ffffff", "surface-bright": "#faf8ff", "surface-container-high": "#e2e7ff", "tertiary-container": "#00885d", "on-surface": "#131b2e", "surface": "#faf8ff", "background": "#faf8ff", "on-tertiary-container": "#000703", "inverse-on-surface": "#eef0ff", "inverse-primary": "#c0c1ff", "on-tertiary-fixed-variant": "#005236", "inverse-surface": "#283044", "surface-container": "#eaedff", "secondary-fixed": "#e9ddff", "tertiary-fixed": "#6ffbbe", "primary-fixed": "#e1e0ff", "on-secondary-container": "#fffbff", "tertiary-fixed-dim": "#4edea3", "on-secondary-fixed": "#23005c", "primary-container": "#6063ee", "tertiary": "#006c49", "surface-dim": "#d2d9f4", "primary-fixed-dim": "#c0c1ff", "surface-variant": "#dae2fd", "primary": "#4648d4", "secondary": "#6b38d4", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#2f2ebe", "on-error": "#ffffff", "on-secondary-fixed-variant": "#5516be", "outline-variant": "#c7c4d7", "surface-tint": "#494bd6", "on-error-container": "#93000a", "on-primary-fixed": "#07006c", "secondary-fixed-dim": "#d0bcff", "surface-container-low": "#f2f3ff", "on-surface-variant": "#464554", "outline": "#767586", "on-primary": "#ffffff", "on-background": "#131b2e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-md": "1rem", "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem", "space-xl": "2rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-lg": ["Inter"], "headline-sm": ["Inter"], "display": ["Inter"], "headline-lg-mobile": ["Inter"], "label-md": ["Inter"], "stat-metric-sm": ["Inter"], "body-lg": ["Inter"], "overline": ["Inter"], "headline-md": ["Inter"], "stat-metric": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "code-table": ["Inter"], "label-sm": ["Inter"] }, "fontSize": { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500" }], "stat-metric-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "overline": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "stat-metric": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "code-table": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-[260px] bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm"><img alt="DreamX Logo" class="w-8 h-8 rounded-lg object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VWlT0DlbfZMjYuXSrC1Zz9dlgmTXqKj15aAeGd-t8DaJztkLQLuh26Z1tfMxnlzHIzD-dUg_GHDfJ2Zlgru_2VGgu3sqLjdqU-Kb74cDmLycHz2gIUwlUT4iOCZVOZtmEr1nOxRk7-5TAvbSeiVtb4ZVb71nlQnWKagHhQK5rjUPA1hUuLR8_ssjIVqEytgOX-VTvvKhx5otClVTHUhEt8kE4ByD08grOXXdFBiwE09uQYU33T3poDBg"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">DreamX</span><span class="font-overline text-overline uppercase text-on-surface-variant">Admin Console</span></div></div><div class="px-space-md py-space-xs"><nav class="space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Overview</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="/admin" href="/admin"><span class="flex items-center gap-space-sm"><span class="">Executive Dashboard</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="/admin/marketplace" href="/admin/marketplace"><span class="flex items-center gap-space-sm"><span class="">Marketplace Health</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="/admin/analytics" href="/admin/analytics"><span class="flex items-center gap-space-sm"><span class="">Analytics &amp; Performance</span></span></a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Management</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="/admin/users" href="/admin/users"><span class="flex items-center gap-space-sm"><span class="">User Directory</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="/admin/mentors" href="/admin/mentors"><span class="flex items-center gap-space-sm"><span class="">Mentor Verification</span></span><span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-primary font-medium">5 pending</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="/admin/programs" href="/admin/programs"><span class="flex items-center gap-space-sm"><span class="">Program Catalog</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="/admin/moderation" href="/admin/moderation"><span class="flex items-center gap-space-sm"><span class="">Content Moderation</span></span></a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Finance &amp; Transactions</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="/admin/payments" href="/admin/payments"><span class="flex items-center gap-space-sm"><span class="">Payments &amp; Escrow</span></span><span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-medium">₹14.2L held</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 rounded-lg transition-colors bg-primary text-on-primary font-medium" data-path="/admin/reports" href="/admin/reports"><span class="flex items-center gap-space-sm"><span class="">Reports &amp; Exports</span></span></a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">System &amp; Configuration</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="/admin/settings" href="/admin/settings"><span class="flex items-center gap-space-sm"><span class="">Platform Settings</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="/admin/audit" href="/admin/audit"><span class="flex items-center gap-space-sm"><span class="">Audit &amp; Compliance Logs</span></span></a></div></div></nav></div></div><div class="p-space-md"><div class="px-space-sm py-space-xs rounded-lg bg-surface-container-low flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-code-table text-code-table text-on-surface-variant">Production v1.0 • Supabase RLS Protected</span></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><nav class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant"><span class="text-on-surface-variant">Administration</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-on-surface-variant">Finance</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><a class="text-on-surface font-semibold hover:underline" href="/admin/reports">Reports &amp; Exports</a></nav><div class="flex items-center gap-2 px-space-sm py-1 rounded-lg bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span><span class="font-label-sm text-label-sm text-on-surface font-medium">India MVP (CM-IN)</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-low p-1 rounded-lg"><button class="px-3 py-1 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">Today</button><button class="px-3 py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-[0_1px_2px_rgba(15,23,42,0.08)] font-medium">Last 7 Days</button><button class="px-3 py-1 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">This Month</button></div><div class="hidden xl:flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low text-tertiary"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="font-label-sm text-label-sm font-medium">All Systems Operational • pg_cron active</span></div><div class="flex items-center gap-space-sm"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1V0AAql4jGIRqEsdzoD0fM4D7KzgdgSCXOxWXLCX3wFMiVq6EyC2nlrmufQAptIDPpABKVSJB2Zne6rHbtLLEuIAzsHg7MqEc5qSi62rtuJwW7jmVFwhjiu6vCFIoyqMlhBdshF-R8fZ8_WhxFyrgwMILFhWONB-s7Ox8cU55jyLfReXDDPXv9cQYcxLx1-bcp30sD6SXgyKvGE0-15_eB1nCyRRXlPwTjAfMFVWRUzwN1R47bR2ALOxTk"><div class="hidden lg:flex flex-col"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Ananya Roy</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">VP Operations &amp; Admin</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-lg py-space-xl"><div class="flex flex-col w-full space-y-space-xl">
+<!-- Header & Executive Ribbon -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm font-semibold tracking-wide uppercase">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="">Compliant with Indian Tax Code &amp; RBI Guidelines</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+          Financial Reports &amp; Compliance Exports
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Generate and download official transaction ledgers, GST tax filings, and mentor payout audit sheets with one click. Clear data with zero accounting confusion.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm self-start lg:self-auto">
+<button class="flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">query_stats</span>
+<span class="">Run Custom Data Query</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span class="">Generate Month-End Package (July 2026)</span>
+</button>
+</div>
+</div>
+<!-- Date Range Selector Ribbon -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm p-1.5 rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex flex-wrap items-center gap-1.5" id="date-range-pills">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold shadow-sm transition-colors">
+          This Month (Jul 2026)
+        </button>
+<button class="px-3.5 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+          Last Month (Jun 2026)
+        </button>
+<button class="px-3.5 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+          Q2 2026
+        </button>
+<button class="px-3.5 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+          Fiscal Year 2026-27
+        </button>
+<button class="flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">date_range</span>
+<span class="">Custom Date Range</span>
+</button>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 font-code-table text-code-table text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="">Reconciliation sync completed 4m ago</span>
+</div>
+</div>
+</section>
+<!-- Top 4 Summary Cards (Plain English) -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-gutter">
+<!-- Card 1 -->
+<div class="flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">Total Money Processed</span>
+<span class="flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+          +18.4% this mo
+        </span>
+</div>
+<div class="font-stat-metric text-stat-metric text-on-surface tabular-nums">
+        ₹48,50,000
+      </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Total fees collected from students before splitting between mentors and DreamX.
+      </p>
+<div class="pt-1 flex items-center justify-between font-label-sm text-label-sm text-primary">
+<span class="">Includes 412 total bookings</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">GST Collected (18%)</span>
+<span class="flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+          Filed &amp; Reconciled
+        </span>
+</div>
+<div class="font-stat-metric text-stat-metric text-on-surface tabular-nums">
+        ₹1,47,966
+      </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        18% GST collected strictly on DreamX platform fee cut, ready for GSTR-1 &amp; GSTR-3B filings.
+      </p>
+<div class="pt-1 flex items-center justify-between font-label-sm text-label-sm text-primary">
+<span class="">SAC Code: 999293</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">Mentor Payouts Released</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed font-semibold">
+          384 Mentors Paid
+        </span>
+</div>
+<div class="font-stat-metric text-stat-metric text-on-surface tabular-nums">
+        ₹34,25,500
+      </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Money sent to mentors after their 3-day (services) or 14-day (programs) escrow hold window.
+      </p>
+<div class="pt-1 flex items-center justify-between font-label-sm text-label-sm text-primary">
+<span class="">Avg ₹8,920 / mentor</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant">Audit Trail Records</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">
+          Zero Discrepancies
+        </span>
+</div>
+<div class="font-stat-metric text-stat-metric text-on-surface tabular-nums">
+        100% Verified
+      </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Every single rupee tracked against Razorpay settlement IDs and Supabase ledger logs.
+      </p>
+<div class="pt-1 flex items-center justify-between font-label-sm text-label-sm text-primary">
+<span class="">HMAC-SHA256 Signed</span>
+<span class="material-symbols-outlined text-[16px]">shield</span>
+</div>
+</div>
+</section>
+<!-- Main Grid: Report Modules (Left 8 cols) vs Scheduled & Custom (Right 4 cols) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-xl items-start">
+<!-- Left Column: Primary Export Suites -->
+<div class="xl:col-span-8 flex flex-col space-y-space-xl">
+<!-- Suite 1: Master Booking Ledger -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<div class="p-space-lg flex flex-col space-y-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">
+                  General Financial Ledger (Master Booking Audit)
+                </h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Line-by-line record of every rupee that entered DreamX. Includes payment methods, session types, and payout timestamps.
+                </span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-start sm:self-auto">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">table_view</span>
+<span class="">Download CSV</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+<span class="">Official PDF</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs pt-1">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-medium">
+              Updated real-time
+            </span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-medium">
+              64 transactions this month
+            </span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-medium">
+              Includes Razorpay Route IDs
+            </span>
+</div>
+</div>
+<!-- Master Ledger Quick Preview Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container-low text-on-surface-variant font-overline text-overline uppercase tracking-wider">
+<tr>
+<th class="py-3 px-space-md">Booking Ref</th>
+<th class="py-3 px-space-md">Student &amp; Mentor</th>
+<th class="py-3 px-space-md">Session / Cohort</th>
+<th class="py-3 px-space-md text-right">Gross Paid</th>
+<th class="py-3 px-space-md text-right">Fee Split (20 / 80)</th>
+<th class="py-3 px-space-md">Settlement Status</th>
+<th class="py-3 px-space-md">Method</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-md font-code-table text-code-table text-primary font-semibold">
+                  #BK-9038
+                </td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Rohan Sharma</span>
+<span class="text-on-surface-variant text-[11px]">→ Devendra K.</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface">
+                  Resume Review
+                </td>
+<td class="py-3.5 px-space-md text-right tabular-nums font-semibold text-on-surface">
+                  ₹899
+                </td>
+<td class="py-3.5 px-space-md text-right tabular-nums">
+<div class="flex flex-col items-end">
+<span class="text-tertiary font-medium">DreamX: ₹179.80</span>
+<span class="text-on-surface-variant text-[11px]">Mentor: ₹719.20</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    Payout Released
+                  </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant text-code-table font-code-table">
+                  UPI (GPay)
+                </td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-md font-code-table text-code-table text-primary font-semibold">
+                  #BK-9042
+                </td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Pooja Sundaram</span>
+<span class="text-on-surface-variant text-[11px]">→ Arunachalam M.</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface">
+                  Mock Interview
+                </td>
+<td class="py-3.5 px-space-md text-right tabular-nums font-semibold text-on-surface">
+                  ₹1,299
+                </td>
+<td class="py-3.5 px-space-md text-right tabular-nums">
+<div class="flex flex-col items-end">
+<span class="text-tertiary font-medium">DreamX: ₹259.80</span>
+<span class="text-on-surface-variant text-[11px]">Mentor: ₹1,039.20</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                    Escrow Frozen (Disputed)
+                  </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant text-code-table font-code-table">
+                  Netbanking
+                </td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-md font-code-table text-code-table text-primary font-semibold">
+                  #PRG-FAANG-084
+                </td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Ananya S.</span>
+<span class="text-on-surface-variant text-[11px]">→ Vikram Singh</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface">
+                  4-Week FAANG Cohort
+                </td>
+<td class="py-3.5 px-space-md text-right tabular-nums">
+<div class="flex flex-col items-end">
+<span class="font-semibold text-on-surface">₹1,349</span>
+<span class="text-error text-[11px] font-medium">-₹150 (Pro 10%)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right tabular-nums">
+<div class="flex flex-col items-end">
+<span class="text-tertiary font-medium">DreamX: ₹149.80</span>
+<span class="text-on-surface-variant text-[11px]">Mentor: ₹1,199.20</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Day 6 of 14d Hold
+                  </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant text-code-table font-code-table">
+                  Credit Card
+                </td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-md font-code-table text-code-table text-primary font-semibold">
+                  #SUB-MEM-402
+                </td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Karthik Mehra</span>
+<span class="text-on-surface-variant text-[11px]">DreamX Direct</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface">
+                  Pro Membership Tier (Mo)
+                </td>
+<td class="py-3.5 px-space-md text-right tabular-nums font-semibold text-on-surface">
+                  ₹299
+                </td>
+<td class="py-3.5 px-space-md text-right tabular-nums">
+<div class="flex flex-col items-end">
+<span class="text-tertiary font-medium">Net: ₹253.39</span>
+<span class="text-on-surface-variant text-[11px]">GST 18%: ₹45.61</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    Instant Settled
+                  </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant text-code-table font-code-table">
+                  UPI AutoPay
+                </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-space-md bg-surface-container-low/40 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing latest 4 entries of 64 transactions for July 2026</span>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:underline flex items-center gap-1">
+<span class="">View Full Ledger Screen</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Suite 2: GST & Statutory Tax Reports -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm p-space-lg space-y-space-md">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">
+                GST &amp; Statutory Tax Reports (India Compliance)
+              </h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                Formatted specifically for Indian Chartered Accountants (CA) and tax filing portals. Calculates 18% IGST / CGST+SGST strictly on platform earnings.
+              </span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-xs">
+<!-- Tax Card 1 -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low space-y-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-primary">GSTR-1</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">check_circle</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">B2C Sales Summary</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                412 consumer invoices generated.<br>
+                Taxable Value: <span class="font-semibold text-on-surface">₹8,22,034</span><br>
+                Total Tax: <span class="font-semibold text-on-surface">₹1,47,966</span>
+</p>
+</div>
+<div class="flex flex-col gap-1.5 pt-2">
+<button class="w-full flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[14px]">download</span>
+<span class="">Export GSTR-1 JSON</span>
+</button>
+<button class="w-full flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors shadow-sm">
+<span class="">Download Excel (.xlsx)</span>
+</button>
+</div>
+</div>
+<!-- Tax Card 2 -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low space-y-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary">Sec 194-O</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">info</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">TDS on Mentor Earnings</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                ₹34,255 deducted at 1% for e-commerce operators, tracked against mentor PAN numbers.
+              </p>
+</div>
+<div class="flex flex-col gap-1.5 pt-2">
+<button class="w-full flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[14px]">table_chart</span>
+<span class="">Download Form 16A Sheet (.csv)</span>
+</button>
+<span class="text-center font-code-table text-code-table text-on-surface-variant">Synced with TRACES portal format</span>
+</div>
+</div>
+<!-- Tax Card 3 -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low space-y-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary">SAC 999293</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">folder_zip</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Platform Invoices</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Individual PDF tax receipts with automated coaching codes ready for external filing audit.
+              </p>
+</div>
+<div class="flex flex-col gap-1.5 pt-2">
+<button class="w-full flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[14px]">archive</span>
+<span class="">Download Zip (412 Invoices)</span>
+</button>
+<span class="text-center font-code-table text-code-table text-on-surface-variant">148 MB compressed package</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Suite 3: Mentor Payout & Bank Settlement Audit -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm p-space-lg space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">
+                Mentor Payout &amp; Bank Settlement Audit
+              </h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                Proof of funds transfer directly to mentor bank accounts and UPI IDs. Essential for reconciling Razorpay Route daily batch disbursements.
+              </span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-start sm:self-auto">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">file_download</span>
+<span class="">Download Bank Ledger (.csv)</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="">Bank Verification Letter (.pdf)</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md p-space-md rounded-xl bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-overline text-overline uppercase text-on-surface-variant">Settled Mentors</span>
+<span class="font-stat-metric-sm text-stat-metric-sm text-on-surface font-bold tabular-nums">384</span>
+<span class="font-body-sm text-body-sm text-tertiary">100% on schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-overline text-overline uppercase text-on-surface-variant">Average Payout</span>
+<span class="font-stat-metric-sm text-stat-metric-sm text-on-surface font-bold tabular-nums">₹8,920</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Per active mentor</span>
+</div>
+<div class="flex flex-col">
+<span class="font-overline text-overline uppercase text-on-surface-variant">Failed Transfers</span>
+<span class="font-stat-metric-sm text-stat-metric-sm text-tertiary font-bold tabular-nums">0</span>
+<span class="font-body-sm text-body-sm text-tertiary">Zero bounce rate</span>
+</div>
+<div class="flex flex-col">
+<span class="font-overline text-overline uppercase text-on-surface-variant">Disbursement Time</span>
+<span class="font-stat-metric-sm text-stat-metric-sm text-on-surface font-bold tabular-nums">2.4h</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">IMPS / NEFT Average</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Scheduled Reports & Custom Export Builder -->
+<div class="xl:col-span-4 flex flex-col space-y-space-xl">
+<!-- Widget 1: Automated Scheduled Exports -->
+<div class="flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">schedule_send</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Automated Scheduled Exports</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">3 Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          DreamX automatically compiles and emails these reports to your leadership and accounting team on a recurring clock.
+        </p>
+<div class="space-y-space-sm">
+<!-- Item 1 -->
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Daily Midnight Cash Summary</span>
+<span class="font-code-table text-code-table text-tertiary font-medium">Every day @ 00:01</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span class="">ananya.roy@dreamx.in</span>
+<span class="font-code-table text-code-table bg-surface-container px-1.5 py-0.5 rounded text-on-surface">CSV + Digest</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Weekly Escrow Release Log</span>
+<span class="font-code-table text-code-table text-tertiary font-medium">Every Mon @ 09:00</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span class="">finance@dreamx.in</span>
+<span class="font-code-table text-code-table bg-surface-container px-1.5 py-0.5 rounded text-on-surface">Excel (.xlsx)</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Monthly GST Tax Pack</span>
+<span class="font-code-table text-code-table text-tertiary font-medium">1st of Month</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span class="">ca_tax@dreamx.in</span>
+<span class="font-code-table text-code-table bg-surface-container px-1.5 py-0.5 rounded text-on-surface">Zip Package</span>
+</div>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span class="">+ Add New Scheduled Report</span>
+</button>
+</div>
+<!-- Widget 2: Custom Report Builder (Plain Language) -->
+<div class="flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Custom Report Builder</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Select the exact data columns you want. Generates a tamper-proof file in seconds.
+        </p>
+<!-- Step 1: Checkboxes -->
+<div class="space-y-space-xs">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">
+            Step 1: Select What to Include
+          </span>
+<div class="space-y-2 pt-1">
+<label class="flex items-center gap-2.5 cursor-pointer font-body-sm text-body-sm text-on-surface select-none">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox">
+<span class="">Student &amp; Mentor Names (De-anonymized)</span>
+</label>
+<label class="flex items-center gap-2.5 cursor-pointer font-body-sm text-body-sm text-on-surface select-none">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox">
+<span class="">Full Gateway Ref Numbers (Razorpay)</span>
+</label>
+<label class="flex items-center gap-2.5 cursor-pointer font-body-sm text-body-sm text-on-surface select-none">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox">
+<span class="">Membership Subsidies &amp; Promo Discounts</span>
+</label>
+<label class="flex items-center gap-2.5 cursor-pointer font-body-sm text-body-sm text-on-surface-variant select-none">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox">
+<span class="">Mentor Bank Account Numbers (Masked for privacy)</span>
+</label>
+</div>
+</div>
+<!-- Step 2: Format Pills -->
+<div class="space-y-space-xs pt-2">
+<span class="font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">
+            Step 2: Choose File Format
+          </span>
+<div class="grid grid-cols-3 gap-1.5 pt-1" id="format-picker">
+<button class="py-2 px-2 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold text-center transition-all">
+              Excel (.xlsx)
+            </button>
+<button class="py-2 px-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm text-center transition-all">
+              CSV (.csv)
+            </button>
+<button class="py-2 px-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm text-center transition-all">
+              PDF (.pdf)
+            </button>
+</div>
+</div>
+<!-- CTA & Cryptographic Proof Note -->
+<div class="space-y-space-xs pt-2">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-all shadow-md">
+<span class="material-symbols-outlined text-[18px]">build_circle</span>
+<span class="">Build &amp; Download Custom File</span>
+</button>
+<div class="p-space-xs flex items-start gap-1.5 text-on-surface-variant font-code-table text-code-table">
+<span class="material-symbols-outlined text-[14px] text-tertiary mt-0.5">verified_user</span>
+<span class="">Exports contain Supabase cryptographic hash signatures to guarantee data authenticity for external auditors.</span>
+</div>
+</div>
+</div>
+<!-- Quick Regulatory Note Banner -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">policy</span>
+<div class="flex flex-col space-y-0.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Data Retention Rule</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Under Indian GST and Company Law regulations, all transactional ledgers are stored immutably for 8 consecutive fiscal years.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive feedback for date pills and format selector
+  document.querySelectorAll('#date-range-pills button').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('#date-range-pills button').forEach(b => {
+        b.className = 'px-3.5 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md';
+      });
+      button.className = 'px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold shadow-sm transition-colors';
+    });
+  });
+
+  document.querySelectorAll('#format-picker button').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('#format-picker button').forEach(b => {
+        b.className = 'py-2 px-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm text-center transition-all';
+      });
+      button.className = 'py-2 px-2 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold text-center transition-all';
+    });
+  });
+</script></main></div>
+
+</body></html>

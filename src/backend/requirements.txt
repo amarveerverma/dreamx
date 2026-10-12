@@ -1,0 +1,9 @@
+fastapi[standard]>=0.111.0
+uvicorn>=0.30.0
+pydantic-settings>=2.2.0
+structlog>=24.1.0
+sentry-sdk>=2.0.0
+
+pyjwt>=2.8.0
+cryptography>=42.0.0
+

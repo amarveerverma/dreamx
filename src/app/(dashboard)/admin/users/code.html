@@ -1,0 +1,1025 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#8455ef", "error": "#ba1a1a", "on-primary-container": "#fffbff", "on-tertiary-fixed": "#002113", "on-secondary": "#ffffff", "surface-container-highest": "#dae2fd", "error-container": "#ffdad6", "surface-container-lowest": "#ffffff", "surface-bright": "#faf8ff", "surface-container-high": "#e2e7ff", "tertiary-container": "#00885d", "on-surface": "#131b2e", "surface": "#faf8ff", "background": "#faf8ff", "on-tertiary-container": "#000703", "inverse-on-surface": "#eef0ff", "inverse-primary": "#c0c1ff", "on-tertiary-fixed-variant": "#005236", "inverse-surface": "#283044", "surface-container": "#eaedff", "secondary-fixed": "#e9ddff", "tertiary-fixed": "#6ffbbe", "primary-fixed": "#e1e0ff", "on-secondary-container": "#fffbff", "tertiary-fixed-dim": "#4edea3", "on-secondary-fixed": "#23005c", "primary-container": "#6063ee", "tertiary": "#006c49", "surface-dim": "#d2d9f4", "primary-fixed-dim": "#c0c1ff", "surface-variant": "#dae2fd", "primary": "#4648d4", "secondary": "#6b38d4", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#2f2ebe", "on-error": "#ffffff", "on-secondary-fixed-variant": "#5516be", "outline-variant": "#c7c4d7", "surface-tint": "#494bd6", "on-error-container": "#93000a", "on-primary-fixed": "#07006c", "secondary-fixed-dim": "#d0bcff", "surface-container-low": "#f2f3ff", "on-surface-variant": "#464554", "outline": "#767586", "on-primary": "#ffffff", "on-background": "#131b2e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-md": "1rem", "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem", "space-xl": "2rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-lg": ["Inter"], "headline-sm": ["Inter"], "display": ["Inter"], "headline-lg-mobile": ["Inter"], "label-md": ["Inter"], "stat-metric-sm": ["Inter"], "body-lg": ["Inter"], "overline": ["Inter"], "headline-md": ["Inter"], "stat-metric": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "code-table": ["Inter"], "label-sm": ["Inter"] }, "fontSize": { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500" }], "stat-metric-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "overline": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "stat-metric": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "code-table": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-[260px] bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm text-headline-sm">DX</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">DreamX</span><span class="font-overline text-overline uppercase text-on-surface-variant">Admin Console</span></div></div><div class="px-space-md py-space-xs"><nav class="space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Overview</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="">Executive Dashboard</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/marketplace"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">vital_signs</span><span class="">Marketplace Health</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/analytics"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">query_stats</span><span class="">Analytics &amp; Performance</span></span></a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Management</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg bg-primary text-on-primary font-medium transition-colors font-label-md text-label-md" href="/admin/users"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">group</span><span class="">User Directory</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/mentors"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">verified_user</span><span class="">Mentor Verification</span></span><span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-primary font-medium">5 pending</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/programs"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">layers</span><span class="">Program Catalog</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/moderation"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">gavel</span><span class="">Content Moderation</span></span></a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">Finance &amp; Transactions</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/payments"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">payments</span><span class="">Payments &amp; Escrow</span></span><span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-medium">₹14.2L held</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/reports"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">summarize</span><span class="">Reports &amp; Exports</span></span></a></div></div><div class="space-y-space-xs"><span class="px-space-sm font-overline text-overline uppercase tracking-wider text-on-surface-variant font-semibold">System &amp; Configuration</span><div class="space-y-1 mt-1"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/settings"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">tune</span><span class="">Platform Settings</span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" href="/admin/audit"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">policy</span><span class="">Audit &amp; Compliance Logs</span></span></a></div></div></nav></div></div><div class="p-space-md"><div class="px-space-sm py-space-xs rounded-lg bg-surface-container-low flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-code-table text-code-table text-on-surface-variant">Production v1.0 • Supabase RLS Protected</span></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><nav class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant"><span class="text-on-surface-variant">Administration</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-on-surface-variant">Management</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-on-surface font-semibold">User Directory</span></nav><div class="flex items-center gap-2 px-space-sm py-1 rounded-lg bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span><span class="font-label-sm text-label-sm text-on-surface font-medium">India MVP (CM-IN)</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-low p-1 rounded-lg"><button class="px- space-sm py-1 px-3 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">Today</button><button class="px-space-sm py-1 px-3 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-[0_1px_2px_rgba(15,23,42,0.08)] font-medium">Last 7 Days</button><button class="px-space-sm py-1 px-3 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">This Month</button></div><div class="hidden xl:flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low text-tertiary"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="font-label-sm text-label-sm font-medium">All Systems Operational • pg_cron active</span></div><div class="flex items-center gap-space-sm"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJH3jYT0bywqHFugkyolasBMtle47rAs0jvCGdQ-TDb738P6UC4gQ4MWJ8eZ7zEfr-uvXu0jmFtaqbUoezXz8Z6bWdTcEtHp9JT1lXUcreCUXVvLIMimg1Kr2P2HyC2FBX1XHHSPJR_pGpq81ASI7ixUw8RTqFkEzC7Z6dYlYr3Z2fQbj37tgDwA5tZ5SqxsgUWJpsvWySBVc8R7cfRJnQcNUvGi0ecoT8xf4ngcVVF_nDON2nQc5O"><div class="hidden lg:flex flex-col"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Ananya Roy</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">VP Operations &amp; Admin</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-lg py-space-xl"><div class="flex flex-col w-full space-y-space-xl">
+<!-- Interactive Breadcrumb Override Indicator via DOM script -->
+<script>
+    (function() {
+      // Highlight User Directory in sidebar if present
+      const navLinks = document.querySelectorAll('aside nav a[data-path="user-directory"]');
+      navLinks.forEach(link => {
+        link.className = "flex items-center justify-between px-space-sm py-2 rounded-lg bg-primary-container text-on-primary-container font-semibold transition-colors font-label-md text-label-md";
+      });
+      // Update topbar breadcrumb segment
+      const bc = document.querySelector('header nav');
+      if (bc) {
+        bc.innerHTML = `
+          <span class="text-on-surface-variant font-medium">Administration</span>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <span class="text-on-surface-variant font-medium">Management</span>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <span class="text-on-surface font-semibold">User Directory &amp; Controls</span>
+        `;
+      }
+    })();
+  </script>
+<!-- Page Header & Global Admin Actions -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">User Directory &amp; Account Controls</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          Live Sync Active
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Search, filter, view activity history, and safely test student or mentor accounts with full security audit logging.
+      </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-low transition-colors shadow-sm font-label-md text-label-md font-medium cursor-pointer" onclick="triggerToast('Preparing real-time CSV export with RLS data filtering...')">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">download</span>
+<span class="">Export User CSV</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm font-label-md text-label-md font-medium cursor-pointer" onclick="toggleModal('inviteModal', true)">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span class="">+ Invite Staff/Admin</span>
+</button>
+</div>
+</div>
+<!-- Key Metrics / Stats Ribbon (4 Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1: Total Accounts -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-transform hover:-translate-y-0.5 duration-200">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wider">Total Accounts</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">group</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric text-on-surface">3,420</span>
+<span class="inline-flex items-center text-tertiary font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +184 this week
+        </span>
+</div>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">Active pool in India MVP market</p>
+</div>
+<!-- Card 2: Active Students -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-transform hover:-translate-y-0.5 duration-200">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wider">Active Students</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">school</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric text-on-surface">2,914</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">85.2% of total</span>
+</div>
+<div class="mt-1.5 flex items-center gap-1.5">
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full" style="width: 28.8%"></div>
+</div>
+<span class="font-code-table text-code-table text-on-surface-variant whitespace-nowrap">840 Pro/Elite</span>
+</div>
+</div>
+<!-- Card 3: Verified Mentors -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-transform hover:-translate-y-0.5 duration-200">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wider">Verified Mentors</span>
+<div class="w-8 h-8 rounded-lg bg-tertiary-container/15 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric text-on-surface">412</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+          100% KYC Passed
+        </span>
+</div>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">Top tech &amp; consulting leaders</p>
+</div>
+<!-- Card 4: Needs Review -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-transform hover:-translate-y-0.5 duration-200">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wider">Needs Review / Flagged</span>
+<div class="w-8 h-8 rounded-lg bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">security_update_warning</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric text-error">14</span>
+<span class="font-label-sm text-label-sm text-error font-medium">Action recommended</span>
+</div>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">Suspected duplicates &amp; payment retries</p>
+</div>
+</div>
+<!-- Main Management Area: Filter Controls & User Table -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col">
+<!-- Presets Tabs & Fast Count Ribbon -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm px-space-md py-space-sm bg-surface-container-low/50">
+<div class="flex items-center gap-1 overflow-x-auto pb-1 sm:pb-0" id="presetTabs">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-sm transition-all whitespace-nowrap" onclick="setTab(this, 'all')">
+          All Accounts <span class="ml-1 text-on-surface-variant font-normal">3,420</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all whitespace-nowrap" onclick="setTab(this, 'students')">
+          Students <span class="ml-1 text-on-surface-variant/70 font-normal">2,914</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all whitespace-nowrap" onclick="setTab(this, 'mentors')">
+          Mentors <span class="ml-1 text-on-surface-variant/70 font-normal">412</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all whitespace-nowrap" onclick="setTab(this, 'admins')">
+          Admins &amp; Staff <span class="ml-1 text-on-surface-variant/70 font-normal">14</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg text-error hover:bg-error-container/30 font-label-md text-label-md font-medium transition-all whitespace-nowrap" onclick="setTab(this, 'flagged')">
+          Flagged / Blocked <span class="ml-1 bg-error-container text-on-error-container px-1.5 py-0.2 rounded-full text-[11px] font-bold">8</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Auto-sync active
+        </span>
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-semibold flex items-center gap-1 px-2 py-1 rounded hover:bg-primary/5 transition-colors" onclick="resetFilters()">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Reset filters
+        </button>
+</div>
+</div>
+<!-- Search & Filter Controls Toolbar -->
+<div class="p-space-md flex flex-col lg:flex-row gap-space-sm items-stretch lg:items-center justify-between">
+<!-- Search Bar -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-9 pr-14 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" id="userSearchInput" oninput="handleSearch(this.value)" placeholder="Search by full name, email, college, company, or user ID (e.g. Rahul, IIT Bombay, Google)..." type="text">
+<div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none hidden sm:flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-table text-[11px]">
+          ⌘K
+        </div>
+</div>
+<!-- Filters Row -->
+<div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm">
+<!-- Role Filter -->
+<select class="px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 cursor-pointer" id="roleFilter" onchange="applyFilters()">
+<option value="">Role: All Roles</option>
+<option value="Student">Student (Mentee)</option>
+<option value="Mentor">Mentor</option>
+<option value="Admin">Administrator / Staff</option>
+</select>
+<!-- Tier Filter -->
+<select class="px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 cursor-pointer" id="tierFilter" onchange="applyFilters()">
+<option value="">Membership: All Tiers</option>
+<option value="Elite">Elite (₹299/mo)</option>
+<option value="Pro">Pro Member (₹149/mo)</option>
+<option value="Free">Free Basic</option>
+</select>
+<!-- Market Filter -->
+<select class="px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 cursor-pointer" id="marketFilter" onchange="applyFilters()">
+<option value="">Market: All (CM-IN, CM-SG, CM-US)</option>
+<option value="CM-IN">India (CM-IN)</option>
+<option value="CM-SG">Singapore (CM-SG)</option>
+<option value="CM-US">United States (CM-US)</option>
+</select>
+<!-- Status Filter -->
+<select class="px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 cursor-pointer" id="statusFilter" onchange="applyFilters()">
+<option value="">Status: All Statuses</option>
+<option value="Active">Active</option>
+<option value="Under Review">Under Review</option>
+<option value="Suspended">Suspended</option>
+</select>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left" id="userDirectoryTable">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-overline text-overline uppercase tracking-wider h-10">
+<th class="px-space-md">User</th>
+<th class="px-space-sm">Role &amp; Plan</th>
+<th class="px-space-sm">Career Market &amp; Goal</th>
+<th class="px-space-sm">Activity &amp; Score</th>
+<th class="px-space-sm text-right">Spend / Earnings</th>
+<th class="px-space-sm">Account Status</th>
+<th class="px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="userTableBody">
+<!-- Row 1: Rohan Sharma -->
+<tr class="hover:bg-surface-container-low/40 transition-colors user-row" data-market="CM-IN" data-role="Student" data-status="Active" data-text="Rohan Sharma rohan.s@iitd.ac.in IIT Delhi Google SDE-1" data-tier="Pro">
+<td class="px-space-md py-3.5">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Close up professional portrait of Rohan Sharma, a 21-year old male Indian engineering student from IIT Delhi wearing a clean navy crewneck with warm soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2Fnc6R5y6586UhSSeSwVgp5bgwrbqBeW7PCGfsPbAb3yciBMjYr0WV2uEMqNzUwRzUPgzNKZ6IpVE0Bh0MocZ3l8jCwnvccjPjCqOqKgM--E6P6Oi3wfoo_kA44VRKu-_Ql-sbDeSVbURvTMKe3UfUrJS_59b2axZg2DhmmyQfw4p3M6IdJGhyv_Ed6SrNur6BQrbttmfp2ZOB11iWOJpeD6sLn5OiVDP2YZC1GJyOkw-OYg7n7KP">
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Rohan Sharma</span>
+<span class="font-code-table text-code-table text-on-surface-variant">#DX-8921</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">rohan.s@iitd.ac.in • Joined Oct 2024</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col items-start gap-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface font-medium">
+                  Student
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary/10 text-primary font-semibold">
+<span class="material-symbols-outlined text-[13px]">bolt</span> Pro Plan
+                </span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Target: Google SDE-1
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">IIT Delhi • CM-IN Market</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">3.8 / 5.0</span>
+<span class="font-code-table text-code-table text-tertiary bg-tertiary-fixed/60 px-1.5 py-0.2 rounded font-medium">Readiness</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3 Booked Sessions</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5 text-right font-code-table text-code-table font-semibold text-on-surface">
+<div class="">₹3,497</div>
+<span class="font-body-sm text-body-sm font-normal text-on-surface-variant">spent (INR)</span>
+</td>
+<td class="px-space-sm py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-fixed/50 text-on-tertiary-fixed-variant font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Active
+              </span>
+</td>
+<td class="px-space-md py-3.5 text-right">
+<div class="inline-flex items-center gap-1.5 justify-end">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container text-primary font-label-sm text-label-sm font-medium flex items-center gap-1 transition-colors cursor-pointer" onclick="openImpersonateModal('Rohan Sharma', 'rohan.s@iitd.ac.in', 'Student (Pro Tier)', '#DX-8921')" title="Safely inspect user session">
+<span class="material-symbols-outlined text-[15px]">visibility</span> Safe Preview
+                </button>
+<button class="p-1 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" onclick="toggleActionMenu('menu-1')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Vikram Singh -->
+<tr class="hover:bg-surface-container-low/40 transition-colors user-row" data-market="CM-IN" data-role="Mentor" data-status="Active" data-text="Vikram Singh vikram.ai@google.com Senior AI Engineer Google CM-IN" data-tier="Elite" style="display: none;">
+<td class="px-space-md py-3.5">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Portrait of Vikram Singh, a 34-year old male Indian Senior AI Engineer with glasses and smart casual shirt, smiling confidently against clean office background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH0OVtHqi8EosXuMRlMD3FfDqO3N2Q25xEqOxxP2TMYKWM5dpIAPfZHgkfz7PymJ9HDWIt_7oSV7F3Be-BQXrTqVpWG4HxBuiha5rty8VLpBv1ACAyAtTzInguXHQLIKKosMdIIx-bclJf-S38hGeoZy7DnHkzNF-7D3tsKuqnEpPz6QC7ZnTAQGILMsCc2LFw3iOGmKE_7kDikiI6IoNUfhFdljvrmvPt__ILjdCKw4ErPiEXYlWI">
+<span class="material-symbols-outlined absolute -bottom-1 -right-1 text-tertiary bg-surface-container-lowest rounded-full text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Vikram Singh</span>
+<span class="material-symbols-outlined text-[15px] text-tertiary" title="Verified Google Mentor">verified</span>
+<span class="font-code-table text-code-table text-on-surface-variant">#DX-1044</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">vikram.ai@google.com • Joined May 2024</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col items-start gap-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-semibold">
+                  Mentor
+                </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-medium">
+                  Top-Rated Mentor
+                </span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Senior AI Engineer
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Google India • CM-IN &amp; US</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-on-surface font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[15px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="">4.95</span>
+<span class="font-body-sm text-body-sm font-normal text-on-surface-variant">(38 reviews)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">42 Completed Sessions</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5 text-right font-code-table text-code-table font-semibold text-tertiary">
+<div class="">₹1,45,000</div>
+<span class="font-body-sm text-body-sm font-normal text-on-surface-variant">earned (Escrow cleared)</span>
+</td>
+<td class="px-space-sm py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-fixed/50 text-on-tertiary-fixed-variant font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Active
+              </span>
+</td>
+<td class="px-space-md py-3.5 text-right">
+<div class="inline-flex items-center gap-1.5 justify-end">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container text-primary font-label-sm text-label-sm font-medium flex items-center gap-1 transition-colors cursor-pointer" onclick="openImpersonateModal('Vikram Singh', 'vikram.ai@google.com', 'Verified Mentor', '#DX-1044')" title="Safely inspect mentor calendar &amp; earnings">
+<span class="material-symbols-outlined text-[15px]">visibility</span> Safe Preview
+                </button>
+<button class="p-1 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" onclick="toggleActionMenu('menu-2')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Ananya S. Iyer -->
+<tr class="hover:bg-surface-container-low/40 transition-colors user-row" data-market="CM-IN" data-role="Student" data-status="Active" data-text="Ananya S. Iyer ananya.iyer@pilani.bits-pilani.ac.in BITS Pilani McKinsey Consulting CM-IN" data-tier="Elite">
+<td class="px-space-md py-3.5">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Portrait photo of Ananya Iyer, female Indian college senior at BITS Pilani with bright expression, wearing a tailored blazer in soft ambient daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLR7RrMDdcQ13MCxgKARizIBR4_2tDXPjOxG88pSxE9R7mxUHOPvF-__JF4jTdMxMf8jrPzssGphG2u-XkkCIWwAfW4vaLJx8ufIHXEUrV1BZ7xDgOw_X1H5tuKoA0cGIUqqHkOE0q1C0xaxuuw7WQzjxT0PQ7y53637vl85eGMdLp3vx_RdYaUqGjcQ1Op61X8tqmjFnUnX4zMVX7PvIOiFWA4bjA6n1ytzmKoVk3eMI8x-3fZSUL">
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Ananya S. Iyer</span>
+<span class="font-code-table text-code-table text-on-surface-variant">#DX-7740</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">ananya.iyer@pilani.bits-pilani.ac.in • Joined Nov 2024</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col items-start gap-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface font-medium">
+                  Student
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-secondary font-semibold">
+<span class="material-symbols-outlined text-[13px]">workspace_premium</span> Elite Plan
+                </span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> Target: McKinsey Consulting
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">BITS Pilani • CM-IN Market</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.4 / 5.0</span>
+<span class="font-code-table text-code-table text-tertiary bg-tertiary-fixed/60 px-1.5 py-0.2 rounded font-medium">Top 5%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">5 Booked Sessions</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5 text-right font-code-table text-code-table font-semibold text-on-surface">
+<div class="">₹9,800</div>
+<span class="font-body-sm text-body-sm font-normal text-on-surface-variant">spent (INR)</span>
+</td>
+<td class="px-space-sm py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-fixed/50 text-on-tertiary-fixed-variant font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Active
+              </span>
+</td>
+<td class="px-space-md py-3.5 text-right">
+<div class="inline-flex items-center gap-1.5 justify-end">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container text-primary font-label-sm text-label-sm font-medium flex items-center gap-1 transition-colors cursor-pointer" onclick="openImpersonateModal('Ananya S. Iyer', 'ananya.iyer@pilani.bits-pilani.ac.in', 'Student (Elite Tier)', '#DX-7740')">
+<span class="material-symbols-outlined text-[15px]">visibility</span> Safe Preview
+                </button>
+<button class="p-1 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" onclick="toggleActionMenu('menu-3')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Devendra Kulkarni -->
+<tr class="hover:bg-surface-container-low/40 transition-colors user-row" data-market="CM-SG" data-role="Mentor" data-status="Active" data-text="Devendra Kulkarni devendra@razorpay.com Staff Engineer Razorpay CM-IN CM-SG" data-tier="Pro" style="display: none;">
+<td class="px-space-md py-3.5">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Portrait of Devendra Kulkarni, male senior engineer in his late 30s with friendly posture, tech fleece vest, softly illuminated studio portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmWqI7D429gLDAO34T_OkPn5DyLJVzwowFNFHmCvH2qIxb7SR-A3CCriOxo3db-_tdV4tNTzE1SHF8_3lq2PMEU3u32oynQxDP_zHC-BZNfRAgPynm-5ljhgNnOoFnFH_nLwDRVN4CQ2EPEZc0dzjgOq3y7VrZj9wIChQ1c16HtRSVyVn1ucnzvUUyvXk7RfttLtMxerGTULzCqtZ6HhjOpicotukychm5idpE-TIwQzCz2TmlAat5">
+<span class="material-symbols-outlined absolute -bottom-1 -right-1 text-tertiary bg-surface-container-lowest rounded-full text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Devendra Kulkarni</span>
+<span class="material-symbols-outlined text-[15px] text-tertiary">verified</span>
+<span class="font-code-table text-code-table text-on-surface-variant">#DX-0932</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">devendra@razorpay.com • Joined Aug 2024</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col items-start gap-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-semibold">
+                  Mentor
+                </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-medium">
+                  Fintech Expert
+                </span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Staff Engineer
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Razorpay • CM-IN &amp; CM-SG</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-on-surface font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[15px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="">4.91</span>
+<span class="font-body-sm text-body-sm font-normal text-on-surface-variant">(19 reviews)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">19 Completed Sessions</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5 text-right font-code-table text-code-table font-semibold text-tertiary">
+<div class="">₹68,500</div>
+<span class="font-body-sm text-body-sm font-normal text-on-surface-variant">earned (Escrow cleared)</span>
+</td>
+<td class="px-space-sm py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-fixed/50 text-on-tertiary-fixed-variant font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Active
+              </span>
+</td>
+<td class="px-space-md py-3.5 text-right">
+<div class="inline-flex items-center gap-1.5 justify-end">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container text-primary font-label-sm text-label-sm font-medium flex items-center gap-1 transition-colors cursor-pointer" onclick="openImpersonateModal('Devendra Kulkarni', 'devendra@razorpay.com', 'Verified Mentor', '#DX-0932')">
+<span class="material-symbols-outlined text-[15px]">visibility</span> Safe Preview
+                </button>
+<button class="p-1 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" onclick="toggleActionMenu('menu-4')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Pooja Sundaram -->
+<tr class="hover:bg-surface-container-low/40 transition-colors user-row" data-market="CM-IN" data-role="Student" data-status="Active" data-text="Pooja Sundaram pooja.sun@rvce.edu.in RVCE Bangalore Amazon SDE-1 Free" data-tier="Free">
+<td class="px-space-md py-3.5">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Portrait of Pooja Sundaram, female South Indian college student with warm smile and casual yellow sweater, soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-ODWs440V3q8WTEbDlKT8zFJprjG2JazUgXjziSLNpEgiy_cKdYe8xjekjys6Is6hRGxtmpIQUMWesUXNje61L8zvVDdB-GIVosDNmQD5AOaFXJOiC-oH6ws7ZDnzS_6i2M6j8mv4aN5C4PFbzD6uCcu1mzQNNvLhkR9uZzd3ApPXnL1NMAx_Eww5Yz6MFJ78DU0g_se4FaH_SNiK3YwgvgAHDew1D87at4qoI8WDmXgH15YLH93G">
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Pooja Sundaram</span>
+<span class="font-code-table text-code-table text-on-surface-variant">#DX-5519</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">pooja.sun@rvce.edu.in • Joined Dec 2024</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col items-start gap-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface font-medium">
+                  Student
+                </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-medium">
+                  Free Tier
+                </span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Target: Amazon SDE-1
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">RVCE Bangalore • CM-IN Market</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">2.9 / 5.0</span>
+<span class="font-code-table text-code-table text-on-surface-variant bg-surface-container px-1.5 py-0.2 rounded font-medium">Early Stage</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">1 Booked Session</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5 text-right font-code-table text-code-table font-semibold text-on-surface">
+<div class="">₹499</div>
+<span class="font-body-sm text-body-sm font-normal text-on-surface-variant">spent (INR)</span>
+</td>
+<td class="px-space-sm py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-fixed/50 text-on-tertiary-fixed-variant font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Active
+              </span>
+</td>
+<td class="px-space-md py-3.5 text-right">
+<div class="inline-flex items-center gap-1.5 justify-end">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container text-primary font-label-sm text-label-sm font-medium flex items-center gap-1 transition-colors cursor-pointer" onclick="openImpersonateModal('Pooja Sundaram', 'pooja.sun@rvce.edu.in', 'Student (Free Tier)', '#DX-5519')">
+<span class="material-symbols-outlined text-[15px]">visibility</span> Safe Preview
+                </button>
+<button class="p-1 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" onclick="toggleActionMenu('menu-5')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Kartik Mehra (Suspended) -->
+<tr class="hover:bg-error-container/10 transition-colors user-row bg-error-container/5" data-market="CM-IN" data-role="Student" data-status="Suspended" data-text="Kartik Mehra kartik.mehra99@gmail.com Suspended Disputed IP anomaly" data-tier="Free">
+<td class="px-space-md py-3.5">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<div class="w-9 h-9 rounded-full bg-error-container flex items-center justify-center text-on-error-container font-headline-sm text-headline-sm font-semibold">
+                    KM
+                  </div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface line-through decoration-error truncate">Kartik Mehra</span>
+<span class="font-code-table text-code-table text-error font-medium">#DX-2109</span>
+</div>
+<span class="font-body-sm text-body-sm text-error truncate">kartik.mehra99@gmail.com • Suspended Today</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col items-start gap-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface font-medium">
+                  Student
+                </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">
+                  Payment Blocked
+                </span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Target: Product Management</span>
+<span class="font-body-sm text-body-sm text-error">Flagged: Multiple IP jumps</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-error font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[15px]">report</span>
+<span class="">2 Disputed Escrows</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">0 Verified Milestones</span>
+</div>
+</td>
+<td class="px-space-sm py-3.5 text-right font-code-table text-code-table font-semibold text-error">
+<div class="">₹0 (₹4,999 Held)</div>
+<span class="font-body-sm text-body-sm font-normal text-on-surface-variant">frozen under dispute</span>
+</td>
+<td class="px-space-sm py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Suspended
+              </span>
+</td>
+<td class="px-space-md py-3.5 text-right">
+<div class="inline-flex items-center gap-1.5 justify-end">
+<button class="px-2.5 py-1 rounded-lg bg-error text-on-error font-label-sm text-label-sm font-medium flex items-center gap-1 transition-colors cursor-pointer" onclick="triggerToast('Viewing fraud prevention forensics for #DX-2109...')">
+<span class="material-symbols-outlined text-[15px]">shield</span> Review Hold
+                </button>
+<button class="p-1 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" onclick="toggleActionMenu('menu-6')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-space-md py-space-sm bg-surface-container-low/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Showing <span class="font-semibold text-on-surface">1–6</span> of <span class="font-semibold text-on-surface">3,420</span> users
+        </span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Per page:</span>
+<select class="bg-surface-container-lowest text-on-surface rounded font-label-sm text-label-sm px-2 py-0.5 focus:outline-none">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center transition-colors disabled:opacity-40 cursor-pointer" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center shadow-sm">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center justify-center transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center justify-center transition-colors">3</button>
+<span class="px-1 text-on-surface-variant font-code-table text-code-table">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center justify-center transition-colors">57</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Section: Feature 1 (Safe Impersonation Showcase) & Feature 2 (Security Audit Trail Ledger) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Feature 1: Safe Account Impersonation Guidance & Fast Launch Card (5 cols) -->
+<div class="lg:col-span-5 rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Read-Only Safety Shield</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Zero-risk testing for support operations</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">
+            Shield Active
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+          You can test and view DreamX exactly as any student or mentor sees it. Financial transfers, password changes, and sensitive credential modifications are strictly prohibited while in safety preview.
+        </p>
+<!-- Protection Highlights -->
+<div class="space-y-2 bg-surface-container-low/60 p-space-md rounded-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Safe view of customized roadmaps &amp; booking calendars</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">All Razorpay / UPI bank transfers hardware locked</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Every session action recorded in permanent audit ledger</span>
+</div>
+</div>
+</div>
+<!-- Fast Quick Impersonate Launcher -->
+<div class="pt-space-md mt-space-md">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-primary hover:bg-primary-container text-on-primary transition-colors font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm cursor-pointer" onclick="openImpersonateModal('Rohan Sharma', 'rohan.s@iitd.ac.in', 'Student (Pro Tier)', '#DX-8921')">
+<span class="material-symbols-outlined text-[18px]">preview</span>
+<span class="">Launch Safe Preview Session (Example: Rohan Sharma)</span>
+</button>
+</div>
+</div>
+<!-- Feature 2: Security Audit Trail Ledger (7 cols) -->
+<div class="lg:col-span-7 rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div class="space-y-space-md">
+<!-- Audit Header -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Recent Staff Actions &amp; Security Audit Trail</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full font-code-table text-[11px] bg-surface-container-high text-on-surface-variant font-medium">
+            Immutable DB Ledger Active
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Live stream from Supabase <code class="font-code-table text-code-table bg-surface-container px-1 py-0.5 rounded">audit.system_audit_logs</code>. Administrative actions require valid justification.
+        </p>
+<!-- Live Log Stream Items -->
+<div class="space-y-space-sm">
+<!-- Item 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start gap-3">
+<div class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Safe Account Preview Launched</span>
+<span class="font-code-table text-code-table text-on-surface-variant">12 mins ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+<strong class="text-on-surface font-medium">Ananya Roy (Admin)</strong> previewed student dashboard for <strong class="text-on-surface font-medium">Rohan Sharma (#DX-8921)</strong> to troubleshoot calendar sync.
+              </p>
+<span class="inline-block mt-1 font-code-table text-[11px] text-primary bg-primary/5 px-1.5 py-0.2 rounded font-medium">
+                Reason: Ticket #3819 (Google Calendar Sync error)
+              </span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start gap-3">
+<div class="w-7 h-7 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">paid</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Automated Escrow Release</span>
+<span class="font-code-table text-code-table text-on-surface-variant">42 mins ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                System automated sweep released <strong class="text-on-surface font-medium">₹4,500 escrow payout</strong> to <strong class="text-on-surface font-medium">Vikram Singh (#DX-1044)</strong> after 72h dispute window elapsed.
+              </p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start gap-3">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">KYC &amp; Employer Credential Verified</span>
+<span class="font-code-table text-code-table text-on-surface-variant">2 hours ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Admin Ananya Roy approved Razorpay employment token for <strong class="text-on-surface font-medium">Devendra Kulkarni (#DX-0932)</strong>. Verified Mentor badge published.
+              </p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="p-3 rounded-lg bg-error-container/20 hover:bg-error-container/30 transition-colors flex items-start gap-3">
+<div class="w-7 h-7 rounded-lg bg-error-container text-error flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">block</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-md text-label-md font-semibold text-error">Security Guard Blocked Anomalous Activity</span>
+<span class="font-code-table text-code-table text-on-surface-variant">5 hours ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Security rule blocked concurrent login attempt from unknown IP subnet for <strong class="text-on-surface font-medium">Kartik Mehra (#DX-2109)</strong>. Account marked as Suspended.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Audit Footer Link -->
+<div class="pt-space-sm mt-space-sm flex items-center justify-between">
+<a class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold inline-flex items-center gap-1 group" href="#" onclick="triggerToast('Opening complete compliance ledger (/admin/audit-and-compliance-logs)...'); return false;">
+<span class="">View Full System Audit Ledger (4,812 events)</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+<span class="font-code-table text-code-table text-on-surface-variant">pg_cron audit job: healthy</span>
+</div>
+</div>
+</div>
+<!-- Safe Impersonation Confirmation Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-4 hidden" id="impersonateModal">
+<div class="w-full max-w-lg rounded-2xl bg-surface-container-lowest p-space-lg shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Top Close -->
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface p-1 rounded-lg hover:bg-surface-container transition-colors" onclick="toggleModal('impersonateModal', false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<!-- Modal Content -->
+<div class="space-y-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">shield_person</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Start Safe User Preview</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Read-only simulation mode</p>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center font-headline-sm text-headline-sm" id="modalUserAvatarInitials">RS</div>
+<div class="flex-1 min-w-0">
+<div class="font-label-md text-label-md font-bold text-on-surface" id="modalUserName">Rohan Sharma</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate" id="modalUserDetails">rohan.s@iitd.ac.in • Student (Pro Tier) • #DX-8921</div>
+</div>
+</div>
+<div class="bg-amber-500/10 p-space-sm rounded-xl space-y-1">
+<div class="flex items-center gap-1.5 text-amber-800 font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+            Safety Guard Active
+          </div>
+<p class="font-body-sm text-body-sm text-amber-900/80">
+            You will navigate the platform with this account's exact permissions. Payout transfers, password resets, and irreversible database changes are blocked by design.
+          </p>
+</div>
+<!-- Mandatory Support Reason Field -->
+<div class="space-y-1.5">
+<label class="block font-label-sm text-label-sm font-semibold text-on-surface" for="impersonateReason">
+            Reason for testing this account <span class="text-error">*</span>
+</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" id="impersonateReason" placeholder="e.g., Resolving student ticket #3819 (Google Calendar Sync error)" type="text" value="Resolving student ticket #3819 (Google Calendar Sync error)">
+<span class="font-code-table text-[11px] text-on-surface-variant block">This entry is permanently signed into immutable audit logs.</span>
+</div>
+<!-- Modal Actions -->
+<div class="flex items-center justify-end gap-space-sm pt-2">
+<button class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium transition-colors cursor-pointer" onclick="toggleModal('impersonateModal', false)">
+            Cancel
+          </button>
+<button class="px-space-lg py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center gap-2 shadow-sm transition-colors cursor-pointer" onclick="executeSafePreview()">
+<span class="material-symbols-outlined text-[18px]">launch</span>
+<span class="">Start Safe Session</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Invite New Staff / Admin Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm hidden p-4" id="inviteModal">
+<div class="w-full max-w-md rounded-2xl bg-surface-container-lowest p-space-lg shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface p-1 rounded-lg hover:bg-surface-container transition-colors" onclick="toggleModal('inviteModal', false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<div class="space-y-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">person_add</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Invite Staff or Admin</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Send magic access link with RBAC rights</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<label class="block font-label-sm text-label-sm font-semibold text-on-surface mb-1">Colleague Work Email</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="name@dreamx.in" type="email">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm font-semibold text-on-surface mb-1">Administrative Role</label>
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm focus:outline-none">
+<option>Operations Specialist (Customer Support &amp; Review)</option>
+<option>Mentor Verification Manager</option>
+<option>Finance &amp; Escrow Auditor</option>
+<option>Full System Admin</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm font-semibold text-on-surface mb-1">Market Scope</label>
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm focus:outline-none">
+<option>India MVP (CM-IN)</option>
+<option>All Markets (India, Singapore, US)</option>
+</select>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-2">
+<button class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-colors" onclick="toggleModal('inviteModal', false)">
+            Cancel
+          </button>
+<button class="px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-colors" onclick="sendStaffInvite()">
+            Send Invite Link
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Toast Notification Banner Container -->
+<div class="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all animate-bounce hidden" id="toastNotification">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMessage">Opening complete compliance ledger (/admin/audit-and-compliance-logs)...</span>
+</div>
+</div>
+<!-- Inline JavaScript Interactions -->
+<script>
+  function toggleModal(modalId, show) {
+    const el = document.getElementById(modalId);
+    if (!el) return;
+    if (show) {
+      el.classList.remove('hidden');
+    } else {
+      el.classList.add('hidden');
+    }
+  }
+
+  function triggerToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const msgEl = document.getElementById('toastMessage');
+    if (!toast || !msgEl) return;
+    msgEl.innerText = msg;
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 3500);
+  }
+
+  function openImpersonateModal(name, email, tier, id) {
+    const nameEl = document.getElementById('modalUserName');
+    const detailsEl = document.getElementById('modalUserDetails');
+    const initialsEl = document.getElementById('modalUserAvatarInitials');
+    if (nameEl) nameEl.innerText = name;
+    if (detailsEl) detailsEl.innerText = `${email} • ${tier} • ${id}`;
+    if (initialsEl) {
+      const parts = name.split(' ');
+      initialsEl.innerText = parts.length > 1 ? (parts[0][0] + parts[1][0]).toUpperCase() : parts[0].substring(0, 2).toUpperCase();
+    }
+    toggleModal('impersonateModal', true);
+  }
+
+  function executeSafePreview() {
+    const reasonInput = document.getElementById('impersonateReason');
+    const reason = reasonInput ? reasonInput.value.trim() : '';
+    if (!reason) {
+      alert('Please provide a short reason for audit logging purposes before starting the session.');
+      return;
+    }
+    toggleModal('impersonateModal', false);
+    triggerToast('Safe Preview Session launched in read-only sandbox with audit token.');
+  }
+
+  function sendStaffInvite() {
+    toggleModal('inviteModal', false);
+    triggerToast('Invitation email with secure magic access link dispatched.');
+  }
+
+  function toggleActionMenu(id) {
+    triggerToast('Options menu opened: Reset Password, Send Email, Inspect Full Audit Records.');
+  }
+
+  // Filter and search mechanics
+  function applyFilters() {
+    const role = document.getElementById('roleFilter').value.toLowerCase();
+    const tier = document.getElementById('tierFilter').value.toLowerCase();
+    const market = document.getElementById('marketFilter').value.toLowerCase();
+    const status = document.getElementById('statusFilter').value.toLowerCase();
+    const search = document.getElementById('userSearchInput').value.toLowerCase();
+
+    const rows = document.querySelectorAll('#userTableBody tr.user-row');
+    rows.forEach(row => {
+      const rRole = (row.getAttribute('data-role') || '').toLowerCase();
+      const rTier = (row.getAttribute('data-tier') || '').toLowerCase();
+      const rMarket = (row.getAttribute('data-market') || '').toLowerCase();
+      const rStatus = (row.getAttribute('data-status') || '').toLowerCase();
+      const rText = (row.getAttribute('data-text') || '').toLowerCase();
+
+      const matchRole = !role || rRole.includes(role);
+      const matchTier = !tier || rTier.includes(tier);
+      const matchMarket = !market || rMarket.includes(market);
+      const matchStatus = !status || rStatus.includes(status);
+      const matchSearch = !search || rText.includes(search);
+
+      if (matchRole && matchTier && matchMarket && matchStatus && matchSearch) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  function handleSearch(val) {
+    applyFilters();
+  }
+
+  function resetFilters() {
+    document.getElementById('roleFilter').value = '';
+    document.getElementById('tierFilter').value = '';
+    document.getElementById('marketFilter').value = '';
+    document.getElementById('statusFilter').value = '';
+    document.getElementById('userSearchInput').value = '';
+    
+    // reset tab style
+    const tabs = document.querySelectorAll('#presetTabs button');
+    tabs.forEach((tab, index) => {
+      if (index === 0) {
+        tab.className = "px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-sm transition-all whitespace-nowrap";
+      } else {
+        tab.className = "px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all whitespace-nowrap";
+      }
+    });
+
+    applyFilters();
+    triggerToast('All directory filters cleared.');
+  }
+
+  function setTab(btn, preset) {
+    const tabs = document.querySelectorAll('#presetTabs button');
+    tabs.forEach(tab => {
+      tab.className = "px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all whitespace-nowrap";
+    });
+    btn.className = "px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-sm transition-all whitespace-nowrap";
+
+    const roleSelect = document.getElementById('roleFilter');
+    const statusSelect = document.getElementById('statusFilter');
+
+    if (preset === 'all') {
+      roleSelect.value = '';
+      statusSelect.value = '';
+    } else if (preset === 'students') {
+      roleSelect.value = 'Student';
+      statusSelect.value = '';
+    } else if (preset === 'mentors') {
+      roleSelect.value = 'Mentor';
+      statusSelect.value = '';
+    } else if (preset === 'admins') {
+      roleSelect.value = 'Admin';
+      statusSelect.value = '';
+    } else if (preset === 'flagged') {
+      roleSelect.value = '';
+      statusSelect.value = 'Suspended';
+    }
+    applyFilters();
+  }
+
+  // Keyboard shortcut listener ⌘K / Ctrl+K
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      const input = document.getElementById('userSearchInput');
+      if (input) {
+        input.focus();
+        input.select();
+      }
+    }
+  });
+</script></main></div>
+
+</body></html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary-fixed-dim":"#d0bcff","primary":"#4648d4","surface-container":"#eaedff","secondary-fixed":"#e9ddff","on-primary-fixed-variant":"#2f2ebe","on-surface":"#131b2e","on-primary":"#ffffff","on-error-container":"#93000a","inverse-surface":"#283044","outline":"#767586","surface":"#faf8ff","on-background":"#131b2e","on-secondary-fixed":"#23005c","on-tertiary-container":"#000703","surface-tint":"#494bd6","on-error":"#ffffff","on-primary-fixed":"#07006c","surface-bright":"#faf8ff","inverse-on-surface":"#eef0ff","surface-container-low":"#f2f3ff","on-tertiary-fixed-variant":"#005236","error":"#ba1a1a","tertiary-fixed":"#6ffbbe","on-primary-container":"#fffbff","secondary":"#6b38d4","on-secondary-fixed-variant":"#5516be","secondary-container":"#8455ef","tertiary-container":"#00885d","surface-variant":"#dae2fd","surface-container-highest":"#dae2fd","on-secondary-container":"#fffbff","surface-container-high":"#e2e7ff","surface-dim":"#d2d9f4","on-surface-variant":"#464554","on-tertiary":"#ffffff","tertiary":"#006c49","tertiary-fixed-dim":"#4edea3","inverse-primary":"#c0c1ff","on-tertiary-fixed":"#002113","primary-container":"#6063ee","outline-variant":"#c7c4d7","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","background":"#faf8ff","error-container":"#ffdad6","primary-fixed-dim":"#c0c1ff","primary-fixed":"#e1e0ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","space-xl":"2rem","space-lg":"1.5rem","space-xs":"0.25rem",gutter:"1.5rem","space-sm":"0.5rem",margin:"2rem"},fontFamily:{"body-sm":["Inter"],overline:["Inter"],"stat-metric-sm":["Inter"],"headline-sm":["Inter"],"stat-metric":["Inter"],"headline-md":["Inter"],display:["Inter"],"code-table":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"headline-lg-mobile":["Inter"],"label-sm":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"]},fontSize:{"body-sm":["13px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"400"}],overline:["11px",{lineHeight:"14px",letterSpacing:"0.06em",fontWeight:"600"}],"stat-metric-sm":["24px",{lineHeight:"30px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["16px",{lineHeight:"24px",letterSpacing:"-0.015em",fontWeight:"600"}],"stat-metric":["32px",{lineHeight:"38px",letterSpacing:"-0.03em",fontWeight:"700"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.02em",fontWeight:"600"}],display:["36px",{lineHeight:"44px",letterSpacing:"-0.03em",fontWeight:"700"}],"code-table":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"400"}],"label-md":["13px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"600"}],"label-sm":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.025em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"-0.005em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest"><img alt="DreamX modern geometric logo mark. Minimalist stylized vibrant gradient purple and indigo letter X with a subtle lightning sparkle symbol in vector flat style, dark slate badge background. High-tech executive fintech and career platform.. Design context: - Primary color: #6366f1
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VWlT0DlbfZMjYuXSrC1Zz9dlgmTXqKj15aAeGd-t8DaJztkLQLuh26Z1tfMxnlzHIzD-dUg_GHDfJ2Zlgru_2VGgu3sqLjdqU-Kb74cDmLycHz2gIUwlUT4iOCZVOZtmEr1nOxRk7-5TAvbSeiVtb4ZVb71nlQnWKagHhQK5rjUPA1hUuLR8_ssjIVqEytgOX-VTvvKhx5otClVTHUhEt8kE4ByD08grOXXdFBiwE09uQYU33T3poDBg"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight font-bold tracking-tight">DreamX</span><span class="font-overline text-overline text-primary tracking-wider uppercase font-semibold">Admin Console</span></div></div><div class="flex-1 overflow-y-auto px-space-sm py-space-md space-y-space-md"><nav class="space-y-space-xs"><div class="px-space-sm pb-space-xs"><span class="font-overline text-overline text-outline tracking-wider uppercase font-semibold">Overview</span></div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="/admin"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="">Executive Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="/admin/marketplace"><span class="material-symbols-outlined text-[18px]">monitoring</span><span class="">Marketplace Health</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="/admin/analytics"><span class="material-symbols-outlined text-[18px]">trending_up</span><span class="">Analytics &amp; Performance</span></a></nav><nav class="space-y-space-xs"><div class="px-space-sm pb-space-xs"><span class="font-overline text-overline text-outline tracking-wider uppercase font-semibold">Management</span></div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="/admin/users"><span class="material-symbols-outlined text-[18px]">group</span><span class="">User Directory</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="/admin/mentors"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">verified_user</span><span class="">Mentor Verification</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-primary font-semibold">5 pending</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-all bg-primary text-on-primary font-medium shadow-[0_1px_3px_rgba(70,72,212,0.25)]" href="/admin/programs"><span class="material-symbols-outlined text-[18px]">library_books</span><span class="">Program Catalog</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="/admin/moderation"><span class="material-symbols-outlined text-[18px]">gavel</span><span class="">Content Moderation</span></a></nav><nav class="space-y-space-xs"><div class="px-space-sm pb-space-xs"><span class="font-overline text-overline text-outline tracking-wider uppercase font-semibold">Finance &amp; Transactions</span></div><a class="flex items-center justify-between px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="/admin/payments"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">account_balance_wallet</span><span class="">Payments &amp; Escrow</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">₹14.2L held</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="/admin/reports"><span class="material-symbols-outlined text-[18px]">description</span><span class="">Reports &amp; Exports</span></a></nav><nav class="space-y-space-xs"><div class="px-space-sm pb-space-xs"><span class="font-overline text-overline text-outline tracking-wider uppercase font-semibold">System &amp; Configuration</span></div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="/admin/settings"><span class="material-symbols-outlined text-[18px]">tune</span><span class="">Platform Settings</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="/admin/audit"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="">Audit &amp; Compliance Logs</span></a></nav></div><div class="p-space-sm bg-surface-container-low mx-space-sm mb-space-sm rounded-lg flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-overline text-overline text-on-surface-variant">Production v1.0 • Supabase RLS Protected</span></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-lg"><nav class="flex items-center gap-space-xs font-body-sm text-body-sm"><span class="text-on-surface-variant">Administration</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="text-on-surface-variant">Management</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><a class="font-semibold text-on-surface hover:text-primary transition-colors" href="/admin/programs">Program Catalog</a></nav><div class="relative flex items-center"><button class="flex items-center gap-space-xs bg-surface-container-low hover:bg-surface-container px-space-sm py-1.5 rounded-lg font-label-md text-label-md text-on-surface font-medium transition-colors" type="button"><span class="material-symbols-outlined text-[16px] text-primary">location_on</span><span class="">India MVP (CM-IN)</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></button></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-lg"><button class="px- space-sm px-2.5 py-1 rounded font-label-sm text-label-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors" type="button">Today</button><button class="px-2.5 py-1 rounded font-label-sm text-label-sm font-medium bg-surface-container-lowest text-on-surface shadow-[0_1px_2px_rgba(15,23,42,0.08)]" type="button">Last 7 Days</button><button class="px-2.5 py-1 rounded font-label-sm text-label-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors" type="button">This Month</button></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-tertiary-fixed font-label-sm text-label-sm text-on-tertiary-fixed font-medium"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="">All Systems Operational • pg_cron active</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1V0AAql4jGIRqEsdzoD0fM4D7KzgdgSCXOxWXLCX3wFMiVq6EyC2nlrmufQAptIDPpABKVSJB2Zne6rHbtLLEuIAzsHg7MqEc5qSi62rtuJwW7jmVFwhjiu6vCFIoyqMlhBdshF-R8fZ8_WhxFyrgwMILFhWONB-s7Ox8cU55jyLfReXDDPXv9cQYcxLx1-bcp30sD6SXgyKvGE0-15_eB1nCyRRXlPwTjAfMFVWRUzwN1R47bR2ALOxTk"><div class="flex flex-col text-left"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Ananya Roy</span><span class="font-overline text-overline text-on-surface-variant">VP Operations &amp; Admin</span></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg max-w-[1600px] w-full mx-auto space-y-space-lg">
+<!-- Top Executive Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Program Catalog &amp; Cohorts</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            Active Cohorts Running
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Manage structured multi-week mentorship programs, customize weekly milestone blueprints, and set student group capacity rules.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg font-label-md text-label-md font-medium text-on-surface bg-surface-container-lowest hover:bg-surface-container-low shadow-[0_1px_3px_rgba(15,23,42,0.05)] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">download</span>
+<span class="">Download Report (.csv)</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg font-label-md text-label-md font-medium text-on-primary bg-primary hover:bg-primary-container shadow-[0_1px_3px_rgba(70,72,212,0.25)] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="">+ New Program Template</span>
+</button>
+</div>
+</div>
+<!-- Top Quick-Stats Overview Row (4 Clean Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1: Active Programs -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Active Programs</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+</div>
+<div class="mt-space-sm space-y-1">
+<div class="flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric text-on-surface">6 Live</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium bg-surface-container-low px-2 py-0.5 rounded-md">+2 drafting</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2-Week, 4-Week, and 6-Week structured formats</p>
+</div>
+</div>
+<!-- Card 2: Enrolled Students -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Enrolled Students</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</div>
+</div>
+<div class="mt-space-sm space-y-1">
+<div class="flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric text-on-surface">840 Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Across 14 current monthly cohorts, 92.4% attendance</p>
+</div>
+</div>
+<!-- Card 3: Avg Completion Rate -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Average Completion</span>
+<div class="w-9 h-9 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[20px]">military_tech</span>
+</div>
+</div>
+<div class="mt-space-sm space-y-1">
+<div class="flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric text-on-surface">88.6%</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold bg-tertiary-fixed/60 px-2 py-0.5 rounded-md">+4.2% vs target</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Students submitting all required weekly milestones</p>
+</div>
+</div>
+<!-- Card 4: Escrow Protection -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Escrow Protection</span>
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+</div>
+<div class="mt-space-sm space-y-1">
+<div class="flex items-baseline gap-2">
+<span class="font-stat-metric text-stat-metric text-on-surface">14-Day Hold</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">₹9.8L held safely during 100% money-back guarantee window</p>
+</div>
+</div>
+</div>
+<!-- Main Interactive Workspace: Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Master Program Catalog (~60%) -->
+<div class="lg:col-span-7 flex flex-col space-y-space-md">
+<!-- Filters, Search & Tabs -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-outline">search</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all" placeholder="Search templates, skills, or mentors..." type="text">
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-2 bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded-lg font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span class="">Filters</span>
+</button>
+<button class="px-3 py-2 bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded-lg font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">sort</span>
+<span class="">Sort: Most Popular</span>
+</button>
+</div>
+</div>
+<!-- Segmented Filter Tabs -->
+<div class="flex items-center gap-1.5 overflow-x-auto pt-1 pb-0.5">
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold bg-primary-fixed text-on-primary-fixed shadow-sm flex items-center gap-1 flex-shrink-0">
+<span class="">All Programs</span>
+<span class="px-1.5 py-0.2 bg-primary text-on-primary rounded-full text-[10px]">6</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-medium text-on-surface-variant hover:bg-surface-container-low flex items-center gap-1 flex-shrink-0 transition-colors">
+<span class="">4-Week Flagships</span>
+<span class="text-outline text-[11px]">(3)</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-medium text-on-surface-variant hover:bg-surface-container-low flex items-center gap-1 flex-shrink-0 transition-colors">
+<span class="">2-Week Sprints</span>
+<span class="text-outline text-[11px]">(2)</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-medium text-on-surface-variant hover:bg-surface-container-low flex items-center gap-1 flex-shrink-0 transition-colors">
+<span class="">6-Week Deep Dives</span>
+<span class="text-outline text-[11px]">(1)</span>
+</button>
+</div>
+</div>
+<!-- Program Cards List -->
+<div class="flex flex-col space-y-space-md">
+<!-- Card 1: Selected / Highlighted -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-[0_4px_12px_rgba(70,72,212,0.08)] bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest to-surface-container-low/50 cursor-pointer transition-all">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary rounded-l-xl"></div>
+<div class="flex flex-col space-y-space-sm pl-2">
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed font-semibold">4 Weeks</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface font-semibold">₹1,499/mo</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant font-medium">Max 8 Students / Group</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">FAANG SDE-1 Placement Prep</h3>
+<span class="font-body-sm text-body-sm text-primary font-medium">Flagship 4-Week Cohort</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Active &amp; Enrolling
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Step-by-step interview coaching: from initial skill gap analysis to live mock technical screens with Google and Amazon mentors.
+              </p>
+<!-- Stats Ribbon -->
+<div class="pt-2 flex flex-wrap items-center justify-between gap-y-2 gap-x-4 bg-surface-container-low/60 rounded-lg p-2.5">
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">groups</span>
+<span class="font-semibold">312</span>
+<span class="text-on-surface-variant font-normal">Students Enrolled</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">psychology</span>
+<span class="font-semibold">4</span>
+<span class="text-on-surface-variant font-normal">Active Mentors</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold">4.92</span>
+<span class="text-on-surface-variant font-normal">(184 Reviews)</span>
+</div>
+<button class="text-primary font-label-sm text-label-sm font-semibold hover:underline flex items-center gap-0.5" type="button">
+<span class="">Selected</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Tech Interview Crunch -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] hover:shadow-md transition-all cursor-pointer">
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-primary-fixed-variant font-semibold">2 Weeks</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface font-semibold">₹799 one-time</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant font-medium">Max 6 Students / Group</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Tech Interview Crunch</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fast 2-Week Sprint</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Active &amp; Enrolling
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Short, high-intensity sprint for students with interviews scheduled in under 14 days. Delivers 2 full mock interviews with scorecards.
+              </p>
+<!-- Stats Ribbon -->
+<div class="pt-2 flex flex-wrap items-center justify-between gap-y-2 gap-x-4 bg-surface-container-low/40 rounded-lg p-2.5">
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-outline">groups</span>
+<span class="font-semibold">184</span>
+<span class="text-on-surface-variant font-normal">Students Enrolled</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-outline">psychology</span>
+<span class="font-semibold">6</span>
+<span class="text-on-surface-variant font-normal">Active Mentors</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-outline" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold">4.88</span>
+<span class="text-on-surface-variant font-normal">(92 Reviews)</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm font-medium flex items-center gap-0.5" type="button">
+<span class="">View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Complete Career Switch Accelerator -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] hover:shadow-md transition-all cursor-pointer">
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-semibold">6 Weeks</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface font-semibold">₹2,499 one-time</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant font-medium">Max 6 Students / Group</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Complete Career Switch Accelerator</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Comprehensive 6-Week Journey</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Active &amp; Enrolling
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Designed for non-CS graduates and career switchers. Covers roadmap analysis, resume overhaul, LinkedIn rebranding, and multiple coding loops.
+              </p>
+<!-- Stats Ribbon -->
+<div class="pt-2 flex flex-wrap items-center justify-between gap-y-2 gap-x-4 bg-surface-container-low/40 rounded-lg p-2.5">
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-outline">groups</span>
+<span class="font-semibold">144</span>
+<span class="text-on-surface-variant font-normal">Students Enrolled</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-outline">psychology</span>
+<span class="font-semibold">3</span>
+<span class="text-on-surface-variant font-normal">Active Mentors</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-outline" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold">4.95</span>
+<span class="text-on-surface-variant font-normal">(110 Reviews)</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm font-medium flex items-center gap-0.5" type="button">
+<span class="">View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Product Management Case Sprint -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] opacity-90 hover:opacity-100 hover:shadow-md transition-all cursor-pointer">
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-semibold">2 Weeks</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-low text-on-surface font-semibold">₹999</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant font-medium">Max 6 Students / Group</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Product Management Case Sprint</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2-Week Sprint for Aspiring PMs</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-semibold flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Draft / Scheduled for Aug
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Structured product teardowns, RCA exercises, and metric evaluation cases paired with senior product managers at top tech unicorns.
+              </p>
+<!-- Stats Ribbon -->
+<div class="pt-2 flex flex-wrap items-center justify-between gap-y-2 gap-x-4 bg-surface-container-low/40 rounded-lg p-2.5">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-outline">groups</span>
+<span class="font-semibold">0</span>
+<span class="">Students Enrolled</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-outline">psychology</span>
+<span class="font-semibold">2</span>
+<span class="">Assigned Mentors</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm italic">
+                  Launch planned for next cohort cycle
+                </div>
+<button class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm font-medium flex items-center gap-0.5" type="button">
+<span class="">Edit Draft</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Selected Program Blueprint & Rules (~40%) -->
+<div class="lg:col-span-5 flex flex-col space-y-space-md">
+<!-- Selected Program Header Container -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)]">
+<div class="flex items-center justify-between mb-1">
+<span class="font-overline text-overline text-primary uppercase font-bold tracking-wider">Cohort Blueprint Configuration</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium bg-surface-container-low px-2 py-0.5 rounded">ID: PRG-FAANG-01</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">FAANG SDE-1 Placement Prep</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Live configurations are updated across all 4 running mentor pods. Changes take effect on next week's schedule automatically.
+          </p>
+</div>
+<!-- Section 1: Weekly Milestone Blueprint -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">view_timeline</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Weekly Milestone Blueprint</h3>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded-full font-medium">4 Weeks Active</span>
+</div>
+<!-- Explanatory note -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5 flex-shrink-0">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+              Every week unlocks a mandatory student deliverable and mentor check-in. Mentors must submit feedback reports within 24 hours of session.
+            </p>
+</div>
+<!-- Timeline list -->
+<div class="space-y-space-sm relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-surface-container-high">
+<!-- Week 1 -->
+<div class="relative flex items-start gap-3 pl-1">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold flex-shrink-0 z-10 shadow-sm">
+                1
+              </div>
+<div class="flex-1 bg-surface-container-low/50 hover:bg-surface-container-low rounded-lg p-space-sm transition-colors">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">Week 1: Skill Gap &amp; Study Roadmap</span>
+<span class="font-overline text-overline text-tertiary uppercase font-bold bg-tertiary-fixed/60 px-1.5 py-0.5 rounded">Enforced</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">description</span>
+<span class="">Deliverable: <strong>Gap Analysis PDF</strong></span>
+</div>
+</div>
+</div>
+<!-- Week 2 -->
+<div class="relative flex items-start gap-3 pl-1">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold flex-shrink-0 z-10 shadow-sm">
+                2
+              </div>
+<div class="flex-1 bg-surface-container-low/50 hover:bg-surface-container-low rounded-lg p-space-sm transition-colors">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">Week 2: ATS Resume Overhaul</span>
+<span class="font-overline text-overline text-tertiary uppercase font-bold bg-tertiary-fixed/60 px-1.5 py-0.5 rounded">Enforced</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">rate_review</span>
+<span class="">Deliverable: <strong>Annotated Resume Report</strong></span>
+</div>
+</div>
+</div>
+<!-- Week 3 -->
+<div class="relative flex items-start gap-3 pl-1">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold flex-shrink-0 z-10 shadow-sm">
+                3
+              </div>
+<div class="flex-1 bg-surface-container-low/50 hover:bg-surface-container-low rounded-lg p-space-sm transition-colors">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">Week 3: Data Structures &amp; Algorithmic Loop</span>
+<span class="font-overline text-overline text-tertiary uppercase font-bold bg-tertiary-fixed/60 px-1.5 py-0.5 rounded">Enforced</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">fact_check</span>
+<span class="">Deliverable: <strong>Technical Rubric Scorecard</strong></span>
+</div>
+</div>
+</div>
+<!-- Week 4 -->
+<div class="relative flex items-start gap-3 pl-1">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold flex-shrink-0 z-10 shadow-sm">
+                4
+              </div>
+<div class="flex-1 bg-surface-container-low/50 hover:bg-surface-container-low rounded-lg p-space-sm transition-colors">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">Week 4: Mock FAANG Screen &amp; Referrals</span>
+<span class="font-overline text-overline text-tertiary uppercase font-bold bg-tertiary-fixed/60 px-1.5 py-0.5 rounded">Enforced</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">workspace_premium</span>
+<span class="">Deliverable: <strong>Final Career Strategy Document</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-1">
+<button class="w-full py-2 bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-label-sm font-semibold rounded-lg flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+<span class="">+ Edit Milestone Rubrics or Add Week</span>
+</button>
+</div>
+</div>
+<!-- Section 2: Group Capacity & Enrolment Safeguards -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] space-y-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">group_add</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Group Capacity &amp; Safeguards</h3>
+</div>
+<!-- Capacity Slider / Stepper -->
+<div class="bg-surface-container-low/40 p-space-sm rounded-lg space-y-2">
+<div class="flex items-center justify-between">
+<div>
+<label class="font-label-md text-label-md text-on-surface font-bold block">Maximum Students Per Mentor Group</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Keeps group discussions small so every student gets personal time.</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold bg-surface-container-lowest px-3 py-1 rounded-lg shadow-sm">
+                8 Students
+              </span>
+</div>
+<!-- Visual Capacity Rules Bar -->
+<div class="pt-1 space-y-1">
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 80%"></div>
+</div>
+<div class="flex justify-between font-overline text-overline text-on-surface-variant">
+<span class="">Current: 8 per pod</span>
+<span class="">Program Maximum: 10</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-outline pt-1 text-[12px]">
+<strong>Standard Limits:</strong> 2-Week Sprints cap at 6 students. 4-Week Flagships cap at 8 students. 6-Week Accelerators cap at 6 students.
+            </p>
+</div>
+<!-- Switches Container -->
+<div class="space-y-space-sm pt-1">
+<!-- Switch 1: Cut-off Rule -->
+<div class="flex items-start justify-between gap-3 p-2.5 rounded-lg bg-surface-container-low/30 hover:bg-surface-container-low/60 transition-colors">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">Lock Enrolment 24 Hours Before Start</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] bg-tertiary-fixed text-on-tertiary-fixed font-bold uppercase">ON</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Prevents last-minute signups so mentors can review student resumes before the first session.
+                </p>
+</div>
+<div class="relative inline-flex items-center cursor-pointer mt-1">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-10 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+<!-- Switch 2: Auto-Split Rule -->
+<div class="flex items-start justify-between gap-3 p-2.5 rounded-lg bg-surface-container-low/30 hover:bg-surface-container-low/60 transition-colors">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">Automatically Open New Cohort When Full</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] bg-tertiary-fixed text-on-tertiary-fixed font-bold uppercase">ON</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  When 8 students enroll, the system instantly creates Cohort B with the next qualified mentor.
+                </p>
+</div>
+<div class="relative inline-flex items-center cursor-pointer mt-1">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-10 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Money-Back Guarantee & Escrow -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] space-y-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">security</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">100% Money-Back &amp; Escrow Rules</h3>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low/60 space-y-2">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-secondary mt-0.5 flex-shrink-0">shield</span>
+<div class="space-y-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">14-Day Student Safety Window</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Students can claim a full 100% refund within the first 14 days if milestones are not delivered. Mentor earnings are safely held in escrow and released automatically after the guarantee window passes.
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-1.5 pt-1 pl-7 text-[12px] text-tertiary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="">Enforced by automated system sweep (pg_cron daily at 00:00 UTC)</span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row items-center gap-space-sm">
+<button class="w-full sm:flex-1 py-2.5 px-space-md bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold rounded-lg shadow-sm transition-all text-center" type="button">
+              Save Blueprint Changes
+            </button>
+<button class="w-full sm:w-auto py-2.5 px-space-md bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium rounded-lg transition-colors text-center whitespace-nowrap" type="button">
+              Duplicate as New Template
+            </button>
+</div>
+<div class="flex justify-center pt-1">
+<button class="text-error hover:text-on-error-container font-label-sm text-label-sm font-medium hover:underline flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">archive</span>
+<span class="">Archive Program Template</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div>
+
+</body></html>

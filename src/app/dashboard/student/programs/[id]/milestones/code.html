@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-container":"#fdfcff","primary-fixed":"#e1e0ff","outline-variant":"#c7c4d7","on-tertiary-fixed-variant":"#3a485b","surface-container-low":"#f2f3ff","inverse-on-surface":"#eef0ff","on-secondary-fixed-variant":"#5516be","outline":"#767586","on-background":"#131b2e","on-error":"#ffffff","tertiary-container":"#67758b","surface-tint":"#494bd6","inverse-primary":"#c0c1ff","surface":"#faf8ff","on-error-container":"#93000a","on-surface":"#131b2e","on-surface-variant":"#464554","secondary-container":"#8455ef","primary-container":"#6063ee","surface-container-highest":"#dae2fd","primary-fixed-dim":"#c0c1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","on-tertiary-fixed":"#0d1c2e","secondary":"#6b38d4","primary":"#4648d4","tertiary-fixed-dim":"#b9c7df","surface-bright":"#faf8ff","on-secondary-container":"#fffbff","on-secondary-fixed":"#23005c","surface-container-high":"#e2e7ff","inverse-surface":"#283044","on-primary-fixed":"#07006c","tertiary-fixed":"#d5e3fc","tertiary":"#4f5d71","on-secondary":"#ffffff","on-primary":"#ffffff","secondary-fixed-dim":"#d0bcff","surface-dim":"#d2d9f4","on-primary-fixed-variant":"#2f2ebe","error":"#ba1a1a","background":"#faf8ff","on-primary-container":"#fffbff","secondary-fixed":"#e9ddff","surface-container":"#eaedff","surface-variant":"#dae2fd","on-tertiary":"#ffffff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","space-sm":"0.5rem",margin:"2rem","space-xs":"0.25rem","space-lg":"1.5rem","space-xl":"2rem",gutter:"1.5rem"},fontFamily:{"display-hero-mobile":["Inter"],"headline-lg-mobile":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"title-md":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"metric-num":["Inter"],"body-lg":["Inter"],"display-hero":["Inter"],"label-sm":["Inter"]},fontSize:{"display-hero-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"500"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"18px",letterSpacing:"0.005em",fontWeight:"400"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"metric-num":["28px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"400"}],"display-hero":["48px",{lineHeight:"56px",letterSpacing:"-0.025em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[22px]">auto_awesome</span></div><div class="flex flex-col"><span class="font-title-md text-title-md font-bold text-on-surface leading-tight tracking-tight">DreamX</span><span class="font-label-sm text-label-sm text-tertiary tracking-wide uppercase font-semibold">Student Portal</span></div></div><button class="p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">dock_to_left</span></button></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-home" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Home</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="discover-goals" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span>Discover Goals</span></a><div class="pt-2 pb-1"><div class="flex items-center justify-between px-space-md py-1.5 text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">event_available</span><span class="font-body-md text-body-md font-medium">Services &amp; Bookings</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></div><div class="ml-6 pl-space-sm flex flex-col gap-0.5 mt-1"><a class="flex items-center px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="active-bookings" href="#">Active Bookings</a><a class="flex items-center px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="smart-requests-offers" href="#">Smart Requests &amp; Offers</a></div></div><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="programs-cohorts" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Programs &amp; Cohorts</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="career-journey" href="#"><span class="material-symbols-outlined text-[20px]">alt_route</span><span>Career Journey Roadmap</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="readiness-score" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span>Career Readiness Score</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ai-assistant" href="#"><span class="material-symbols-outlined text-[20px]">neurology</span><span>AI Assistant &amp; Recomms</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="deliverables-reports" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span>Deliverables &amp; Reports</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="membership-billing" href="#"><span class="material-symbols-outlined text-[20px]">credit_card</span><span>Membership &amp; Billing</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div></div><div class="p-space-md flex flex-col gap-space-sm"><div class="p-space-md rounded-xl bg-surface-container-low shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-primary">Pro Plan</span><span class="font-label-sm text-label-sm text-tertiary">Active</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">100 Monthly AI Credits • Renews Aug 1</p><button class="mt-space-xs w-full py-1.5 px-space-sm rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-colors shadow-sm" type="button">Upgrade to Elite</button></div><div class="flex items-center justify-between px-space-sm py-space-xs"><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">swap_horiz</span><span>Switch Portal</span></button><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-error font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">logout</span><span>Log out</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><button class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button><div class="flex items-center gap-space-xs font-body-sm text-body-sm"><span class="text-tertiary">Dashboard</span><span class="text-tertiary">/</span><span class="text-on-surface font-medium">Student Home</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-1.5 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px] text-primary">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">⌘K AI Search</span></button><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[16px] text-tertiary">public</span><span>Target: CM-IN (India Tech) • IST</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md"><span class="font-medium">⚡ 47 AI Credits</span><button class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center hover:bg-secondary-container transition-colors" type="button"><span class="material-symbols-outlined text-[14px]">add</span></button></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><div class="flex items-center gap-space-xs justify-end"><span class="font-title-md text-body-md font-semibold text-on-surface leading-none">Ananya S.</span><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase font-bold">PRO</span></div><span class="font-label-sm text-label-sm text-tertiary">3rd Yr CS @ IIT Delhi</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 px-gutter bg-surface min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- Top Meta & Escrow Alert Strip -->
+<div class="mb-space-lg flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-sm pb-space-md border-b border-surface-container-highest">
+<div class="flex flex-wrap items-center gap-space-xs font-body-sm text-body-sm text-tertiary">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">Programs &amp; Cohorts</a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface-variant font-medium">Distributed Systems Fellowship</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-semibold">Milestone 2</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-medium">Week 2 of 4 • In Review Prep</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-medium">Due in 3 Days • Jul 29, 11:59 PM IST</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span class="font-semibold">Escrow Active (4 Days Left)</span>
+</div>
+</div>
+</div>
+<!-- Primary Page Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-tertiary font-label-sm text-label-sm uppercase tracking-wider font-bold">
+<span>COHORT #COHORT-2026-DIST-04</span>
+<span>•</span>
+<span class="text-secondary">Track: Core Backend &amp; Consensus</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+        Milestone 2: Distributed Storage &amp; Fault-Tolerant Raft Consensus
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Engineer a production-grade 3-node Raft consensus engine in Go or C++ handling election transitions, heartbeat telemetry, log replication, and Byzantine split-brain resilience.
+      </p>
+</div>
+<div class="flex items-center flex-wrap gap-space-sm shrink-0">
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to Program</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>View Syllabus</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">person_check</span>
+<span>Book 1:1 Mentor Sync</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Weekly Roadmap Stepper -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-xl overflow-x-auto">
+<div class="min-w-[760px] grid grid-cols-4 gap-space-sm">
+<!-- Week 1: Completed -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm font-bold text-primary uppercase">Week 1</span>
+<span class="flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            4.9 / 5.0
+          </span>
+</div>
+<span class="font-title-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors truncate">
+          Core Algorithms &amp; Concurrency
+        </span>
+<span class="font-body-sm text-body-sm text-tertiary mt-1">Evaluated by Vikram • Passed</span>
+</div>
+<!-- Week 2: Active / Current -->
+<div class="flex flex-col p-3 rounded-lg bg-primary text-on-primary shadow-md relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-16 h-16 bg-white/10 rounded-full blur-sm"></div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-primary-fixed">Week 2 • CURRENT</span>
+<span class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/20 text-on-primary font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-300"></span>
+            Draft v1.4
+          </span>
+</div>
+<span class="font-title-md text-body-md font-bold text-on-primary truncate">
+          Distributed Storage &amp; Raft
+        </span>
+<span class="font-body-sm text-body-sm text-primary-fixed mt-1">Due Jul 29 • CI 88.5% Passing</span>
+</div>
+<!-- Week 3: Locked -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low opacity-60">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm font-medium text-tertiary uppercase">Week 3</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">lock</span>
+</div>
+<span class="font-title-md text-body-md font-medium text-on-surface truncate">
+          High-Throughput System Design
+        </span>
+<span class="font-body-sm text-body-sm text-tertiary mt-1">Unlocks Aug 1, 2026</span>
+</div>
+<!-- Week 4: Locked -->
+<div class="flex flex-col p-3 rounded-lg bg-surface-container-low opacity-60">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm font-medium text-tertiary uppercase">Week 4</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">lock</span>
+</div>
+<span class="font-title-md text-body-md font-medium text-on-surface truncate">
+          Google Bar-Raiser Capstone
+        </span>
+<span class="font-body-sm text-body-sm text-tertiary mt-1">Unlocks Aug 8, 2026</span>
+</div>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-xl">
+<!-- LEFT COLUMN: Spec, Automated Runner, Upload Form (~65%) -->
+<div class="xl:col-span-8 flex flex-col gap-space-xl">
+<!-- Section A: Architectural Spec & Requirements -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md font-bold text-on-surface">Architectural Specification &amp; RFC 5.0</h2>
+<p class="font-body-sm text-body-sm text-tertiary">Core state machine replication protocol &amp; strict guarantees</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container font-label-sm text-label-sm font-mono text-on-surface">RFC-RAFT-EXT#05</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm leading-relaxed flex flex-col gap-space-xs">
+<p><strong class="text-on-surface">Mission Objective:</strong> Build an in-memory distributed commit log replicated across at least three Go nodes communicating via gRPC. Your Raft engine must survive arbitrary network splits without stale reads or uncommitted state mutations.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0">check</span>
+<span><strong>Quorum Consensus:</strong> Strict majority <code class="px-1 py-0.5 rounded bg-surface-container-highest font-mono text-label-sm">N/2 + 1</code> commits before client ACK.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0">check</span>
+<span><strong>Randomized Heartbeats:</strong> 150ms–300ms jitter window avoiding split voting cycles.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0">check</span>
+<span><strong>Monotonic Terms:</strong> Reject stale term IDs immediately with updated step-down logic.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0">check</span>
+<span><strong>Snapshot Compact:</strong> State truncation with zero memory leaks over 100,000 log entries.</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-tertiary">Reference Frameworks:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">Go 1.23</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">protobuf/v3</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">etcd/raft testsuite</span>
+</div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md font-semibold text-primary hover:underline" href="#">
+<span>Download Full RFC Spec PDF</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Section B: Automated Submission & CI/CD Test Harness -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-title-md text-title-md font-bold text-on-surface">Automated CI/CD Validation Harness</h2>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">DreamX Sandbox v3.4</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary">Isolated Linux containers executing parallel cluster failure injections</p>
+</div>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-all shadow-sm shrink-0" id="runTestsBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+<span>Re-Run Automated Suite</span>
+</button>
+</div>
+<!-- Harness Progress & Score Indicator -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<!-- Circular Progress Ring (inline SVG, <2KB) -->
+<div class="relative w-14 h-14 shrink-0 flex items-center justify-center">
+<svg class="w-14 h-14 -rotate-90" viewbox="0 0 48 48">
+<circle class="text-surface-container-highest" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-secondary" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="14.4" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<span class="absolute font-label-md text-label-md font-bold text-on-surface">88.5%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-bold text-on-surface">CI Benchmark Score: 88.5%</span>
+<span class="font-body-sm text-body-sm text-tertiary">3 of 4 unit &amp; stress suites currently passing • Target: ≥90% for auto-clearing</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-mono text-label-sm">Total Run: 1.48s</span>
+<span class="px-2.5 py-1 rounded-md bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">1 Alert</span>
+</div>
+</div>
+<!-- Suite List Items -->
+<div class="flex flex-col gap-space-xs">
+<!-- Test 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</span>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Test 1: Leader Election Under Normal Isolation</span>
+<span class="font-body-sm text-body-sm text-tertiary font-mono">pkg/raft/election_test.go • 3 node converge</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-mono text-body-sm text-tertiary hidden sm:inline">42ms</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold">PASS</span>
+</div>
+</div>
+<!-- Test 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</span>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Test 2: Heartbeat Timeout &amp; Monotonic Term Increment</span>
+<span class="font-body-sm text-body-sm text-tertiary font-mono">pkg/raft/heartbeat_test.go • step-down verified</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-mono text-body-sm text-tertiary hidden sm:inline">18ms</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold">PASS</span>
+</div>
+</div>
+<!-- Test 3 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</span>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Test 3: Log Consistency Verification on Follower Crash</span>
+<span class="font-body-sm text-body-sm text-tertiary font-mono">pkg/raft/replication_test.go • 10k entries replay</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-mono text-body-sm text-tertiary hidden sm:inline">88ms</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold">PASS</span>
+</div>
+</div>
+<!-- Test 4: Warning / Latency -->
+<div class="p-3 rounded-lg bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+</span>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Test 4: Split-Brain 3-Way Partition Recovery &amp; Rejoin</span>
+<span class="font-body-sm text-body-sm text-error font-medium">Tail-latency p99: 480ms (Violates 300ms SLA target)</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-mono text-body-sm text-tertiary hidden sm:inline">480ms</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">WARNING</span>
+</div>
+</div>
+</div>
+<!-- Terminal Output View -->
+<div class="rounded-lg bg-inverse-surface text-inverse-on-surface p-space-md font-mono text-body-sm leading-relaxed overflow-x-auto shadow-inner">
+<div class="flex items-center justify-between text-tertiary-fixed-dim pb-2 mb-2 border-b border-white/10">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-red-400/80"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-yellow-400/80"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-green-400/80"></span>
+<span class="text-label-sm text-tertiary-fixed ml-2 font-mono">runner@dreamx-worker-node-04:~/workspace/milestone2</span>
+</div>
+<span class="text-label-sm font-mono text-tertiary-fixed">Go test -v -race -timeout 30s</span>
+</div>
+<p class="text-green-300">=== RUN   TestRaftLeaderElectionSimple</p>
+<p class="text-neutral-400">--- PASS: TestRaftLeaderElectionSimple (0.04s) • term: 1, leader: node_1</p>
+<p class="text-green-300">=== RUN   TestRaftHeartbeatLossElectionTrigger</p>
+<p class="text-neutral-400">--- PASS: TestRaftHeartbeatLossElectionTrigger (0.02s) • term: 2, leader: node_3</p>
+<p class="text-green-300">=== RUN   TestRaftLogReplicationFuzz</p>
+<p class="text-neutral-400">--- PASS: TestRaftLogReplicationFuzz (0.09s) • verified 10,000 operations</p>
+<p class="text-yellow-300">=== RUN   TestRaftSplitBrainPartitionRejoin</p>
+<p class="text-yellow-200">    raft_test.go:412: [WARN] Rejoin sync took 480ms. Lock contention identified in LogCompactorMutex.</p>
+<p class="text-yellow-300">--- WARN: TestRaftSplitBrainPartitionRejoin (0.48s)</p>
+<p class="text-white font-bold pt-2">RESULT: 3 PASSED, 1 WARNING • Bench Score: 88.5/100.0</p>
+</div>
+</div>
+<!-- Section C: Deliverables & Submission Portal -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<div>
+<h2 class="font-title-md text-title-md font-bold text-on-surface">Submit Deliverables &amp; Artifacts</h2>
+<p class="font-body-sm text-body-sm text-tertiary">Provide reproducible code repository, binary artifact, and context for your mentor review</p>
+</div>
+<!-- Artifact Zip File Card -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">folder_zip</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-body-md font-semibold text-on-surface truncate">raft_consensus_benchmark_v1.zip</span>
+<span class="font-body-sm text-body-sm text-tertiary">14.2 MB • SHA-256: 7f8c12a... • Uploaded 2 hours ago</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors" type="button">
+              Download Draft
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-medium hover:bg-primary-fixed transition-colors" type="button">
+              Replace ZIP
+            </button>
+</div>
+</div>
+<!-- GitHub Repo Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between">
+<span>GitHub Repository Link (Private or Public)</span>
+<span class="text-tertiary font-normal">Linked to commit 9f2b80a</span>
+</label>
+<div class="flex items-center rounded-lg bg-surface-container-low px-3 py-2">
+<span class="material-symbols-outlined text-tertiary text-[20px] mr-2">code</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" type="text" value="https://github.com/ananya-sharma/raft-consensus-engine"/>
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+</div>
+</div>
+<!-- Note to Vikram -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between">
+<span>Notes &amp; Context for Lead Mentor (Vikram Singh)</span>
+<span class="text-tertiary font-normal">Optional</span>
+</label>
+<textarea class="w-full rounded-lg bg-surface-container-low p-3 text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary placeholder-tertiary" placeholder="Explain your architectural design decisions, known trade-offs, or specific bottleneck issues you want Vikram to review..." rows="3">Hi Vikram, I isolated the split-brain latency issue in Test 4 to lock contention in LogCompactorMutex during dynamic snapshot generation. I left inline benchmarks in benchmarks/mutex_profile.pprof for your review.</textarea>
+</div>
+<!-- Pre-submission Validation Banner & Submit CTA -->
+<div class="pt-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-md border-t border-surface-container">
+<div class="flex items-center gap-2 text-tertiary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">info</span>
+<span>Once submitted, Vikram begins review within 24h guarantee SLA.</span>
+</div>
+<button class="px-6 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition-all shadow-md flex items-center justify-center gap-2" id="submitMilestoneBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+<span>Submit Milestone 2 for Review</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Evaluation Rubric, Lead Mentor Sync & Escrow Status (~35%) -->
+<div class="xl:col-span-4 flex flex-col gap-space-xl">
+<!-- Section A: 4-Pillar Evaluation Rubric -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<h2 class="font-title-md text-title-md font-bold text-on-surface">4-Pillar Evaluation Rubric</h2>
+<span class="font-body-sm text-body-sm text-tertiary">Calibrated Google L6 / Amazon Bar-Raiser criteria</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-primary font-label-sm text-label-sm font-bold">100 Pts</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Pillar 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-md font-semibold text-on-surface">1. Partition Safety &amp; Quorum</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">30% Weight</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Absence of split-brain state mutations during network isolation and automated majority reconnect.</p>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 85%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary text-right">Self-assessment: 26/30 Pts</span>
+</div>
+<!-- Pillar 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-md font-semibold text-on-surface">2. Log Compaction &amp; Snapshots</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">25% Weight</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Non-blocking state truncation, monotonic index validation, and zero RAM leaks under continuous load.</p>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 78%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary text-right">Self-assessment: 20/25 Pts</span>
+</div>
+<!-- Pillar 3 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-md font-semibold text-on-surface">3. Concurrency &amp; Lock Rigor</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">25% Weight</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Zero data races with <code class="font-mono text-label-sm">-race</code>, clean channel synchronization, and sub-300ms p99 tail latency.</p>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 70%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-error text-right font-medium">Contention detected: 18/25 Pts</span>
+</div>
+<!-- Pillar 4 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-md font-semibold text-on-surface">4. Clean Idiomatic Code &amp; Tests</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">20% Weight</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Modular package structure, descriptive error wrapping, and reproducible unit/integration table tests.</p>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 95%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary text-right">Self-assessment: 19/20 Pts</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary">article</span>
+<span class="font-body-sm text-body-sm text-on-surface">Mentor produces a <strong>4-page annotated architectural feedback PDF</strong> with line-by-line profiling.</span>
+</div>
+</div>
+<!-- Section B: Lead Mentor Profile & Live Cohort Sync -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-tertiary">Dedicated Lead Mentor</span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+            Online in IST
+          </span>
+</div>
+<div class="flex items-center gap-3">
+<img class="w-14 h-14 rounded-xl object-cover shadow-sm shrink-0" data-alt="Professional headshot of Vikram Singh, a distinguished Indian male cloud architect in his late thirties wearing modern minimalist spectacles and charcoal polo shirt, warm studio lighting with high tech office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwKDVOJ-tLtbVg7dqBZQ_YDojdiOZzV-L1qGCmEpdlOTGMbDDtOn6kcBC9YBz4kyfaZ2x7_xfOucMZc6ZGHde9dDtehWlNCUnWI5HBp3xJ-nqBWNfM6oDwdPbhMypBBtUIgFvazLmeIRubPL68UN9OFyp3dNMTu8dzkpIochVLiFtxTuzOcfxCT9QkWfXoMHYaHmNwULagn667YGDoqnH9OHA6Wivx9Am4Mq0bA5PdgW7TekR-2wB4"/>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-bold text-on-surface leading-tight">Vikram Singh</span>
+<span class="font-body-sm text-body-sm text-primary font-medium">Senior Staff Engineer @ Google Cloud</span>
+<span class="font-label-sm text-label-sm text-tertiary">Ex-Amazon Bar Raiser • 14 Yrs Dist. Systems</span>
+</div>
+</div>
+<!-- Next Live Session Card -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary uppercase">Next Live Whiteboard Sync</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">Mandatory</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-title-md text-body-md font-semibold">
+<span class="material-symbols-outlined text-[18px] text-primary">videocam</span>
+<span>Saturday, Jul 26 @ 6:00 PM IST</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live deep-dive: "Surviving Raft Split-Brains Under Asymmetric Network Partitions" on Google Meet.</p>
+<a class="mt-1 w-full py-1.5 px-3 rounded-lg bg-surface-container-highest text-on-surface font-label-md text-label-md font-semibold text-center hover:bg-surface-container transition-colors" href="#">
+            Add to Google Calendar (.ics)
+          </a>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<button class="py-2 px-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Ask Async Q</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md font-semibold hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Book 30m Slot</span>
+</button>
+</div>
+</div>
+<!-- Section C: 14-Day Money-Back Guarantee & Escrow Protection Widget -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md border-l-4 border-primary">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-bold text-on-surface">Escrow Guarantee</span>
+<span class="font-label-sm text-label-sm text-tertiary">14-Day 100% Refund Safeguard</span>
+</div>
+</div>
+<span class="font-mono text-label-sm font-bold text-primary">Day 10 / 14</span>
+</div>
+<!-- Escrow Window Progress -->
+<div class="flex flex-col gap-1.5">
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full" style="width: 71.4%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-tertiary">
+<span>Enrolled Jul 15</span>
+<span class="font-semibold text-primary">4 Days Remaining in Trial</span>
+<span>Escrow Releases Jul 29</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Your ₹48,000 fellowship tuition is safely locked in DreamX escrow. If you feel the curriculum rigor or mentor caliber does not meet Google/Amazon bar standards, claim an instant 100% refund before Milestone 2 evaluation.
+        </p>
+<a class="text-tertiary hover:text-on-surface font-body-sm text-body-sm underline transition-colors text-right" href="#">
+          Read Escrow Terms &amp; Refund Policy
+        </a>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Interactive test runner simulation
+  document.getElementById('runTestsBtn')?.addEventListener('click', function() {
+    const btn = this;
+    const originalText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Running Test Containers...</span>';
+    
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+      alert('Automated test suite finished in 1.42s! Check terminal logs.');
+    }, 1800);
+  });
+
+  // Milestone submission CTA micro-interaction
+  document.getElementById('submitMilestoneBtn')?.addEventListener('click', function() {
+    const confirmSubmit = confirm('Submit Milestone 2 (Draft v1.4) to Vikram Singh for official review?');
+    if (confirmSubmit) {
+      this.classList.remove('bg-primary');
+      this.classList.add('bg-secondary');
+      this.innerHTML = '<span class="material-symbols-outlined text-[20px]">done_all</span><span>Submitted to Vikram!</span>';
+    }
+  });
+</script></main></div></body></html>

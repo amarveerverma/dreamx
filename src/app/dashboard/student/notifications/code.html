@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-container":"#fdfcff","primary-fixed":"#e1e0ff","outline-variant":"#c7c4d7","on-tertiary-fixed-variant":"#3a485b","surface-container-low":"#f2f3ff","inverse-on-surface":"#eef0ff","on-secondary-fixed-variant":"#5516be","outline":"#767586","on-background":"#131b2e","on-error":"#ffffff","tertiary-container":"#67758b","surface-tint":"#494bd6","inverse-primary":"#c0c1ff","surface":"#faf8ff","on-error-container":"#93000a","on-surface":"#131b2e","on-surface-variant":"#464554","secondary-container":"#8455ef","primary-container":"#6063ee","surface-container-highest":"#dae2fd","primary-fixed-dim":"#c0c1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","on-tertiary-fixed":"#0d1c2e","secondary":"#6b38d4","primary":"#4648d4","tertiary-fixed-dim":"#b9c7df","surface-bright":"#faf8ff","on-secondary-container":"#fffbff","on-secondary-fixed":"#23005c","surface-container-high":"#e2e7ff","inverse-surface":"#283044","on-primary-fixed":"#07006c","tertiary-fixed":"#d5e3fc","tertiary":"#4f5d71","on-secondary":"#ffffff","on-primary":"#ffffff","secondary-fixed-dim":"#d0bcff","surface-dim":"#d2d9f4","on-primary-fixed-variant":"#2f2ebe","error":"#ba1a1a","background":"#faf8ff","on-primary-container":"#fffbff","secondary-fixed":"#e9ddff","surface-container":"#eaedff","surface-variant":"#dae2fd","on-tertiary":"#ffffff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","space-sm":"0.5rem",margin:"2rem","space-xs":"0.25rem","space-lg":"1.5rem","space-xl":"2rem",gutter:"1.5rem"},fontFamily:{"display-hero-mobile":["Inter"],"headline-lg-mobile":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"title-md":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"metric-num":["Inter"],"body-lg":["Inter"],"display-hero":["Inter"],"label-sm":["Inter"]},fontSize:{"display-hero-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"500"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"18px",letterSpacing:"0.005em",fontWeight:"400"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"metric-num":["28px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"400"}],"display-hero":["48px",{lineHeight:"56px",letterSpacing:"-0.025em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[22px]">auto_awesome</span></div><div class="flex flex-col"><span class="font-title-md text-title-md font-bold text-on-surface leading-tight tracking-tight">DreamX</span><span class="font-label-sm text-label-sm text-tertiary tracking-wide uppercase font-semibold">Student Portal</span></div></div><button class="p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">dock_to_left</span></button></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-home" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Home</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="discover-goals" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span>Discover Goals</span></a><div class="pt-2 pb-1"><div class="flex items-center justify-between px-space-md py-1.5 text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">event_available</span><span class="font-body-md text-body-md font-medium">Services &amp; Bookings</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></div><div class="ml-6 pl-space-sm flex flex-col gap-0.5 mt-1"><a class="flex items-center px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="active-bookings" href="#">Active Bookings</a><a class="flex items-center px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="smart-requests-offers" href="#">Smart Requests &amp; Offers</a></div></div><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="programs-cohorts" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Programs &amp; Cohorts</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="career-journey" href="#"><span class="material-symbols-outlined text-[20px]">alt_route</span><span>Career Journey Roadmap</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="readiness-score" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span>Career Readiness Score</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ai-assistant" href="#"><span class="material-symbols-outlined text-[20px]">neurology</span><span>AI Assistant &amp; Recomms</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="deliverables-reports" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span>Deliverables &amp; Reports</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="membership-billing" href="#"><span class="material-symbols-outlined text-[20px]">credit_card</span><span>Membership &amp; Billing</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div></div><div class="p-space-md flex flex-col gap-space-sm"><div class="p-space-md rounded-xl bg-surface-container-low shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-primary">Pro Plan</span><span class="font-label-sm text-label-sm text-tertiary">Active</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">100 Monthly AI Credits • Renews Aug 1</p><button class="mt-space-xs w-full py-1.5 px-space-sm rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-colors shadow-sm" type="button">Upgrade to Elite</button></div><div class="flex items-center justify-between px-space-sm py-space-xs"><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">swap_horiz</span><span>Switch Portal</span></button><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-error font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">logout</span><span>Log out</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><button class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button><div class="flex items-center gap-space-xs font-body-sm text-body-sm"><span class="text-tertiary">Dashboard</span><span class="text-tertiary">/</span><span class="text-on-surface font-medium">Student Home</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-1.5 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px] text-primary">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">⌘K AI Search</span></button><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[16px] text-tertiary">public</span><span>Target: CM-IN (India Tech) • IST</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md"><span class="font-medium">⚡ 47 AI Credits</span><button class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center hover:bg-secondary-container transition-colors" type="button"><span class="material-symbols-outlined text-[14px]">add</span></button></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><div class="flex items-center gap-space-xs justify-end"><span class="font-title-md text-body-md font-semibold text-on-surface leading-none">Ananya S.</span><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase font-bold">PRO</span></div><span class="font-label-sm text-label-sm text-tertiary">3rd Yr CS @ IIT Delhi</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 px-gutter bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Notification Center Main Container -->
+<div class="max-w-[1400px] w-full mx-auto pb-16 space-y-6">
+<!-- Top Command & Status Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<div class="space-y-1.5">
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-tertiary">
+<span>Workspace</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-medium">Notifications &amp; Realtime Alerts</span>
+</div>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Notification Center</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            WS CONNECTED
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Live stream connected to cluster <code class="px-1.5 py-0.5 rounded bg-surface-container font-mono text-[12px] text-primary">asia-south1-dreamx-sub-04</code>. All system events synced in IST.
+        </p>
+</div>
+<!-- Quick Actions -->
+<div class="flex flex-wrap items-center gap-3">
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all shadow-sm" id="mark-all-read-btn" onclick="markAllNotificationsAsRead()">
+<span class="material-symbols-outlined text-[18px] text-primary">done_all</span>
+<span>Mark All as Read</span>
+</button>
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all shadow-sm" onclick="togglePreferencesModal(true)">
+<span class="material-symbols-outlined text-[18px] text-tertiary">tune</span>
+<span>Channels &amp; Rules</span>
+</button>
+<div class="h-6 w-[1px] bg-surface-container hidden sm:block"></div>
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-semibold transition-all" id="unread-only-toggle" onclick="toggleUnreadFilter()">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span>Unread Only</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary text-on-primary text-[11px] font-bold" id="unread-counter-badge">4</span>
+</button>
+</div>
+</div>
+<!-- Search & Search Filter Control Bar -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-surface-container-lowest p-3 rounded-xl shadow-sm">
+<div class="relative flex-1">
+<span class="absolute left-3.5 top-1/2 -translate-y-1/2 material-symbols-outlined text-[20px] text-tertiary">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-colors" id="notification-search" onkeyup="filterBySearch(this.value)" placeholder="Search alerts by mentor, order ID (e.g. #REQ-2026), rubric title, or keyword..." type="text"/>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-auto">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider px-2">Sort:</span>
+<select class="bg-surface-container-low text-on-surface font-label-md text-label-md py-2 px-3 rounded-lg focus:outline-none cursor-pointer" onchange="sortNotificationList(this.value)">
+<option value="newest">Most Recent First</option>
+<option value="urgency">Urgency / Action Priority</option>
+<option value="escrow">Escrow Countdown First</option>
+</select>
+</div>
+</div>
+<!-- Main Section Layout: Split 9 Cols (List) + 3 Cols (Sidebar Widget) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+<!-- Left / Center Feed Column -->
+<div class="xl:col-span-8 flex flex-col gap-4">
+<!-- Category Filter Tabs -->
+<div class="overflow-x-auto pb-1">
+<div class="flex items-center gap-1.5 min-w-max p-1 bg-surface-container-lowest rounded-xl shadow-sm">
+<button class="category-tab-btn active-tab flex items-center gap-2 px-3.5 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold transition-all" onclick="setCategoryTab('all', this)">
+<span>All Alerts</span>
+<span class="px-2 py-0.5 rounded-full bg-on-primary/20 text-on-primary text-[11px] font-bold">14</span>
+</button>
+<button class="category-tab-btn flex items-center gap-2 px-3.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md font-medium transition-all" onclick="setCategoryTab('bookings', this)">
+<span class="material-symbols-outlined text-[17px] text-primary">event_available</span>
+<span>Bookings &amp; Sessions</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold">1</span>
+</button>
+<button class="category-tab-btn flex items-center gap-2 px-3.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md font-medium transition-all" onclick="setCategoryTab('offers', this)">
+<span class="material-symbols-outlined text-[17px] text-secondary">local_offer</span>
+<span>Offers &amp; Bids</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-bold">2</span>
+</button>
+<button class="category-tab-btn flex items-center gap-2 px-3.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md font-medium transition-all" onclick="setCategoryTab('deliverables', this)">
+<span class="material-symbols-outlined text-[17px] text-primary-container">assignment_turned_in</span>
+<span>Deliverables</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold">1</span>
+</button>
+<button class="category-tab-btn flex items-center gap-2 px-3.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md font-medium transition-all" onclick="setCategoryTab('milestones', this)">
+<span class="material-symbols-outlined text-[17px] text-secondary">trending_up</span>
+<span>AI Milestones</span>
+</button>
+<button class="category-tab-btn flex items-center gap-2 px-3.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md font-medium transition-all" onclick="setCategoryTab('billing', this)">
+<span class="material-symbols-outlined text-[17px] text-tertiary">receipt_long</span>
+<span>Billing</span>
+</button>
+</div>
+</div>
+<!-- Dynamic Batch Action Floating Banner -->
+<div class="flex items-center justify-between px-4 py-2.5 bg-surface-container-high rounded-xl text-on-surface font-body-sm text-body-sm shadow-sm" id="batch-actions-strip">
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 rounded text-primary cursor-pointer accent-primary" id="select-all-checkbox" onchange="toggleSelectAll(this)" type="checkbox"/>
+<span class="font-medium"><span id="selected-count">0</span> notifications selected</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-bright font-label-sm text-label-sm font-semibold transition-all" onclick="batchAction('read')">
+              Mark Read
+            </button>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-bright font-label-sm text-label-sm font-semibold transition-all" onclick="batchAction('archive')">
+              Archive
+            </button>
+<button class="px-2.5 py-1 rounded text-error hover:bg-error-container/30 font-label-sm text-label-sm font-semibold transition-all" onclick="batchAction('clear-read')">
+              Clear Read Items
+            </button>
+</div>
+</div>
+<!-- Notification Timeline Feed -->
+<div class="space-y-6" id="notification-timeline-container">
+<!-- GROUP: TODAY -->
+<div class="timeline-group space-y-3" data-group="today">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary tracking-wider">Today</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-tertiary">3 Actions Requiring Review</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">Thursday, 24 Oct</span>
+</div>
+<!-- Item 1: Smart Match Offer (UNREAD) -->
+<article class="notification-card relative bg-surface-container-lowest p-5 rounded-xl shadow-sm transition-all hover:shadow-md border-l-4 border-secondary flex flex-col md:flex-row md:items-start justify-between gap-4" data-category="offers" data-id="notif-1" data-read="false">
+<div class="flex items-start gap-4 flex-1">
+<input class="item-selector mt-1 w-4 h-4 rounded text-primary accent-primary cursor-pointer" onchange="updateSelectionCount()" type="checkbox"/>
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center shrink-0 text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[22px]">local_offer</span>
+</div>
+<div class="space-y-2 flex-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">New Custom Match Offer Received</h3>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">Offer #BID-982</span>
+<span class="font-label-sm text-label-sm text-tertiary ml-auto">12 mins ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+<strong class="text-on-surface font-semibold">Vikram Singh</strong> (Staff SRE @ Google, IITD Alum) submitted a targeted offer of <span class="font-semibold text-secondary">₹1,199</span> for your request <span class="font-mono text-tertiary font-medium">#REQ-2026-4412</span> (Distributed Systems &amp; Concurrency Mock). Proposed slot: <strong class="text-on-surface font-medium">Tomorrow, 7:30 PM IST</strong>.
+                  </p>
+<!-- Direct Match Highlight Meta -->
+<div class="flex flex-wrap items-center gap-3 pt-1 text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span>Target: L4/L5 Distributed Systems Track</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low font-medium text-secondary">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+<span>Expires in 11 hours</span>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-2.5 pt-2">
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+<span>Review Offer &amp; Book (₹1,199)</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium transition-colors">
+                      Decline / Counter
+                    </button>
+<button class="p-2 rounded-lg text-tertiary hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="toggleSingleRead('notif-1')" title="Toggle read state">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 2: Deliverable Inspection & Escrow Active (UNREAD) -->
+<article class="notification-card relative bg-surface-container-lowest p-5 rounded-xl shadow-sm transition-all hover:shadow-md border-l-4 border-primary flex flex-col md:flex-row md:items-start justify-between gap-4" data-category="deliverables" data-id="notif-2" data-read="false">
+<div class="flex items-start gap-4 flex-1">
+<input class="item-selector mt-1 w-4 h-4 rounded text-primary accent-primary cursor-pointer" onchange="updateSelectionCount()" type="checkbox"/>
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center shrink-0 text-on-primary-fixed">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div class="space-y-2 flex-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary shrink-0 animate-pulse"></span>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Deliverable Ready: 4-Page ATS Resume Redline</h3>
+<span class="px-2 py-0.5 rounded-md bg-error-container text-on-error-container font-label-sm text-label-sm font-bold tracking-wide">Escrow Active</span>
+<span class="font-label-sm text-label-sm text-tertiary ml-auto">1 hr ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+<strong class="text-on-surface font-semibold">Devika Rao</strong> has published the annotated LaTeX source, Overleaf redlines, and rubric assessment for order <span class="font-mono text-tertiary font-medium">#DEL-8803</span>. Inspection period opened: you have <span class="font-semibold text-primary">68 hours left</span> to request revisions before funds release automatically.
+                  </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">attach_file</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface truncate">IITD_Ananya_Sharma_ATS_v4.2.pdf</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-tertiary sm:justify-end">
+<span class="material-symbols-outlined text-[16px] text-outline">timer</span>
+<span>Disbursal: Saturday 2:00 PM IST</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2.5 pt-2">
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Inspect Deliverable &amp; Release Escrow</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-low text-error hover:bg-error-container/20 font-label-md text-label-md font-medium transition-colors">
+                      Raise Revision Request
+                    </button>
+<button class="p-2 rounded-lg text-tertiary hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="toggleSingleRead('notif-2')" title="Toggle read state">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 3: Upcoming Session in 24 Hours (UNREAD) -->
+<article class="notification-card relative bg-surface-container-lowest p-5 rounded-xl shadow-sm transition-all hover:shadow-md border-l-4 border-primary-container flex flex-col md:flex-row md:items-start justify-between gap-4" data-category="bookings" data-id="notif-3" data-read="false">
+<div class="flex items-start gap-4 flex-1">
+<input class="item-selector mt-1 w-4 h-4 rounded text-primary accent-primary cursor-pointer" onchange="updateSelectionCount()" type="checkbox"/>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[22px]">video_camera_front</span>
+</div>
+<div class="space-y-2 flex-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary shrink-0"></span>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Upcoming 1-on-1 Whiteboard Mock in 24 Hours</h3>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">Booking #BKG-1049</span>
+<span class="font-label-sm text-label-sm text-tertiary ml-auto">3 hrs ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Session with mentor <strong class="text-on-surface font-semibold">Vikram Singh</strong> starts tomorrow, Friday at <strong>7:30 PM IST</strong>. Secure Google Meet conference room has been auto-provisioned. Calendar invite synced to <span class="font-mono text-tertiary">ananya.sharma@iitd.ac.in</span>.
+                  </p>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-low font-mono text-[13px] text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">link</span>
+<span>meet.google.com/dmx-sys-9402-vks</span>
+<button class="ml-auto font-label-sm text-label-sm text-primary font-bold hover:underline" onclick="navigator.clipboard.writeText('https://meet.google.com/dmx-sys-9402-vks')">Copy Link</button>
+</div>
+<div class="flex flex-wrap items-center gap-2.5 pt-2">
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">launch</span>
+<span>Join Room Room Portal</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium transition-colors">
+                      Reschedule (Free Window)
+                    </button>
+<button class="p-2 rounded-lg text-tertiary hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="toggleSingleRead('notif-3')">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- GROUP: YESTERDAY -->
+<div class="timeline-group space-y-3" data-group="yesterday">
+<div class="flex items-center justify-between px-1 pt-3">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase font-bold text-tertiary tracking-wider">Yesterday</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-tertiary">1 Unread Milestone, 1 Offer Adjustment</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">Wednesday, 23 Oct</span>
+</div>
+<!-- Item 4: Career Readiness Score Lift (UNREAD) -->
+<article class="notification-card relative bg-surface-container-lowest p-5 rounded-xl shadow-sm transition-all hover:shadow-md border-l-4 border-secondary-container flex flex-col md:flex-row md:items-start justify-between gap-4" data-category="milestones" data-id="notif-4" data-read="false">
+<div class="flex items-start gap-4 flex-1">
+<input class="item-selector mt-1 w-4 h-4 rounded text-primary accent-primary cursor-pointer" onchange="updateSelectionCount()" type="checkbox"/>
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center shrink-0 text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[22px]">military_tech</span>
+</div>
+<div class="space-y-2 flex-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Algorithmic Readiness Score Elevated to 3.2 / 5.0</h3>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">+0.8 Lift</span>
+<span class="font-label-sm text-label-sm text-tertiary ml-auto">Yesterday, 4:15 PM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    AI verification of your verified Raft consensus lab report and mock benchmark lifted your profile into the top quartile of IIT applicants. <strong class="text-on-surface font-semibold">Stage 5: High-Frequency Systems Interview Prep</strong> is now fully unlocked.
+                  </p>
+<div class="flex flex-wrap items-center gap-3">
+<div class="w-full sm:w-64 bg-surface-container-low h-2.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-secondary h-full rounded-full" style="width: 64%;"></div>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">Tier 1 Target Readiness (64%)</span>
+</div>
+<div class="flex flex-wrap items-center gap-2.5 pt-2">
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">insights</span>
+<span>View Score Breakdown &amp; Rubric</span>
+</button>
+<button class="p-2 rounded-lg text-tertiary hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="toggleSingleRead('notif-4')">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 5: Counter-Offer Accepted (READ) -->
+<article class="notification-card relative bg-surface-container-lowest/70 p-5 rounded-xl shadow-sm transition-all hover:bg-surface-container-lowest border-l-4 border-outline-variant flex flex-col md:flex-row md:items-start justify-between gap-4" data-category="offers" data-id="notif-5" data-read="true">
+<div class="flex items-start gap-4 flex-1">
+<input class="item-selector mt-1 w-4 h-4 rounded text-primary accent-primary cursor-pointer" onchange="updateSelectionCount()" type="checkbox"/>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[22px]">handshake</span>
+</div>
+<div class="space-y-1.5 flex-1">
+<div class="flex flex-wrap items-center gap-2">
+<h3 class="font-title-md text-title-md font-semibold text-on-surface">Counter-Offer Accepted: ₹899 Price Settled</h3>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-tertiary font-label-sm text-label-sm font-medium">Archived Match</span>
+<span class="font-label-sm text-label-sm text-tertiary ml-auto">Yesterday, 11:20 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Mentor agreed to your ₹899 student allowance adjustment on Request <span class="font-mono text-tertiary">#REQ-2026-4390</span>. Slot held for 24 hours.
+                  </p>
+<div class="flex flex-wrap items-center gap-2.5 pt-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium transition-colors">
+<span>Complete Checkout</span>
+</button>
+<button class="p-2 rounded-lg text-tertiary hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="toggleSingleRead('notif-5')">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- GROUP: THIS WEEK -->
+<div class="timeline-group space-y-3" data-group="this-week">
+<div class="flex items-center justify-between px-1 pt-3">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase font-bold text-tertiary tracking-wider">Earlier This Week</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-tertiary">2 Transactional Alerts</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">21 - 22 Oct</span>
+</div>
+<!-- Item 6: Pro Renewal (READ) -->
+<article class="notification-card relative bg-surface-container-lowest/70 p-5 rounded-xl shadow-sm transition-all hover:bg-surface-container-lowest border-l-4 border-outline-variant flex flex-col md:flex-row md:items-start justify-between gap-4" data-category="billing" data-id="notif-6" data-read="true">
+<div class="flex items-start gap-4 flex-1">
+<input class="item-selector mt-1 w-4 h-4 rounded text-primary accent-primary cursor-pointer" onchange="updateSelectionCount()" type="checkbox"/>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[22px]">credit_card</span>
+</div>
+<div class="space-y-1.5 flex-1">
+<div class="flex flex-wrap items-center gap-2">
+<h3 class="font-title-md text-title-md font-semibold text-on-surface">Razorpay AutoPay: DreamX Pro Subscription Renewed</h3>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-tertiary font-label-sm text-label-sm font-medium">Billed ₹149</span>
+<span class="font-label-sm text-label-sm text-tertiary ml-auto">Oct 21, 9:00 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Monthly subscription renewed via UPI AutoPay. 100 new monthly AI credits added to your active wallet balance. GST invoice is available for download.
+                  </p>
+<div class="flex flex-wrap items-center gap-2.5 pt-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium transition-colors">
+<span class="material-symbols-outlined text-[16px]">receipt</span>
+<span>Download Invoice #INV-2026-7812</span>
+</button>
+<button class="p-2 rounded-lg text-tertiary hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="toggleSingleRead('notif-6')">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 7: Pre-Session Calibration (READ) -->
+<article class="notification-card relative bg-surface-container-lowest/70 p-5 rounded-xl shadow-sm transition-all hover:bg-surface-container-lowest border-l-4 border-outline-variant flex flex-col md:flex-row md:items-start justify-between gap-4" data-category="bookings" data-id="notif-7" data-read="true">
+<div class="flex items-start gap-4 flex-1">
+<input class="item-selector mt-1 w-4 h-4 rounded text-primary accent-primary cursor-pointer" onchange="updateSelectionCount()" type="checkbox"/>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[22px]">checklist</span>
+</div>
+<div class="space-y-1.5 flex-1">
+<div class="flex flex-wrap items-center gap-2">
+<h3 class="font-title-md text-title-md font-semibold text-on-surface">Pre-Session Calibration Packet Synchronized</h3>
+<span class="font-label-sm text-label-sm text-tertiary ml-auto">Oct 20, 6:40 PM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    System Design syllabus, baseline rubrics, and previous feedback notes bundled for your upcoming session with Vikram Singh.
+                  </p>
+<div class="flex flex-wrap items-center gap-2.5 pt-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium transition-colors">
+<span>View Calibration Checklist</span>
+</button>
+<button class="p-2 rounded-lg text-tertiary hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="toggleSingleRead('notif-7')">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Empty state placeholder (hidden by default) -->
+<div class="hidden flex-col items-center justify-center py-16 px-4 bg-surface-container-lowest rounded-xl shadow-sm text-center" id="empty-state-notice">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-tertiary mb-3">
+<span class="material-symbols-outlined text-[28px]">notifications_off</span>
+</div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface">No notifications found</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-1">
+            No alerts match your current filter or keyword. Try resetting your search or switching categories.
+          </p>
+<button class="mt-4 px-4 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-semibold" onclick="resetAllFilters()">
+            Reset Filters
+          </button>
+</div>
+</div>
+<!-- Right Sidebar Column (340px) -->
+<div class="xl:col-span-4 space-y-6">
+<!-- Notification Summary Metrics Card -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-primary">Student SLA &amp; Volume</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">IITD Fast Track</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 bg-surface-container-low rounded-lg space-y-0.5">
+<span class="font-label-sm text-label-sm text-tertiary">Actionable Items</span>
+<div class="font-metric-num text-metric-num font-bold text-on-surface" id="metrics-actionable">4</div>
+<span class="font-body-sm text-body-sm text-secondary font-medium">2 Urgent &lt; 24h</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg space-y-0.5">
+<span class="font-label-sm text-label-sm text-tertiary">On-Time SLA</span>
+<div class="font-metric-num text-metric-num font-bold text-primary">99.8%</div>
+<span class="font-body-sm text-body-sm text-tertiary">Escrow Verified</span>
+</div>
+</div>
+<div class="pt-2 border-t border-surface-container">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Next Calendar Event:</span>
+<span class="font-semibold text-on-surface">Tomorrow, 7:30 PM IST</span>
+</div>
+</div>
+</div>
+<!-- Escrow & Dispute Alert Guard -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm space-y-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface leading-snug">Escrow Protection Guard</h4>
+<span class="font-label-sm text-label-sm text-tertiary">Section 18.2 Dispute Policy</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            All mentor payments are securely held by DreamX Escrow. You hold a mandatory <strong>72-hour student inspection window</strong> after deliverable upload to audit ATS rubrics or dispute quality before auto-release.
+          </p>
+<div class="p-3 bg-surface-container-low rounded-lg space-y-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-medium text-on-surface">Active Escrow: Order #DEL-8803</span>
+<span class="text-primary font-bold">68 hrs left</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">gavel</span>
+<span>Open Dispute Center</span>
+</button>
+</div>
+</div>
+<!-- Channel Delivery Controls Widget -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<h4 class="font-title-md text-title-md font-bold text-on-surface">Alert Channels</h4>
+<span class="font-label-sm text-label-sm text-primary font-bold">Instant Dispatch</span>
+</div>
+<div class="space-y-3">
+<!-- Channel 1: In-App Live -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary">browser_updated</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">In-App Live Push</div>
+<span class="font-label-sm text-label-sm text-tertiary">Realtime WebSockets</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="toggleChannelState(this, 'In-App')" type="checkbox"/>
+<div class="w-9 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Channel 2: Resend Email -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-secondary">mail</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Email via Resend</div>
+<span class="font-label-sm text-label-sm text-tertiary truncate max-w-[150px] inline-block">ananya.s***@iitd.ac.in</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="toggleChannelState(this, 'Email')" type="checkbox"/>
+<div class="w-9 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Channel 3: WhatsApp Dispatch -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-tertiary">chat</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">WhatsApp Alerts</div>
+<span class="font-label-sm text-label-sm text-tertiary">+91 98110 •••••</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="toggleChannelState(this, 'WhatsApp')" type="checkbox"/>
+<div class="w-9 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<button class="w-full text-center font-label-sm text-label-sm font-semibold text-primary hover:underline pt-1" onclick="togglePreferencesModal(true)">
+            Configure Granular Notification Categories →
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Preferences Modal (Triggered by Channels & Rules) -->
+<div class="fixed inset-0 z-50 hidden bg-on-background/40 backdrop-blur-sm flex items-center justify-center p-4" id="preferences-modal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-2xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<div class="p-6 border-b border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Notification Preferences</h3>
+<p class="font-body-sm text-body-sm text-tertiary">Fine-tune alert dispatches for IIT Delhi placement sprint</p>
+</div>
+</div>
+<button class="p-1 rounded-lg text-tertiary hover:text-on-surface hover:bg-surface-container-low" onclick="togglePreferencesModal(false)">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<div class="p-6 space-y-4 max-h-[614px] overflow-y-auto">
+<div class="space-y-3">
+<h4 class="font-label-sm text-label-sm font-bold uppercase text-primary tracking-wider">Alert Frequency</h4>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low cursor-pointer">
+<input checked="" class="w-4 h-4 text-primary accent-primary" name="freq" type="radio"/>
+<div class="text-body-sm font-body-sm">
+<span class="font-semibold text-on-surface block">Instant Realtime Push</span>
+<span class="text-tertiary">Immediate notification for bids, room links, and rubrics.</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low cursor-pointer">
+<input class="w-4 h-4 text-primary accent-primary" name="freq" type="radio"/>
+<div class="text-body-sm font-body-sm">
+<span class="font-semibold text-on-surface block">Twice Daily Digest</span>
+<span class="text-tertiary">Consolidated briefing at 8:00 AM &amp; 8:00 PM IST.</span>
+</div>
+</label>
+</div>
+<div class="space-y-3 pt-2">
+<h4 class="font-label-sm text-label-sm font-bold uppercase text-primary tracking-wider">Trigger Events</h4>
+<div class="space-y-2">
+<label class="flex items-center justify-between text-body-sm font-body-sm py-1.5">
+<span>New Mentor Bids &amp; Counter-Offers</span>
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between text-body-sm font-body-sm py-1.5">
+<span>Session Room Provisioning &amp; Link</span>
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between text-body-sm font-body-sm py-1.5">
+<span>ATS Rubric Upload &amp; 72h Escrow Timers</span>
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between text-body-sm font-body-sm py-1.5">
+<span>AI Readiness Score Benchmark Lifts</span>
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low border-t border-surface-container flex items-center justify-end gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-medium" onclick="togglePreferencesModal(false)">Cancel</button>
+<button class="px-5 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm hover:bg-primary-container" onclick="saveNotificationPreferences()">Save Preferences</button>
+</div>
+</div>
+</div>
+<!-- Toast Notification element -->
+<div class="fixed bottom-6 right-6 z-50 hidden bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 font-body-sm text-body-sm transition-all duration-300" id="toast-pill">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">check_circle</span>
+<span id="toast-message">Preferences updated</span>
+</div>
+</div>
+<script>
+  let isUnreadFilterActive = false;
+  let activeCategory = 'all';
+
+  function showToast(message) {
+    const toast = document.getElementById('toast-pill');
+    const msgEl = document.getElementById('toast-message');
+    if (!toast || !msgEl) return;
+    msgEl.textContent = message;
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 2800);
+  }
+
+  function getUnreadCount() {
+    const unreadItems = document.querySelectorAll('.notification-card[data-read="false"]');
+    return unreadItems.length;
+  }
+
+  function updateUnreadBadges() {
+    const count = getUnreadCount();
+    const badge = document.getElementById('unread-counter-badge');
+    const metric = document.getElementById('metrics-actionable');
+    if (badge) badge.textContent = count;
+    if (metric) metric.textContent = count;
+  }
+
+  function toggleUnreadFilter() {
+    isUnreadFilterActive = !isUnreadFilterActive;
+    const btn = document.getElementById('unread-only-toggle');
+    if (isUnreadFilterActive) {
+      btn.classList.add('bg-primary', 'text-on-primary');
+      btn.classList.remove('bg-primary-fixed', 'text-on-primary-fixed');
+    } else {
+      btn.classList.remove('bg-primary', 'text-on-primary');
+      btn.classList.add('bg-primary-fixed', 'text-on-primary-fixed');
+    }
+    applyVisibilityFilters();
+  }
+
+  function setCategoryTab(category, btnElement) {
+    activeCategory = category;
+    document.querySelectorAll('.category-tab-btn').forEach(btn => {
+      btn.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+      btn.classList.add('text-on-surface-variant', 'font-medium');
+    });
+    btnElement.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+    btnElement.classList.remove('text-on-surface-variant', 'font-medium');
+    applyVisibilityFilters();
+  }
+
+  function filterBySearch(keyword) {
+    applyVisibilityFilters(keyword.trim().toLowerCase());
+  }
+
+  function applyVisibilityFilters(searchQuery = '') {
+    const q = searchQuery || (document.getElementById('notification-search')?.value.trim().toLowerCase() || '');
+    const cards = document.querySelectorAll('.notification-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const isRead = card.getAttribute('data-read') === 'true';
+      const category = card.getAttribute('data-category');
+      const text = card.textContent.toLowerCase();
+
+      let matchesCategory = (activeCategory === 'all') || (category === activeCategory);
+      let matchesUnread = !isUnreadFilterActive || (!isRead);
+      let matchesSearch = !q || text.includes(q);
+
+      if (matchesCategory && matchesUnread && matchesSearch) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Check timeline groups headers
+    document.querySelectorAll('.timeline-group').forEach(group => {
+      const visibleChildren = group.querySelectorAll('.notification-card:not([style*="display: none"])');
+      group.style.display = visibleChildren.length > 0 ? 'block' : 'none';
+    });
+
+    const emptyState = document.getElementById('empty-state-notice');
+    if (emptyState) {
+      emptyState.style.display = visibleCount === 0 ? 'flex' : 'none';
+    }
+  }
+
+  function markAllNotificationsAsRead() {
+    const unreadCards = document.querySelectorAll('.notification-card[data-read="false"]');
+    unreadCards.forEach(card => {
+      card.setAttribute('data-read', 'true');
+      card.classList.add('bg-surface-container-lowest/70');
+      card.classList.remove('border-l-4', 'border-secondary', 'border-primary', 'border-primary-container', 'border-secondary-container');
+      card.classList.add('border-l-4', 'border-outline-variant');
+      const dot = card.querySelector('.animate-pulse, .bg-secondary, .bg-primary');
+      if (dot) dot.remove();
+    });
+    updateUnreadBadges();
+    applyVisibilityFilters();
+    showToast('All notifications marked as read');
+  }
+
+  function toggleSingleRead(cardId) {
+    const card = document.querySelector(`.notification-card[data-id="${cardId}"]`);
+    if (!card) return;
+    const isCurrentlyRead = card.getAttribute('data-read') === 'true';
+    if (isCurrentlyRead) {
+      card.setAttribute('data-read', 'false');
+      card.classList.remove('bg-surface-container-lowest/70');
+      showToast('Marked as unread');
+    } else {
+      card.setAttribute('data-read', 'true');
+      card.classList.add('bg-surface-container-lowest/70');
+      showToast('Marked as read');
+    }
+    updateUnreadBadges();
+    applyVisibilityFilters();
+  }
+
+  function updateSelectionCount() {
+    const selected = document.querySelectorAll('.item-selector:checked');
+    const counter = document.getElementById('selected-count');
+    if (counter) counter.textContent = selected.length;
+  }
+
+  function toggleSelectAll(masterCheckbox) {
+    const visibleCheckboxes = document.querySelectorAll('.notification-card:not([style*="display: none"]) .item-selector');
+    visibleCheckboxes.forEach(cb => {
+      cb.checked = masterCheckbox.checked;
+    });
+    updateSelectionCount();
+  }
+
+  function batchAction(action) {
+    const selectedBoxes = document.querySelectorAll('.item-selector:checked');
+    if (selectedBoxes.length === 0 && action !== 'clear-read') {
+      showToast('No notifications selected');
+      return;
+    }
+
+    if (action === 'read') {
+      selectedBoxes.forEach(cb => {
+        const card = cb.closest('.notification-card');
+        if (card) {
+          card.setAttribute('data-read', 'true');
+          card.classList.add('bg-surface-container-lowest/70');
+          cb.checked = false;
+        }
+      });
+      showToast(`Marked ${selectedBoxes.length} items as read`);
+    } else if (action === 'archive') {
+      selectedBoxes.forEach(cb => {
+        const card = cb.closest('.notification-card');
+        if (card) card.remove();
+      });
+      showToast(`Archived ${selectedBoxes.length} notifications`);
+    } else if (action === 'clear-read') {
+      const readCards = document.querySelectorAll('.notification-card[data-read="true"]');
+      readCards.forEach(c => c.remove());
+      showToast(`Cleared ${readCards.length} read notifications`);
+    }
+
+    const master = document.getElementById('select-all-checkbox');
+    if (master) master.checked = false;
+    updateSelectionCount();
+    updateUnreadBadges();
+    applyVisibilityFilters();
+  }
+
+  function resetAllFilters() {
+    isUnreadFilterActive = false;
+    activeCategory = 'all';
+    const search = document.getElementById('notification-search');
+    if (search) search.value = '';
+    const btn = document.getElementById('unread-only-toggle');
+    if (btn) {
+      btn.classList.remove('bg-primary', 'text-on-primary');
+      btn.classList.add('bg-primary-fixed', 'text-on-primary-fixed');
+    }
+    const allTab = document.querySelector('.category-tab-btn');
+    if (allTab) setCategoryTab('all', allTab);
+  }
+
+  function togglePreferencesModal(show) {
+    const modal = document.getElementById('preferences-modal');
+    if (!modal) return;
+    if (show) {
+      modal.classList.remove('hidden');
+    } else {
+      modal.classList.add('hidden');
+    }
+  }
+
+  function saveNotificationPreferences() {
+    togglePreferencesModal(false);
+    showToast('Saved placement sprint dispatch preferences');
+  }
+
+  function toggleChannelState(checkbox, channelName) {
+    showToast(`${channelName} alerts ${checkbox.checked ? 'activated' : 'muted'}`);
+  }
+
+  function sortNotificationList(criteria) {
+    showToast(`Sorted by ${criteria}`);
+  }
+</script></main></div></body></html>

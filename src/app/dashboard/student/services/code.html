@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-container":"#fdfcff","primary-fixed":"#e1e0ff","outline-variant":"#c7c4d7","on-tertiary-fixed-variant":"#3a485b","surface-container-low":"#f2f3ff","inverse-on-surface":"#eef0ff","on-secondary-fixed-variant":"#5516be","outline":"#767586","on-background":"#131b2e","on-error":"#ffffff","tertiary-container":"#67758b","surface-tint":"#494bd6","inverse-primary":"#c0c1ff","surface":"#faf8ff","on-error-container":"#93000a","on-surface":"#131b2e","on-surface-variant":"#464554","secondary-container":"#8455ef","primary-container":"#6063ee","surface-container-highest":"#dae2fd","primary-fixed-dim":"#c0c1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","on-tertiary-fixed":"#0d1c2e","secondary":"#6b38d4","primary":"#4648d4","tertiary-fixed-dim":"#b9c7df","surface-bright":"#faf8ff","on-secondary-container":"#fffbff","on-secondary-fixed":"#23005c","surface-container-high":"#e2e7ff","inverse-surface":"#283044","on-primary-fixed":"#07006c","tertiary-fixed":"#d5e3fc","tertiary":"#4f5d71","on-secondary":"#ffffff","on-primary":"#ffffff","secondary-fixed-dim":"#d0bcff","surface-dim":"#d2d9f4","on-primary-fixed-variant":"#2f2ebe","error":"#ba1a1a","background":"#faf8ff","on-primary-container":"#fffbff","secondary-fixed":"#e9ddff","surface-container":"#eaedff","surface-variant":"#dae2fd","on-tertiary":"#ffffff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","space-sm":"0.5rem",margin:"2rem","space-xs":"0.25rem","space-lg":"1.5rem","space-xl":"2rem",gutter:"1.5rem"},fontFamily:{"display-hero-mobile":["Inter"],"headline-lg-mobile":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"title-md":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"metric-num":["Inter"],"body-lg":["Inter"],"display-hero":["Inter"],"label-sm":["Inter"]},fontSize:{"display-hero-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"500"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"18px",letterSpacing:"0.005em",fontWeight:"400"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"metric-num":["28px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"400"}],"display-hero":["48px",{lineHeight:"56px",letterSpacing:"-0.025em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[22px]">auto_awesome</span></div><div class="flex flex-col"><span class="font-title-md text-title-md font-bold text-on-surface leading-tight tracking-tight">DreamX</span><span class="font-label-sm text-label-sm text-tertiary tracking-wide uppercase font-semibold">Student Portal</span></div></div><button class="p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">dock_to_left</span></button></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-home" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Home</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="discover-goals" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span>Discover Goals</span></a><div class="pt-2 pb-1"><div class="flex items-center justify-between px-space-md py-1.5 text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">event_available</span><span class="font-body-md text-body-md font-medium">Services &amp; Bookings</span></div><span class="material-symbols-outlined text-[16px]">expand_more</span></div><div class="ml-6 pl-space-sm flex flex-col gap-0.5 mt-1"><a class="flex items-center px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="active-bookings" href="#">Active Bookings</a><a class="flex items-center px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="smart-requests-offers" href="#">Smart Requests &amp; Offers</a></div></div><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="programs-cohorts" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Programs &amp; Cohorts</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="career-journey" href="#"><span class="material-symbols-outlined text-[20px]">alt_route</span><span>Career Journey Roadmap</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="readiness-score" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span>Career Readiness Score</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ai-assistant" href="#"><span class="material-symbols-outlined text-[20px]">neurology</span><span>AI Assistant &amp; Recomms</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="deliverables-reports" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span>Deliverables &amp; Reports</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="membership-billing" href="#"><span class="material-symbols-outlined text-[20px]">credit_card</span><span>Membership &amp; Billing</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div></div><div class="p-space-md flex flex-col gap-space-sm"><div class="p-space-md rounded-xl bg-surface-container-low shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-primary">Pro Plan</span><span class="font-label-sm text-label-sm text-tertiary">Active</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">100 Monthly AI Credits • Renews Aug 1</p><button class="mt-space-xs w-full py-1.5 px-space-sm rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-colors shadow-sm" type="button">Upgrade to Elite</button></div><div class="flex items-center justify-between px-space-sm py-space-xs"><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">swap_horiz</span><span>Switch Portal</span></button><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-error font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">logout</span><span>Log out</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><button class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button><div class="flex items-center gap-space-xs font-body-sm text-body-sm"><span class="text-tertiary">Dashboard</span><span class="text-tertiary">/</span><span class="text-on-surface font-medium">Student Home</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-1.5 rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px] text-primary">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">⌘K AI Search</span></button><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[16px] text-tertiary">public</span><span>Target: CM-IN (India Tech) • IST</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md"><span class="font-medium">⚡ 47 AI Credits</span><button class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center hover:bg-secondary-container transition-colors" type="button"><span class="material-symbols-outlined text-[14px]">add</span></button></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><div class="flex items-center gap-space-xs justify-end"><span class="font-title-md text-body-md font-semibold text-on-surface leading-none">Ananya S.</span><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase font-bold">PRO</span></div><span class="font-label-sm text-label-sm text-tertiary">3rd Yr CS @ IIT Delhi</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 px-gutter bg-surface min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- Top Context Header & Actions -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-lg mb-space-xl">
+<div class="flex flex-col gap-1 max-w-3xl">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-tertiary mb-1">
+<span class="hover:text-primary transition-colors cursor-pointer">Dashboard</span>
+<span>/</span>
+<span class="text-on-surface font-semibold">Services &amp; Bookings</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Services &amp; Active Bookings</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Manage your 1-on-1 scheduled sessions, track active Smart Match requests, compare verified mentor offers, and inspect verified deliverable reports.
+      </p>
+</div>
+<!-- Quick Action Cluster -->
+<div class="flex flex-wrap items-center gap-space-sm self-start xl:self-auto">
+<div class="flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<span class="font-label-md text-label-md font-medium">Google Calendar Synced</span>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface hover:bg-surface-container transition-all font-label-md text-label-md font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">explore</span>
+<span>Submit Smart Match</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary text-on-primary shadow-sm hover:bg-primary-container transition-all font-label-md text-label-md font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Book New 1:1 Service</span>
+</button>
+</div>
+</div>
+<!-- Operational Metrics 4-Card Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-tertiary">Active Bookings</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-metric-num text-metric-num text-on-surface">2 Scheduled</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Next session in 3 hours
+        </p>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-tertiary">Smart Match Queue</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-metric-num text-metric-num text-on-surface">1 Live Bidding</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">3 reverse offers pending</p>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-tertiary">Verified Deliverables</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-metric-num text-metric-num text-on-surface">5 Completed</div>
+<p class="font-body-sm text-body-sm text-tertiary mt-1">100% Escrow disbursed</p>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-secondary">Pro Savings</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">savings</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-metric-num text-metric-num text-secondary">₹820 Saved</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">15% auto-discount applied</p>
+</div>
+</div>
+</div>
+<!-- Primary Tab Segmented Control -->
+<div class="flex items-center gap-space-xs p-1 rounded-xl bg-surface-container-low max-w-fit mb-space-lg" id="service-tabs">
+<button class="tab-btn flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface font-label-md text-label-md font-semibold transition-all" id="tab-btn-active-bookings" onclick="switchTab('active-bookings')" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">event_available</span>
+<span>Active Bookings</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold">2</span>
+</button>
+<button class="tab-btn flex items-center gap-2 px-space-md py-2 rounded-lg text-tertiary hover:text-on-surface font-label-md text-label-md font-medium transition-all" id="tab-btn-match-requests" onclick="switchTab('match-requests')" type="button">
+<span class="material-symbols-outlined text-[18px]">neurology</span>
+<span>Smart Match Queue</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary text-[11px] font-bold">1</span>
+</button>
+<button class="tab-btn flex items-center gap-2 px-space-md py-2 rounded-lg text-tertiary hover:text-on-surface font-label-md text-label-md font-medium transition-all" id="tab-btn-received-offers" onclick="switchTab('received-offers')" type="button">
+<span class="material-symbols-outlined text-[18px]">local_offer</span>
+<span>Received Offers</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-bold">3</span>
+</button>
+<button class="tab-btn flex items-center gap-2 px-space-md py-2 rounded-lg text-tertiary hover:text-on-surface font-label-md text-label-md font-medium transition-all" id="tab-btn-booking-history" onclick="switchTab('booking-history')" type="button">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+<span>Deliverables &amp; History</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary text-[11px] font-bold">4</span>
+</button>
+</div>
+<!-- TAB 1: ACTIVE BOOKINGS (DEFAULT) -->
+<div class="tab-panel flex flex-col gap-space-lg" id="tab-content-active-bookings">
+<!-- Booking 1: Immediate / Today -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary"></div>
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-space-lg">
+<div class="flex flex-col gap-space-md flex-1">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span> Today's Session
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-low text-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span> 100% Escrow Protected
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">
+              ID: BK-2026-8902
+            </span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Mock Interview: Technical &amp; System Design</h2>
+<div class="flex items-center gap-space-sm text-tertiary font-body-sm text-body-sm mt-1">
+<span class="flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span> 60 Minutes
+              </span>
+<span>•</span>
+<span class="text-on-surface">Today, July 26, 2026</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">7:00 PM – 8:00 PM IST</span>
+</div>
+</div>
+<!-- Mentor Profile Card Micro-layout -->
+<div class="flex items-center gap-space-md p-space-md rounded-xl bg-surface-container-low">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Professional studio portrait of Vikram Singh, Senior AI Engineer at Google Cloud, wearing a charcoal blazer with subtle navy backdrop, soft modern studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQYteqJPjN_6Y6sbuPJAdSHjDI6ppClVO2coplZ9o0i0yBQt-w_vBvPf4MvdMNCw32sc8f-PZLqUB7E3IFdG9XNLPc7UlLwxqZLAZkq5r2dwnk7QXVqk3Xoapeiuj7ORbm1sKwy2XNgJoLYimsWQMW_LJSa-0eSz-Q5mS_GC9G3H2ljx_4CywYSYhD_AWp_GLZKH37MNv5xbsogAUzfrzhLod2hoF4k-Pl62QRKgwO4MWcWUuxDYpl"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-on-surface truncate">Vikram Singh</span>
+<span class="material-symbols-outlined text-[16px] text-primary" title="Verified Big Tech Mentor">verified</span>
+<div class="flex items-center gap-0.5 text-on-surface font-label-md text-label-md ml-auto">
+<span class="material-symbols-outlined text-[16px] text-secondary">star</span>
+<span class="font-bold">4.95</span>
+<span class="text-tertiary">(84 reviews)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Senior AI Engineer @ Google Cloud • ex-Amazon Bar Raiser</p>
+</div>
+</div>
+<!-- Pre-session callout -->
+<div class="flex items-start gap-space-sm p-space-sm px-space-md rounded-lg bg-surface-container-high text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">assignment_turned_in</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold">Pre-session Intake Sheet Received</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Focus Area: "Real-time notification WebSocket scaling under 500k concurrent client connections."</p>
+</div>
+</div>
+</div>
+<!-- Right Side: Logistics, Escrow & Meeting Launch -->
+<div class="flex flex-col justify-between gap-space-md lg:w-80 p-space-md rounded-xl bg-surface-container-low">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-tertiary font-body-sm text-body-sm">
+<span>Financial Snapshot</span>
+<span class="font-semibold text-secondary">Pro 15% Applied</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-metric-num text-headline-md font-bold text-on-surface">₹1,019</span>
+<span class="font-body-sm text-body-sm text-tertiary line-through">₹1,199 catalog</span>
+</div>
+<p class="font-label-sm text-label-sm text-tertiary">Payout held in DreamX Safe Escrow until deliverable approval.</p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="w-full py-2.5 px-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-space-xs hover:bg-primary-container shadow-sm transition-all text-center" href="https://meet.google.com/abc-defg-hij" target="_blank">
+<span class="material-symbols-outlined text-[18px]">videocam</span>
+<span>Join Google Meet</span>
+</a>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-space-xs rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium shadow-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Intake Sheet</span>
+</button>
+<button class="py-2 px-space-xs rounded-lg bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md font-medium shadow-sm hover:text-on-surface transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Reschedule</span>
+</button>
+</div>
+</div>
+<div class="text-[11px] leading-tight text-tertiary text-center">
+            Free rescheduling available until 7:00 AM today (&gt;12h rule)
+          </div>
+</div>
+</div>
+</div>
+<!-- Booking 2: Upcoming / In 3 Days -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg relative overflow-hidden">
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-space-lg">
+<div class="flex flex-col gap-space-md flex-1">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event</span> In 3 Days
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-low text-tertiary font-label-sm text-label-sm font-semibold">
+              Confirmed &amp; Calendar Synced
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm">
+              ID: BK-2026-9041
+            </span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Resume &amp; ATS Optimization (Big Tech Calibrated)</h2>
+<div class="flex items-center gap-space-sm text-tertiary font-body-sm text-body-sm mt-1">
+<span class="flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">timer</span> 45 Minutes
+              </span>
+<span>•</span>
+<span class="text-on-surface">Tuesday, July 29, 2026</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">8:30 PM – 9:15 PM IST</span>
+</div>
+</div>
+<!-- Mentor Profile -->
+<div class="flex items-center gap-space-md p-space-md rounded-xl bg-surface-container-low">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Polished corporate headshot of Rohan Verma, Senior Engineering Manager at Amazon, wearing navy casual shirt in contemporary glass office background with soft evening lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf7zNyVlS3N3JVGBvp4VgWoGJ1Ill9kZ0404AXR3VhnwTbOCZx_mW6ylQpg9H7lPjRw4MhAwEvkcsNBXNIzzsHAjm2LjUNKBePR1qQciFKTx9HTAVCt5Tu8fD0e77Iyr1bY_WAFCcGTOI2RW48n40uFxS8B8_iw8tZPE612nt7fi2bmzjd2J626uXCLL5SGJ5dZ-u8Yy1wEQcyyWjDCeS9keK6oyeE10mdWAArNWjNAdHdpWvjiyDB"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-on-surface truncate">Rohan Verma</span>
+<span class="material-symbols-outlined text-[16px] text-primary" title="Verified Big Tech Mentor">verified</span>
+<div class="flex items-center gap-0.5 text-on-surface font-label-md text-label-md ml-auto">
+<span class="material-symbols-outlined text-[16px] text-secondary">star</span>
+<span class="font-bold">4.98</span>
+<span class="text-tertiary">(112 reviews)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Sr. Engineering Manager @ Amazon • Systems &amp; Leadership Hiring</p>
+</div>
+</div>
+<!-- Attached Document Preview Card -->
+<div class="flex items-center justify-between p-space-sm px-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-primary text-[22px]">picture_as_pdf</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Ananya_Resume_Google_SDE_v2.pdf</span>
+<span class="font-label-sm text-label-sm text-tertiary">Attached for mentor audit • 248 KB</span>
+</div>
+</div>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span>Preview</span>
+</button>
+</div>
+</div>
+<!-- Right Side: Actions -->
+<div class="flex flex-col justify-between gap-space-md lg:w-80 p-space-md rounded-xl bg-surface-container-low">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-tertiary font-body-sm text-body-sm">
+<span>Financial Escrow</span>
+<span class="text-primary font-semibold">Active Deposit</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-metric-num text-headline-md font-bold text-on-surface">₹764</span>
+<span class="font-body-sm text-body-sm text-tertiary line-through">₹899 catalog</span>
+</div>
+<p class="font-label-sm text-label-sm text-tertiary">Calendar invite dispatched to your registered Google Account.</p>
+</div>
+<div class="flex flex-col gap-2">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Message Mentor</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-space-xs rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium shadow-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Details</span>
+</button>
+<button class="py-2 px-space-xs rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium shadow-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+<span>Reschedule</span>
+</button>
+</div>
+</div>
+<div class="text-[11px] leading-tight text-tertiary text-center">
+            Free rescheduling available until July 29, 8:30 AM IST
+          </div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2: LIVE SMART MATCH QUEUE -->
+<div class="tab-panel hidden flex flex-col gap-space-lg" id="tab-content-match-requests">
+<!-- Active Request Status Banner -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[24px]">radar</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase font-bold">Live Request</span>
+<span class="font-body-sm text-body-sm text-tertiary">Submitted 6h ago</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">ATS Resume Review &amp; Distributed Systems Audit</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Budget Target: ₹750 – ₹1,000 • Desired Window: July 28–30, Evenings IST</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md self-end lg:self-auto">
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-tertiary block">Bidding Window Closes</span>
+<span class="font-title-md text-title-md font-bold text-error flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-[18px]">timer</span> 18h 42m remaining
+          </span>
+</div>
+<button class="py-2 px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold transition-colors" type="button">
+          Edit Request
+        </button>
+</div>
+</div>
+<!-- Live Reverse Bids Grid -->
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<h3 class="font-title-md text-title-md font-bold text-on-surface">3 Mentors Submitted Reverse Offers</h3>
+<span class="font-label-sm text-label-sm text-tertiary">Reverse-bid pricing valid until window expiration</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Bid 1: Recommended Top Match -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
+                94% Match Fit
+              </span>
+<span class="font-metric-num text-headline-sm font-bold text-on-surface">₹899</span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of Vikram Singh, Staff AI Specialist at Google Cloud, wearing business casual attire with natural office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCep7Slx08cnk91PE5mRjTtm9TzWKVw-40Br1cLExIJ5h1W80JjDXSL05ZghK2CLbcAnav6ZYnF7_kL-MMAUOl9CNW5M4MimpYMwth7-mTAIxsL2-M8t-tpx0HN7fw0OfYsMYDOAwewz7Y94h8i3M90a6OgU-ySjF0upahdQ86XM-elfrq7nqV6HB6EzKIgkSuf2xDDxfFyZXj_FyQEBoFM3-LAwK5fG5Xx6MgmUs1odKXPwQ02i3HR"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Vikram Singh</span>
+<span class="font-body-sm text-body-sm text-tertiary truncate">Google Staff AI • 4.95★</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="font-label-sm text-label-sm text-tertiary mb-1">Proposed Slot</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">event</span>
+                July 28 @ 8:00 PM IST
+              </div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mb-space-md">
+              "I've reviewed your attached resume and will tailor our review to Google L4 systems rubric."
+            </p>
+</div>
+<div class="flex flex-col gap-2">
+<button class="w-full py-2 px-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container shadow-sm transition-all" type="button">
+              Accept Offer &amp; Pay (₹899)
+            </button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-1.5 px-space-xs rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm font-medium hover:bg-surface-container transition-colors" type="button">
+                Counter (1 left)
+              </button>
+<button class="py-1.5 px-space-xs rounded-lg bg-surface-container-low text-tertiary font-label-sm text-label-sm font-medium hover:text-error transition-colors" type="button">
+                Decline
+              </button>
+</div>
+</div>
+</div>
+<!-- Bid 2: High Value Offer -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">
+                88% Match Fit
+              </span>
+<span class="font-metric-num text-headline-sm font-bold text-on-surface">₹799</span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of Devika Rao, Principal Architect at Fintech scaleup, smiling confident with clean modern studio backdrop and warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx3CelRB1mGpWbxbp5PlQ4S_SLyQtJ2QY6qwbTroZQJieRY8AoaZ-uSlQvfVwaharIi3cnR63nioNG-1Yi5imXS5rGQn48UplHamzvssjOtmxVuYLZ1nwYmFZIIMQPaZbXrn-tbNt8kOIASBcqE4Wsxf3VKW9nJHeHbsv3TikUVkh-yTlHV7wlL7bFGecz5V6jML_osMvzTp1oPgc3g6h6l4JPOIjWPUvD0jh9dhRFMteKSjpoQjzm"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Devika Rao</span>
+<span class="font-body-sm text-body-sm text-tertiary truncate">Principal Architect • ex-Stripe • 4.96★</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="font-label-sm text-label-sm text-tertiary mb-1">Proposed Slot</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">event</span>
+                July 29 @ 7:00 PM IST
+              </div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mb-space-md">
+              "Hands-on review with concrete bullet-point revisions for distributed event queues."
+            </p>
+</div>
+<div class="flex flex-col gap-2">
+<button class="w-full py-2 px-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container shadow-sm transition-all" type="button">
+              Accept Offer &amp; Pay (₹799)
+            </button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-1.5 px-space-xs rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm font-medium hover:bg-surface-container transition-colors" type="button">
+                Counter
+              </button>
+<button class="py-1.5 px-space-xs rounded-lg bg-surface-container-low text-tertiary font-label-sm text-label-sm font-medium hover:text-error transition-colors" type="button">
+                Decline
+              </button>
+</div>
+</div>
+</div>
+<!-- Bid 3 -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">
+                82% Match Fit
+              </span>
+<span class="font-metric-num text-headline-sm font-bold text-on-surface">₹850</span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary">
+                KS
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Karthik S.</span>
+<span class="font-body-sm text-body-sm text-tertiary truncate">AI Architect • 4.97★</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="font-label-sm text-label-sm text-tertiary mb-1">Proposed Slot</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">event</span>
+                July 30 @ 9:00 PM IST
+              </div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mb-space-md">
+              "Deep dive into backend caching layers and telemetry patterns on your projects."
+            </p>
+</div>
+<div class="flex flex-col gap-2">
+<button class="w-full py-2 px-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container shadow-sm transition-all" type="button">
+              Accept Offer
+            </button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-1.5 px-space-xs rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm font-medium hover:bg-surface-container transition-colors" type="button">
+                Counter
+              </button>
+<button class="py-1.5 px-space-xs rounded-lg bg-surface-container-low text-tertiary font-label-sm text-label-sm font-medium hover:text-error transition-colors" type="button">
+                Decline
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 3: RECEIVED OFFERS (Direct View) -->
+<div class="tab-panel hidden flex flex-col gap-space-lg" id="tab-content-received-offers">
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Active Reverse Auction Bids</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Review verified mentor bids for your open inquiries. Escrow guarantees 100% refund if not satisfied.</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold">3 Actionable Offers</span>
+</div>
+<div class="divide-y divide-surface-container-low flex flex-col">
+<!-- Item 1 -->
+<div class="py-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">VS</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-on-surface">Vikram Singh</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold">94% Fit</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Proposed: July 28 @ 8:00 PM IST • Mock System Design</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="text-right">
+<span class="font-metric-num text-headline-sm font-bold text-on-surface">₹899</span>
+<span class="font-label-sm text-label-sm text-tertiary block">Reverse Bid Discount</span>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-all shadow-sm" type="button">
+              Accept Offer
+            </button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="py-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-bold">DR</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-on-surface">Devika Rao</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-tertiary text-[11px] font-bold">88% Fit</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Proposed: July 29 @ 7:00 PM IST • Resume &amp; Systems Architecture</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="text-right">
+<span class="font-metric-num text-headline-sm font-bold text-on-surface">₹799</span>
+<span class="font-label-sm text-label-sm text-tertiary block">Reverse Bid Discount</span>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-all shadow-sm" type="button">
+              Accept Offer
+            </button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="py-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-bold">KS</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-on-surface">Karthik S.</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-tertiary text-[11px] font-bold">82% Fit</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Proposed: July 30 @ 9:00 PM IST • Code Audit &amp; Design Review</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="text-right">
+<span class="font-metric-num text-headline-sm font-bold text-on-surface">₹850</span>
+<span class="font-label-sm text-label-sm text-tertiary block">Standard Bid</span>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-all shadow-sm" type="button">
+              Accept Offer
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 4: DELIVERABLES & HISTORY -->
+<div class="tab-panel hidden flex flex-col gap-space-lg" id="tab-content-booking-history">
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-lg">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Completed Sessions &amp; Deliverables</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inspect verified mentor artifacts, rubrics, and feedback documentation.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Download All Invoices</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- History Card 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-tertiary">July 18, 2026</span>
+<span>•</span>
+<div class="flex items-center text-secondary text-[14px]">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="ml-1 font-label-sm text-label-sm text-on-surface font-bold">5.0</span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-0.5">Behavioral STAR Mock Interview</h3>
+<p class="font-body-sm text-body-sm text-tertiary">Mentor: Priya Nair (Senior Staff SRE @ Microsoft)</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">4-Page STAR Behavioral Feedback Rubric.pdf</span>
+<span class="font-label-sm text-label-sm text-tertiary">Verified deliverable • Approved</span>
+</div>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Document" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+<!-- History Card 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-tertiary">July 12, 2026</span>
+<span>•</span>
+<div class="flex items-center text-secondary text-[14px]">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="ml-1 font-label-sm text-label-sm text-on-surface font-bold">5.0</span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-0.5">Career Roadmap &amp; Strategy Session</h3>
+<p class="font-body-sm text-body-sm text-tertiary">Mentor: Vikram Singh (Senior AI Engineer @ Google)</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">6-Month Tier-1 Career Transition Roadmap.pdf</span>
+<span class="font-label-sm text-label-sm text-tertiary">Verified deliverable • Approved</span>
+</div>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Document" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+<!-- History Card 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-tertiary">June 28, 2026</span>
+<span>•</span>
+<div class="flex items-center text-secondary text-[14px]">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="material-symbols-outlined text-[14px]">star_half</span>
+<span class="ml-1 font-label-sm text-label-sm text-on-surface font-bold">4.8</span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-0.5">Coding &amp; DSA Pattern Mastery</h3>
+<p class="font-body-sm text-body-sm text-tertiary">Mentor: Rohan Verma (Sr. Engineering Manager @ Amazon)</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Monotonic Stack &amp; DP Drill Solutions.pdf</span>
+<span class="font-label-sm text-label-sm text-tertiary">Verified deliverable • Approved</span>
+</div>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Document" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Safety, Escrow & Policy Callout Bar -->
+<div class="mt-space-xl p-space-lg rounded-xl bg-surface-container-low flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">shield</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-title-md text-title-md font-bold text-on-surface">DreamX 72-Hour Safe Escrow Protocol</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl mt-0.5">
+          Mentor payouts are held securely in escrow for 72 hours post-session. You have a 48-hour dispute window following deliverable submission to review and ensure complete satisfaction. Free rescheduling is permitted once per service when requested at least 12 hours prior.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium transition-colors" type="button">
+        Read Policy
+      </button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">receipt</span>
+<span>Tax Invoices</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function switchTab(tabId) {
+    const tabs = ['active-bookings', 'match-requests', 'received-offers', 'booking-history'];
+    
+    tabs.forEach(id => {
+      const panel = document.getElementById('tab-content-' + id);
+      const btn = document.getElementById('tab-btn-' + id);
+      
+      if (id === tabId) {
+        if (panel) panel.classList.remove('hidden');
+        if (btn) {
+          btn.classList.add('bg-surface-container-lowest', 'shadow-sm', 'text-on-surface', 'font-semibold');
+          btn.classList.remove('text-tertiary');
+        }
+      } else {
+        if (panel) panel.classList.add('hidden');
+        if (btn) {
+          btn.classList.remove('bg-surface-container-lowest', 'shadow-sm', 'text-on-surface', 'font-semibold');
+          btn.classList.add('text-tertiary');
+        }
+      }
+    });
+  }
+</script></main></div></body></html>
