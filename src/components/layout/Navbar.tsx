@@ -1,7 +1,9 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { createClient } from '@/lib/supabase/client'
 
 interface NavbarProps {
   activePage?: 'discover' | 'services' | 'programs' | 'mentors' | 'pricing'
@@ -9,6 +11,26 @@ interface NavbarProps {
 
 export function Navbar({ activePage }: NavbarProps) {
   const pathname = usePathname()
+  const supabase = createClient()
+  const [user, setUser] = useState<any>(null)
+  const [role, setRole] = useState<string>('student')
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (user) {
+        setUser(user)
+        const userRole = user.app_metadata?.user_role || user.user_metadata?.user_role || 'student'
+        setRole(userRole)
+      } else {
+        setUser(null)
+      }
+    })
+  }, [supabase])
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut()
+    window.location.href = '/login'
+  }
 
   const openCommandMenu = () => {
     if (typeof window !== 'undefined') {
@@ -99,25 +121,41 @@ export function Navbar({ activePage }: NavbarProps) {
               </span>
             </div>
           </button>
-          <Link
-            className="hidden md:inline-flex font-body-md text-body-md font-semibold text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors duration-150"
-            href="/login"
-          >
-            Sign In
-          </Link>
-          <Link
-            className="h-10 px-space-lg rounded-lg bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-body-md text-body-md font-semibold inline-flex items-center justify-center shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] hover:shadow-[0_4px_6px_-1px_rgba(15,23,42,0.06)] transition-all duration-150 active:scale-[0.99]"
-            href="/signup"
-          >
-            Join Workspace
-          </Link>
-          <Link
-            href="/dashboard/mentor/services"
-            className="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:opacity-90 transition-opacity"
-            title="Mentor Dashboard"
-          >
-            <span className="material-symbols-outlined text-on-primary text-[18px]">person</span>
-          </Link>
+          {user ? (
+            <div className="flex items-center gap-space-sm">
+              <Link
+                className="h-10 px-space-md rounded-lg bg-primary hover:bg-primary-hover text-on-primary font-body-md text-body-md font-semibold inline-flex items-center gap-1.5 shadow-sm transition-all"
+                href={`/dashboard/${role}`}
+              >
+                <span className="material-symbols-outlined text-[18px]">dashboard</span>
+                <span>Workspace</span>
+              </Link>
+              <button
+                onClick={handleSignOut}
+                className="h-10 px-3 rounded-lg border border-surface-container-high hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-medium inline-flex items-center gap-1 transition-colors cursor-pointer"
+                title="Sign Out"
+                type="button"
+              >
+                <span className="material-symbols-outlined text-[18px]">logout</span>
+                <span className="hidden sm:inline">Sign Out</span>
+              </button>
+            </div>
+          ) : (
+            <>
+              <Link
+                className="hidden md:inline-flex font-body-md text-body-md font-semibold text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors duration-150"
+                href="/login"
+              >
+                Sign In
+              </Link>
+              <Link
+                className="h-10 px-space-lg rounded-lg bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-body-md text-body-md font-semibold inline-flex items-center justify-center shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] hover:shadow-[0_4px_6px_-1px_rgba(15,23,42,0.06)] transition-all duration-150 active:scale-[0.99]"
+                href="/signup"
+              >
+                Join Workspace
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </header>

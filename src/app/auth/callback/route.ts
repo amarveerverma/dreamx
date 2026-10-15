@@ -16,6 +16,23 @@ export async function GET(request: Request) {
     env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     {
       cookies: {
+        get(name: string) {
+          return cookieStore.get(name)?.value
+        },
+        set(name: string, value: string, options: any) {
+          try {
+            cookieStore.set(name, value, options)
+          } catch {
+            // Pass-through
+          }
+        },
+        remove(name: string, options: any) {
+          try {
+            cookieStore.set(name, '', options)
+          } catch {
+            // Pass-through
+          }
+        },
         getAll() {
           return cookieStore.getAll()
         },

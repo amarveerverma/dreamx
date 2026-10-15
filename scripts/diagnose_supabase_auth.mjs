@@ -31,6 +31,7 @@ const supabaseAdmin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 const TEST_ACCOUNTS = [
   { email: 'student@dreamx.com', password: 'CareerMobility2025!', role: 'student' },
   { email: 'mentor.google@dreamx.com', password: 'CareerMobility2025!', role: 'mentor' },
+  { email: 'admin@dreamx.com', password: 'CareerMobility2025!', role: 'admin' },
   { email: 'vermaamarveeer0@gamail.com', password: 'CareerMobility2025!', role: 'student' },
 ];
 

@@ -3,6 +3,7 @@ import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import { getPaymentProvider } from '@/lib/payments';
 import { PayoutService, adminDb } from '@/lib/payments/payout-service';
+import { NotificationService } from '@/lib/notifications/notification-service';
 
 export async function POST(request: NextRequest) {
   try {
@@ -88,6 +89,11 @@ export async function POST(request: NextRequest) {
       gatewayOrderId: razorpay_order_id,
       gatewayPaymentId: razorpay_payment_id,
     });
+
+    // Trigger Notification & Reminder Dispatch Engine
+    NotificationService.onBookingConfirmed(updatedBooking.id).catch((err) =>
+      console.error('[NotificationService onBookingConfirmed Error]:', err)
+    );
 
     return NextResponse.json({
       success: true,

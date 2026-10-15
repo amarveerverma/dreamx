@@ -20,18 +20,35 @@
 import crypto from 'crypto';
 import pg from 'pg';
 import { readFileSync } from 'fs';
-import { CommissionCalculatorService } from '../src/lib/payments/commission';
-import { RazorpayAdapter } from '../src/lib/payments/adapters/razorpay-adapter';
-import { StripeAdapter } from '../src/lib/payments/adapters/stripe-adapter';
-import { adminDb, PayoutService } from '../src/lib/payments/payout-service';
 
 // Load environment variables
 const envContent = readFileSync('.env.local', 'utf-8');
 const env: Record<string, string> = {};
 for (const line of envContent.split(/\r?\n/)) {
-  const match = line.match(/^([^#=]+)=(.*)$/);
-  if (match) env[match[1].trim()] = match[2].trim().replace(/^["']|["']$/g, '');
+  const trimmed = line.trim();
+  if (!trimmed || trimmed.startsWith('#')) continue;
+  const match = trimmed.match(/^([^=]+)=(.*)$/);
+  if (match) {
+    const key = match[1].trim();
+    let val = match[2].trim();
+    if (val.startsWith('"')) {
+      const closingIdx = val.indexOf('"', 1);
+      if (closingIdx !== -1) val = val.substring(1, closingIdx);
+    } else if (val.startsWith("'")) {
+      const closingIdx = val.indexOf("'", 1);
+      if (closingIdx !== -1) val = val.substring(1, closingIdx);
+    } else {
+      val = val.replace(/\s+#.*$/, '').trim();
+    }
+    env[key] = val;
+  }
 }
+
+process.env.NEXT_PUBLIC_SUPABASE_URL = env.NEXT_PUBLIC_SUPABASE_URL;
+process.env.SUPABASE_SERVICE_ROLE_KEY = env.SUPABASE_SERVICE_ROLE_KEY;
+process.env.RAZORPAY_KEY_ID = env.RAZORPAY_KEY_ID;
+process.env.RAZORPAY_KEY_SECRET = env.RAZORPAY_KEY_SECRET;
+process.env.RAZORPAY_WEBHOOK_SECRET = env.RAZORPAY_WEBHOOK_SECRET;
 
 const pool = new pg.Pool({
   connectionString: env.DATABASE_URL,
@@ -52,6 +69,11 @@ function assert(condition: boolean, message: string) {
 }
 
 async function runPhase6E2E() {
+  const { CommissionCalculatorService } = await import('../src/lib/payments/commission');
+  const { RazorpayAdapter } = await import('../src/lib/payments/adapters/razorpay-adapter');
+  const { StripeAdapter } = await import('../src/lib/payments/adapters/stripe-adapter');
+  const { adminDb, PayoutService } = await import('../src/lib/payments/payout-service');
+
   console.log('================================================================');
   console.log('   DREAMX PHASE 6: PAYMENTS & PAYOUT PIPELINE E2E VERIFICATION   ');
   console.log('================================================================\n');

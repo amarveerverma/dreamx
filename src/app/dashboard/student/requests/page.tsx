@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { StudentDashboardShell } from "@/components/layout/StudentDashboardShell";
 import { useRouter } from "next/navigation";
 
 export default function StudentRequestsPage() {
@@ -92,7 +91,7 @@ export default function StudentRequestsPage() {
   );
 
   return (
-    <StudentDashboardShell>
+    <div className="space-y-6">
       <div className="flex flex-col gap-space-sm mb-space-lg">
         <div className="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
           <span>Dashboard</span>
@@ -527,6 +526,6 @@ export default function StudentRequestsPage() {
           </div>
         </div>
       )}
-    </StudentDashboardShell>
+    </div>
   );
 }

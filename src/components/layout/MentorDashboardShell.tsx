@@ -35,11 +35,13 @@ export function MentorDashboardShell({ children }: MentorDashboardShellProps) {
   async function handleLogout() {
     const supabase = createClient();
     await supabase.auth.signOut();
-    router.push("/login");
+    window.location.href = "/login";
   }
 
   const navLinks = [
     { href: "/dashboard/mentor", label: "Overview", icon: "dashboard" },
+    { href: "/dashboard/mentor/analytics", label: "Performance & Analytics", icon: "insights" },
+    { href: "/dashboard/mentor/earnings", label: "Earnings & Payouts", icon: "payments" },
     { href: "/dashboard/mentor/requests", label: "Student Requests & Bidding", icon: "broadcast_on_personal" },
     { href: "/dashboard/mentor/bookings", label: "My Bookings & Sessions", icon: "calendar_month" },
     { href: "/dashboard/mentor/services", label: "Services & Pricing", icon: "inventory_2" },

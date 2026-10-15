@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { StudentDashboardShell } from "@/components/layout/StudentDashboardShell";
 
 export default function StudentBookingsPage() {
   const [bookings, setBookings] = useState<any[]>([]);
@@ -62,7 +61,7 @@ export default function StudentBookingsPage() {
   const completedCount = bookings.filter((b) => ["completed", "deliverable_submitted"].includes(b.status)).length;
 
   return (
-    <StudentDashboardShell>
+    <div className="space-y-6">
       <div className="py-space-md mb-space-lg flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-space-xs font-body-sm text-body-sm text-tertiary">
@@ -298,6 +297,6 @@ export default function StudentBookingsPage() {
           })}
         </div>
       )}
-    </StudentDashboardShell>
+    </div>
   );
 }

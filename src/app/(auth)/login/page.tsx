@@ -73,13 +73,31 @@ export default function LoginPage() {
         data.user?.user_metadata?.user_role ||
         (activeRole === 'mentor' ? 'mentor' : 'student')
 
+      const searchParams = new URLSearchParams(window.location.search)
+      const nextParam = searchParams.get('next')
+
+      let redirectPath = userRole === 'admin' ? '/admin' : `/dashboard/${userRole}`
+      if (nextParam && nextParam.startsWith('/') && !nextParam.startsWith('//')) {
+        const isRestrictedForStudent = nextParam.startsWith('/admin') || nextParam.startsWith('/dashboard/mentor')
+        const isRestrictedForMentor = nextParam.startsWith('/admin') || nextParam.startsWith('/dashboard/student')
+
+        if (userRole === 'admin') {
+          redirectPath = nextParam
+        } else if (userRole === 'mentor' && !isRestrictedForMentor) {
+          redirectPath = nextParam
+        } else if (userRole === 'student' && !isRestrictedForStudent) {
+          redirectPath = nextParam
+        }
+      }
+
       // Allow browser client to flush auth cookies, then launch workspace
       setTimeout(() => {
-        window.location.href = `/dashboard/${userRole}`
+        window.location.href = redirectPath
       }, 250)
     } catch (err: any) {
       setErrorMessage(err.message || 'Invalid email or password.')
       setStatusMessage(null)
+      setLoading(false)
     } finally {
       // Small timeout allows unmount to happen before flipping state if successful
       setTimeout(() => setLoading(false), 2000)
@@ -142,6 +160,7 @@ export default function LoginPage() {
               {/* Quick Role Context Switcher */}
               <div className="relative bg-surface-container-low p-1 rounded-lg flex items-center mb-space-lg text-center" role="tablist">
                 <button
+                  role="tab"
                   aria-selected={activeRole === 'seeker'}
                   className={`flex-1 flex items-center justify-center gap-space-xs py-2 px-3 rounded-md font-label-md text-label-md transition-all duration-200 ${
                     activeRole === 'seeker'
@@ -156,6 +175,7 @@ export default function LoginPage() {
                 </button>
 
                 <button
+                  role="tab"
                   aria-selected={activeRole === 'mentor'}
                   className={`flex-1 flex items-center justify-center gap-space-xs py-2 px-3 rounded-md font-label-md text-label-md transition-all duration-200 ${
                     activeRole === 'mentor'
@@ -291,6 +311,7 @@ export default function LoginPage() {
 
                 {/* Submit Action Button */}
                 <button
+                  id="btn-login-submit"
                   className="w-full h-11 px-space-lg rounded-lg bg-primary hover:bg-primary-container active:bg-on-primary-fixed-variant text-on-primary font-title-md text-title-md flex items-center justify-center gap-space-sm shadow-md transition-all duration-150 mt-space-md cursor-pointer disabled:opacity-60"
                   disabled={loading}
                   type="submit"
@@ -330,6 +351,7 @@ export default function LoginPage() {
                 </div>
                 <div className="flex flex-wrap gap-2 mt-2">
                   <button
+                    id="btn-quick-fill-student"
                     className="flex-1 min-w-[140px] text-left px-2.5 py-1.5 rounded-md bg-surface-container-lowest hover:bg-surface-container-high transition-colors font-body-sm text-body-sm text-on-surface flex items-center justify-between group shadow-xs"
                     onClick={() => fillDemoCredentials('student@dreamx.com', 'seeker')}
                     type="button"
@@ -341,6 +363,7 @@ export default function LoginPage() {
                     <span className="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">touch_app</span>
                   </button>
                   <button
+                    id="btn-quick-fill-mentor"
                     className="flex-1 min-w-[140px] text-left px-2.5 py-1.5 rounded-md bg-surface-container-lowest hover:bg-surface-container-high transition-colors font-body-sm text-body-sm text-on-surface flex items-center justify-between group shadow-xs"
                     onClick={() => fillDemoCredentials('mentor.google@dreamx.com', 'mentor')}
                     type="button"
@@ -352,12 +375,25 @@ export default function LoginPage() {
                     <span className="material-symbols-outlined text-[16px] text-outline group-hover:text-secondary transition-colors">touch_app</span>
                   </button>
                   <button
+                    id="btn-quick-fill-admin"
+                    className="flex-1 min-w-[140px] text-left px-2.5 py-1.5 rounded-md bg-surface-container-lowest hover:bg-surface-container-high transition-colors font-body-sm text-body-sm text-on-surface flex items-center justify-between group shadow-xs border border-error/20"
+                    onClick={() => fillDemoCredentials('admin@dreamx.com', 'seeker')}
+                    type="button"
+                  >
+                    <div className="flex flex-col truncate">
+                      <span className="font-label-sm text-label-sm text-error font-semibold">Admin Ops</span>
+                      <span className="truncate font-mono text-label-sm text-error/80">admin@dreamx.com</span>
+                    </div>
+                    <span className="material-symbols-outlined text-[16px] text-error group-hover:scale-110 transition-transform">shield_person</span>
+                  </button>
+                  <button
+                    id="btn-quick-fill-user"
                     className="flex-1 min-w-[140px] text-left px-2.5 py-1.5 rounded-md bg-surface-container-lowest hover:bg-surface-container-high transition-colors font-body-sm text-body-sm text-on-surface flex items-center justify-between group shadow-xs"
                     onClick={() => fillDemoCredentials('vermaamarveeer0@gamail.com', 'seeker')}
                     type="button"
                   >
                     <div className="flex flex-col truncate">
-                      <span className="font-label-sm text-label-sm text-on-surface-variant font-semibold">Your Account</span>
+                      <span className="font-label-sm text-label-sm text-on-surface-variant font-semibold">Verified Student</span>
                       <span className="truncate font-mono text-label-sm text-primary">vermaamarveeer0@gamail.com</span>
                     </div>
                     <span className="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">touch_app</span>

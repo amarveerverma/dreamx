@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { StudentDashboardShell } from "@/components/layout/StudentDashboardShell";
 import { useRouter } from "next/navigation";
 
 export default function StudentServicesPage() {
@@ -141,7 +140,7 @@ export default function StudentServicesPage() {
   );
 
   return (
-    <StudentDashboardShell>
+    <div className="space-y-6">
       <div className="py-space-md mb-space-lg flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
         <div>
           <div className="flex items-center gap-space-xs font-body-sm text-body-sm text-tertiary">
@@ -531,6 +530,6 @@ export default function StudentServicesPage() {
           </div>
         </div>
       )}
-    </StudentDashboardShell>
+    </div>
   );
 }

@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { NotificationService } from "@/lib/notifications/notification-service";
+import { CareerScoreService } from "@/lib/career/career-score-service";
 
 export async function POST(req: Request, { params }: { params: { id: string } }) {
   try {
@@ -47,6 +49,18 @@ export async function POST(req: Request, { params }: { params: { id: string } })
     if (updateError) {
       console.error("Booking complete update error:", updateError);
       return NextResponse.json({ error: "Failed to complete booking" }, { status: 500 });
+    }
+
+    // Trigger session completion notification & review scheduling
+    NotificationService.onSessionCompleted(bookingId).catch((err) =>
+      console.error('[NotificationService onSessionCompleted Error]:', err)
+    );
+
+    // Recalculate career readiness score and update journey progress
+    try {
+      await CareerScoreService.onBookingCompleted(bookingId);
+    } catch (scoreErr) {
+      console.error('[CareerScoreService onBookingCompleted Error]:', scoreErr);
     }
 
     return NextResponse.json({ booking: updatedBooking }, { status: 200 });
